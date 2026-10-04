@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 550" width="800" height="550">
+  <!-- 
+  IMAGE PLACEHOLDER — BEDMINSTER ROOFER INSPECTION
+  Intended Subject: Roofing craftsman inspecting copper valley transitions and slate-look shingles on a steep Bedminster estate roof.
+  Dimensions: 800x550 (approx 3:2)
+  Visual Style: Close-up professional inspection photography, sunny daylight.
+  Future Alt Text: "Roofing technician in harness inspecting soldered copper valley flashing on a Bedminster NJ estate"
+  -->
+  <defs>
+    <linearGradient id="bm_grad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0284c7"/>
+      <stop offset="40%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#e0f2fe"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="550" fill="url(#bm_grad)"/>
+
+  <!-- Steep Roof Plane & Copper Valley -->
+  <polygon points="0,550 500,160 800,320 800,550" fill="#1e293b"/>
+  <line x1="500" y1="160" x2="340" y2="550" stroke="#f97316" stroke-width="6"/>
+
+  <!-- Technician Silhouette Graphic -->
+  <circle cx="280" cy="270" r="22" fill="#f97316"/>
+  <path d="M 260 295 L 300 295 L 310 380 L 250 380 Z" fill="#0f172a"/>
+  <line x1="280" y1="295" x2="350" y2="230" stroke="#f97316" stroke-width="3" stroke-dasharray="4 2"/>
+
+  <!-- Technical Overlay HUD Badge -->
+  <rect x="80" y="410" width="640" height="105" rx="10" fill="#0b1329" fill-opacity="0.92" stroke="#f97316" stroke-width="2"/>
+  <text x="400" y="445" font-family="'Outfit', sans-serif" font-size="16" font-weight="700" fill="#f97316" text-anchor="middle" letter-spacing="1.5">IMAGE PLACEHOLDER — BEDMINSTER ROOF INSPECTION</text>
+  <text x="400" y="472" font-family="'Plus Jakarta Sans', sans-serif" font-size="13" fill="#e2e8f0" text-anchor="middle">Subject: Specialist Inspecting Copper Flashing & Underlayment | 800x550</text>
+  <text x="400" y="495" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" fill="#94a3b8" text-anchor="middle">Visual: Estate roof diagnostics • Bedminster Township NJ • Replacement Scheduled</text>
+</svg>

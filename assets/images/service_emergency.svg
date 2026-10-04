@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 380" width="600" height="380">
+  <defs>
+    <linearGradient id="sky_emerg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1E293B"/>
+      <stop offset="100%" stop-color="#334155"/>
+    </linearGradient>
+    <linearGradient id="tarp_blue" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1D4ED8"/>
+      <stop offset="50%" stop-color="#2563EB"/>
+      <stop offset="100%" stop-color="#1E40AF"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="380" fill="url(#sky_emerg)"/>
+
+  <!-- Roof Peak & Rafters -->
+  <polygon points="50,380 300,100 550,380" fill="#0F172A"/>
+  
+  <!-- Shingle details -->
+  <g stroke="#1E293B" stroke-width="2">
+    <line x1="120" y1="300" x2="480" y2="300"/>
+    <line x1="180" y1="230" x2="420" y2="230"/>
+    <line x1="230" y1="170" x2="370" y2="170"/>
+  </g>
+
+  <!-- Heavy Duty Industrial Blue Tarp over breached slope -->
+  <polygon points="200,200 340,110 460,240 380,360 160,340" fill="url(#tarp_blue)" opacity="0.95"/>
+  <!-- Tarp Weave Grid Texture -->
+  <g stroke="#60A5FA" stroke-width="1" opacity="0.3">
+    <line x1="200" y1="200" x2="380" y2="360"/>
+    <line x1="240" y1="180" x2="420" y2="330"/>
+    <line x1="170" y1="270" x2="430" y2="180"/>
+    <line x1="190" y1="310" x2="450" y2="220"/>
+  </g>
+
+  <!-- Anchoring Wood 2x4 Furring Strips -->
+  <line x1="220" y1="180" x2="280" y2="340" stroke="#D97706" stroke-width="8" stroke-linecap="round"/>
+  <line x1="380" y1="160" x2="420" y2="320" stroke="#D97706" stroke-width="8" stroke-linecap="round"/>
+  <line x1="230" y1="320" x2="410" y2="300" stroke="#D97706" stroke-width="8" stroke-linecap="round"/>
+
+  <!-- Fastener Screws on batten -->
+  <circle cx="230" cy="210" r="3" fill="#F8FAFC"/>
+  <circle cx="250" cy="260" r="3" fill="#F8FAFC"/>
+  <circle cx="270" cy="310" r="3" fill="#F8FAFC"/>
+  <circle cx="390" cy="200" r="3" fill="#F8FAFC"/>
+  <circle cx="410" cy="270" r="3" fill="#F8FAFC"/>
+
+  <!-- Emergency Response Badge -->
+  <rect x="20" y="20" width="220" height="34" rx="17" fill="rgba(7,19,31,0.9)" stroke="rgba(244,122,36,0.5)"/>
+  <circle cx="38" cy="37" r="6" fill="#F47A24"/>
+  <text x="54" y="42" fill="#FFFFFF" font-family="system-ui, sans-serif" font-size="12" font-weight="700">RAPID EMERGENCY TARPING</text>
+</svg>

@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600" width="900" height="600">
+  <!-- 
+  IMAGE PLACEHOLDER — BASKING RIDGE ROOFER HERO
+  Intended Subject: Wide photograph of an elegant historic colonial executive estate in Basking Ridge NJ with slate-gray architectural shingle roof, white trim dormers, and brick chimney.
+  Dimensions: 900x600 (3:2)
+  Visual Style: Professional architectural daytime photography, lush Somerset Hills landscaping.
+  Future Alt Text: "Historic executive colonial residence in Basking Ridge NJ featuring an architectural shingle roof replacement"
+  -->
+  <defs>
+    <linearGradient id="br_sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="60%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#334155"/>
+    </linearGradient>
+    <linearGradient id="br_roof" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#334155"/>
+      <stop offset="100%" stop-color="#1e293b"/>
+    </linearGradient>
+    <pattern id="br_shingles" width="30" height="14" patternUnits="userSpaceOnUse">
+      <rect width="30" height="14" fill="#1e293b"/>
+      <line x1="0" y1="14" x2="30" y2="14" stroke="#0f172a" stroke-width="1.5"/>
+      <line x1="12" y1="0" x2="12" y2="14" stroke="#334155" stroke-width="1.2"/>
+    </pattern>
+  </defs>
+
+  <rect width="900" height="600" fill="url(#br_sky)"/>
+  
+  <!-- Architectural Outline of Basking Ridge Colonial -->
+  <g opacity="0.9">
+    <!-- Main House Body -->
+    <rect x="180" y="280" width="540" height="260" fill="#f8fafc" rx="4"/>
+    <!-- Grand Roof Pitch -->
+    <polygon points="140,280 450,110 760,280" fill="url(#br_roof)"/>
+    <polygon points="140,280 450,110 760,280" fill="url(#br_shingles)" opacity="0.6"/>
+    <!-- Dormer 1 -->
+    <polygon points="260,220 310,165 360,220" fill="#f8fafc"/>
+    <polygon points="255,220 310,160 365,220" fill="none" stroke="#f97316" stroke-width="3"/>
+    <!-- Dormer 2 -->
+    <polygon points="540,220 590,165 640,220" fill="#f8fafc"/>
+    <polygon points="535,220 590,160 645,220" fill="none" stroke="#f97316" stroke-width="3"/>
+    <!-- Brick Chimneys -->
+    <rect x="220" y="130" width="45" height="110" fill="#7f1d1d" rx="2"/>
+    <rect x="635" y="130" width="45" height="110" fill="#7f1d1d" rx="2"/>
+  </g>
+
+  <!-- Technical Overlay HUD Badge -->
+  <rect x="120" y="440" width="660" height="110" rx="12" fill="#0b1329" fill-opacity="0.92" stroke="#f97316" stroke-width="2"/>
+  <text x="450" y="475" font-family="'Outfit', sans-serif" font-size="18" font-weight="700" fill="#f97316" text-anchor="middle" letter-spacing="1.5">IMAGE PLACEHOLDER — BASKING RIDGE ROOFER HERO</text>
+  <text x="450" y="502" font-family="'Plus Jakarta Sans', sans-serif" font-size="14" fill="#e2e8f0" text-anchor="middle">Subject: Historic Executive Colonial with Slate-Gray Architectural Roof | 900x600</text>
+  <text x="450" y="525" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" fill="#94a3b8" text-anchor="middle">Visual: High-end architectural photography • Bernards Twp, NJ • Replacement Scheduled</text>
+</svg>

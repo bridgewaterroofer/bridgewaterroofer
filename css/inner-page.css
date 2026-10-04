@@ -1,0 +1,48 @@
+/**
+ * BRIDGEWATER ROOFER — INNER PAGE CORE STYLES
+ * Common layout, breadcrumbs, sub-heroes, and utility styling across inner pages.
+ */
+
+.inner-page-hero {
+  position: relative;
+  background: linear-gradient(135deg, var(--navy-950, #0B192C) 0%, var(--navy-900, #1E3E62) 100%);
+  color: #ffffff;
+  padding: clamp(3rem, 6vw, 5.5rem) 0 clamp(2.5rem, 5vw, 4rem);
+  border-bottom: 3px solid var(--orange, #FF6500);
+}
+
+.inner-breadcrumbs {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  color: var(--slate-300, #CBD5E1);
+  margin-bottom: 1.5rem;
+}
+
+.inner-breadcrumbs a {
+  color: var(--slate-200, #E2E8F0);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.inner-breadcrumbs a:hover {
+  color: var(--orange, #FF6500);
+}
+
+.inner-breadcrumbs .separator {
+  color: var(--slate-400, #94A3B8);
+  font-size: 0.75rem;
+}
+
+.inner-page-content {
+  padding: clamp(3rem, 5vw, 5rem) 0;
+  background: var(--bg-primary, #ffffff);
+}
+
+.inner-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}

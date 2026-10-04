@@ -1,0 +1,1166 @@
+/* ==========================================================================
+   BRIDGEWATER ROOFER — SERVICE PAGE DESIGN SYSTEM (Roof Repair Master)
+   Pure CSS3 — Extends base.css, components.css, sections.css
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. BREADCRUMBS
+   -------------------------------------------------------------------------- */
+.service-breadcrumb-bar {
+  background: var(--navy-950);
+  padding: 0.85rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.service-breadcrumb-nav {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8125rem;
+  color: var(--slate-400);
+  flex-wrap: wrap;
+}
+
+.service-breadcrumb-nav a {
+  color: var(--slate-300);
+  text-decoration: none;
+  transition: color var(--duration-fast) ease;
+}
+
+.service-breadcrumb-nav a:hover {
+  color: var(--orange);
+}
+
+.breadcrumb-sep {
+  color: var(--slate-600);
+  user-select: none;
+}
+
+.breadcrumb-current {
+  color: var(--orange);
+  font-weight: 600;
+}
+
+/* --------------------------------------------------------------------------
+   2. SERVICE HERO (600 - 720px Height)
+   -------------------------------------------------------------------------- */
+.service-hero {
+  position: relative;
+  background: radial-gradient(circle at 80% 20%, #152E42 0%, var(--navy-950) 65%);
+  padding: 3.5rem 0 5rem;
+  min-height: 620px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.service-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+.service-hero-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.95fr;
+  gap: 3.5rem;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+.service-hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.service-hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(244, 122, 36, 0.12);
+  border: 1px solid rgba(244, 122, 36, 0.35);
+  padding: 0.4rem 0.9rem;
+  border-radius: var(--radius-full);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--orange);
+  margin-bottom: 1.25rem;
+}
+
+.service-hero-title {
+  font-family: var(--font-heading);
+  font-size: clamp(2.25rem, 4vw, 3.25rem);
+  font-weight: 800;
+  color: var(--white);
+  line-height: 1.12;
+  letter-spacing: -0.025em;
+  margin-bottom: 1.25rem;
+}
+
+.service-hero-desc {
+  font-size: 1.125rem;
+  color: var(--slate-300);
+  line-height: 1.65;
+  margin-bottom: 2rem;
+  max-width: 580px;
+}
+
+.service-hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.75rem;
+}
+
+.service-trust-microcopy {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 0.8125rem;
+  color: var(--slate-400);
+  flex-wrap: wrap;
+}
+
+.service-trust-microcopy span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.service-trust-microcopy span svg {
+  color: var(--green);
+}
+
+/* Hero Right 3D Visual Frame */
+.service-hero-visual {
+  position: relative;
+  perspective: 1200px;
+}
+
+.service-visual-frame {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: 
+    0 24px 48px -12px rgba(0, 0, 0, 0.7),
+    0 0 40px rgba(244, 122, 36, 0.18);
+  border: 1.5px solid rgba(255, 255, 255, 0.15);
+  transform: rotateY(-3deg) rotateX(2deg);
+  transition: transform var(--duration-normal) ease;
+}
+
+.service-visual-frame:hover {
+  transform: rotateY(0deg) rotateX(0deg) scale(1.01);
+}
+
+.service-visual-frame img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16/10;
+  object-fit: cover;
+}
+
+/* Floating Service Info Badges */
+.service-floating-badge {
+  position: absolute;
+  background: rgba(10, 25, 38, 0.92);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: var(--radius-md);
+  padding: 0.75rem 1rem;
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.45);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  z-index: 3;
+  animation: floatSubtle 4s ease-in-out infinite alternate;
+}
+
+.badge-top-right {
+  top: -15px;
+  right: -15px;
+}
+
+.badge-bottom-left {
+  bottom: -20px;
+  left: -20px;
+  animation-delay: -2s;
+}
+
+@keyframes floatSubtle {
+  0% { transform: translateY(0px); }
+  100% { transform: translateY(-8px); }
+}
+
+.badge-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-sm);
+  background: rgba(244, 122, 36, 0.2);
+  color: var(--orange);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.badge-text strong {
+  display: block;
+  font-size: 0.875rem;
+  color: var(--white);
+  font-family: var(--font-heading);
+}
+
+.badge-text span {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--slate-400);
+}
+
+/* --------------------------------------------------------------------------
+   3. URGENT PROBLEM STRIP (Floating Overlap Card)
+   -------------------------------------------------------------------------- */
+.service-urgent-strip {
+  position: relative;
+  z-index: 10;
+  margin-top: -2.5rem;
+  margin-bottom: 2rem;
+}
+
+.urgent-strip-card {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 20px 40px -15px rgba(7, 19, 31, 0.18), 0 0 0 1px rgba(7, 19, 31, 0.06);
+  padding: 1.5rem 2.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  border-left: 5px solid var(--orange);
+}
+
+.urgent-strip-text h2 {
+  font-size: 1.25rem;
+  color: var(--navy-950);
+  margin-bottom: 0.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.urgent-strip-text p {
+  font-size: 0.9375rem;
+  color: var(--slate-600);
+  margin: 0;
+}
+
+.urgent-strip-actions {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  flex-shrink: 0;
+}
+
+/* --------------------------------------------------------------------------
+   4. TWO-COLUMN SERVICE INTRODUCTION
+   -------------------------------------------------------------------------- */
+.service-intro-section {
+  padding: 4.5rem 0;
+  background: var(--white);
+}
+
+.service-intro-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.service-intro-content h2 {
+  font-size: 2.25rem;
+  color: var(--navy-950);
+  margin-bottom: 1.25rem;
+  line-height: 1.2;
+}
+
+.service-intro-content p {
+  font-size: 1.05rem;
+  color: var(--slate-600);
+  line-height: 1.7;
+  margin-bottom: 1.25rem;
+}
+
+.service-intro-features {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.intro-feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--navy-900);
+}
+
+.intro-feature-item svg {
+  color: var(--orange);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.service-intro-media {
+  position: relative;
+}
+
+.service-intro-media img {
+  width: 100%;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  display: block;
+}
+
+.media-caption-badge {
+  position: absolute;
+  bottom: 1.25rem;
+  left: 1.25rem;
+  right: 1.25rem;
+  background: rgba(10, 25, 38, 0.88);
+  backdrop-filter: blur(8px);
+  color: var(--slate-200);
+  font-size: 0.8125rem;
+  padding: 0.75rem 1.25rem;
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+/* --------------------------------------------------------------------------
+   5. PROBLEMS THIS SERVICE SOLVES (3D Cards)
+   -------------------------------------------------------------------------- */
+.service-problems-section {
+  padding: 5rem 0;
+  background: var(--off-white);
+  border-top: 1px solid var(--soft-gray);
+  border-bottom: 1px solid var(--soft-gray);
+}
+
+.problems-grid-3col {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.75rem;
+  margin-top: 3rem;
+}
+
+.problem-3d-card {
+  background: var(--white);
+  border: 1px solid var(--soft-gray);
+  border-radius: var(--radius-md);
+  padding: 1.85rem;
+  display: flex;
+  flex-direction: column;
+  transition: transform var(--duration-fast) ease, box-shadow var(--duration-fast) ease, border-color var(--duration-fast) ease;
+  position: relative;
+}
+
+.problem-3d-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 36px -10px rgba(7, 19, 31, 0.12);
+  border-color: var(--orange);
+}
+
+.problem-card-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-sm);
+  background: rgba(244, 122, 36, 0.12);
+  color: var(--orange);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+}
+
+.problem-3d-card h3 {
+  font-size: 1.2rem;
+  color: var(--navy-950);
+  margin-bottom: 0.65rem;
+}
+
+.problem-3d-card p {
+  font-size: 0.9375rem;
+  color: var(--slate-600);
+  line-height: 1.6;
+  margin-bottom: 0;
+  flex-grow: 1;
+}
+
+/* --------------------------------------------------------------------------
+   6. INTERACTIVE VISUAL DIAGNOSIS
+   -------------------------------------------------------------------------- */
+.service-diagnosis-section {
+  padding: 5.5rem 0;
+  background: var(--navy-900);
+  color: var(--white);
+  position: relative;
+}
+
+.diagnosis-interactive-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 3.5rem;
+  align-items: center;
+  margin-top: 3rem;
+}
+
+.roof-diagram-container {
+  background: var(--navy-950);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  position: relative;
+  box-shadow: var(--shadow-xl);
+}
+
+.hotspot-control-buttons {
+  display: flex;
+  gap: 0.65rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+}
+
+.hotspot-btn {
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: var(--slate-300);
+  padding: 0.5rem 0.95rem;
+  border-radius: var(--radius-full);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--duration-fast) ease;
+}
+
+.hotspot-btn:hover,
+.hotspot-btn.is-active {
+  background: var(--orange);
+  color: var(--white);
+  border-color: var(--orange);
+  box-shadow: 0 0 15px rgba(244, 122, 36, 0.4);
+}
+
+.roof-svg-diagram {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.svg-hotspot-pin {
+  cursor: pointer;
+  transition: transform var(--duration-fast) ease;
+}
+
+.svg-hotspot-pin:hover circle {
+  fill: var(--amber);
+}
+
+.diagnosis-info-card {
+  background: var(--navy-850);
+  border: 1px solid rgba(244, 122, 36, 0.35);
+  border-radius: var(--radius-lg);
+  padding: 2.25rem;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.diagnosis-pill-tag {
+  display: inline-block;
+  background: rgba(244, 122, 36, 0.18);
+  color: var(--orange);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 0.35rem 0.85rem;
+  border-radius: var(--radius-full);
+  margin-bottom: 1rem;
+}
+
+.diagnosis-info-card h3 {
+  font-size: 1.65rem;
+  color: var(--white);
+  margin-bottom: 1rem;
+}
+
+.diagnosis-info-card p {
+  font-size: 1rem;
+  color: var(--slate-300);
+  line-height: 1.65;
+  margin-bottom: 1.5rem;
+}
+
+.diagnosis-spec-box {
+  background: rgba(7, 19, 31, 0.6);
+  border-radius: var(--radius-md);
+  padding: 1.25rem;
+  border-left: 3px solid var(--orange);
+  margin-bottom: 1.75rem;
+}
+
+.diagnosis-spec-box strong {
+  display: block;
+  font-size: 0.875rem;
+  color: var(--white);
+  margin-bottom: 0.35rem;
+}
+
+.diagnosis-spec-box span {
+  font-size: 0.875rem;
+  color: var(--slate-400);
+}
+
+/* --------------------------------------------------------------------------
+   7. SIGNS YOU MAY NEED ROOF REPAIR (Checklist Grid)
+   -------------------------------------------------------------------------- */
+.service-signs-section {
+  padding: 5rem 0;
+  background: var(--white);
+}
+
+.signs-checklist-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+
+.sign-check-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.15rem;
+  background: var(--off-white);
+  border: 1px solid var(--soft-gray);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  transition: transform var(--duration-fast) ease, border-color var(--duration-fast) ease;
+}
+
+.sign-check-card:hover {
+  transform: translateX(4px);
+  border-color: var(--orange);
+}
+
+.sign-check-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(244, 122, 36, 0.15);
+  color: var(--orange);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.sign-check-text h3 {
+  font-size: 1.1rem;
+  color: var(--navy-950);
+  margin-bottom: 0.35rem;
+}
+
+.sign-check-text p {
+  font-size: 0.9375rem;
+  color: var(--slate-600);
+  line-height: 1.55;
+  margin: 0;
+}
+
+/* --------------------------------------------------------------------------
+   8. BRIDGEWATER LOCAL CONTEXT SECTION
+   -------------------------------------------------------------------------- */
+.service-local-section {
+  padding: 5rem 0;
+  background: var(--off-white);
+  border-top: 1px solid var(--soft-gray);
+  border-bottom: 1px solid var(--soft-gray);
+}
+
+.local-context-grid {
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.local-chip-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(16, 36, 51, 0.08);
+  border: 1px solid rgba(16, 36, 51, 0.15);
+  padding: 0.4rem 0.9rem;
+  border-radius: var(--radius-full);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: var(--navy-900);
+  margin-bottom: 1.25rem;
+}
+
+.local-context-text h2 {
+  font-size: 2.25rem;
+  color: var(--navy-950);
+  margin-bottom: 1.25rem;
+}
+
+.local-context-text p {
+  font-size: 1.05rem;
+  color: var(--slate-600);
+  line-height: 1.7;
+  margin-bottom: 1.25rem;
+}
+
+.local-factors-list {
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0;
+}
+
+.local-factors-list li {
+  position: relative;
+  padding-left: 1.75rem;
+  font-size: 0.95rem;
+  color: var(--slate-700);
+  margin-bottom: 0.75rem;
+  line-height: 1.5;
+}
+
+.local-factors-list li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--orange);
+  font-weight: 800;
+}
+
+/* --------------------------------------------------------------------------
+   9. 8-STEP ANIMATED PROCESS TIMELINE
+   -------------------------------------------------------------------------- */
+.service-process-section {
+  padding: 5.5rem 0;
+  background: var(--white);
+}
+
+.process-8steps-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.75rem;
+  margin-top: 3.5rem;
+}
+
+.process-8step-card {
+  background: var(--off-white);
+  border: 1px solid var(--soft-gray);
+  border-radius: var(--radius-md);
+  padding: 1.75rem;
+  position: relative;
+  transition: transform var(--duration-fast) ease, border-color var(--duration-fast) ease;
+}
+
+.process-8step-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--orange);
+}
+
+.step-num-bubble {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: var(--navy-900);
+  color: var(--orange);
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+  border: 2px solid rgba(244, 122, 36, 0.4);
+}
+
+.process-8step-card h3 {
+  font-size: 1.15rem;
+  color: var(--navy-950);
+  margin-bottom: 0.5rem;
+}
+
+.process-8step-card p {
+  font-size: 0.875rem;
+  color: var(--slate-600);
+  line-height: 1.55;
+  margin: 0;
+}
+
+/* --------------------------------------------------------------------------
+   10. SUB-SERVICES / TYPES OF REPAIRS
+   -------------------------------------------------------------------------- */
+.subservices-section {
+  padding: 5rem 0;
+  background: var(--navy-950);
+  color: var(--white);
+}
+
+.subservices-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+
+.subservice-card {
+  background: var(--navy-900);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-md);
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  transition: transform var(--duration-fast) ease, border-color var(--duration-fast) ease;
+}
+
+.subservice-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--orange);
+}
+
+.subservice-card h3 {
+  font-size: 1.15rem;
+  color: var(--white);
+  margin-bottom: 0.5rem;
+}
+
+.subservice-card p {
+  font-size: 0.875rem;
+  color: var(--slate-300);
+  line-height: 1.55;
+  margin-bottom: 1.25rem;
+  flex-grow: 1;
+}
+
+/* --------------------------------------------------------------------------
+   11. REPAIR VS REPLACEMENT COMPARISON
+   -------------------------------------------------------------------------- */
+.repair-replace-section {
+  padding: 5.5rem 0;
+  background: var(--white);
+}
+
+.decision-split-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.decision-card {
+  border-radius: var(--radius-lg);
+  padding: 2.5rem;
+  border: 1.5px solid var(--soft-gray);
+  display: flex;
+  flex-direction: column;
+}
+
+.decision-card.is-repair {
+  background: var(--off-white);
+  border-color: rgba(45, 155, 98, 0.3);
+}
+
+.decision-card.is-replace {
+  background: var(--off-white);
+  border-color: rgba(244, 122, 36, 0.3);
+}
+
+.decision-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.35rem 0.85rem;
+  border-radius: var(--radius-full);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 1.25rem;
+  width: fit-content;
+}
+
+.decision-card.is-repair .decision-badge {
+  background: rgba(45, 155, 98, 0.15);
+  color: var(--green);
+}
+
+.decision-card.is-replace .decision-badge {
+  background: rgba(244, 122, 36, 0.15);
+  color: var(--orange);
+}
+
+.decision-card h3 {
+  font-size: 1.5rem;
+  color: var(--navy-950);
+  margin-bottom: 1.25rem;
+}
+
+.decision-checklist {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.5rem 0;
+}
+
+.decision-checklist li {
+  position: relative;
+  padding-left: 1.75rem;
+  font-size: 0.95rem;
+  color: var(--slate-700);
+  margin-bottom: 0.85rem;
+  line-height: 1.55;
+}
+
+.decision-card.is-repair .decision-checklist li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--green);
+  font-weight: 800;
+}
+
+.decision-card.is-replace .decision-checklist li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--orange);
+  font-weight: 800;
+}
+
+/* --------------------------------------------------------------------------
+   11B. COOL SERVICE AREA & DISPATCH RADAR
+   -------------------------------------------------------------------------- */
+.service-dispatch-radar-section {
+  padding: 5.5rem 0;
+  background: var(--off-white);
+  border-top: 1px solid var(--border-light);
+  border-bottom: 1px solid var(--border-light);
+  position: relative;
+}
+
+.dispatch-header-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(45, 155, 98, 0.12);
+  border: 1px solid rgba(45, 155, 98, 0.35);
+  color: var(--green);
+  padding: 0.35rem 0.95rem;
+  border-radius: var(--radius-full);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 0.85rem;
+}
+
+.live-pulse-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--green);
+  box-shadow: 0 0 8px var(--green);
+  animation: livePulse 2s infinite;
+}
+
+@keyframes livePulse {
+  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(45, 155, 98, 0.7); }
+  70% { transform: scale(1); box-shadow: 0 0 0 8px rgba(45, 155, 98, 0); }
+  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(45, 155, 98, 0); }
+}
+
+.dispatch-grid-2col {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 3rem;
+  align-items: start;
+  margin-top: 2.5rem;
+}
+
+.dispatch-map-frame {
+  background: var(--navy-950);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius-xl);
+  padding: 1.5rem;
+  box-shadow: 0 20px 45px rgba(10, 25, 38, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.dispatch-map-frame svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.dispatch-map-livebar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  padding-top: 1rem;
+  margin-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 0.8125rem;
+  color: var(--slate-300);
+}
+
+.dispatch-livebar-left {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.dispatch-livebar-right a {
+  color: var(--amber);
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+/* Dispatch Stats Trio */
+.dispatch-stats-trio {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-bottom: 1.75rem;
+}
+
+.dispatch-stat-box {
+  background: var(--white);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 1.15rem 1rem;
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--duration-fast) ease, border-color var(--duration-fast) ease;
+}
+
+.dispatch-stat-box:hover {
+  transform: translateY(-2px);
+  border-color: var(--orange);
+}
+
+.dispatch-stat-num {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--navy-950);
+  line-height: 1.1;
+  margin-bottom: 0.25rem;
+}
+
+.dispatch-stat-label {
+  font-size: 0.75rem;
+  color: var(--slate-600);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+/* Town Hubs Interactive List */
+.town-hubs-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  margin-bottom: 1.75rem;
+}
+
+.town-hub-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1rem;
+  background: var(--white);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  transition: all var(--duration-fast) ease;
+}
+
+.town-hub-item:hover {
+  border-color: var(--orange);
+  background: #FFF9F5;
+  transform: translateX(4px);
+  box-shadow: var(--shadow-sm);
+}
+
+.town-hub-item.is-hq {
+  border-color: rgba(244, 122, 36, 0.4);
+  background: #FFF6EE;
+}
+
+.town-hub-info {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.town-hub-name {
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--navy-950);
+}
+
+.town-hub-tag {
+  font-size: 0.75rem;
+  color: var(--slate-500);
+}
+
+.town-hub-time {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: var(--orange);
+  background: rgba(244, 122, 36, 0.1);
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--radius-full);
+}
+
+/* Direct Dispatch Phone Card */
+.dispatch-phone-banner {
+  background: var(--navy-900);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  color: var(--white);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: var(--shadow-md);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.25rem;
+}
+
+.dispatch-phone-banner h4 {
+  font-size: 1.1rem;
+  color: var(--white);
+  margin-bottom: 0.25rem;
+}
+
+.dispatch-phone-banner p {
+  font-size: 0.875rem;
+  color: var(--slate-300);
+  margin: 0;
+  line-height: 1.4;
+}
+
+.dispatch-phone-banner .btn-phone {
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* SVG Map Community Node Hover Effect */
+.map-community-node {
+  cursor: pointer;
+  transition: all var(--duration-fast) ease;
+}
+
+.map-community-node:hover circle {
+  fill: var(--orange);
+  filter: drop-shadow(0 0 6px var(--orange));
+}
+
+.map-community-node:hover rect {
+  stroke: var(--orange);
+}
+
+/* --------------------------------------------------------------------------
+   12. RESPONSIVE BREAKPOINTS FOR SERVICE PAGE
+   -------------------------------------------------------------------------- */
+@media (max-width: 1024px) {
+  .service-hero-grid,
+  .service-intro-grid,
+  .diagnosis-interactive-grid,
+  .local-context-grid,
+  .dispatch-grid-2col {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .problems-grid-3col,
+  .process-8steps-grid,
+  .subservices-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .urgent-strip-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.25rem;
+  }
+
+  .urgent-strip-actions {
+    width: 100%;
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 768px) {
+  .dispatch-stats-trio {
+    grid-template-columns: 1fr;
+  }
+
+  .dispatch-phone-banner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .dispatch-phone-banner .btn-phone {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .service-hero {
+    padding: 2.5rem 0 3.5rem;
+    min-height: auto;
+  }
+
+  .service-hero-title {
+    font-size: 2rem;
+  }
+
+  .problems-grid-3col,
+  .signs-checklist-grid,
+  .process-8steps-grid,
+  .subservices-grid,
+  .decision-split-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .service-intro-features {
+    grid-template-columns: 1fr;
+  }
+
+  .badge-top-right,
+  .badge-bottom-left {
+    position: static;
+    margin-top: 1rem;
+  }
+}

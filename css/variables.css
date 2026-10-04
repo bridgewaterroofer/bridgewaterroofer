@@ -1,0 +1,85 @@
+/* ==========================================================================
+   BRIDGEWATER ROOFER — DESIGN SYSTEM & TOKENS
+   Pure CSS3 Variables & Design System
+   ========================================================================== */
+
+:root {
+  /* Brand Core Palette */
+  --navy-950: #07131F;
+  --navy-900: #0A1926;
+  --navy-850: #0C1E2F;
+  --navy-800: #102433;
+  --navy-700: #183348;
+  --charcoal: #151C22;
+  --slate-800: #1F2C37;
+  --slate-700: #334552;
+  --slate-600: #4B6070;
+  --slate-500: #657784;
+  --slate-400: #8E9EA9;
+  --slate-300: #B4C0C8;
+
+  /* Neutrals */
+  --white: #FFFFFF;
+  --off-white: #F5F7F8;
+  --soft-gray: #E8EDF0;
+  --border-light: rgba(16, 36, 51, 0.08);
+  --border-glass: rgba(255, 255, 255, 0.12);
+  --border-glass-hover: rgba(244, 122, 36, 0.4);
+
+  /* Conversion Accents (Construction Orange & Amber) */
+  --orange: #F47A24;
+  --orange-hover: #DD6615;
+  --orange-active: #C2540B;
+  --orange-light: #FFF4EC;
+  --amber: #FFB020;
+  --amber-light: #FFF8E7;
+
+  /* Functional Accents */
+  --green: #2D9B62;
+  --green-light: #EAF7F0;
+  --blue-accent: #2B7CB8;
+
+  /* Shadows & Glows */
+  --shadow-sm: 0 2px 8px rgba(7, 19, 31, 0.06);
+  --shadow-md: 0 8px 24px rgba(7, 19, 31, 0.09);
+  --shadow-lg: 0 16px 36px rgba(7, 19, 31, 0.14);
+  --shadow-xl: 0 24px 56px rgba(7, 19, 31, 0.22);
+  --shadow-dark: rgba(4, 15, 25, 0.28);
+  --shadow-orange: 0 8px 28px rgba(244, 122, 36, 0.35);
+  --shadow-orange-lg: 0 14px 40px rgba(244, 122, 36, 0.45);
+  --orange-glow: rgba(244, 122, 36, 0.28);
+  --amber-glow: rgba(255, 176, 32, 0.25);
+
+  /* Typography Stack */
+  --font-heading: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+
+  /* Layout Container */
+  --container-max: 1440px;
+  --container-wide: 1440px;
+  --container-narrow: 1100px;
+  --container-padding: clamp(1.25rem, 3.5vw, 2.5rem);
+
+  /* Section Spacing */
+  --section-pad-y: clamp(4.5rem, 8vw, 7.5rem);
+  --section-pad-y-compact: clamp(3.5rem, 6vw, 5rem);
+
+  /* Border Radii */
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+  --radius-full: 9999px;
+
+  /* Transitions */
+  --ease-smooth: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --duration-fast: 200ms;
+  --duration-normal: 350ms;
+  --duration-slow: 600ms;
+
+  /* Card 3D Tilt Defaults (Updated via JS) */
+  --rotateX: 0deg;
+  --rotateY: 0deg;
+}

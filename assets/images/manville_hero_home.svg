@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600" width="900" height="600">
+  <!-- 
+  IMAGE PLACEHOLDER — MANVILLE ROOFER HERO
+  Intended Subject: Wide photograph of a well-maintained residential Cape Cod home in Manville NJ featuring a brand new slate-gray architectural shingle roof with clean white trim gutters and brick chimney.
+  Dimensions: 900x600 (3:2)
+  Visual Style: Bright crisp daytime architectural photography, tidy borough street setting.
+  Future Alt Text: "Residential Cape Cod home in Manville NJ featuring a newly installed architectural shingle roof"
+  -->
+  <defs>
+    <linearGradient id="mv_sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="60%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#334155"/>
+    </linearGradient>
+    <linearGradient id="mv_roof" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#334155"/>
+      <stop offset="100%" stop-color="#1e293b"/>
+    </linearGradient>
+    <pattern id="mv_shingles" width="30" height="14" patternUnits="userSpaceOnUse">
+      <rect width="30" height="14" fill="#1e293b"/>
+      <line x1="0" y1="14" x2="30" y2="14" stroke="#0f172a" stroke-width="1.5"/>
+      <line x1="10" y1="0" x2="10" y2="14" stroke="#334155" stroke-width="1.2"/>
+    </pattern>
+  </defs>
+
+  <rect width="900" height="600" fill="url(#mv_sky)"/>
+  
+  <!-- Architectural Outline of Manville Cape Cod -->
+  <g opacity="0.9">
+    <rect x="220" y="310" width="460" height="230" fill="#f8fafc" rx="4"/>
+    <polygon points="180,310 450,150 720,310" fill="url(#mv_roof)"/>
+    <polygon points="180,310 450,150 720,310" fill="url(#mv_shingles)" opacity="0.6"/>
+    <!-- Cape Cod Dormer 1 -->
+    <polygon points="280,240 320,195 360,240" fill="#f8fafc"/>
+    <polygon points="275,240 320,190 365,240" fill="none" stroke="#f97316" stroke-width="2.5"/>
+    <!-- Cape Cod Dormer 2 -->
+    <polygon points="540,240 580,195 620,240" fill="#f8fafc"/>
+    <polygon points="535,240 580,190 625,240" fill="none" stroke="#f97316" stroke-width="2.5"/>
+    <!-- Chimney -->
+    <rect x="425" y="120" width="50" height="100" fill="#991b1b" rx="2"/>
+  </g>
+
+  <!-- Technical Overlay HUD Badge -->
+  <rect x="120" y="440" width="660" height="110" rx="12" fill="#0b1329" fill-opacity="0.92" stroke="#f97316" stroke-width="2"/>
+  <text x="450" y="475" font-family="'Outfit', sans-serif" font-size="18" font-weight="700" fill="#f97316" text-anchor="middle" letter-spacing="1.5">IMAGE PLACEHOLDER — MANVILLE ROOFER HERO</text>
+  <text x="450" y="502" font-family="'Plus Jakarta Sans', sans-serif" font-size="14" fill="#e2e8f0" text-anchor="middle">Subject: Classic Cape Cod with Slate-Gray Architectural Shingles | 900x600</text>
+  <text x="450" y="525" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" fill="#94a3b8" text-anchor="middle">Visual: Residential architectural capture • Manville Borough, NJ • Replacement Scheduled</text>
+</svg>

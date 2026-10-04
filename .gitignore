@@ -1,0 +1,22 @@
+# Scratch and temporary testing files
+scratch/
+*.tmp
+*.log
+
+# Dependencies
+node_modules/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE & Editor settings
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Environment variables
+.env
+.env.local

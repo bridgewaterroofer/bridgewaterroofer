@@ -1,0 +1,203 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a192f" />
+      <stop offset="50%" stop-color="#0f2b48" />
+      <stop offset="100%" stop-color="#071526" />
+    </linearGradient>
+
+    <!-- Metal Gradient -->
+    <linearGradient id="metalGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#2d3748" />
+      <stop offset="25%" stop-color="#4a5568" />
+      <stop offset="50%" stop-color="#718096" />
+      <stop offset="75%" stop-color="#4a5568" />
+      <stop offset="100%" stop-color="#2d3748" />
+    </linearGradient>
+
+    <!-- Shingle Gradient -->
+    <linearGradient id="shingleGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#374151" />
+      <stop offset="50%" stop-color="#1f2937" />
+      <stop offset="100%" stop-color="#111827" />
+    </linearGradient>
+
+    <!-- Accent Gradients -->
+    <linearGradient id="accentOrange" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f97316" />
+      <stop offset="100%" stop-color="#ea580c" />
+    </linearGradient>
+    <linearGradient id="accentCyan" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="100%" stop-color="#0284c7" />
+    </linearGradient>
+
+    <!-- Subtle Grid Pattern -->
+    <pattern id="gridPattern" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#ffffff" stroke-opacity="0.04" stroke-width="1" />
+    </pattern>
+
+    <!-- Drop Shadow Filter -->
+    <filter id="cardShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#000000" flood-opacity="0.45" />
+    </filter>
+  </defs>
+
+  <!-- Background Base -->
+  <rect width="1200" height="675" fill="url(#bgGrad)" />
+  <rect width="1200" height="675" fill="url(#gridPattern)" />
+
+  <!-- Top Decorative Header Bar -->
+  <rect x="0" y="0" width="1200" height="8" fill="url(#accentOrange)" />
+
+  <!-- Brand & Category Header -->
+  <g transform="translate(60, 48)">
+    <rect x="0" y="0" width="180" height="28" rx="14" fill="#f97316" fill-opacity="0.15" stroke="#f97316" stroke-opacity="0.4" stroke-width="1" />
+    <text x="90" y="19" fill="#fb923c" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="12" font-weight="700" text-anchor="middle" letter-spacing="1">ROOFING MATERIAL MATRIX</text>
+    <text x="200" y="20" fill="#94a3b8" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="14" font-weight="500">Bridgewater Roofer • Technical Comparison Series</text>
+  </g>
+
+  <!-- Title Section -->
+  <g transform="translate(60, 115)">
+    <text x="0" y="0" fill="#ffffff" font-family="'Outfit', system-ui, sans-serif" font-size="34" font-weight="800" letter-spacing="-0.5">Asphalt Shingles vs. Standing Seam Metal</text>
+    <text x="0" y="32" fill="#94a3b8" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="16" font-weight="400">Head-to-head comparison for Somerset County, NJ climate, wind resistance, and long-term ROI</text>
+  </g>
+
+  <!-- LEFT CARD: Architectural Asphalt Shingles -->
+  <g transform="translate(60, 175)" filter="url(#cardShadow)">
+    <rect x="0" y="0" width="510" height="425" rx="16" fill="#132338" stroke="#334155" stroke-width="1.5" />
+    
+    <!-- Shingle Banner Header -->
+    <path d="M 0 16 C 0 7.16 7.16 0 16 0 L 494 0 C 502.84 0 510 7.16 510 16 L 510 70 L 0 70 Z" fill="#1e293b" />
+    <circle cx="36" cy="35" r="18" fill="#f97316" fill-opacity="0.2" />
+    <path d="M 28 41 L 36 27 L 44 41 Z" fill="#fb923c" />
+    <text x="68" y="32" fill="#ffffff" font-family="'Outfit', system-ui, sans-serif" font-size="20" font-weight="700">Architectural Asphalt Shingles</text>
+    <text x="68" y="52" fill="#94a3b8" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="13">GAF Timberline HDZ / Owens Corning Duration</text>
+    <rect x="390" y="22" width="100" height="26" rx="6" fill="#0f172a" stroke="#475569" stroke-width="1" />
+    <text x="440" y="39" fill="#38bdf8" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="11" font-weight="700" text-anchor="middle">MOST POPULAR</text>
+
+    <!-- Key Metrics Grid -->
+    <g transform="translate(24, 90)">
+      <!-- Lifespan Metric -->
+      <rect x="0" y="0" width="220" height="65" rx="10" fill="#0f172a" stroke="#1e293b" stroke-width="1" />
+      <text x="16" y="25" fill="#64748b" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="11" font-weight="600" text-transform="uppercase">Expected Lifespan (NJ)</text>
+      <text x="16" y="50" fill="#f8fafc" font-family="'Outfit', system-ui, sans-serif" font-size="22" font-weight="800">22 – 30 Years</text>
+
+      <!-- Upfront Cost Metric -->
+      <rect x="242" y="0" width="220" height="65" rx="10" fill="#0f172a" stroke="#1e293b" stroke-width="1" />
+      <text x="16" y="25" fill="#64748b" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="11" font-weight="600" text-transform="uppercase">Upfront Installed Cost</text>
+      <text x="16" y="50" fill="#4ade80" font-family="'Outfit', system-ui, sans-serif" font-size="22" font-weight="800">$450 – $650 <tspan font-size="13" font-weight="400" fill="#94a3b8">/sq</tspan></text>
+    </g>
+
+    <!-- Shingle Visual Diagram Profile -->
+    <g transform="translate(24, 172)">
+      <rect x="0" y="0" width="462" height="70" rx="8" fill="#091422" stroke="#1e293b" stroke-width="1" />
+      <text x="16" y="24" fill="#94a3b8" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="12" font-weight="600">Cross-Section Profile: Layered Fiberglass Mat &amp; Granules</text>
+      <!-- Layered Shingle Profile Vector -->
+      <g transform="translate(16, 36)">
+        <rect x="0" y="16" width="430" height="10" rx="2" fill="#0f172a" stroke="#334155" />
+        <rect x="10" y="8" width="130" height="8" rx="2" fill="#334155" />
+        <rect x="150" y="8" width="130" height="8" rx="2" fill="#475569" />
+        <rect x="290" y="8" width="130" height="8" rx="2" fill="#334155" />
+        <rect x="0" y="0" width="200" height="8" rx="2" fill="#64748b" />
+        <rect x="210" y="0" width="210" height="8" rx="2" fill="#64748b" />
+      </g>
+    </g>
+
+    <!-- Feature Checklist -->
+    <g transform="translate(24, 260)">
+      <circle cx="8" cy="10" r="6" fill="#22c55e" fill-opacity="0.2" />
+      <path d="M 5 10 L 7 12 L 11 8" stroke="#22c55e" stroke-width="1.5" fill="none" />
+      <text x="24" y="14" fill="#e2e8f0" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="13">Wind Warranty: Up to 130 mph with 6-nail high-wind pattern</text>
+
+      <circle cx="8" cy="38" r="6" fill="#22c55e" fill-opacity="0.2" />
+      <path d="M 5 38 L 7 40 L 11 36" stroke="#22c55e" stroke-width="1.5" fill="none" />
+      <text x="24" y="42" fill="#e2e8f0" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="13">Class A Fire Resistance Rating (Highest Residential Standard)</text>
+
+      <circle cx="8" cy="66" r="6" fill="#22c55e" fill-opacity="0.2" />
+      <path d="M 5 66 L 7 68 L 11 64" stroke="#22c55e" stroke-width="1.5" fill="none" />
+      <text x="24" y="70" fill="#e2e8f0" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="13">Fast 1- to 2-day installation minimizes weather exposure</text>
+
+      <circle cx="8" cy="94" r="6" fill="#f59e0b" fill-opacity="0.2" />
+      <circle cx="8" cy="94" r="2" fill="#fbbf24" />
+      <text x="24" y="98" fill="#94a3b8" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="13">Algae-resistant copper granules protect against NJ shade stains</text>
+
+      <circle cx="8" cy="122" r="6" fill="#ef4444" fill-opacity="0.2" />
+      <line x1="5" y1="122" x2="11" y2="122" stroke="#f87171" stroke-width="1.5" />
+      <text x="24" y="126" fill="#94a3b8" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="13">Needs replacement roughly twice in a 50-year homeownership span</text>
+    </g>
+  </g>
+
+  <!-- RIGHT CARD: Standing Seam Metal Roofing -->
+  <g transform="translate(630, 175)" filter="url(#cardShadow)">
+    <rect x="0" y="0" width="510" height="425" rx="16" fill="#132338" stroke="#0284c7" stroke-width="1.5" />
+    
+    <!-- Metal Banner Header -->
+    <path d="M 0 16 C 0 7.16 7.16 0 16 0 L 494 0 C 502.84 0 510 7.16 510 16 L 510 70 L 0 70 Z" fill="#0c4a6e" fill-opacity="0.6" />
+    <circle cx="36" cy="35" r="18" fill="#38bdf8" fill-opacity="0.2" />
+    <path d="M 28 35 L 36 25 L 44 35 L 40 43 L 32 43 Z" fill="#38bdf8" />
+    <text x="68" y="32" fill="#ffffff" font-family="'Outfit', system-ui, sans-serif" font-size="20" font-weight="700">Standing Seam Metal Roofing</text>
+    <text x="68" y="52" fill="#7dd3fc" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="13">24-Gauge Galvalume / Kynar 500 Coated Steel</text>
+    <rect x="375" y="22" width="115" height="26" rx="6" fill="#082f49" stroke="#0284c7" stroke-width="1" />
+    <text x="432" y="39" fill="#38bdf8" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="11" font-weight="700" text-anchor="middle">MAXIMUM LIFESPAN</text>
+
+    <!-- Key Metrics Grid -->
+    <g transform="translate(24, 90)">
+      <!-- Lifespan Metric -->
+      <rect x="0" y="0" width="220" height="65" rx="10" fill="#0f172a" stroke="#0284c7" stroke-opacity="0.3" stroke-width="1" />
+      <text x="16" y="25" fill="#38bdf8" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="11" font-weight="600" text-transform="uppercase">Expected Lifespan (NJ)</text>
+      <text x="16" y="50" fill="#f8fafc" font-family="'Outfit', system-ui, sans-serif" font-size="22" font-weight="800">50 – 70+ Years</text>
+
+      <!-- Upfront Cost Metric -->
+      <rect x="242" y="0" width="220" height="65" rx="10" fill="#0f172a" stroke="#0284c7" stroke-opacity="0.3" stroke-width="1" />
+      <text x="16" y="25" fill="#64748b" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="11" font-weight="600" text-transform="uppercase">Upfront Installed Cost</text>
+      <text x="16" y="50" fill="#38bdf8" font-family="'Outfit', system-ui, sans-serif" font-size="22" font-weight="800">$1,100 – $1,800 <tspan font-size="13" font-weight="400" fill="#94a3b8">/sq</tspan></text>
+    </g>
+
+    <!-- Metal Visual Diagram Profile -->
+    <g transform="translate(24, 172)">
+      <rect x="0" y="0" width="462" height="70" rx="8" fill="#091422" stroke="#0369a1" stroke-opacity="0.3" stroke-width="1" />
+      <text x="16" y="24" fill="#38bdf8" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="12" font-weight="600">Cross-Section Profile: Concealed Fastener Raised Rib Seams</text>
+      <!-- Standing Seam Rib Profile Vector -->
+      <g transform="translate(16, 36)">
+        <path d="M 0 20 L 70 20 L 70 4 L 74 4 L 74 20 L 170 20 L 170 4 L 174 4 L 174 20 L 270 20 L 270 4 L 274 4 L 274 20 L 370 20 L 370 4 L 374 4 L 374 20 L 430 20" fill="none" stroke="#38bdf8" stroke-width="3" stroke-linecap="round" />
+        <rect x="68" y="2" width="8" height="6" fill="#0284c7" />
+        <rect x="168" y="2" width="8" height="6" fill="#0284c7" />
+        <rect x="268" y="2" width="8" height="6" fill="#0284c7" />
+        <rect x="368" y="2" width="8" height="6" fill="#0284c7" />
+      </g>
+    </g>
+
+    <!-- Feature Checklist -->
+    <g transform="translate(24, 260)">
+      <circle cx="8" cy="10" r="6" fill="#38bdf8" fill-opacity="0.2" />
+      <path d="M 5 10 L 7 12 L 11 8" stroke="#38bdf8" stroke-width="1.5" fill="none" />
+      <text x="24" y="14" fill="#e2e8f0" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="13">Wind Rating: Up to 150+ mph (Highest Hurricane/Gale Resistance)</text>
+
+      <circle cx="8" cy="38" r="6" fill="#38bdf8" fill-opacity="0.2" />
+      <path d="M 5 38 L 7 40 L 11 36" stroke="#38bdf8" stroke-width="1.5" fill="none" />
+      <text x="24" y="42" fill="#e2e8f0" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="13">Effortless Winter Snow &amp; Ice Shedding (Eliminates Ice Dams)</text>
+
+      <circle cx="8" cy="66" r="6" fill="#38bdf8" fill-opacity="0.2" />
+      <path d="M 5 66 L 7 68 L 11 64" stroke="#38bdf8" stroke-width="1.5" fill="none" />
+      <text x="24" y="70" fill="#e2e8f0" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="13">Solar-reflective cool roof coatings reduce summer A/C load by 15-25%</text>
+
+      <circle cx="8" cy="94" r="6" fill="#38bdf8" fill-opacity="0.2" />
+      <path d="M 5 94 L 7 96 L 11 92" stroke="#38bdf8" stroke-width="1.5" fill="none" />
+      <text x="24" y="98" fill="#e2e8f0" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="13">100% Recyclable steel/aluminum with zero petroleum waste</text>
+
+      <circle cx="8" cy="122" r="6" fill="#f59e0b" fill-opacity="0.2" />
+      <circle cx="8" cy="122" r="2" fill="#fbbf24" />
+      <text x="24" y="126" fill="#94a3b8" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="13">Higher initial investment, but lowest 50-year lifecycle cost</text>
+    </g>
+  </g>
+
+  <!-- Bottom Comparison HUD Bar -->
+  <g transform="translate(60, 620)">
+    <rect x="0" y="0" width="1080" height="36" rx="8" fill="#081424" stroke="#1e293b" stroke-width="1" />
+    <text x="24" y="23" fill="#64748b" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="12">VERDICT SUMMARY:</text>
+    <text x="148" y="23" fill="#cbd5e1" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="12"><tspan fill="#fb923c" font-weight="700">Asphalt</tspan> wins on upfront affordability &amp; neighborhood aesthetic match; <tspan fill="#38bdf8" font-weight="700">Standing Seam Metal</tspan> wins on 50-yr durability &amp; zero ice dams.</text>
+    <text x="1056" y="23" fill="#64748b" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="11" text-anchor="end">Bridgewater, NJ Field Engineering Data</text>
+  </g>
+</svg>

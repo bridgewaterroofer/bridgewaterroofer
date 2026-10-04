@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675">
+  <!-- 
+  IMAGE PLACEHOLDER — ROOF REPLACEMENT COST GUIDE
+  Intended Subject: Professional roofing crew installing new architectural shingles on a suburban Bridgewater NJ home, with material bundles, ladders, and safety staging visible on a sunny morning.
+  Dimensions: 1200x675 (16:9)
+  Visual Style: High-end architectural documentary photography, clear crisp daylight.
+  Future Alt Text: "Roofing crew installing new architectural shingles on a residential home in Bridgewater NJ"
+  -->
+  <defs>
+    <linearGradient id="cost_sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="60%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#334155"/>
+    </linearGradient>
+    <linearGradient id="cost_roof" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#334155"/>
+      <stop offset="100%" stop-color="#1e293b"/>
+    </linearGradient>
+    <pattern id="cost_shingle_pat" width="32" height="15" patternUnits="userSpaceOnUse">
+      <rect width="32" height="15" fill="#1e293b"/>
+      <line x1="0" y1="15" x2="32" y2="15" stroke="#0f172a" stroke-width="1.5"/>
+      <line x1="12" y1="0" x2="12" y2="15" stroke="#334155" stroke-width="1.2"/>
+    </pattern>
+  </defs>
+
+  <rect width="1200" height="675" fill="url(#cost_sky)"/>
+
+  <!-- Architectural House Silhouette -->
+  <g opacity="0.9">
+    <rect x="250" y="320" width="700" height="300" fill="#f8fafc" rx="4"/>
+    <polygon points="200,320 600,120 1000,320" fill="url(#cost_roof)"/>
+    <polygon points="200,320 600,120 1000,320" fill="url(#cost_shingle_pat)" opacity="0.6"/>
+    <!-- Dormer -->
+    <polygon points="400,240 460,180 520,240" fill="#f8fafc"/>
+    <polygon points="395,240 460,175 525,240" fill="none" stroke="#f97316" stroke-width="3"/>
+    <!-- Chimney -->
+    <rect x="740" y="160" width="55" height="120" fill="#991b1b" rx="2"/>
+    <!-- Scaffolding & Ladder Line -->
+    <line x1="280" y1="620" x2="340" y2="330" stroke="#94a3b8" stroke-width="3"/>
+  </g>
+
+  <!-- Technical Overlay HUD Badge -->
+  <rect x="200" y="510" width="800" height="120" rx="14" fill="#0b1329" fill-opacity="0.94" stroke="#f97316" stroke-width="2"/>
+  <text x="600" y="550" font-family="'Outfit', sans-serif" font-size="20" font-weight="700" fill="#f97316" text-anchor="middle" letter-spacing="1.5">IMAGE PLACEHOLDER — ROOF REPLACEMENT COST GUIDE</text>
+  <text x="600" y="582" font-family="'Plus Jakarta Sans', sans-serif" font-size="15" fill="#e2e8f0" text-anchor="middle">Subject: Residential Roof Tear-Off & Shingle Installation in Bridgewater NJ | 1200x675</text>
+  <text x="600" y="608" font-family="'Plus Jakarta Sans', sans-serif" font-size="13" fill="#94a3b8" text-anchor="middle">Visual: Professional job site photography • Somerset County Pricing Analysis</text>
+</svg>

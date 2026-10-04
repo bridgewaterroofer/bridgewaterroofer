@@ -1,0 +1,335 @@
+/* ==========================================================================
+   BRIDGEWATER ROOFER — RESPONSIVE MEDIA QUERIES
+   Fluid breakdowns for 1200px, 992px, 768px, 576px, and 390px/375px
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Desktop Narrow / Small Laptops (<= 1200px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 1200px) {
+  .nav-link {
+    padding: 0.5rem 0.65rem;
+    font-size: 0.875rem;
+    gap: 0.25rem;
+  }
+
+  .hero-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+
+  .trust-cards-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .trust-card:nth-child(4),
+  .trust-card:nth-child(5) {
+    grid-column: span 1;
+  }
+
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .process-steps-grid {
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 2.5rem;
+  }
+
+  .process-line-track {
+    display: none;
+  }
+
+  .footer-main-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .footer-brand-col {
+    grid-column: span 3;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Tablets Landscape & Standard (<= 1040px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 1040px) {
+  .desktop-nav,
+  .nav-actions .header-phone-btn,
+  .nav-actions .header-phone-link {
+    display: none;
+  }
+
+  .mobile-nav-toggle,
+  .mobile-phone-quick {
+    display: flex;
+  }
+
+  .hero-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .hero-content {
+    margin-inline: auto;
+  }
+
+  .hero-cta-group {
+    justify-content: center;
+  }
+
+  .hero-trust-row {
+    justify-content: center;
+  }
+
+  .hero-visual-wrapper {
+    margin-top: 1.5rem;
+  }
+
+  .hero-image-frame img {
+    height: 380px;
+  }
+
+  .emergency-strip-card {
+    grid-template-columns: 1fr;
+    text-align: center;
+    border-left: none;
+    border-top: 5px solid var(--orange);
+  }
+
+  .emergency-strip-icons {
+    justify-content: center;
+  }
+
+  .emergency-strip-actions {
+    align-items: center;
+    width: 100%;
+  }
+
+  .emergency-strip-actions .btn {
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .diagnosis-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .local-authority-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .local-visual-column {
+    order: 2;
+  }
+
+  .local-text-column {
+    order: 1;
+  }
+
+  .comparison-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .material-viewer-panel {
+    grid-template-columns: 1fr;
+  }
+
+  .permit-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cost-section-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .why-us-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .eeat-trust-bar {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .reviews-track {
+    grid-template-columns: 1fr;
+  }
+
+  .service-area-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .final-cta-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .desktop-phone-pill {
+    display: none !important;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Mobile Landscape & Large Phones (<= 768px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 768px) {
+  body {
+    padding-bottom: 64px; /* Ensure mobile sticky call bar does not cover footer/content */
+  }
+
+  .mobile-sticky-bar {
+    display: block;
+  }
+
+  .top-trust-bar .trust-badge-left {
+    display: none; /* Keep top bar clean on mobile */
+  }
+
+  .top-trust-bar .header-email-link,
+  .top-trust-bar .trust-bar-divider {
+    display: none;
+  }
+
+  .top-trust-bar .container {
+    justify-content: center;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .trust-cards-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .trust-card:last-child {
+    grid-column: span 2;
+  }
+
+  .progression-timeline {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .progression-timeline::before {
+    display: none;
+  }
+
+  .projects-editorial-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cost-factors-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .why-us-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .blog-cards-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .form-grid-2col {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-main-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .footer-brand-col {
+    grid-column: span 1;
+  }
+
+  .footer-bottom-bar {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Mobile Standard / Small Phones (<= 480px, 390px, 375px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 2.15rem;
+  }
+
+  .hero-cta-group {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .hero-phone-cta,
+  .hero-estimate-cta {
+    width: 100%;
+    text-align: center;
+  }
+
+  .hero-float-card {
+    display: none; /* Hide floating 3D labels on tiny screens to avoid overflow */
+  }
+
+  .hero-image-frame img {
+    height: 280px;
+  }
+
+  .trust-cards-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .trust-card:last-child {
+    grid-column: span 1;
+  }
+
+  .emergency-strip-icons {
+    flex-wrap: wrap;
+  }
+
+  .problem-mini-pill {
+    flex: 1 1 30%;
+  }
+
+  .eeat-trust-bar {
+    grid-template-columns: 1fr;
+  }
+
+  .process-steps-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .materials-tabs-bar {
+    overflow-x: auto;
+    justify-content: flex-start;
+    padding-bottom: 0.5rem;
+    flex-wrap: nowrap;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .material-tab-btn {
+    flex-shrink: 0;
+  }
+
+  .material-render-box {
+    height: 240px;
+  }
+
+  .material-specs-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .comparison-bridge-cta {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .comparison-bridge-cta .btn {
+    width: 100%;
+  }
+
+  .before-after-container {
+    aspect-ratio: 4 / 3;
+  }
+}

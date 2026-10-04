@@ -1,0 +1,186 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bgCommercial" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a192f" />
+      <stop offset="50%" stop-color="#0e233d" />
+      <stop offset="100%" stop-color="#071220" />
+    </linearGradient>
+
+    <!-- TPO White Card Gradient -->
+    <linearGradient id="tpoCardGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#162942" />
+      <stop offset="100%" stop-color="#0e1d30" />
+    </linearGradient>
+
+    <!-- EPDM Black Card Gradient -->
+    <linearGradient id="epdmCardGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1f2937" />
+      <stop offset="100%" stop-color="#111827" />
+    </linearGradient>
+
+    <!-- Accent Gradients -->
+    <linearGradient id="accentCyan" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="100%" stop-color="#0284c7" />
+    </linearGradient>
+    <linearGradient id="accentOrange" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f97316" />
+      <stop offset="100%" stop-color="#ea580c" />
+    </linearGradient>
+
+    <pattern id="gridSubtle" width="30" height="30" patternUnits="userSpaceOnUse">
+      <path d="M 30 0 L 0 0 0 30" fill="none" stroke="#ffffff" stroke-opacity="0.04" stroke-width="1" />
+    </pattern>
+
+    <filter id="boxShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="12" stdDeviation="15" flood-color="#000000" flood-opacity="0.45" />
+    </filter>
+  </defs>
+
+  <!-- Background Base -->
+  <rect width="1200" height="675" fill="url(#bgCommercial)" />
+  <rect width="1200" height="675" fill="url(#gridSubtle)" />
+
+  <!-- Top Accent Bar -->
+  <rect x="0" y="0" width="1200" height="8" fill="url(#accentOrange)" />
+
+  <!-- Category Badge & Header -->
+  <g transform="translate(60, 45)">
+    <rect x="0" y="0" width="220" height="28" rx="14" fill="#38bdf8" fill-opacity="0.15" stroke="#38bdf8" stroke-opacity="0.4" stroke-width="1" />
+    <text x="110" y="19" fill="#38bdf8" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="12" font-weight="700" text-anchor="middle" letter-spacing="1">COMMERCIAL FLAT ROOFING</text>
+    <text x="240" y="20" fill="#94a3b8" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="14" font-weight="500">Bridgewater Roofer • Commercial Envelope Engineering</text>
+  </g>
+
+  <!-- Title Section -->
+  <g transform="translate(60, 110)">
+    <text x="0" y="0" fill="#ffffff" font-family="'Outfit', system-ui, sans-serif" font-size="34" font-weight="800" letter-spacing="-0.5">TPO vs. EPDM Single-Ply Membrane Systems</text>
+    <text x="0" y="32" fill="#94a3b8" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="16" font-weight="400">Head-to-head engineering comparison for commercial and low-slope roofs in Somerset County, NJ</text>
+  </g>
+
+  <!-- LEFT CARD: TPO (Thermoplastic Polyolefin) -->
+  <g transform="translate(60, 175)" filter="url(#boxShadow)">
+    <rect x="0" y="0" width="510" height="425" rx="16" fill="url(#tpoCardGrad)" stroke="#0284c7" stroke-width="1.5" />
+    
+    <!-- TPO Card Header -->
+    <path d="M 0 16 C 0 7.16 7.16 0 16 0 L 494 0 C 502.84 0 510 7.16 510 16 L 510 70 L 0 70 Z" fill="#0369a1" fill-opacity="0.4" />
+    <circle cx="36" cy="35" r="18" fill="#38bdf8" fill-opacity="0.2" />
+    <circle cx="36" cy="35" r="8" fill="#ffffff" />
+    <text x="68" y="32" fill="#ffffff" font-family="'Outfit', system-ui, sans-serif" font-size="20" font-weight="700">TPO Single-Ply Membrane</text>
+    <text x="68" y="52" fill="#7dd3fc" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="13">White Reflective • Hot-Air Welded Seams</text>
+    <rect x="365" y="22" width="125" height="26" rx="6" fill="#082f49" stroke="#0284c7" stroke-width="1" />
+    <text x="427" y="39" fill="#38bdf8" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="11" font-weight="700" text-anchor="middle">COOL ROOF LEADER</text>
+
+    <!-- Key Metrics Grid -->
+    <g transform="translate(24, 90)">
+      <rect x="0" y="0" width="220" height="65" rx="10" fill="#081526" stroke="#1e293b" stroke-width="1" />
+      <text x="16" y="25" fill="#64748b" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="11" font-weight="600" text-transform="uppercase">Expected Lifespan</text>
+      <text x="16" y="50" fill="#ffffff" font-family="'Outfit', system-ui, sans-serif" font-size="22" font-weight="800">22 – 30 Years</text>
+
+      <rect x="242" y="0" width="220" height="65" rx="10" fill="#081526" stroke="#1e293b" stroke-width="1" />
+      <text x="16" y="25" fill="#64748b" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="11" font-weight="600" text-transform="uppercase">Solar Reflectivity</text>
+      <text x="16" y="50" fill="#38bdf8" font-family="'Outfit', system-ui, sans-serif" font-size="22" font-weight="800">78% – 86%</text>
+    </g>
+
+    <!-- Technical Diagram Profile -->
+    <g transform="translate(24, 172)">
+      <rect x="0" y="0" width="462" height="70" rx="8" fill="#06101c" stroke="#1e293b" stroke-width="1" />
+      <text x="16" y="24" fill="#38bdf8" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="12" font-weight="600">Seam Technology: Robotic Hot-Air Molecular Fusion (Welded)</text>
+      <g transform="translate(16, 36)">
+        <rect x="0" y="10" width="430" height="12" rx="2" fill="#e2e8f0" stroke="#cbd5e1" />
+        <rect x="180" y="6" width="70" height="20" rx="2" fill="#38bdf8" fill-opacity="0.3" stroke="#0284c7" />
+        <text x="215" y="20" fill="#0284c7" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="10" font-weight="800" text-anchor="middle">WELDED</text>
+      </g>
+    </g>
+
+    <!-- Feature Checklist -->
+    <g transform="translate(24, 260)">
+      <circle cx="8" cy="10" r="6" fill="#38bdf8" fill-opacity="0.2" />
+      <path d="M 5 10 L 7 12 L 11 8" stroke="#38bdf8" stroke-width="1.5" fill="none" />
+      <text x="24" y="14" fill="#e2e8f0" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="13">Heat-welded seams are 3x to 4x stronger than adhesive tape</text>
+
+      <circle cx="8" cy="38" r="6" fill="#38bdf8" fill-opacity="0.2" />
+      <path d="M 5 38 L 7 40 L 11 36" stroke="#38bdf8" stroke-width="1.5" fill="none" />
+      <text x="24" y="42" fill="#e2e8f0" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="13">Energy Star cool roof lowers building cooling loads by up to 35%</text>
+
+      <circle cx="8" cy="66" r="6" fill="#38bdf8" fill-opacity="0.2" />
+      <path d="M 5 66 L 7 68 L 11 64" stroke="#38bdf8" stroke-width="1.5" fill="none" />
+      <text x="24" y="70" fill="#e2e8f0" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="13">High puncture and tear resistance against rooftop HVAC foot traffic</text>
+
+      <circle cx="8" cy="94" r="6" fill="#38bdf8" fill-opacity="0.2" />
+      <path d="M 5 94 L 7 96 L 11 92" stroke="#38bdf8" stroke-width="1.5" fill="none" />
+      <text x="24" y="98" fill="#e2e8f0" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="13">Resistant to restaurant fats, grease vents, and chemical emissions</text>
+
+      <circle cx="8" cy="122" r="6" fill="#f59e0b" fill-opacity="0.2" />
+      <circle cx="8" cy="122" r="2" fill="#fbbf24" />
+      <text x="24" y="126" fill="#94a3b8" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="13">Requires robotic welder expertise; sensitive to uncalibrated heat</text>
+    </g>
+  </g>
+
+  <!-- RIGHT CARD: EPDM (Ethylene Propylene Diene Monomer) -->
+  <g transform="translate(630, 175)" filter="url(#boxShadow)">
+    <rect x="0" y="0" width="510" height="425" rx="16" fill="url(#epdmCardGrad)" stroke="#475569" stroke-width="1.5" />
+    
+    <!-- EPDM Card Header -->
+    <path d="M 0 16 C 0 7.16 7.16 0 16 0 L 494 0 C 502.84 0 510 7.16 510 16 L 510 70 L 0 70 Z" fill="#334155" fill-opacity="0.5" />
+    <circle cx="36" cy="35" r="18" fill="#64748b" fill-opacity="0.2" />
+    <circle cx="36" cy="35" r="8" fill="#0f172a" stroke="#64748b" stroke-width="1" />
+    <text x="68" y="32" fill="#ffffff" font-family="'Outfit', system-ui, sans-serif" font-size="20" font-weight="700">EPDM Synthetic Rubber</text>
+    <text x="68" y="52" fill="#94a3b8" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="13">Black Rubber • Factory Primer &amp; Seam Tape</text>
+    <rect x="365" y="22" width="125" height="26" rx="6" fill="#0f172a" stroke="#475569" stroke-width="1" />
+    <text x="427" y="39" fill="#e2e8f0" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="11" font-weight="700" text-anchor="middle">PROVEN 40+ YR TRACK</text>
+
+    <!-- Key Metrics Grid -->
+    <g transform="translate(24, 90)">
+      <rect x="0" y="0" width="220" height="65" rx="10" fill="#0b111a" stroke="#1e293b" stroke-width="1" />
+      <text x="16" y="25" fill="#64748b" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="11" font-weight="600" text-transform="uppercase">Expected Lifespan</text>
+      <text x="16" y="50" fill="#ffffff" font-family="'Outfit', system-ui, sans-serif" font-size="22" font-weight="800">25 – 35+ Years</text>
+
+      <rect x="242" y="0" width="220" height="65" rx="10" fill="#0b111a" stroke="#1e293b" stroke-width="1" />
+      <text x="16" y="25" fill="#64748b" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="11" font-weight="600" text-transform="uppercase">Winter Solar Absorption</text>
+      <text x="16" y="50" fill="#f97316" font-family="'Outfit', system-ui, sans-serif" font-size="22" font-weight="800">Melts Snow Fast</text>
+    </g>
+
+    <!-- Technical Diagram Profile -->
+    <g transform="translate(24, 172)">
+      <rect x="0" y="0" width="462" height="70" rx="8" fill="#06101c" stroke="#1e293b" stroke-width="1" />
+      <text x="16" y="24" fill="#94a3b8" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="12" font-weight="600">Seam Technology: Factory Double-Sided Butyl Seam Tape</text>
+      <g transform="translate(16, 36)">
+        <rect x="0" y="10" width="430" height="12" rx="2" fill="#1e293b" stroke="#334155" />
+        <rect x="180" y="12" width="70" height="8" rx="1" fill="#f97316" />
+        <text x="215" y="20" fill="#f97316" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="10" font-weight="800" text-anchor="middle">TAPE</text>
+      </g>
+    </g>
+
+    <!-- Feature Checklist -->
+    <g transform="translate(24, 260)">
+      <circle cx="8" cy="10" r="6" fill="#22c55e" fill-opacity="0.2" />
+      <path d="M 5 10 L 7 12 L 11 8" stroke="#22c55e" stroke-width="1.5" fill="none" />
+      <text x="24" y="14" fill="#e2e8f0" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="13">Exceptional elongation (up to 300%) accommodates deck movement</text>
+
+      <circle cx="8" cy="38" r="6" fill="#22c55e" fill-opacity="0.2" />
+      <path d="M 5 38 L 7 40 L 11 36" stroke="#22c55e" stroke-width="1.5" fill="none" />
+      <text x="24" y="42" fill="#e2e8f0" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="13">Dark surface absorbs winter solar heat, speeding snowmelt in NJ</text>
+
+      <circle cx="8" cy="66" r="6" fill="#22c55e" fill-opacity="0.2" />
+      <path d="M 5 66 L 7 68 L 11 64" stroke="#22c55e" stroke-width="1.5" fill="none" />
+      <text x="24" y="70" fill="#e2e8f0" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="13">Available in seamless sheets up to 50 ft wide, minimizing field joints</text>
+
+      <circle cx="8" cy="94" r="6" fill="#f59e0b" fill-opacity="0.2" />
+      <circle cx="8" cy="94" r="2" fill="#fbbf24" />
+      <text x="24" y="98" fill="#94a3b8" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="13">Seam tape adhesives require inspection and maintenance at year 15</text>
+
+      <circle cx="8" cy="122" r="6" fill="#ef4444" fill-opacity="0.2" />
+      <line x1="5" y1="122" x2="11" y2="122" stroke="#f87171" stroke-width="1.5" />
+      <text x="24" y="126" fill="#94a3b8" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="13">Vulnerable to animal fats, oils, and petroleum grease breakdown</text>
+    </g>
+  </g>
+
+  <!-- Bottom Recommendation Bar -->
+  <g transform="translate(60, 620)">
+    <rect x="0" y="0" width="1080" height="36" rx="8" fill="#081424" stroke="#1e293b" stroke-width="1" />
+    <text x="24" y="23" fill="#64748b" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="12">ENGINEERING SUMMARY:</text>
+    <text x="180" y="23" fill="#cbd5e1" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="12">Choose <tspan fill="#38bdf8" font-weight="700">TPO</tspan> for air-conditioned retail, offices, and restaurants; Choose <tspan fill="#fb923c" font-weight="700">EPDM</tspan> for unconditioned warehouses, large spans, and cold-weather durability.</text>
+    <text x="1056" y="23" fill="#64748b" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="11" text-anchor="end">Bridgewater Commercial Roofing Division</text>
+  </g>
+</svg>

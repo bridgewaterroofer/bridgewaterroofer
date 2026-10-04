@@ -1,0 +1,1560 @@
+/**
+ * BRIDGEWATER ROOFER — LOCATION PAGE MASTER STYLESHEET
+ * Master styling for Borough and Township location pages (e.g. Somerville, NJ)
+ * Built to strictly match the master visual design system of Bridgewater Roofer
+ */
+
+/* --------------------------------------------------------------------------
+   1. HERO SECTION SPECIFICS & 3D VISUAL STAGE
+   -------------------------------------------------------------------------- */
+.hero-section {
+  min-height: auto;
+  padding-top: clamp(8.75rem, 13.5vh, 9.75rem);
+  padding-bottom: clamp(4.5rem, 8vw, 6rem);
+}
+
+.hero-breadcrumb-nav {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8125rem;
+  color: var(--slate-400);
+  margin-bottom: 1.15rem;
+  position: relative;
+  z-index: 5;
+}
+
+.hero-breadcrumb-nav a {
+  color: var(--slate-300);
+  text-decoration: none;
+  transition: color var(--duration-fast) ease;
+}
+
+.hero-breadcrumb-nav a:hover {
+  color: var(--orange);
+}
+
+.hero-breadcrumb-nav .breadcrumb-sep {
+  color: var(--slate-600);
+  user-select: none;
+}
+
+.hero-breadcrumb-nav .breadcrumb-current {
+  color: var(--orange);
+  font-weight: 600;
+}
+
+.hero-content .hero-location-badge {
+  margin-bottom: 0.75rem;
+}
+
+.hero-content .hero-title {
+  margin-bottom: 0.85rem;
+}
+
+.hero-content .hero-lead {
+  font-size: clamp(1rem, 1.15vw, 1.15rem);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.hero-content .hero-cta-group {
+  margin-bottom: 1.35rem;
+}
+
+.hero-content .hero-trust-row {
+  padding-top: 1rem;
+}
+
+.hero-visual-wrapper .hero-image-frame img {
+  height: clamp(380px, 42vh, 440px);
+}
+
+/* --------------------------------------------------------------------------
+   2. LOCAL SERVICE CONFIRMATION STRIP (Floating Overlap Card)
+   -------------------------------------------------------------------------- */
+.local-service-strip {
+  position: relative;
+  z-index: 10;
+  margin-top: -3.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.local-strip-card {
+  background: var(--white);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-xl);
+  padding: 1.75rem 2.5rem;
+  box-shadow: 0 20px 45px -12px rgba(7, 19, 31, 0.16), 0 0 0 1px rgba(7, 19, 31, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.local-strip-info {
+  flex: 1;
+}
+
+.local-strip-badge-row {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  color: var(--orange);
+  font-size: 0.8125rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.35rem;
+}
+
+.local-strip-info h2 {
+  font-size: 1.35rem;
+  color: var(--navy-950);
+  margin-bottom: 0.4rem;
+}
+
+.local-strip-info p {
+  color: var(--slate-600);
+  font-size: 0.95rem;
+  margin: 0;
+  line-height: 1.55;
+  max-width: 680px;
+}
+
+.local-strip-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-shrink: 0;
+}
+
+.local-strip-actions .btn-secondary-light,
+.local-strip-actions .btn-secondary {
+  background: var(--white);
+  color: var(--navy-950);
+  border: 1.5px solid rgba(7, 19, 31, 0.16);
+  box-shadow: 0 2px 6px rgba(7, 19, 31, 0.05);
+  font-weight: 700;
+  padding: 0.95rem 1.65rem;
+  font-size: 0.95rem;
+  transition: all var(--duration-fast) ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.local-strip-actions .btn-secondary-light:hover,
+.local-strip-actions .btn-secondary:hover {
+  background: var(--off-white);
+  border-color: var(--orange);
+  color: var(--orange);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(7, 19, 31, 0.08);
+}
+
+/* --------------------------------------------------------------------------
+   3. LOCAL INTRODUCTION SECTION & BALANCED MEDIA COLUMN
+   -------------------------------------------------------------------------- */
+.local-intro-section {
+  padding: 5.5rem 0;
+  background: var(--white);
+}
+
+.local-intro-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.local-intro-text h2 {
+  font-size: clamp(1.85rem, 2.5vw, 2.35rem);
+  color: var(--navy-950);
+  margin-bottom: 1.25rem;
+  line-height: 1.25;
+}
+
+.local-intro-text p {
+  font-size: 1.025rem;
+  color: var(--slate-600);
+  line-height: 1.7;
+  margin-bottom: 1.25rem;
+}
+
+.local-intro-features {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin: 1.75rem 0 2rem;
+  padding: 1.5rem;
+  background: var(--off-white);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+}
+
+.intro-feature-item {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: var(--navy-900);
+}
+
+.intro-feature-item svg {
+  color: var(--orange);
+  flex-shrink: 0;
+}
+
+.local-intro-visual-col {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.local-intro-visual {
+  position: relative;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-xl);
+  border: 1px solid var(--border-light);
+}
+
+.local-intro-visual img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s ease;
+}
+
+.local-intro-visual:hover img {
+  transform: scale(1.03);
+}
+
+.local-visual-badge {
+  position: absolute;
+  bottom: 1.25rem;
+  left: 1.25rem;
+  background: rgba(10, 25, 38, 0.92);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: var(--white);
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-md);
+  font-size: 0.875rem;
+  font-weight: 700;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* Quick Facts Card to Balance Right Column */
+.local-quick-facts-card {
+  background: var(--off-white);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-xl);
+  padding: 1.75rem;
+}
+
+.local-quick-facts-card h4 {
+  font-size: 1.1rem;
+  color: var(--navy-950);
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.quick-facts-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.quick-facts-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  font-size: 0.9rem;
+  color: var(--slate-700);
+  line-height: 1.5;
+}
+
+.quick-facts-list li strong {
+  color: var(--navy-950);
+}
+
+/* --------------------------------------------------------------------------
+   4. CORE SERVICES GRID (Clean White Cards, Master Match)
+   -------------------------------------------------------------------------- */
+.loc-services-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+
+.loc-service-card {
+  background: var(--white);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-xl);
+  padding: 2rem 1.75rem;
+  box-shadow: 0 4px 16px rgba(7, 19, 31, 0.04);
+  display: flex;
+  flex-direction: column;
+  transition: transform var(--duration-fast) ease, border-color var(--duration-fast) ease, box-shadow var(--duration-fast) ease;
+}
+
+.loc-service-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--orange);
+  box-shadow: 0 16px 32px rgba(7, 19, 31, 0.1);
+}
+
+.loc-service-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: var(--radius-md);
+  background: rgba(244, 122, 36, 0.12);
+  color: var(--orange);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+}
+
+.loc-service-card h3 {
+  font-size: 1.2rem;
+  color: var(--navy-950);
+  margin-bottom: 0.65rem;
+}
+
+.loc-service-card p {
+  font-size: 0.925rem;
+  color: var(--slate-600);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+}
+
+.loc-service-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--border-light);
+  gap: 0.5rem;
+}
+
+.loc-service-call {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: var(--orange);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  white-space: nowrap;
+}
+
+.loc-service-call:hover {
+  text-decoration: underline;
+}
+
+/* --------------------------------------------------------------------------
+   5. INTERACTIVE ROOF DIAGNOSIS SECTION (Dark High-Tech Architectural SVG)
+   -------------------------------------------------------------------------- */
+.service-diagnosis-section {
+  padding: 5.5rem 0;
+  background: var(--navy-950);
+  color: var(--white);
+}
+
+.section-eyebrow.dark-theme {
+  background: rgba(244, 122, 36, 0.15);
+  border: 1px solid rgba(244, 122, 36, 0.35);
+  color: var(--orange);
+}
+
+.diagnosis-interactive-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 2.5rem;
+  align-items: center;
+  margin-top: 3.5rem;
+}
+
+.roof-diagram-container {
+  background: var(--navy-900);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius-xl);
+  padding: 1.75rem;
+  box-shadow: var(--shadow-xl);
+}
+
+.hotspot-control-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.hotspot-btn {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: var(--slate-300);
+  padding: 0.45rem 0.85rem;
+  border-radius: var(--radius-full);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--duration-fast) ease;
+}
+
+.hotspot-btn:hover {
+  background: rgba(255, 255, 255, 0.15);
+  color: var(--white);
+}
+
+.hotspot-btn.is-active {
+  background: var(--orange);
+  border-color: var(--orange);
+  color: var(--white);
+  font-weight: 700;
+  box-shadow: 0 0 16px rgba(244, 122, 36, 0.4);
+}
+
+.roof-svg-diagram {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.svg-hotspot-pin {
+  cursor: pointer;
+  transition: transform var(--duration-fast) ease;
+}
+
+.svg-hotspot-pin:hover {
+  transform: scale(1.2);
+}
+
+.svg-hotspot-pin.is-active circle:first-child {
+  animation: svgPinPulse 1.8s infinite;
+}
+
+@keyframes svgPinPulse {
+  0% { r: 8px; opacity: 0.6; }
+  50% { r: 16px; opacity: 0.15; }
+  100% { r: 8px; opacity: 0.6; }
+}
+
+.diagnosis-info-card {
+  background: var(--navy-900);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: var(--radius-xl);
+  padding: 2.5rem;
+  box-shadow: var(--shadow-xl);
+  position: relative;
+}
+
+.diagnosis-status-pill {
+  display: inline-block;
+  background: rgba(244, 122, 36, 0.2);
+  border: 1px solid rgba(244, 122, 36, 0.4);
+  color: var(--orange);
+  font-size: 0.8125rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 0.35rem 0.85rem;
+  border-radius: var(--radius-full);
+  margin-bottom: 1rem;
+}
+
+.diagnosis-info-card h3 {
+  font-size: 1.45rem;
+  color: var(--white);
+  margin-bottom: 1rem;
+  line-height: 1.3;
+}
+
+.diagnosis-info-card p {
+  color: var(--slate-300);
+  font-size: 0.975rem;
+  line-height: 1.65;
+  margin-bottom: 1.5rem;
+}
+
+.diagnosis-spec-box {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-left: 3px solid var(--orange);
+  border-radius: var(--radius-md);
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 1.75rem;
+}
+
+.diagnosis-spec-box strong {
+  display: block;
+  font-size: 0.9375rem;
+  color: var(--amber);
+  margin-bottom: 0.35rem;
+}
+
+.diagnosis-spec-box span {
+  display: block;
+  font-size: 0.875rem;
+  color: var(--slate-300);
+  line-height: 1.55;
+}
+
+/* --------------------------------------------------------------------------
+   6. SEASONAL WEATHER TIMELINE CARDS
+   -------------------------------------------------------------------------- */
+.seasonal-timeline-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin-top: 3.5rem;
+}
+
+.season-card {
+  background: var(--white);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-xl);
+  padding: 2.25rem 1.75rem;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(7, 19, 31, 0.04);
+  transition: transform var(--duration-fast) ease, box-shadow var(--duration-fast) ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.season-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 16px 32px rgba(7, 19, 31, 0.08);
+}
+
+.season-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+}
+
+.season-card.is-spring::before { background: #10B981; }
+.season-card.is-summer::before { background: #F59E0B; }
+.season-card.is-fall::before { background: #F97316; }
+.season-card.is-winter::before { background: #3B82F6; }
+
+.season-icon-box {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+}
+
+.season-card.is-spring .season-icon-box { background: rgba(16, 185, 129, 0.12); color: #10B981; }
+.season-card.is-summer .season-icon-box { background: rgba(245, 158, 11, 0.12); color: #F59E0B; }
+.season-card.is-fall .season-icon-box { background: rgba(249, 115, 22, 0.12); color: #F97316; }
+.season-card.is-winter .season-icon-box { background: rgba(59, 130, 246, 0.12); color: #3B82F6; }
+
+.season-tag {
+  font-size: 0.8125rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 0.35rem;
+  display: block;
+}
+
+.season-card.is-spring .season-tag { color: #10B981; }
+.season-card.is-summer .season-tag { color: #F59E0B; }
+.season-card.is-fall .season-tag { color: #F97316; }
+.season-card.is-winter .season-tag { color: #3B82F6; }
+
+.season-card h3 {
+  font-size: 1.2rem;
+  color: var(--navy-950);
+  margin-bottom: 0.75rem;
+}
+
+.season-card p {
+  font-size: 0.925rem;
+  color: var(--slate-600);
+  line-height: 1.6;
+  margin: 0;
+  flex-grow: 1;
+}
+
+/* --------------------------------------------------------------------------
+   7. PROPERTY TYPES GRID (4 Symmetrical Columns)
+   -------------------------------------------------------------------------- */
+.property-types-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin-top: 3.5rem;
+}
+
+.property-type-card {
+  background: var(--white);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-xl);
+  padding: 2.25rem 1.75rem;
+  box-shadow: 0 4px 16px rgba(7, 19, 31, 0.04);
+  transition: transform var(--duration-fast) ease, border-color var(--duration-fast) ease, box-shadow var(--duration-fast) ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.property-type-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--orange);
+  box-shadow: 0 16px 32px rgba(7, 19, 31, 0.08);
+}
+
+.property-type-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: var(--radius-md);
+  background: rgba(244, 122, 36, 0.12);
+  color: var(--orange);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+}
+
+.property-type-card h3 {
+  font-size: 1.2rem;
+  color: var(--navy-950);
+  margin-bottom: 0.65rem;
+}
+
+.property-type-card p {
+  font-size: 0.925rem;
+  color: var(--slate-600);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+}
+
+/* --------------------------------------------------------------------------
+   8. ROOFING MATERIALS TABS & PANELS
+   -------------------------------------------------------------------------- */
+.mat-tabs-nav {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  margin: 2.5rem 0 3rem;
+  flex-wrap: wrap;
+}
+
+.mat-tab-btn {
+  background: var(--off-white);
+  border: 1.5px solid var(--border-light);
+  color: var(--navy-900);
+  padding: 0.85rem 1.5rem;
+  border-radius: var(--radius-full);
+  font-family: var(--font-heading);
+  font-size: 0.9375rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all var(--duration-fast) ease;
+}
+
+.mat-tab-btn:hover {
+  border-color: var(--orange);
+  background: var(--white);
+}
+
+.mat-tab-btn.is-active {
+  background: var(--orange);
+  border-color: var(--orange);
+  color: var(--white);
+  box-shadow: 0 6px 20px rgba(244, 122, 36, 0.35);
+}
+
+.mat-tab-panel {
+  display: none;
+}
+
+.mat-tab-panel.is-active {
+  display: block;
+  animation: matFadeIn 0.35s ease;
+}
+
+@keyframes matFadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.mat-panel-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 2.5rem;
+  align-items: stretch;
+}
+
+.mat-panel-content {
+  background: var(--white);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-xl);
+  padding: 2.5rem;
+  box-shadow: 0 4px 20px rgba(7, 19, 31, 0.04);
+}
+
+.mat-panel-content h3 {
+  font-size: 1.5rem;
+  color: var(--navy-950);
+  margin-bottom: 1rem;
+}
+
+.mat-panel-content p {
+  font-size: 1rem;
+  color: var(--slate-600);
+  line-height: 1.65;
+  margin-bottom: 1.5rem;
+}
+
+.mat-specs-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.mat-specs-list li {
+  font-size: 0.9375rem;
+  color: var(--slate-700);
+  padding-left: 1.5rem;
+  position: relative;
+  line-height: 1.5;
+}
+
+.mat-specs-list li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--orange);
+  font-weight: 800;
+}
+
+.mat-specs-list li strong {
+  color: var(--navy-950);
+}
+
+.mat-panel-card {
+  background: var(--off-white);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-xl);
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.mat-panel-card h4 {
+  font-size: 1.2rem;
+  color: var(--navy-950);
+  margin-bottom: 1rem;
+}
+
+.mat-panel-card p {
+  font-size: 0.95rem;
+  color: var(--slate-600);
+  line-height: 1.6;
+}
+
+/* --------------------------------------------------------------------------
+   9. REPAIR VS REPLACEMENT COMPARISON SPLIT
+   -------------------------------------------------------------------------- */
+.decision-split-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin-top: 3.5rem;
+  align-items: stretch;
+}
+
+.decision-card {
+  background: var(--white);
+  border-radius: var(--radius-xl);
+  padding: 2.5rem;
+  box-shadow: 0 4px 20px rgba(7, 19, 31, 0.05);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  border: 2px solid var(--border-light);
+}
+
+.decision-card.is-repair {
+  border-color: rgba(16, 185, 129, 0.35);
+}
+
+.decision-card.is-replace {
+  border-color: rgba(244, 122, 36, 0.35);
+}
+
+.decision-badge {
+  display: inline-block;
+  padding: 0.4rem 1rem;
+  border-radius: var(--radius-full);
+  font-size: 0.8125rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 1.25rem;
+  width: fit-content;
+}
+
+.decision-card.is-repair .decision-badge {
+  background: rgba(16, 185, 129, 0.12);
+  color: #10B981;
+  border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.decision-card.is-replace .decision-badge {
+  background: rgba(244, 122, 36, 0.12);
+  color: var(--orange);
+  border: 1px solid rgba(244, 122, 36, 0.3);
+}
+
+.decision-card h3 {
+  font-size: 1.45rem;
+  color: var(--navy-950);
+  margin-bottom: 1.25rem;
+}
+
+.decision-checklist {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  flex-grow: 1;
+}
+
+.decision-checklist li {
+  position: relative;
+  padding-left: 1.75rem;
+  font-size: 0.95rem;
+  color: var(--slate-700);
+  line-height: 1.55;
+}
+
+.decision-card.is-repair .decision-checklist li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: #10B981;
+  font-weight: 800;
+}
+
+.decision-card.is-replace .decision-checklist li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--orange);
+  font-weight: 800;
+}
+
+.decision-card .btn-secondary-light,
+.decision-card .btn-secondary {
+  background: var(--navy-900);
+  color: var(--white);
+  border: 1.5px solid var(--navy-900);
+  font-weight: 700;
+  padding: 0.95rem 1.5rem;
+  transition: all var(--duration-fast) ease;
+}
+
+.decision-card .btn-secondary-light:hover,
+.decision-card .btn-secondary:hover {
+  background: var(--navy-950);
+  border-color: var(--orange);
+  color: var(--orange);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+/* --------------------------------------------------------------------------
+   10. 6-STEP ROOFING PROCESS (Balanced 3x2 Grid)
+   -------------------------------------------------------------------------- */
+.process-6steps-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.75rem;
+  margin-top: 3.5rem;
+}
+
+.process-step-card {
+  background: var(--white);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-xl);
+  padding: 2.25rem 2rem;
+  box-shadow: 0 4px 16px rgba(7, 19, 31, 0.04);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  transition: transform var(--duration-fast) ease, border-color var(--duration-fast) ease;
+}
+
+.process-step-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--orange);
+}
+
+.step-num-badge {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-full);
+  background: var(--navy-950);
+  color: var(--orange);
+  border: 2px solid var(--orange);
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+}
+
+.process-step-card h3 {
+  font-size: 1.2rem;
+  color: var(--navy-950);
+  margin-bottom: 0.75rem;
+}
+
+.process-step-card p {
+  font-size: 0.925rem;
+  color: var(--slate-600);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* --------------------------------------------------------------------------
+   11. ROOFING PROJECTS NEAR SOMERVILLE (Clean Light Cards)
+   -------------------------------------------------------------------------- */
+.loc-projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.75rem;
+  margin-top: 3.5rem;
+}
+
+.loc-project-card {
+  background: var(--white);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-xl);
+  padding: 2.25rem 2rem;
+  box-shadow: 0 4px 16px rgba(7, 19, 31, 0.04);
+  display: flex;
+  flex-direction: column;
+  transition: transform var(--duration-fast) ease, box-shadow var(--duration-fast) ease;
+}
+
+.loc-project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 32px rgba(7, 19, 31, 0.08);
+}
+
+.loc-project-tag {
+  display: inline-block;
+  font-size: 0.8125rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.35rem 0.85rem;
+  border-radius: var(--radius-full);
+  margin-bottom: 1rem;
+  width: fit-content;
+}
+
+.loc-project-card h3 {
+  font-size: 1.25rem;
+  color: var(--navy-950);
+  margin-bottom: 1rem;
+}
+
+.project-details-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  font-size: 0.925rem;
+  color: var(--slate-600);
+  line-height: 1.55;
+}
+
+.project-details-list strong {
+  color: var(--navy-950);
+}
+
+/* --------------------------------------------------------------------------
+   12. WHAT AFFECTS ROOFING COST (SVG Icons, Clean Grid)
+   -------------------------------------------------------------------------- */
+.cost-factors-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 3.5rem;
+}
+
+.cost-factor-card {
+  background: var(--white);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-xl);
+  padding: 2rem 1.75rem;
+  box-shadow: 0 4px 16px rgba(7, 19, 31, 0.04);
+  display: flex;
+  flex-direction: column;
+}
+
+.cost-factor-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-md);
+  background: rgba(244, 122, 36, 0.12);
+  color: var(--orange);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+}
+
+.cost-factor-card h3 {
+  font-size: 1.15rem;
+  color: var(--navy-950);
+  margin-bottom: 0.5rem;
+}
+
+.cost-factor-card p {
+  font-size: 0.9rem;
+  color: var(--slate-600);
+  line-height: 1.55;
+  margin: 0;
+}
+
+/* --------------------------------------------------------------------------
+   13. LOCAL PERMITS & REQUIREMENTS BOX
+   -------------------------------------------------------------------------- */
+.permit-info-box {
+  background: var(--navy-950);
+  border-radius: var(--radius-xl);
+  padding: 3rem;
+  color: var(--slate-200);
+  margin-top: 3rem;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: var(--shadow-xl);
+}
+
+.permit-info-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.permit-info-grid h3 {
+  font-size: 1.65rem;
+  color: var(--white);
+  margin-bottom: 1rem;
+}
+
+.permit-info-grid p {
+  color: var(--slate-300);
+  line-height: 1.65;
+  margin-bottom: 1.25rem;
+}
+
+.permit-contact-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+}
+
+.permit-contact-card h4 {
+  color: var(--amber);
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+.permit-contact-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 0.925rem;
+  color: var(--slate-300);
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.permit-contact-card li strong {
+  color: var(--white);
+}
+
+/* --------------------------------------------------------------------------
+   14. WHY CHOOSE US (Symmetrical 4-Column Grid)
+   -------------------------------------------------------------------------- */
+.why-us-4col-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin-top: 3.5rem;
+}
+
+.why-card {
+  background: var(--white);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-xl);
+  padding: 2.25rem 1.75rem;
+  box-shadow: 0 4px 16px rgba(7, 19, 31, 0.04);
+  display: flex;
+  flex-direction: column;
+  transition: transform var(--duration-fast) ease, border-color var(--duration-fast) ease;
+}
+
+.why-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--orange);
+}
+
+.why-card-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: var(--radius-md);
+  background: rgba(244, 122, 36, 0.12);
+  color: var(--orange);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+}
+
+.why-card h3 {
+  font-size: 1.2rem;
+  color: var(--navy-950);
+  margin-bottom: 0.65rem;
+}
+
+.why-card p {
+  font-size: 0.925rem;
+  color: var(--slate-600);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* EEAT Trust Bar for Location Page (High Contrast on White Background) */
+.service-why-section .eeat-trust-bar {
+  background: var(--off-white);
+  border: 1px solid var(--border-light);
+  box-shadow: 0 4px 20px rgba(7, 19, 31, 0.05);
+  border-radius: var(--radius-xl);
+  padding: 1.75rem 2rem;
+  margin-top: 3.5rem;
+}
+
+.service-why-section .eeat-col span {
+  color: var(--slate-500);
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.35rem;
+}
+
+.service-why-section .eeat-col strong {
+  color: var(--navy-950);
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 800;
+  line-height: 1.35;
+}
+
+.service-why-section .eeat-icon-tag {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-full);
+  background: rgba(244, 122, 36, 0.12);
+  border: 1px solid rgba(244, 122, 36, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.65rem;
+}
+
+/* --------------------------------------------------------------------------
+   15. VERIFIED REVIEWS GRID (3-Column Layout)
+   -------------------------------------------------------------------------- */
+.reviews-grid-3col {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.75rem;
+  margin-top: 3.5rem;
+}
+
+.review-card {
+  background: var(--white);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-xl);
+  padding: 2.25rem;
+  box-shadow: 0 4px 16px rgba(7, 19, 31, 0.04);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.review-stars {
+  color: var(--amber);
+  font-size: 1.25rem;
+  letter-spacing: 0.15em;
+  margin-bottom: 1rem;
+}
+
+.review-text {
+  font-size: 0.95rem;
+  color: var(--slate-700);
+  line-height: 1.65;
+  font-style: italic;
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+}
+
+.review-author-row {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border-light);
+}
+
+.author-avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: var(--radius-full);
+  background: var(--navy-950);
+  color: var(--orange);
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.875rem;
+}
+
+.author-meta .author-name {
+  font-weight: 700;
+  color: var(--navy-950);
+  font-size: 0.9375rem;
+}
+
+.author-meta span {
+  font-size: 0.8125rem;
+  color: var(--slate-500);
+  display: block;
+}
+
+/* --------------------------------------------------------------------------
+   16. SERVICE DISPATCH RADAR MAP (Seamless High-Tech Dark Container)
+   -------------------------------------------------------------------------- */
+.service-dispatch-radar-section {
+  padding: 5.5rem 0;
+  background: var(--navy-950);
+  color: var(--white);
+}
+
+.service-dispatch-radar-section .section-head-center h2 {
+  color: var(--white);
+  font-size: clamp(2rem, 3.2vw, 2.75rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin-bottom: 1rem;
+}
+
+.service-dispatch-radar-section .section-head-center p {
+  color: var(--slate-300);
+  font-size: 1.05rem;
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.dispatch-header-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(244, 122, 36, 0.15);
+  border: 1px solid rgba(244, 122, 36, 0.35);
+  color: var(--orange);
+  font-size: 0.8125rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.35rem 0.95rem;
+  border-radius: var(--radius-full);
+  margin-bottom: 1.25rem;
+}
+
+.dispatch-header-badge .live-pulse-dot {
+  width: 8px;
+  height: 8px;
+  background: var(--orange);
+  border-radius: 50%;
+  box-shadow: 0 0 8px var(--orange);
+  animation: pulseDot 2s infinite;
+}
+
+.dispatch-grid-2col {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 2.5rem;
+  align-items: center;
+  margin-top: 3.5rem;
+}
+
+.dispatch-map-frame {
+  background: var(--navy-900);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-xl);
+}
+
+.dispatch-map-livebar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.85rem 1.5rem;
+  background: rgba(7, 19, 31, 0.95);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 0.8125rem;
+}
+
+.dispatch-livebar-left {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--slate-300);
+}
+
+.dispatch-livebar-right a {
+  color: var(--orange);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.dispatch-info-col h3 {
+  font-size: 1.5rem;
+  color: var(--white);
+  margin-bottom: 0.75rem;
+}
+
+.dispatch-info-col p {
+  color: var(--slate-300);
+  font-size: 0.975rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.town-hubs-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.town-hub-item {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius-lg);
+  padding: 1rem 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-decoration: none;
+  transition: all var(--duration-fast) ease;
+}
+
+.town-hub-item:hover,
+.town-hub-item.is-hovered {
+  background: rgba(244, 122, 36, 0.18);
+  border-color: var(--orange);
+  transform: translateX(4px);
+}
+
+.town-hub-item.is-hq {
+  border-color: rgba(244, 122, 36, 0.4);
+  background: rgba(244, 122, 36, 0.1);
+}
+
+.town-hub-info {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.town-hub-name {
+  font-weight: 700;
+  color: var(--white);
+  font-size: 0.95rem;
+}
+
+.town-hub-tag {
+  color: var(--slate-400);
+  font-size: 0.8125rem;
+}
+
+.town-hub-time {
+  font-size: 0.8125rem;
+  font-weight: 800;
+  color: var(--orange);
+  background: rgba(244, 122, 36, 0.15);
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--radius-full);
+}
+
+/* --------------------------------------------------------------------------
+   17. HELPFUL ROOFING RESOURCES (3-Column Clean Cards)
+   -------------------------------------------------------------------------- */
+.resources-grid-3col {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.75rem;
+  margin-top: 3.5rem;
+}
+
+.resource-card {
+  background: var(--white);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-xl);
+  padding: 2.25rem;
+  box-shadow: 0 4px 16px rgba(7, 19, 31, 0.04);
+  display: flex;
+  flex-direction: column;
+  transition: transform var(--duration-fast) ease, border-color var(--duration-fast) ease;
+}
+
+.resource-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--orange);
+}
+
+.resource-tag {
+  display: inline-block;
+  background: rgba(244, 122, 36, 0.1);
+  color: var(--orange);
+  font-size: 0.8125rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.3rem 0.75rem;
+  border-radius: var(--radius-full);
+  margin-bottom: 1rem;
+  width: fit-content;
+}
+
+.resource-card h3 {
+  font-size: 1.25rem;
+  color: var(--navy-950);
+  margin-bottom: 0.75rem;
+  line-height: 1.35;
+}
+
+.resource-card p {
+  font-size: 0.925rem;
+  color: var(--slate-600);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+}
+
+/* --------------------------------------------------------------------------
+   18. RESPONSIVE BREAKPOINTS (Mobile, Tablet, Desktop)
+   -------------------------------------------------------------------------- */
+@media (max-width: 1200px) {
+  .loc-services-grid,
+  .property-types-grid,
+  .why-us-4col-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 1024px) {
+  .local-intro-grid,
+  .diagnosis-interactive-grid,
+  .permit-info-grid,
+  .dispatch-grid-2col,
+  .mat-panel-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .seasonal-timeline-grid,
+  .cost-factors-grid,
+  .loc-projects-grid,
+  .reviews-grid-3col,
+  .resources-grid-3col,
+  .process-6steps-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .decision-split-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .local-strip-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .local-strip-actions {
+    width: 100%;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 640px) {
+  .loc-services-grid,
+  .property-types-grid,
+  .why-us-4col-grid,
+  .seasonal-timeline-grid,
+  .cost-factors-grid,
+  .loc-projects-grid,
+  .reviews-grid-3col,
+  .resources-grid-3col,
+  .process-6steps-grid,
+  .local-intro-features {
+    grid-template-columns: 1fr;
+  }
+
+  .local-service-strip {
+    margin-top: -2rem;
+  }
+
+  .local-strip-card {
+    padding: 1.5rem;
+  }
+
+  .permit-info-box {
+    padding: 2rem 1.5rem;
+  }
+}

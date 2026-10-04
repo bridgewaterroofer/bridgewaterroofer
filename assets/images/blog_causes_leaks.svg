@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 320" width="600" height="320">
+  <defs>
+    <linearGradient id="bg_b2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#07131F"/>
+      <stop offset="100%" stop-color="#1E293B"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="320" fill="url(#bg_b2)"/>
+  <!-- Rain droplets and flashing detail -->
+  <path d="M300 70 C300 70, 220 180, 220 220 A80 80 0 1 0 380 220 C380 180, 300 70, 300 70 Z" fill="rgba(56,189,248,0.15)" stroke="#38BDF8" stroke-width="3"/>
+  <polygon points="270,180 330,180 315,220 285,220" fill="#F59E0B"/>
+  <circle cx="300" cy="230" r="12" fill="#38BDF8"/>
+  <text x="300" y="280" text-anchor="middle" fill="#CBD5E1" font-family="system-ui, sans-serif" font-size="13" font-weight="700">HIDDEN PENETRATION LEAK TRACING</text>
+</svg>
