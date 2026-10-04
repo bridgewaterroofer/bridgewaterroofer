@@ -391,128 +391,229 @@
   </aside>
 
   <main id="main-content">
-    <!-- Page Hero -->
-    <header class="article-hero" style="padding-bottom: 3rem;">
-      <div class="container hero-container" style="text-align: center; max-width: 800px; margin: 0 auto;">
-        <nav class="breadcrumb-nav" aria-label="Breadcrumb" style="justify-content: center;">
-          <ol class="breadcrumb-list">
-            <li><a href="/">Home</a></li>
-            <li aria-current="page">Contact Us</li>
-          </ol>
+    <div class="inner-breadcrumb-bar">
+      <div class="container">
+        <nav class="inner-breadcrumb-nav" aria-label="Breadcrumb">
+          <a href="/">Home</a>
+          <span class="breadcrumb-sep" aria-hidden="true">/</span>
+          <span class="breadcrumb-current" aria-current="page">Contact Us</span>
         </nav>
+      </div>
+    </div>
 
-        <div class="hero-badge-wrap" style="justify-content: center;">
-          <span class="category-badge">Somerset County Dispatch</span>
-          <span class="reading-time">Fast Response Guarantee</span>
+    <!-- Inner Page Hero -->
+    <header class="inner-page-hero">
+      <div class="inner-hero-container">
+        <div class="inner-hero-badge">
+          Somerset County Headquarters &amp; Dispatch
         </div>
-
-        <h1 class="article-h1" style="font-size: clamp(2.2rem, 4.5vw, 3.2rem);">Contact Bridgewater Roofer</h1>
-
-        <p class="article-lead" style="font-size: 1.15rem; color: #cbd5e1; max-width: 700px; margin: 0 auto;">
-          Whether you need an immediate emergency tarp for an active storm leak or want an itemized proposal for an architectural roof replacement, we are ready to assist.
+        <h1 class="inner-hero-title">
+          Contact Bridgewater Roofer
+        </h1>
+        <p class="inner-hero-lead">
+          Whether you need rapid emergency tarping for an active storm leak, a 21-point roof health audit, or a transparent itemized proposal for an architectural replacement, our licensed team is ready to assist.
         </p>
+        <div class="inner-hero-actions">
+          <a href="tel:+19084659944" class="btn btn-phone cta-phone" data-call-source="contact-hero">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+            Direct Roofer Line: (908) 465-9944
+          </a>
+          <a href="#estimate-form" class="btn btn-secondary" style="padding: 0.75rem 1.6rem;">
+            Online Estimate Form ↓
+          </a>
+        </div>
       </div>
     </header>
 
-    <!-- Contact Layout Grid: Form on Left, Info Cards on Right -->
-    <section style="padding: 4rem 0; background: var(--bg-surface, #0f172a);">
-      <div class="container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 3rem; max-width: 1100px; margin: 0 auto;">
-        
-        <!-- Estimate Request Form -->
-        <div style="background: #132338; border: 1px solid #1e3a5f; border-radius: 16px; padding: 2.5rem; box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
-          <span style="color: #fb923c; font-weight: 700; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px;">Online Request</span>
-          <h2 style="font-size: 1.8rem; color: #ffffff; margin: 0.5rem 0 1.25rem; font-family: 'Outfit', sans-serif;">Request a Free Roof Consultation</h2>
-          <p style="color: #94a3b8; font-size: 0.95rem; margin-bottom: 2rem;">Fill out the form below and an estimator will follow up within 2 business hours.</p>
-
-          <form action="/thank-you/" method="GET">
-            <div style="margin-bottom: 1.25rem;">
-              <label for="contactName" style="display: block; color: #cbd5e1; font-size: 0.9rem; margin-bottom: 0.4rem; font-weight: 600;">Full Name *</label>
-              <input type="text" id="contactName" name="name" required placeholder="John Doe" style="width: 100%; padding: 0.75rem 1rem; background: #0b1526; border: 1px solid #334155; border-radius: 8px; color: #ffffff; font-size: 1rem;">
-            </div>
-
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.25rem;">
-              <div>
-                <label for="contactPhone" style="display: block; color: #cbd5e1; font-size: 0.9rem; margin-bottom: 0.4rem; font-weight: 600;">Phone Number *</label>
-                <input type="tel" id="contactPhone" name="phone" required placeholder="(908) 555-0199" style="width: 100%; padding: 0.75rem 1rem; background: #0b1526; border: 1px solid #334155; border-radius: 8px; color: #ffffff; font-size: 1rem;">
-              </div>
-              <div>
-                <label for="contactEmail" style="display: block; color: #cbd5e1; font-size: 0.9rem; margin-bottom: 0.4rem; font-weight: 600;">Email Address *</label>
-                <input type="email" id="contactEmail" name="email" required placeholder="john@example.com" style="width: 100%; padding: 0.75rem 1rem; background: #0b1526; border: 1px solid #334155; border-radius: 8px; color: #ffffff; font-size: 1rem;">
-              </div>
-            </div>
-
-            <div style="margin-bottom: 1.25rem;">
-              <label for="contactAddress" style="display: block; color: #cbd5e1; font-size: 0.9rem; margin-bottom: 0.4rem; font-weight: 600;">Property Address &amp; Town (Somerset County) *</label>
-              <input type="text" id="contactAddress" name="address" required placeholder="e.g. 123 Main St, Somerville, NJ" style="width: 100%; padding: 0.75rem 1rem; background: #0b1526; border: 1px solid #334155; border-radius: 8px; color: #ffffff; font-size: 1rem;">
-            </div>
-
-            <div style="margin-bottom: 1.25rem;">
-              <label for="contactService" style="display: block; color: #cbd5e1; font-size: 0.9rem; margin-bottom: 0.4rem; font-weight: 600;">Primary Service Needed *</label>
-              <select id="contactService" name="service" required style="width: 100%; padding: 0.75rem 1rem; background: #0b1526; border: 1px solid #334155; border-radius: 8px; color: #ffffff; font-size: 1rem;">
-                <option value="">Select a Roofing Service...</option>
-                <option value="replacement">Full Roof Replacement (Shingles)</option>
-                <option value="repair">Roof Leak Repair / Missing Shingles</option>
-                <option value="storm">Storm Damage / Hail Inspection</option>
-                <option value="emergency">Emergency Roof Tarping (Active Leak)</option>
-                <option value="metal">Standing Seam Metal Roofing</option>
-                <option value="commercial">Commercial Flat Roofing (TPO/EPDM)</option>
-                <option value="inspection">21-Point Roof Health Inspection</option>
-              </select>
-            </div>
-
-            <div style="margin-bottom: 1.5rem;">
-              <label for="contactMessage" style="display: block; color: #cbd5e1; font-size: 0.9rem; margin-bottom: 0.4rem; font-weight: 600;">Tell Us About Your Project</label>
-              <textarea id="contactMessage" name="message" rows="4" placeholder="Describe any leaks, roof age, or specific concerns..." style="width: 100%; padding: 0.75rem 1rem; background: #0b1526; border: 1px solid #334155; border-radius: 8px; color: #ffffff; font-size: 1rem;"></textarea>
-            </div>
-
-            <button type="submit" class="btn btn-primary btn-block" style="padding: 1rem; font-size: 1.05rem; font-weight: 700; width: 100%; justify-content: center;">
-              Submit Request for Consultation →
-            </button>
-            <p style="color: #64748b; font-size: 0.8rem; margin-top: 0.75rem; text-align: center;">We respect your privacy. No pushy sales calls or spam.</p>
-          </form>
+    <!-- Trust Metrics Bar -->
+    <section class="trust-metrics-section" style="background: #091524; border-bottom: 1px solid rgba(255, 255, 255, 0.08); padding: 2.25rem 0;">
+      <div class="container">
+        <div class="metrics-grid">
+          <div class="metric-item">
+            <div class="metric-number">15-Min</div>
+            <div class="metric-label">Average Response Time</div>
+          </div>
+          <div class="metric-item">
+            <div class="metric-number">100%</div>
+            <div class="metric-label">Free On-Site Inspections</div>
+          </div>
+          <div class="metric-item">
+            <div class="metric-number">400 Commons</div>
+            <div class="metric-label">Bridgewater Dispatch Hub</div>
+          </div>
+          <div class="metric-item">
+            <div class="metric-number">24/7</div>
+            <div class="metric-label">Emergency Storm Leak Tarping</div>
+          </div>
         </div>
+      </div>
+    </section>
 
-        <!-- Contact Information & Quick Channels -->
-        <div style="display: flex; flex-direction: column; gap: 1.75rem;">
+    <!-- Contact Main Section: Form & Info Cards -->
+    <section class="inner-section">
+      <div class="container">
+        <div class="contact-layout-grid">
+          
+          <!-- Estimate Request Form -->
+          <div class="contact-form-card" id="estimate-form">
+            <span class="contact-form-tag">ONLINE CONSULTATION PORTAL</span>
+            <h2 class="contact-form-title">Request a Free Roof Consultation</h2>
+            <p class="contact-form-desc">Fill out your project details below and a senior estimator will follow up within 2 business hours.</p>
+
+            <form action="/thank-you/" method="GET">
+              <div class="contact-form-group">
+                <label for="contactName" class="contact-label">Full Name *</label>
+                <input type="text" id="contactName" name="name" required placeholder="John Doe" class="contact-input">
+              </div>
+
+              <div class="contact-form-row-2">
+                <div class="contact-form-group" style="margin-bottom: 0;">
+                  <label for="contactPhone" class="contact-label">Phone Number *</label>
+                  <input type="tel" id="contactPhone" name="phone" required placeholder="(908) 555-0199" class="contact-input">
+                </div>
+                <div class="contact-form-group" style="margin-bottom: 0;">
+                  <label for="contactEmail" class="contact-label">Email Address *</label>
+                  <input type="email" id="contactEmail" name="email" required placeholder="john@example.com" class="contact-input">
+                </div>
+              </div>
+
+              <div class="contact-form-group">
+                <label for="contactAddress" class="contact-label">Property Address &amp; Town (Somerset County) *</label>
+                <input type="text" id="contactAddress" name="address" required placeholder="e.g. 123 Main St, Somerville, NJ" class="contact-input">
+              </div>
+
+              <div class="contact-form-group">
+                <label for="contactService" class="contact-label">Primary Service Needed *</label>
+                <select id="contactService" name="service" required class="contact-select">
+                  <option value="">Select a Roofing Service...</option>
+                  <option value="replacement">Full Roof Replacement (Architectural Shingles)</option>
+                  <option value="repair">Roof Leak Repair / Missing Shingles</option>
+                  <option value="storm">Storm Damage / Wind &amp; Hail Inspection</option>
+                  <option value="emergency">Emergency Roof Tarping (Active Leak)</option>
+                  <option value="metal">Standing Seam Metal Roofing</option>
+                  <option value="commercial">Commercial Flat Roofing (TPO/EPDM)</option>
+                  <option value="inspection">21-Point Roof Health Inspection</option>
+                </select>
+              </div>
+
+              <div class="contact-form-group" style="margin-bottom: 1.75rem;">
+                <label for="contactMessage" class="contact-label">Tell Us About Your Project</label>
+                <textarea id="contactMessage" name="message" rows="4" placeholder="Describe any leaks, roof age, or specific project concerns..." class="contact-textarea"></textarea>
+              </div>
+
+              <button type="submit" class="contact-submit-btn">
+                <span>Submit Request for Consultation</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </button>
+              <p class="contact-privacy-note">We respect your privacy. No spam, pushy sales calls, or third-party marketing.</p>
+            </form>
+          </div>
+
+        <!-- Contact Information & Quick Channels Stack -->
+        <div class="contact-info-stack">
           
           <!-- Direct Phone Card -->
-          <div style="background: #132338; border: 1px solid #ea580c; border-radius: 16px; padding: 2rem;">
-            <span style="color: #fb923c; font-weight: 700; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px;">Immediate Assistance</span>
-            <h3 style="font-size: 1.5rem; color: #ffffff; margin: 0.5rem 0 0.75rem; font-family: 'Outfit', sans-serif;">Speak Directly With a Roofer</h3>
-            <p style="color: #cbd5e1; font-size: 0.95rem; line-height: 1.5; margin-bottom: 1.25rem;">
-              Need urgent advice, have an active leak, or want to speak with our field manager right now?
+          <div class="contact-direct-card">
+            <span class="contact-card-tag">Immediate Roofer Dispatch</span>
+            <h3 class="contact-card-title">Speak Directly With a Roofer</h3>
+            <p class="contact-card-text">
+              Need urgent storm damage advice, have an active roof leak, or want to speak with our Somerset County field manager right now?
             </p>
-            <a href="tel:+19084659944" class="btn btn-primary btn-block" data-call-source="contact-page-direct" style="padding: 0.9rem 1.25rem; font-size: 1.1rem; justify-content: center;">
-              <svg class="phone-icon" viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.02-.24c1.12.37 2.33.57 3.57.57a1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.24.2 2.45.57 3.57a1 1 0 01-.24 1.02l-2.21 2.2z"/></svg>
+            <a href="tel:+19084659944" class="contact-card-phone-btn" data-call-source="contact-page-direct">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.02-.24c1.12.37 2.33.57 3.57.57a1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.24.2 2.45.57 3.57a1 1 0 01-.24 1.02l-2.21 2.2z"/></svg>
               <span>Call (908) 465-9944</span>
             </a>
           </div>
 
           <!-- Headquarters Card -->
-          <div style="background: #132338; border: 1px solid #1e3a5f; border-radius: 16px; padding: 2rem;">
-            <h3 style="font-size: 1.3rem; color: #ffffff; margin-bottom: 1rem; font-family: 'Outfit', sans-serif;">Headquarters &amp; Dispatch</h3>
-            <p style="color: #cbd5e1; font-size: 0.95rem; margin-bottom: 0.75rem;">
-              <strong>Office:</strong><br>
-              400 Commons Way<br>
-              Bridgewater, NJ 08807
-            </p>
-            <p style="color: #cbd5e1; font-size: 0.95rem; margin-bottom: 0.75rem;">
-              <strong>Email:</strong><br>
-              <a href="mailto:service@bridgewaterroofer.com" style="color: #38bdf8; text-decoration: none;">service@bridgewaterroofer.com</a>
-            </p>
-            <p style="color: #cbd5e1; font-size: 0.95rem; margin-bottom: 0.75rem;">
-              <strong>Operating Hours:</strong><br>
-              Monday – Saturday: 7:00 AM – 7:00 PM<br>
-              24/7 Emergency Storm Leak Dispatch
-            </p>
-            <p style="color: #94a3b8; font-size: 0.85rem; border-top: 1px solid #1e293b; padding-top: 0.75rem; margin-top: 1rem;">
-              NJ Home Improvement Contractor #13VH09876500<br>
-              Fully Licensed, Insured &amp; Bonded
-            </p>
+          <div class="contact-hq-card">
+            <span class="contact-card-tag">Somerset County Hub</span>
+            <h3 class="contact-card-title">Headquarters &amp; Dispatch</h3>
+            
+            <div class="contact-hq-item">
+              <svg class="contact-hq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+              <div>
+                <strong>Physical Office:</strong>
+                400 Commons Way, Bridgewater, NJ 08807
+              </div>
+            </div>
+
+            <div class="contact-hq-item">
+              <svg class="contact-hq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              <div>
+                <strong>Direct Email:</strong>
+                <a href="mailto:service@bridgewaterroofer.com" style="color: #38bdf8; text-decoration: none;">service@bridgewaterroofer.com</a>
+              </div>
+            </div>
+
+            <div class="contact-hq-item">
+              <svg class="contact-hq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+              <div>
+                <strong>Operating Hours:</strong>
+                Monday – Saturday: 7:00 AM – 7:00 PM<br>
+                <span style="color: #4ade80; font-weight: 600; font-size: 0.85rem;">● 24/7 Emergency Storm Leak Dispatch Available</span>
+              </div>
+            </div>
+
+            <div style="color: #94a3b8; font-size: 0.8125rem; border-top: 1px solid #1e293b; padding-top: 0.85rem; margin-top: 1rem; line-height: 1.5;">
+              NJ Home Improvement Contractor License #13VH09876500<br>
+              Fully Insured, Bonded &amp; GAF Master Elite Certified
+            </div>
+          </div>
+
+          <!-- What Happens Next Card -->
+          <div class="contact-steps-card">
+            <span class="contact-card-tag">Transparent Process</span>
+            <h3 class="contact-card-title">What to Expect Next</h3>
+            <div class="contact-steps-list">
+              <div class="contact-step-row">
+                <div class="contact-step-num">1</div>
+                <div>
+                  <div class="contact-step-title">Prompt Confirmation</div>
+                  <p class="contact-step-desc">A certified Somerset County project estimator reviews your address and project details within 2 business hours.</p>
+                </div>
+              </div>
+              <div class="contact-step-row">
+                <div class="contact-step-num">2</div>
+                <div>
+                  <div class="contact-step-title">Comprehensive Roof Assessment</div>
+                  <p class="contact-step-desc">We conduct an honest, non-invasive 21-point roof health inspection including digital attic and drone photography.</p>
+                </div>
+              </div>
+              <div class="contact-step-row">
+                <div class="contact-step-num">3</div>
+                <div>
+                  <div class="contact-step-title">Transparent Itemized Proposal</div>
+                  <p class="contact-step-desc">Receive a crystal-clear quote detailing material grades, labor, township permits, and transferable manufacturer warranties.</p>
+                </div>
+              </div>
+            </div>
           </div>
 
         </div>
+      </div>
+    </div>
+  </section>
 
+    <!-- Final CTA Section -->
+    <section class="project-cta-final">
+      <div class="container">
+        <div class="project-cta-container">
+          <span class="inner-section-tag">RAPID SOMERSET COUNTY RESPONSE</span>
+          <h2 class="inner-section-title" style="margin-bottom: 1rem;">Facing an Active Roof Leak or Storm Emergency?</h2>
+          <p class="inner-section-lead" style="margin-bottom: 2rem;">
+            Do not let water migrate into your home's attic and drywall. Our emergency leak mitigation crews are equipped with heavy-duty tarps, fasteners, and moisture detection equipment for immediate deployment.
+          </p>
+          <div class="inner-hero-actions">
+            <a href="tel:+19084659944" class="btn btn-phone cta-phone" data-call-source="contact-footer">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+              Call (908) 465-9944
+            </a>
+            <a href="/service-area/" class="btn btn-primary" style="padding: 0.75rem 1.6rem;">
+              View All 15+ Service Towns
+            </a>
+          </div>
+        </div>
       </div>
     </section>
   </main>
