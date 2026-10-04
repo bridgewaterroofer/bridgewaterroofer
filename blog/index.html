@@ -371,157 +371,335 @@
   </aside>
 
   <main id="main-content">
-    <!-- Hub Hero Section -->
-    <header class="article-hero" style="padding-bottom: 3.5rem;">
-      <div class="container hero-container" style="text-align: center; max-width: 850px; margin: 0 auto;">
-        <nav class="breadcrumb-nav" aria-label="Breadcrumb" style="justify-content: center;">
-          <ol class="breadcrumb-list">
-            <li><a href="/">Home</a></li>
-            <li aria-current="page">Roofing Knowledge Center</li>
-          </ol>
+    <div class="inner-breadcrumb-bar">
+      <div class="container">
+        <nav class="inner-breadcrumb-nav" aria-label="Breadcrumb">
+          <a href="/">Home</a>
+          <span class="breadcrumb-sep" aria-hidden="true">/</span>
+          <span class="breadcrumb-current" aria-current="page">Roofing Knowledge Center</span>
         </nav>
+      </div>
+    </div>
 
-        <div class="hero-badge-wrap" style="justify-content: center;">
-          <span class="category-badge">Editorial Knowledge Center</span>
-          <span class="reading-time">8 In-Depth Guides</span>
+    <!-- Inner Page Hero -->
+    <header class="inner-page-hero">
+      <div class="inner-hero-container">
+        <div class="inner-hero-badge">
+          Somerset County Editorial Knowledge Center
         </div>
-
-        <h1 class="article-h1" style="font-size: clamp(2.2rem, 4.5vw, 3.2rem);">Roofing Knowledge Center &amp; Guides</h1>
-
-        <p class="article-lead" style="font-size: 1.15rem; color: #cbd5e1; max-width: 720px; margin: 0 auto 1.5rem;">
+        <h1 class="inner-hero-title">
+          Roofing Knowledge Center &amp; Guides
+        </h1>
+        <p class="inner-hero-lead">
           Objective engineering research, real-world New Jersey cost benchmarks, township building code guidelines, and storm resilience protocols written and reviewed by licensed roofing specialists.
         </p>
-
-        <p style="font-size: 0.9rem; color: #94a3b8;">
-          All publications adhere to our <a href="/editorial-policy/" style="color: #38bdf8; text-decoration: underline;">Editorial Standards &amp; Fact-Checking Policy</a>.
-        </p>
+        <div class="inner-hero-actions">
+          <a href="tel:+19084659944" class="btn btn-phone cta-phone" data-call-source="blog-hero">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+            Speak With a Specialist: (908) 465-9944
+          </a>
+          <a href="/editorial-policy/" class="btn btn-secondary" style="padding: 0.75rem 1.6rem;">
+            Editorial Standards &amp; Policy
+          </a>
+        </div>
       </div>
     </header>
 
-    <!-- Articles Grid Section -->
-    <section class="section-blog-grid" style="padding: 4rem 0; background: var(--bg-surface, #0f172a);">
+    <!-- Trust Metrics Bar -->
+    <section class="trust-metrics-section" style="background: #091524; border-bottom: 1px solid rgba(255, 255, 255, 0.08); padding: 2.25rem 0;">
       <div class="container">
-        
-        <div class="articles-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 2rem;">
+        <div class="metrics-grid">
+          <div class="metric-item">
+            <div class="metric-number">8</div>
+            <div class="metric-label">In-Depth Technical Guides</div>
+          </div>
+          <div class="metric-item">
+            <div class="metric-number">100%</div>
+            <div class="metric-label">NJ UCC Code Verified</div>
+          </div>
+          <div class="metric-item">
+            <div class="metric-number">22+</div>
+            <div class="metric-label">Years Local Field Data</div>
+          </div>
+          <div class="metric-item">
+            <div class="metric-number">0%</div>
+            <div class="metric-label">Sponsored Manufacturer Bias</div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-          <!-- Article 1: Master Pillar - Repair vs Replacement -->
-          <article class="article-card-mini" style="background: #132338; border: 1px solid #1e3a5f; border-radius: 12px; padding: 1.75rem; display: flex; flex-direction: column;">
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
-              <span class="card-category" style="color: #fb923c; font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.5px;">Master Decision Guide</span>
-              <span class="card-time" style="color: #94a3b8; font-size: 0.8rem;">12 Min Read</span>
+    <!-- Articles Section -->
+    <section class="inner-section">
+      <div class="container">
+
+        <div class="inner-section-header">
+          <span class="inner-section-tag">EDITORIAL RESEARCH ARCHIVE</span>
+          <h2 class="inner-section-title">Explore Homeowner &amp; Commercial Guides</h2>
+          <p class="inner-section-lead">
+            Select a topic below to review detailed cost schedules, photographic leak diagnostics, township permit workflows, and material lifespan engineering.
+          </p>
+        </div>
+
+        <!-- Category Filters -->
+        <div class="filter-tabs" role="tablist" aria-label="Blog Topics Filter">
+          <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true">All Guides (8)</button>
+          <button class="filter-btn" data-filter="replacement" role="tab" aria-selected="false">Replacement &amp; Costs</button>
+          <button class="filter-btn" data-filter="leaks" role="tab" aria-selected="false">Leak Diagnostics</button>
+          <button class="filter-btn" data-filter="permits" role="tab" aria-selected="false">Township Permits</button>
+          <button class="filter-btn" data-filter="materials" role="tab" aria-selected="false">Materials &amp; Lifespans</button>
+          <button class="filter-btn" data-filter="commercial" role="tab" aria-selected="false">Commercial Flat</button>
+        </div>
+
+        <!-- 8 Article Cards with Featured Images -->
+        <div class="blog-hub-grid">
+
+          <!-- Article 1: Repair vs Replacement -->
+          <article class="blog-hub-card" data-category="replacement">
+            <a href="/blog/roof-repair-vs-replacement/" class="blog-hub-media" aria-label="Read Roof Repair vs Replacement Guide">
+              <img src="../assets/images/blog_repair_replacement.jpg" alt="Comparison diagram of roof repair vs full roof replacement criteria" width="600" height="338" loading="lazy">
+              <span class="blog-hub-badge">Master Decision Guide</span>
+            </a>
+            <div class="blog-hub-body">
+              <div class="blog-hub-meta">
+                <span class="blog-hub-meta-item">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                  12 Min Read
+                </span>
+                <span>Somerset County, NJ</span>
+              </div>
+              <h2 class="blog-hub-title">
+                <a href="/blog/roof-repair-vs-replacement/">Roof Repair vs. Replacement: How to Know Which One You Need</a>
+              </h2>
+              <p class="blog-hub-excerpt">
+                Comprehensive framework evaluating shingle age, the 30% square footage damage rule, NJ two-layer building codes, and repair vs. tear-off economics.
+              </p>
+              <div class="blog-hub-footer">
+                <div class="blog-author-pill">
+                  <span class="blog-author-dot"></span> Peer-Reviewed
+                </div>
+                <a href="/blog/roof-repair-vs-replacement/" class="blog-read-btn">
+                  Read Full Guide <span>→</span>
+                </a>
+              </div>
             </div>
-            <h2 style="font-size: 1.35rem; font-family: 'Outfit', sans-serif; font-weight: 700; margin-bottom: 0.75rem; line-height: 1.3;">
-              <a href="/blog/roof-repair-vs-replacement/" style="color: #ffffff; text-decoration: none;">Roof Repair vs. Replacement: How to Know Which One You Need</a>
-            </h2>
-            <p style="color: #94a3b8; font-size: 0.95rem; line-height: 1.5; flex-grow: 1; margin-bottom: 1.25rem;">
-              Comprehensive framework evaluating shingle age, the 30% square footage damage rule, NJ two-layer building codes, and repair vs. tear-off economics.
-            </p>
-            <a href="/blog/roof-repair-vs-replacement/" style="color: #38bdf8; font-weight: 600; font-size: 0.95rem; display: inline-flex; align-items: center; gap: 0.5rem;">Read Full Guide →</a>
           </article>
 
           <!-- Article 2: What Causes Roof Leaks -->
-          <article class="article-card-mini" style="background: #132338; border: 1px solid #1e3a5f; border-radius: 12px; padding: 1.75rem; display: flex; flex-direction: column;">
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
-              <span class="card-category" style="color: #38bdf8; font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.5px;">Roof Leaks &amp; Diagnostics</span>
-              <span class="card-time" style="color: #94a3b8; font-size: 0.8rem;">10 Min Read</span>
+          <article class="blog-hub-card" data-category="leaks">
+            <a href="/blog/what-causes-roof-leaks/" class="blog-hub-media" aria-label="Read What Causes Roof Leaks Guide">
+              <img src="../assets/images/blog_causes_leaks.jpg" alt="Detailed technical diagram showing 10 common roof leak failure zones" width="600" height="338" loading="lazy">
+              <span class="blog-hub-badge">Leak Diagnostics</span>
+            </a>
+            <div class="blog-hub-body">
+              <div class="blog-hub-meta">
+                <span class="blog-hub-meta-item">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                  10 Min Read
+                </span>
+                <span>Water Travel Physics</span>
+              </div>
+              <h2 class="blog-hub-title">
+                <a href="/blog/what-causes-roof-leaks/">What Causes Roof Leaks? 8 Common Problem Areas &amp; Water Travel Physics</a>
+              </h2>
+              <p class="blog-hub-excerpt">
+                Why ceiling water stains are rarely directly beneath the leak point. Forensic analysis of chimney flashing, pipe boots, roof valleys, and ice damming.
+              </p>
+              <div class="blog-hub-footer">
+                <div class="blog-author-pill">
+                  <span class="blog-author-dot"></span> Field Verified
+                </div>
+                <a href="/blog/what-causes-roof-leaks/" class="blog-read-btn">
+                  Read Full Guide <span>→</span>
+                </a>
+              </div>
             </div>
-            <h2 style="font-size: 1.35rem; font-family: 'Outfit', sans-serif; font-weight: 700; margin-bottom: 0.75rem; line-height: 1.3;">
-              <a href="/blog/what-causes-roof-leaks/" style="color: #ffffff; text-decoration: none;">What Causes Roof Leaks? 8 Common Problem Areas &amp; Water Travel Physics</a>
-            </h2>
-            <p style="color: #94a3b8; font-size: 0.95rem; line-height: 1.5; flex-grow: 1; margin-bottom: 1.25rem;">
-              Why the ceiling stain is rarely directly below the leak point. Forensic analysis of chimney flashing, pipe boots, roof valleys, and ice damming.
-            </p>
-            <a href="/blog/what-causes-roof-leaks/" style="color: #38bdf8; font-weight: 600; font-size: 0.95rem; display: inline-flex; align-items: center; gap: 0.5rem;">Read Full Guide →</a>
           </article>
 
           <!-- Article 3: Roof Replacement Cost -->
-          <article class="article-card-mini" style="background: #132338; border: 1px solid #1e3a5f; border-radius: 12px; padding: 1.75rem; display: flex; flex-direction: column;">
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
-              <span class="card-category" style="color: #4ade80; font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.5px;">Costs &amp; Estimates</span>
-              <span class="card-time" style="color: #94a3b8; font-size: 0.8rem;">9 Min Read</span>
+          <article class="blog-hub-card" data-category="replacement">
+            <a href="/blog/roof-replacement-cost-bridgewater-nj/" class="blog-hub-media" aria-label="Read Roof Replacement Cost Guide">
+              <img src="../assets/images/blog_replacement_cost.jpg" alt="2026 roof replacement cost breakdown graph for Bridgewater NJ homes" width="600" height="338" loading="lazy">
+              <span class="blog-hub-badge">Costs &amp; Estimates</span>
+            </a>
+            <div class="blog-hub-body">
+              <div class="blog-hub-meta">
+                <span class="blog-hub-meta-item">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                  9 Min Read
+                </span>
+                <span>2026 Price Index</span>
+              </div>
+              <h2 class="blog-hub-title">
+                <a href="/blog/roof-replacement-cost-bridgewater-nj/">Roof Replacement Cost in Bridgewater, NJ: What Affects Price?</a>
+              </h2>
+              <p class="blog-hub-excerpt">
+                Detailed price benchmarks for Central New Jersey homes. Square footage pricing, old roof tear-off costs, rotted CDX plywood rates, and estimate comparisons.
+              </p>
+              <div class="blog-hub-footer">
+                <div class="blog-author-pill">
+                  <span class="blog-author-dot"></span> Line-Item Pricing
+                </div>
+                <a href="/blog/roof-replacement-cost-bridgewater-nj/" class="blog-read-btn">
+                  Read Full Guide <span>→</span>
+                </a>
+              </div>
             </div>
-            <h2 style="font-size: 1.35rem; font-family: 'Outfit', sans-serif; font-weight: 700; margin-bottom: 0.75rem; line-height: 1.3;">
-              <a href="/blog/roof-replacement-cost-bridgewater-nj/" style="color: #ffffff; text-decoration: none;">Roof Replacement Cost in Bridgewater, NJ: What Affects Price?</a>
-            </h2>
-            <p style="color: #94a3b8; font-size: 0.95rem; line-height: 1.5; flex-grow: 1; margin-bottom: 1.25rem;">
-              Detailed price breakdown for Central New Jersey homes. Square footage pricing, old roof tear-off costs, rotted CDX plywood rates, and estimate comparisons.
-            </p>
-            <a href="/blog/roof-replacement-cost-bridgewater-nj/" style="color: #38bdf8; font-weight: 600; font-size: 0.95rem; display: inline-flex; align-items: center; gap: 0.5rem;">Read Full Guide →</a>
           </article>
 
           <!-- Article 4: Bridgewater Permit Guide -->
-          <article class="article-card-mini" style="background: #132338; border: 1px solid #1e3a5f; border-radius: 12px; padding: 1.75rem; display: flex; flex-direction: column;">
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
-              <span class="card-category" style="color: #facc15; font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.5px;">Municipal Codes &amp; Permits</span>
-              <span class="card-time" style="color: #94a3b8; font-size: 0.8rem;">8 Min Read</span>
+          <article class="blog-hub-card" data-category="permits">
+            <a href="/blog/bridgewater-roofing-permit-guide/" class="blog-hub-media" aria-label="Read Bridgewater Permit Guide">
+              <img src="../assets/images/blog_permit_guide.jpg" alt="Bridgewater Township NJ roofing permit process infographic" width="600" height="338" loading="lazy">
+              <span class="blog-hub-badge">Municipal Codes</span>
+            </a>
+            <div class="blog-hub-body">
+              <div class="blog-hub-meta">
+                <span class="blog-hub-meta-item">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                  8 Min Read
+                </span>
+                <span>Township Code</span>
+              </div>
+              <h2 class="blog-hub-title">
+                <a href="/blog/bridgewater-roofing-permit-guide/">Bridgewater Roofing Permit Guide: Township Rules &amp; UCC Requirements</a>
+              </h2>
+              <p class="blog-hub-excerpt">
+                Official homeowner guide to Bridgewater Township roofing permits. Learn when UCC permits are required, fee formulas, ice barrier rules, and inspection scheduling.
+              </p>
+              <div class="blog-hub-footer">
+                <div class="blog-author-pill">
+                  <span class="blog-author-dot"></span> NJ UCC Compliant
+                </div>
+                <a href="/blog/bridgewater-roofing-permit-guide/" class="blog-read-btn">
+                  Read Full Guide <span>→</span>
+                </a>
+              </div>
             </div>
-            <h2 style="font-size: 1.35rem; font-family: 'Outfit', sans-serif; font-weight: 700; margin-bottom: 0.75rem; line-height: 1.3;">
-              <a href="/blog/bridgewater-roofing-permit-guide/" style="color: #ffffff; text-decoration: none;">Bridgewater Roofing Permit Guide: Township Rules &amp; UCC Requirements</a>
-            </h2>
-            <p style="color: #94a3b8; font-size: 0.95rem; line-height: 1.5; flex-grow: 1; margin-bottom: 1.25rem;">
-              Official homeowner guide to Bridgewater Township roofing permits. Learn when UCC permits are required, fee formulas, ice barrier rules, and inspection scheduling.
-            </p>
-            <a href="/blog/bridgewater-roofing-permit-guide/" style="color: #38bdf8; font-weight: 600; font-size: 0.95rem; display: inline-flex; align-items: center; gap: 0.5rem;">Read Full Guide →</a>
           </article>
 
           <!-- Article 5: Asphalt vs Metal -->
-          <article class="article-card-mini" style="background: #132338; border: 1px solid #1e3a5f; border-radius: 12px; padding: 1.75rem; display: flex; flex-direction: column;">
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
-              <span class="card-category" style="color: #38bdf8; font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.5px;">Materials Comparison</span>
-              <span class="card-time" style="color: #94a3b8; font-size: 0.8rem;">10 Min Read</span>
+          <article class="blog-hub-card" data-category="materials">
+            <a href="/blog/asphalt-shingles-vs-metal-roofing/" class="blog-hub-media" aria-label="Read Asphalt vs Metal Roofing Guide">
+              <img src="../assets/images/blog_asphalt_vs_metal.jpg" alt="Comparison between architectural shingles and standing seam metal roofing" width="600" height="338" loading="lazy">
+              <span class="blog-hub-badge">Materials Comparison</span>
+            </a>
+            <div class="blog-hub-body">
+              <div class="blog-hub-meta">
+                <span class="blog-hub-meta-item">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                  10 Min Read
+                </span>
+                <span>50-Year ROI</span>
+              </div>
+              <h2 class="blog-hub-title">
+                <a href="/blog/asphalt-shingles-vs-metal-roofing/">Asphalt Shingles vs. Metal Roofing: Which Is Better for Your NJ Home?</a>
+              </h2>
+              <p class="blog-hub-excerpt">
+                Compare architectural dimensional shingles against standing seam metal across upfront cost, 50-year ROI, wind resistance (130 vs 150+ mph), and snow shedding.
+              </p>
+              <div class="blog-hub-footer">
+                <div class="blog-author-pill">
+                  <span class="blog-author-dot"></span> Engineering Data
+                </div>
+                <a href="/blog/asphalt-shingles-vs-metal-roofing/" class="blog-read-btn">
+                  Read Full Guide <span>→</span>
+                </a>
+              </div>
             </div>
-            <h2 style="font-size: 1.35rem; font-family: 'Outfit', sans-serif; font-weight: 700; margin-bottom: 0.75rem; line-height: 1.3;">
-              <a href="/blog/asphalt-shingles-vs-metal-roofing/" style="color: #ffffff; text-decoration: none;">Asphalt Shingles vs. Metal Roofing: Which Is Better for Your NJ Home?</a>
-            </h2>
-            <p style="color: #94a3b8; font-size: 0.95rem; line-height: 1.5; flex-grow: 1; margin-bottom: 1.25rem;">
-              Compare architectural dimensional shingles against standing seam metal across upfront cost, 50-year ROI, wind resistance (130 vs 150+ mph), and snow shedding.
-            </p>
-            <a href="/blog/asphalt-shingles-vs-metal-roofing/" style="color: #38bdf8; font-weight: 600; font-size: 0.95rem; display: inline-flex; align-items: center; gap: 0.5rem;">Read Full Guide →</a>
           </article>
 
-          <!-- Article 6: Storm Checklist -->
-          <article class="article-card-mini" style="background: #132338; border: 1px solid #1e3a5f; border-radius: 12px; padding: 1.75rem; display: flex; flex-direction: column;">
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
-              <span class="card-category" style="color: #f87171; font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.5px;">Storm Damage &amp; Emergency</span>
-              <span class="card-time" style="color: #94a3b8; font-size: 0.8rem;">9 Min Read</span>
+          <!-- Article 6: Post-Storm Checklist -->
+          <article class="blog-hub-card" data-category="leaks">
+            <a href="/blog/what-to-check-after-a-nj-storm/" class="blog-hub-media" aria-label="Read NJ Storm Inspection Checklist">
+              <img src="../assets/images/blog_storm_checklist.jpg" alt="Post-storm roof assessment protocol showing safe ground and attic inspection" width="600" height="338" loading="lazy">
+              <span class="blog-hub-badge">Storm &amp; Emergency</span>
+            </a>
+            <div class="blog-hub-body">
+              <div class="blog-hub-meta">
+                <span class="blog-hub-meta-item">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                  9 Min Read
+                </span>
+                <span>Safety Protocol</span>
+              </div>
+              <h2 class="blog-hub-title">
+                <a href="/blog/what-to-check-after-a-nj-storm/">What to Check After a New Jersey Storm: Safe Roof Inspection Checklist</a>
+              </h2>
+              <p class="blog-hub-excerpt">
+                Safe ground and attic inspection protocol following high winds, heavy rain, or hail. How to spot wind-creased shingles, emergency tarping, and insurance claim steps.
+              </p>
+              <div class="blog-hub-footer">
+                <div class="blog-author-pill">
+                  <span class="blog-author-dot"></span> Emergency Safety
+                </div>
+                <a href="/blog/what-to-check-after-a-nj-storm/" class="blog-read-btn">
+                  Read Full Guide <span>→</span>
+                </a>
+              </div>
             </div>
-            <h2 style="font-size: 1.35rem; font-family: 'Outfit', sans-serif; font-weight: 700; margin-bottom: 0.75rem; line-height: 1.3;">
-              <a href="/blog/what-to-check-after-a-nj-storm/" style="color: #ffffff; text-decoration: none;">What to Check After a New Jersey Storm: Safe Roof Inspection Checklist</a>
-            </h2>
-            <p style="color: #94a3b8; font-size: 0.95rem; line-height: 1.5; flex-grow: 1; margin-bottom: 1.25rem;">
-              Safe ground and attic inspection protocol following high winds, heavy rain, or hail. How to spot wind-creased shingles, emergency tarping, and insurance claim steps.
-            </p>
-            <a href="/blog/what-to-check-after-a-nj-storm/" style="color: #38bdf8; font-weight: 600; font-size: 0.95rem; display: inline-flex; align-items: center; gap: 0.5rem;">Read Full Guide →</a>
           </article>
 
-          <!-- Article 7: How Long Roofs Last in NJ -->
-          <article class="article-card-mini" style="background: #132338; border: 1px solid #1e3a5f; border-radius: 12px; padding: 1.75rem; display: flex; flex-direction: column;">
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
-              <span class="card-category" style="color: #c084fc; font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.5px;">Lifespan &amp; Maintenance</span>
-              <span class="card-time" style="color: #94a3b8; font-size: 0.8rem;">9 Min Read</span>
+          <!-- Article 7: How Long Does a Roof Last in NJ -->
+          <article class="blog-hub-card" data-category="materials">
+            <a href="/blog/how-long-does-a-roof-last-in-nj/" class="blog-hub-media" aria-label="Read NJ Roof Lifespan Guide">
+              <img src="../assets/images/blog_roof_lifespan.jpg" alt="Infographic showing expected roof lifespan by material in New Jersey climate" width="600" height="338" loading="lazy">
+              <span class="blog-hub-badge">Lifespan &amp; Care</span>
+            </a>
+            <div class="blog-hub-body">
+              <div class="blog-hub-meta">
+                <span class="blog-hub-meta-item">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                  9 Min Read
+                </span>
+                <span>Climate Factors</span>
+              </div>
+              <h2 class="blog-hub-title">
+                <a href="/blog/how-long-does-a-roof-last-in-nj/">How Long Does a Roof Last in New Jersey? Lifespans by Material &amp; Climate</a>
+              </h2>
+              <p class="blog-hub-excerpt">
+                Realistic service longevity for architectural shingles, 3-tab, metal, and flat systems under Somerset County freeze-thaw cycles and attic heat buildup.
+              </p>
+              <div class="blog-hub-footer">
+                <div class="blog-author-pill">
+                  <span class="blog-author-dot"></span> Maintenance Data
+                </div>
+                <a href="/blog/how-long-does-a-roof-last-in-nj/" class="blog-read-btn">
+                  Read Full Guide <span>→</span>
+                </a>
+              </div>
             </div>
-            <h2 style="font-size: 1.35rem; font-family: 'Outfit', sans-serif; font-weight: 700; margin-bottom: 0.75rem; line-height: 1.3;">
-              <a href="/blog/how-long-does-a-roof-last-in-nj/" style="color: #ffffff; text-decoration: none;">How Long Does a Roof Last in New Jersey? Lifespans by Material &amp; Climate</a>
-            </h2>
-            <p style="color: #94a3b8; font-size: 0.95rem; line-height: 1.5; flex-grow: 1; margin-bottom: 1.25rem;">
-              Realistic service longevity for architectural shingles, 3-tab, metal, and flat systems under Somerset County freeze-thaw cycles and attic heat buildup.
-            </p>
-            <a href="/blog/how-long-does-a-roof-last-in-nj/" style="color: #38bdf8; font-weight: 600; font-size: 0.95rem; display: inline-flex; align-items: center; gap: 0.5rem;">Read Full Guide →</a>
           </article>
 
-          <!-- Article 8: TPO vs EPDM Commercial -->
-          <article class="article-card-mini" style="background: #132338; border: 1px solid #1e3a5f; border-radius: 12px; padding: 1.75rem; display: flex; flex-direction: column;">
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
-              <span class="card-category" style="color: #38bdf8; font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.5px;">Commercial Flat Roofing</span>
-              <span class="card-time" style="color: #94a3b8; font-size: 0.8rem;">10 Min Read</span>
+          <!-- Article 8: TPO vs EPDM -->
+          <article class="blog-hub-card" data-category="commercial">
+            <a href="/blog/tpo-vs-epdm-roofing/" class="blog-hub-media" aria-label="Read TPO vs EPDM Flat Roofing Guide">
+              <img src="../assets/images/blog_tpo_vs_epdm.svg" alt="TPO vs EPDM commercial flat roofing comparison infographic showing seam engineering" width="600" height="338" loading="lazy">
+              <span class="blog-hub-badge">Commercial Flat</span>
+            </a>
+            <div class="blog-hub-body">
+              <div class="blog-hub-meta">
+                <span class="blog-hub-meta-item">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                  10 Min Read
+                </span>
+                <span>Single-Ply Systems</span>
+              </div>
+              <h2 class="blog-hub-title">
+                <a href="/blog/tpo-vs-epdm-roofing/">TPO vs. EPDM Roofing: Which Flat Roof Membrane Is Best for Your Building?</a>
+              </h2>
+              <p class="blog-hub-excerpt">
+                Commercial single-ply comparison: white hot-air welded TPO vs. black butyl-taped EPDM rubber. Seam peel strength, cool roof energy savings, and ponding water.
+              </p>
+              <div class="blog-hub-footer">
+                <div class="blog-author-pill">
+                  <span class="blog-author-dot"></span> Commercial Grade
+                </div>
+                <a href="/blog/tpo-vs-epdm-roofing/" class="blog-read-btn">
+                  Read Full Guide <span>→</span>
+                </a>
+              </div>
             </div>
-            <h2 style="font-size: 1.35rem; font-family: 'Outfit', sans-serif; font-weight: 700; margin-bottom: 0.75rem; line-height: 1.3;">
-              <a href="/blog/tpo-vs-epdm-roofing/" style="color: #ffffff; text-decoration: none;">TPO vs. EPDM Roofing: Which Flat Roof Membrane Is Best for Your Building?</a>
-            </h2>
-            <p style="color: #94a3b8; font-size: 0.95rem; line-height: 1.5; flex-grow: 1; margin-bottom: 1.25rem;">
-              Commercial single-ply comparison: white hot-air welded TPO vs. black butyl-taped EPDM rubber. Seam peel strength, cool roof energy savings, and ponding water.
-            </p>
-            <a href="/blog/tpo-vs-epdm-roofing/" style="color: #38bdf8; font-weight: 600; font-size: 0.95rem; display: inline-flex; align-items: center; gap: 0.5rem;">Read Full Guide →</a>
           </article>
 
         </div>
@@ -529,24 +707,57 @@
     </section>
 
     <!-- Final High-Conversion CTA Section -->
-    <section class="section-cta-final">
-      <div class="container cta-final-container">
-        <div class="cta-final-content">
-          <span class="badge-accent">Somerset County Roofing Specialists</span>
-          <h2>Need an On-Site Roofing Diagnostic or Transparent Estimate?</h2>
-          <p>
+    <section class="project-cta-final">
+      <div class="container">
+        <div class="project-cta-container">
+          <span class="inner-section-tag">SOMERSET COUNTY ROOFING SPECIALISTS</span>
+          <h2 class="inner-section-title" style="margin-bottom: 1rem;">Need an On-Site Diagnostic or Itemized Estimate?</h2>
+          <p class="inner-section-lead" style="margin-bottom: 2rem;">
             Our master technicians examine roof planes, attic ventilation, flashing transitions, and shingle pliability to give you honest repair vs. replacement guidance.
           </p>
-          <div class="cta-button-group">
-            <a href="tel:+19084659944" class="btn btn-primary btn-lg" data-call-source="blog-hub-footer">
-              <svg class="phone-icon" viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.02-.24c1.12.37 2.33.57 3.57.57a1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.24.2 2.45.57 3.57a1 1 0 01-.24 1.02l-2.21 2.2z"/></svg>
-              <span>Call (908) 465-9944 for Consultation</span>
+          <div class="inner-hero-actions">
+            <a href="tel:+19084659944" class="btn btn-phone cta-phone" data-call-source="blog-footer">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+              Call (908) 465-9944
             </a>
-            <a href="/contact/" class="btn btn-outline btn-lg">Schedule On-Site Inspection</a>
+            <a href="/contact/" class="btn btn-primary" style="padding: 0.75rem 1.6rem;">
+              Schedule On-Site Inspection
+            </a>
           </div>
         </div>
       </div>
     </section>
+
+    <!-- Category Filter Script -->
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const cards = document.querySelectorAll('.blog-hub-card');
+
+        filterBtns.forEach(btn => {
+          btn.addEventListener('click', () => {
+            filterBtns.forEach(b => {
+              b.classList.remove('active');
+              b.setAttribute('aria-selected', 'false');
+            });
+            btn.classList.add('active');
+            btn.setAttribute('aria-selected', 'true');
+
+            const filter = btn.getAttribute('data-filter');
+            cards.forEach(card => {
+              const category = card.getAttribute('data-category');
+              if (filter === 'all' || category === filter) {
+                card.style.display = 'flex';
+                setTimeout(() => card.style.opacity = '1', 10);
+              } else {
+                card.style.opacity = '0';
+                setTimeout(() => card.style.display = 'none', 150);
+              }
+            });
+          });
+        });
+      });
+    </script>
   </main>
 
 <!-- ====================================================================
@@ -700,7 +911,7 @@
         <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
         Call a Roofer
       </a>
-      <a href="#estimate-form" class="sticky-estimate-btn">
+      <a href="/contact/" class="sticky-estimate-btn">
         Get Estimate
       </a>
     </div>
