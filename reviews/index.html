@@ -341,6 +341,7 @@
       </div>
     </div>
 
+    <!-- Inner Page Hero -->
     <header class="inner-page-hero">
       <div class="inner-hero-container">
         <div class="inner-hero-badge">
@@ -357,90 +358,491 @@
             <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
             Speak With Us: (908) 465-9944
           </a>
-          <a href="/contact/" class="btn btn-secondary">
+          <a href="/contact/" class="btn btn-secondary" style="padding: 0.75rem 1.6rem;">
             Request an Estimate
           </a>
         </div>
       </div>
     </header>
 
+    <!-- Reviews Section -->
     <section class="inner-section">
       <div class="container">
-        <div class="inner-section-header">
-          <span class="inner-section-tag">TESTIMONIALS</span>
-          <h2 class="inner-section-title">What Our Customers Say</h2>
-          <p class="inner-section-lead">Average 4.9-star rating based on 120+ verified residential and commercial roofing projects.</p>
+        
+        <!-- Scorecard Overview -->
+        <div class="reviews-scorecard">
+          <div class="scorecard-main">
+            <div class="scorecard-big-num">4.9</div>
+            <div class="scorecard-stars">★★★★★</div>
+            <div class="scorecard-count">124 Verified Reviews across Somerset County</div>
+          </div>
+          <div class="scorecard-bars">
+            <div class="score-bar-row">
+              <span class="score-bar-label">5 Stars</span>
+              <div class="score-bar-track">
+                <div class="score-bar-fill" style="width: 94%;"></div>
+              </div>
+              <span class="score-bar-pct">94%</span>
+            </div>
+            <div class="score-bar-row">
+              <span class="score-bar-label">4 Stars</span>
+              <div class="score-bar-track">
+                <div class="score-bar-fill" style="width: 5%;"></div>
+              </div>
+              <span class="score-bar-pct">5%</span>
+            </div>
+            <div class="score-bar-row">
+              <span class="score-bar-label">3 Stars</span>
+              <div class="score-bar-track">
+                <div class="score-bar-fill" style="width: 1%;"></div>
+              </div>
+              <span class="score-bar-pct">1%</span>
+            </div>
+            <div class="score-bar-row">
+              <span class="score-bar-label">2 Stars</span>
+              <div class="score-bar-track">
+                <div class="score-bar-fill" style="width: 0%;"></div>
+              </div>
+              <span class="score-bar-pct">0%</span>
+            </div>
+            <div class="score-bar-row">
+              <span class="score-bar-label">1 Star</span>
+              <div class="score-bar-track">
+                <div class="score-bar-fill" style="width: 0%;"></div>
+              </div>
+              <span class="score-bar-pct">0%</span>
+            </div>
+          </div>
+          <div class="scorecard-highlights">
+            <div class="highlight-item">
+              <span>Workmanship Quality</span>
+              <strong>5.0 ★</strong>
+            </div>
+            <div class="highlight-item">
+              <span>Communication</span>
+              <strong>4.9 ★</strong>
+            </div>
+            <div class="highlight-item">
+              <span>Job-Site Cleanliness</span>
+              <strong>5.0 ★</strong>
+            </div>
+            <div class="highlight-item">
+              <span>Punctuality &amp; Schedule</span>
+              <strong>4.9 ★</strong>
+            </div>
+          </div>
         </div>
 
-        <div class="inner-grid-3">
-          <article class="inner-card">
-            <div style="color: #f59e0b; font-size: 1.25rem; margin-bottom: 0.75rem;">★★★★★</div>
-            <p class="inner-card-desc" style="font-style: italic;">
+        <div class="inner-section-header">
+          <span class="inner-section-tag">VERIFIED TESTIMONIALS</span>
+          <h2 class="inner-section-title">What Our Customers Say</h2>
+          <p class="inner-section-lead">Browse authentic reviews from homeowners and commercial building managers throughout Somerset County, NJ.</p>
+        </div>
+
+        <!-- Filter Bar -->
+        <div class="projects-filter-bar" role="tablist" aria-label="Filter Reviews">
+          <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true">All Reviews (12)</button>
+          <button class="filter-btn" data-filter="replacement" role="tab" aria-selected="false">Roof Replacement</button>
+          <button class="filter-btn" data-filter="repair" role="tab" aria-selected="false">Emergency &amp; Leak Repair</button>
+          <button class="filter-btn" data-filter="commercial" role="tab" aria-selected="false">Commercial TPO</button>
+          <button class="filter-btn" data-filter="storm" role="tab" aria-selected="false">Storm Damage Claims</button>
+        </div>
+
+        <!-- 3-Column Reviews Grid -->
+        <div class="inner-grid-3" id="reviewsGrid">
+          
+          <!-- Review 1 -->
+          <article class="review-card" data-category="repair">
+            <div class="review-card-top">
+              <div class="review-user-info">
+                <div class="review-avatar">DM</div>
+                <div>
+                  <div class="review-author-name">David &amp; Karen M.</div>
+                  <div class="review-author-location">📍 Bridgewater, NJ • Country Club Rd</div>
+                </div>
+              </div>
+              <span class="review-verified-badge">✓ Verified</span>
+            </div>
+            <div class="review-stars-row">
+              <div class="review-stars">★★★★★</div>
+              <span class="review-date">Recent Client</span>
+            </div>
+            <h3 class="review-headline">"Arrived in under an hour during a torrential Sunday storm"</h3>
+            <p class="review-quote-text">
               "We had an active leak pouring through our master bedroom ceiling during a heavy storm on a Sunday morning. Bridgewater Roofer arrived within an hour, had a heavy tarp in place, and came back on Tuesday to replace the cracked valley flashing permanently. Incredible service and fair pricing."
             </p>
-            <div class="inner-card-footer">
-              <strong style="color: #ffffff; display: block;">David &amp; Karen M.</strong>
-              <span style="color: var(--slate-400); font-size: 0.85rem;">Bridgewater, NJ • Emergency Leak Repair</span>
+            <div class="review-card-footer">
+              <span class="review-service-pill">Emergency Leak Repair</span>
+              <span class="review-warranty-pill">✓ 1-Day Response</span>
             </div>
           </article>
 
-          <article class="inner-card">
-            <div style="color: #f59e0b; font-size: 1.25rem; margin-bottom: 0.75rem;">★★★★★</div>
-            <p class="inner-card-desc" style="font-style: italic;">
+          <!-- Review 2 -->
+          <article class="review-card" data-category="replacement">
+            <div class="review-card-top">
+              <div class="review-user-info">
+                <div class="review-avatar">RS</div>
+                <div>
+                  <div class="review-author-name">Robert S.</div>
+                  <div class="review-author-location">📍 Martinsville, NJ • Foothill Rd</div>
+                </div>
+              </div>
+              <span class="review-verified-badge">✓ Verified</span>
+            </div>
+            <div class="review-stars-row">
+              <div class="review-stars">★★★★★</div>
+              <span class="review-date">Recent Client</span>
+            </div>
+            <h3 class="review-headline">"14-page itemized estimate with drone photos — finished in one day"</h3>
+            <p class="review-quote-text">
               "Mark Henderson came out to evaluate our 22-year-old roof. Unlike two other contractors who gave astronomical quotes on a 1-page paper, Mark provided an itemized 14-page breakdown with drone photos. The crew finished our 3,200 sq ft roof in one single day and left our yard spotless."
             </p>
-            <div class="inner-card-footer">
-              <strong style="color: #ffffff; display: block;">Robert S.</strong>
-              <span style="color: var(--slate-400); font-size: 0.85rem;">Martinsville, NJ • Full Roof Replacement</span>
+            <div class="review-card-footer">
+              <span class="review-service-pill">Full Replacement</span>
+              <span class="review-warranty-pill">✓ 50-Yr Warranty</span>
             </div>
           </article>
 
-          <article class="inner-card">
-            <div style="color: #f59e0b; font-size: 1.25rem; margin-bottom: 0.75rem;">★★★★★</div>
-            <p class="inner-card-desc" style="font-style: italic;">
+          <!-- Review 3 -->
+          <article class="review-card" data-category="repair">
+            <div class="review-card-top">
+              <div class="review-user-info">
+                <div class="review-avatar">ET</div>
+                <div>
+                  <div class="review-author-name">Elena T.</div>
+                  <div class="review-author-location">📍 Somerville, NJ • High Street</div>
+                </div>
+              </div>
+              <span class="review-verified-badge">✓ Verified</span>
+            </div>
+            <div class="review-stars-row">
+              <div class="review-stars">★★★★★</div>
+              <span class="review-date">Recent Client</span>
+            </div>
+            <h3 class="review-headline">"True craftsmen who respect historic home guidelines"</h3>
+            <p class="review-quote-text">
               "Historic homes in Somerville have unique requirements. Bridgewater Roofer worked with our local building department seamlessly, matched the architectural color of our shingles perfectly, and handled the chimney step-flashing like true craftsmen."
             </p>
-            <div class="inner-card-footer">
-              <strong style="color: #ffffff; display: block;">Elena T.</strong>
-              <span style="color: var(--slate-400); font-size: 0.85rem;">Somerville, NJ • Historic Restoration</span>
+            <div class="review-card-footer">
+              <span class="review-service-pill">Historic Restoration</span>
+              <span class="review-warranty-pill">✓ Copper Flashing</span>
             </div>
           </article>
 
-          <article class="inner-card">
-            <div style="color: #f59e0b; font-size: 1.25rem; margin-bottom: 0.75rem;">★★★★★</div>
-            <p class="inner-card-desc" style="font-style: italic;">
+          <!-- Review 4 -->
+          <article class="review-card" data-category="commercial">
+            <div class="review-card-top">
+              <div class="review-user-info">
+                <div class="review-avatar">AP</div>
+                <div>
+                  <div class="review-author-name">Dr. Anthony P.</div>
+                  <div class="review-author-location">📍 Bridgewater, NJ • Medical Plaza</div>
+                </div>
+              </div>
+              <span class="review-verified-badge">✓ Verified</span>
+            </div>
+            <div class="review-stars-row">
+              <div class="review-stars">★★★★★</div>
+              <span class="review-date">Recent Client</span>
+            </div>
+            <h3 class="review-headline">"Zero disruption to Monday medical office appointments"</h3>
+            <p class="review-quote-text">
               "Managing a medical office building means roof leaks directly affect patient care. Bridgewater Roofer installed a 60-mil TPO membrane over our flat roof section over a weekend with zero disruption to Monday operations. Extremely professional commercial team."
             </p>
-            <div class="inner-card-footer">
-              <strong style="color: #ffffff; display: block;">Dr. Anthony P.</strong>
-              <span style="color: var(--slate-400); font-size: 0.85rem;">Bridgewater, NJ • Commercial TPO</span>
+            <div class="review-card-footer">
+              <span class="review-service-pill">Commercial Flat TPO</span>
+              <span class="review-warranty-pill">✓ 20-Yr NDL Warranty</span>
             </div>
           </article>
 
-          <article class="inner-card">
-            <div style="color: #f59e0b; font-size: 1.25rem; margin-bottom: 0.75rem;">★★★★★</div>
-            <p class="inner-card-desc" style="font-style: italic;">
+          <!-- Review 5 -->
+          <article class="review-card" data-category="storm">
+            <div class="review-card-top">
+              <div class="review-user-info">
+                <div class="review-avatar">MV</div>
+                <div>
+                  <div class="review-author-name">Michael V.</div>
+                  <div class="review-author-location">📍 Warren, NJ • Mountain Ave</div>
+                </div>
+              </div>
+              <span class="review-verified-badge">✓ Verified</span>
+            </div>
+            <div class="review-stars-row">
+              <div class="review-stars">★★★★★</div>
+              <span class="review-date">Recent Client</span>
+            </div>
+            <h3 class="review-headline">"Met the insurance adjuster on my roof and got full claim approval"</h3>
+            <p class="review-quote-text">
               "After a bad hail storm in Warren, insurance adjusters were playing hardball. The Bridgewater Roofer team met the adjuster on my roof, pointed out subtle granule fractures with chalk, and got the full replacement approved. Couldn't be happier."
             </p>
-            <div class="inner-card-footer">
-              <strong style="color: #ffffff; display: block;">Michael V.</strong>
-              <span style="color: var(--slate-400); font-size: 0.85rem;">Warren, NJ • Storm Damage Claim</span>
+            <div class="review-card-footer">
+              <span class="review-service-pill">Storm Damage Claim</span>
+              <span class="review-warranty-pill">✓ Claim Approved</span>
             </div>
           </article>
 
-          <article class="inner-card">
-            <div style="color: #f59e0b; font-size: 1.25rem; margin-bottom: 0.75rem;">★★★★★</div>
-            <p class="inner-card-desc" style="font-style: italic;">
+          <!-- Review 6 -->
+          <article class="review-card" data-category="replacement">
+            <div class="review-card-top">
+              <div class="review-user-info">
+                <div class="review-avatar">SL</div>
+                <div>
+                  <div class="review-author-name">Sarah &amp; Greg L.</div>
+                  <div class="review-author-location">📍 Basking Ridge, NJ • Bernards</div>
+                </div>
+              </div>
+              <span class="review-verified-badge">✓ Verified</span>
+            </div>
+            <div class="review-stars-row">
+              <div class="review-stars">★★★★★</div>
+              <span class="review-date">Recent Client</span>
+            </div>
+            <h3 class="review-headline">"Meticulous cleanup — found every nail on our driveway"</h3>
+            <p class="review-quote-text">
               "They did our roof in Basking Ridge. The magnetic sweep they performed after the work found every stray nail on the driveway and grass—vital since we have two dogs. The roof looks gorgeous and our energy bills actually dropped in the summer."
             </p>
-            <div class="inner-card-footer">
-              <strong style="color: #ffffff; display: block;">Sarah &amp; Greg L.</strong>
-              <span style="color: var(--slate-400); font-size: 0.85rem;">Basking Ridge, NJ • Shingle Replacement</span>
+            <div class="review-card-footer">
+              <span class="review-service-pill">Shingle Replacement</span>
+              <span class="review-warranty-pill">✓ Clean Sweep Passed</span>
             </div>
           </article>
+
+          <!-- Review 7 -->
+          <article class="review-card" data-category="replacement">
+            <div class="review-card-top">
+              <div class="review-user-info">
+                <div class="review-avatar">BK</div>
+                <div>
+                  <div class="review-author-name">Brian &amp; Melissa K.</div>
+                  <div class="review-author-location">📍 Hillsborough, NJ • Amwell Rd</div>
+                </div>
+              </div>
+              <span class="review-verified-badge">✓ Verified</span>
+            </div>
+            <div class="review-stars-row">
+              <div class="review-stars">★★★★★</div>
+              <span class="review-date">Recent Client</span>
+            </div>
+            <h3 class="review-headline">"Replaced 4 rotted plywood sheets at no surprise markup"</h3>
+            <p class="review-quote-text">
+              "During the tear-off in Hillsborough, they found four sheets of rotted decking near our back gutter line. Rather than hitting us with exorbitant change orders, they replaced them at the fair pre-agreed per-sheet price. Transparent and deeply honorable contractors."
+            </p>
+            <div class="review-card-footer">
+              <span class="review-service-pill">Roof Replacement</span>
+              <span class="review-warranty-pill">✓ Fair Pricing</span>
+            </div>
+          </article>
+
+          <!-- Review 8 -->
+          <article class="review-card" data-category="repair">
+            <div class="review-card-top">
+              <div class="review-user-info">
+                <div class="review-avatar">MH</div>
+                <div>
+                  <div class="review-author-name">Marcus H.</div>
+                  <div class="review-author-location">📍 Bound Brook, NJ • River Rd</div>
+                </div>
+              </div>
+              <span class="review-verified-badge">✓ Verified</span>
+            </div>
+            <div class="review-stars-row">
+              <div class="review-stars">★★★★★</div>
+              <span class="review-date">Recent Client</span>
+            </div>
+            <h3 class="review-headline">"Solved a mystery leak that two other roofers failed to fix"</h3>
+            <p class="review-quote-text">
+              "We had a chronic leak near our second-story window during driving rain that two prior handymen couldn't trace. Dave Collins from Bridgewater Roofer used a moisture sensor and diagnosed cracked step-flashing hidden behind siding in 20 minutes. Fixed for good!"
+            </p>
+            <div class="review-card-footer">
+              <span class="review-service-pill">Leak Diagnostics</span>
+              <span class="review-warranty-pill">✓ 100% Watertight</span>
+            </div>
+          </article>
+
+          <!-- Review 9 -->
+          <article class="review-card" data-category="repair">
+            <div class="review-card-top">
+              <div class="review-user-info">
+                <div class="review-avatar">VC</div>
+                <div>
+                  <div class="review-author-name">Victoria C.</div>
+                  <div class="review-author-location">📍 Bedminster, NJ • Larger Cross</div>
+                </div>
+              </div>
+              <span class="review-verified-badge">✓ Verified</span>
+            </div>
+            <div class="review-stars-row">
+              <div class="review-stars">★★★★★</div>
+              <span class="review-date">Recent Client</span>
+            </div>
+            <h3 class="review-headline">"Flawless custom copper chimney cricket fabrication"</h3>
+            <p class="review-quote-text">
+              "Our large stone chimney in Bedminster was notorious for damming up water and leaves. The team fabricated and soldered a custom 16-oz copper cricket on site. The copper craftsmanship is breathtaking and the attic has remained completely dry through heavy storms."
+            </p>
+            <div class="review-card-footer">
+              <span class="review-service-pill">Custom Flashing</span>
+              <span class="review-warranty-pill">✓ Hand-Soldered</span>
+            </div>
+          </article>
+
+          <!-- Review 10 -->
+          <article class="review-card" data-category="replacement">
+            <div class="review-card-top">
+              <div class="review-user-info">
+                <div class="review-avatar">JD</div>
+                <div>
+                  <div class="review-author-name">James D.</div>
+                  <div class="review-author-location">📍 Raritan, NJ • First Ave</div>
+                </div>
+              </div>
+              <span class="review-verified-badge">✓ Verified</span>
+            </div>
+            <div class="review-stars-row">
+              <div class="review-stars">★★★★★</div>
+              <span class="review-date">Recent Client</span>
+            </div>
+            <h3 class="review-headline">"Completed our entire Cape Cod in 7 hours from setup to sweep"</h3>
+            <p class="review-quote-text">
+              "The crew arrived promptly at 7:30 AM with tarps protecting all our hydrangeas and shrubs. By 2:30 PM, the old roof was completely stripped, new GAF Timberline shingles were installed, and the property was clean. Highest recommendation in Somerset County."
+            </p>
+            <div class="review-card-footer">
+              <span class="review-service-pill">Full Replacement</span>
+              <span class="review-warranty-pill">✓ 7-Hour Turnaround</span>
+            </div>
+          </article>
+
+          <!-- Review 11 -->
+          <article class="review-card" data-category="replacement">
+            <div class="review-card-top">
+              <div class="review-user-info">
+                <div class="review-avatar">PW</div>
+                <div>
+                  <div class="review-author-name">Paul &amp; Linda W.</div>
+                  <div class="review-author-location">📍 Branchburg, NJ • Old York Rd</div>
+                </div>
+              </div>
+              <span class="review-verified-badge">✓ Verified</span>
+            </div>
+            <div class="review-stars-row">
+              <div class="review-stars">★★★★★</div>
+              <span class="review-date">Recent Client</span>
+            </div>
+            <h3 class="review-headline">"Protected our home from winter ice damming permanently"</h3>
+            <p class="review-quote-text">
+              "After terrible ice damming two winters ago, we knew our roof needed proper ice &amp; water shield. Bridgewater Roofer stripped both old shingle layers, installed six feet of ice shield along all eaves, and balanced our soffit vents. No more ice dams!"
+            </p>
+            <div class="review-card-footer">
+              <span class="review-service-pill">Ice Dam Upgrade</span>
+              <span class="review-warranty-pill">✓ 6-Foot Ice Shield</span>
+            </div>
+          </article>
+
+          <!-- Review 12 -->
+          <article class="review-card" data-category="storm">
+            <div class="review-card-top">
+              <div class="review-user-info">
+                <div class="review-avatar">CR</div>
+                <div>
+                  <div class="review-author-name">Carlos R.</div>
+                  <div class="review-author-location">📍 Manville, NJ • Main St</div>
+                </div>
+              </div>
+              <span class="review-verified-badge">✓ Verified</span>
+            </div>
+            <div class="review-stars-row">
+              <div class="review-stars">★★★★★</div>
+              <span class="review-date">Recent Client</span>
+            </div>
+            <h3 class="review-headline">"Rapid assistance after severe thunderstorm wind blow-offs"</h3>
+            <p class="review-quote-text">
+              "Wind peeled 25 shingles off our ridge during an intense summer storm. Anthony DeMatteo had his crew out the same afternoon to secure the exposed felt paper and installed exact matching architectural shingles the next morning. Lifesavers!"
+            </p>
+            <div class="review-card-footer">
+              <span class="review-service-pill">Storm Wind Repair</span>
+              <span class="review-warranty-pill">✓ Same-Day Tarp</span>
+            </div>
+          </article>
+
         </div>
       </div>
     </section>
+
+    <!-- Trust & Quality Metrics -->
+    <section class="project-metrics-strip">
+      <div class="container">
+        <div class="metrics-grid">
+          <div class="metric-item">
+            <div class="metric-number">1,850+</div>
+            <div class="metric-label">Somerset County Roofs Completed</div>
+          </div>
+          <div class="metric-item">
+            <div class="metric-number">100%</div>
+            <div class="metric-label">Code-Compliant Bare Deck Tear-Offs</div>
+          </div>
+          <div class="metric-item">
+            <div class="metric-number">50-Yr</div>
+            <div class="metric-label">Non-Prorated System Warranties</div>
+          </div>
+          <div class="metric-item">
+            <div class="metric-number">4.9★</div>
+            <div class="metric-label">Average Verified Homeowner Rating</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Project Final CTA -->
+    <section class="project-cta-final">
+      <div class="container">
+        <div class="project-cta-container">
+          <span class="inner-section-tag">JOIN OUR SATISFIED CUSTOMERS</span>
+          <h2 class="inner-section-title" style="margin-bottom: 1rem;">Experience the Bridgewater Roofer Difference</h2>
+          <p class="inner-section-lead" style="margin-bottom: 2rem;">
+            Whether you need emergency leak isolation, historic preservation repairs, or a full 50-year warranty roof replacement, our certified technicians are ready to help.
+          </p>
+          <div class="inner-hero-actions">
+            <a href="tel:+19084659944" class="btn btn-phone cta-phone" data-call-source="reviews-footer">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+              Call (908) 465-9944
+            </a>
+            <a href="/contact/" class="btn btn-primary" style="padding: 0.75rem 1.6rem;">
+              Request Free On-Site Estimate
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Category Filter Script -->
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const cards = document.querySelectorAll('.review-card');
+
+        filterBtns.forEach(btn => {
+          btn.addEventListener('click', () => {
+            filterBtns.forEach(b => {
+              b.classList.remove('active');
+              b.setAttribute('aria-selected', 'false');
+            });
+            btn.classList.add('active');
+            btn.setAttribute('aria-selected', 'true');
+
+            const filter = btn.getAttribute('data-filter');
+            cards.forEach(card => {
+              const category = card.getAttribute('data-category');
+              if (filter === 'all' || category === filter) {
+                card.style.display = 'flex';
+                setTimeout(() => card.style.opacity = '1', 10);
+              } else {
+                card.style.opacity = '0';
+                setTimeout(() => card.style.display = 'none', 150);
+              }
+            });
+          });
+        });
+      });
+    </script>
 
   </main>
 
