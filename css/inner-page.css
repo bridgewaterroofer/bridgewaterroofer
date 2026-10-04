@@ -1,48 +1,389 @@
 /**
- * BRIDGEWATER ROOFER — INNER PAGE CORE STYLES
- * Common layout, breadcrumbs, sub-heroes, and utility styling across inner pages.
+ * BRIDGEWATER ROOFER — INNER PAGE CORE DESIGN SYSTEM
+ * Comprehensive layouts, breadcrumbs, sub-heroes, cards, grids, and responsive UX.
  */
 
-.inner-page-hero {
-  position: relative;
-  background: linear-gradient(135deg, var(--navy-950, #0B192C) 0%, var(--navy-900, #1E3E62) 100%);
-  color: #ffffff;
-  padding: clamp(3rem, 6vw, 5.5rem) 0 clamp(2.5rem, 5vw, 4rem);
-  border-bottom: 3px solid var(--orange, #FF6500);
+/* --------------------------------------------------------------------------
+   Breadcrumb Bar
+   -------------------------------------------------------------------------- */
+.inner-breadcrumb-bar {
+  background: var(--navy-950, #07131f);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 0.85rem 0;
+  font-size: 0.875rem;
 }
 
-.inner-breadcrumbs {
+.inner-breadcrumb-nav {
   display: flex;
-  flex-wrap: wrap;
   align-items: center;
   gap: 0.5rem;
-  font-size: 0.875rem;
-  color: var(--slate-300, #CBD5E1);
-  margin-bottom: 1.5rem;
+  color: var(--slate-400, #94a3b8);
 }
 
-.inner-breadcrumbs a {
-  color: var(--slate-200, #E2E8F0);
+.inner-breadcrumb-nav a {
+  color: var(--slate-300, #cbd5e1);
   text-decoration: none;
+  font-weight: 500;
   transition: color 0.2s ease;
 }
 
-.inner-breadcrumbs a:hover {
-  color: var(--orange, #FF6500);
+.inner-breadcrumb-nav a:hover {
+  color: var(--orange, #f47a24);
 }
 
-.inner-breadcrumbs .separator {
-  color: var(--slate-400, #94A3B8);
+.breadcrumb-sep {
+  color: var(--slate-600, #475569);
   font-size: 0.75rem;
 }
 
-.inner-page-content {
-  padding: clamp(3rem, 5vw, 5rem) 0;
-  background: var(--bg-primary, #ffffff);
+.breadcrumb-current {
+  color: var(--orange, #f47a24);
+  font-weight: 600;
 }
 
-.inner-container {
-  max-width: 1200px;
+/* --------------------------------------------------------------------------
+   Inner Page Hero
+   -------------------------------------------------------------------------- */
+.inner-page-hero {
+  position: relative;
+  background: radial-gradient(circle at 50% 20%, rgba(30, 58, 95, 0.6) 0%, rgba(11, 25, 44, 0.95) 70%, #07131f 100%);
+  color: #ffffff;
+  padding: clamp(3.5rem, 6vw, 5rem) 1.25rem clamp(3rem, 5vw, 4.5rem);
+  text-align: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+}
+
+.inner-hero-container {
+  max-width: 920px;
   margin: 0 auto;
-  padding: 0 1.25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.inner-hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.45rem 1.15rem;
+  border-radius: 9999px;
+  background: rgba(244, 122, 36, 0.12);
+  border: 1px solid rgba(244, 122, 36, 0.35);
+  color: var(--orange, #f47a24);
+  font-family: var(--font-heading, 'Outfit', sans-serif);
+  font-size: 0.8125rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 1.25rem;
+}
+
+.inner-hero-title {
+  font-family: var(--font-heading, 'Outfit', sans-serif);
+  font-size: clamp(2.2rem, 4.5vw, 3.25rem);
+  font-weight: 900;
+  line-height: 1.15;
+  color: #ffffff !important;
+  margin-bottom: 1.25rem;
+  letter-spacing: -0.02em;
+}
+
+.inner-hero-lead {
+  font-size: clamp(1.05rem, 1.8vw, 1.2rem);
+  line-height: 1.65;
+  color: var(--slate-300, #cbd5e1);
+  max-width: 760px;
+  margin: 0 auto 2rem;
+}
+
+.inner-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+/* --------------------------------------------------------------------------
+   Inner Page Section Structure
+   -------------------------------------------------------------------------- */
+.inner-section {
+  padding: clamp(3.5rem, 6vw, 5.5rem) 0;
+  background: var(--bg-surface, #0f172a);
+}
+
+.inner-section-header {
+  text-align: center;
+  max-width: 780px;
+  margin: 0 auto 3rem;
+}
+
+.inner-section-tag {
+  display: inline-block;
+  font-family: var(--font-heading, 'Outfit', sans-serif);
+  font-size: 0.8125rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--orange, #f47a24);
+  margin-bottom: 0.75rem;
+}
+
+.inner-section-title {
+  font-family: var(--font-heading, 'Outfit', sans-serif);
+  font-size: clamp(1.85rem, 3.5vw, 2.5rem);
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 1rem;
+  letter-spacing: -0.02em;
+}
+
+.inner-section-lead {
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  color: var(--slate-400, #94a3b8);
+}
+
+/* --------------------------------------------------------------------------
+   Filter Bar
+   -------------------------------------------------------------------------- */
+.projects-filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  margin-bottom: 3rem;
+}
+
+.filter-btn {
+  background: #132338;
+  border: 1px solid #1e3a5f;
+  color: var(--slate-300, #cbd5e1);
+  padding: 0.6rem 1.25rem;
+  border-radius: 9999px;
+  font-family: var(--font-heading, 'Outfit', sans-serif);
+  font-size: 0.875rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.filter-btn:hover {
+  background: #1a3150;
+  border-color: rgba(244, 122, 36, 0.4);
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+.filter-btn.active {
+  background: var(--orange, #f47a24);
+  border-color: var(--orange, #f47a24);
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(244, 122, 36, 0.35);
+}
+
+/* --------------------------------------------------------------------------
+   3-Column Grid for Cards
+   -------------------------------------------------------------------------- */
+.inner-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+@media (max-width: 1100px) {
+  .inner-grid-3 {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 720px) {
+  .inner-grid-3 {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Project Cards UI / UX
+   -------------------------------------------------------------------------- */
+.project-card {
+  background: #132338;
+  border: 1px solid #1e3a5f;
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease, border-color 0.3s ease;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(244, 122, 36, 0.5);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(244, 122, 36, 0.15);
+}
+
+.project-card-media {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background: #0b1329;
+}
+
+.project-card-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.project-card:hover .project-card-media img {
+  transform: scale(1.05);
+}
+
+.project-card-badge {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  background: rgba(11, 25, 44, 0.88);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: var(--orange, #f47a24);
+  font-family: var(--font-heading, 'Outfit', sans-serif);
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.3rem 0.75rem;
+  border-radius: 6px;
+}
+
+.project-card-body {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.project-location {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: var(--orange, #f47a24);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+}
+
+.project-card-title {
+  font-family: var(--font-heading, 'Outfit', sans-serif);
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1.3;
+  margin-bottom: 0.85rem;
+}
+
+.project-spec-box {
+  background: rgba(11, 25, 44, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 8px;
+  padding: 0.9rem;
+  margin-bottom: 1.15rem;
+  font-size: 0.875rem;
+  line-height: 1.55;
+  color: var(--slate-300, #cbd5e1);
+}
+
+.project-spec-item {
+  margin-bottom: 0.5rem;
+}
+
+.project-spec-item:last-child {
+  margin-bottom: 0;
+}
+
+.project-spec-label {
+  font-weight: 700;
+  color: #ffffff;
+  display: inline-block;
+  min-width: 70px;
+}
+
+.project-card-footer {
+  margin-top: auto;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.8125rem;
+  color: #4ade80;
+  font-weight: 600;
+}
+
+/* --------------------------------------------------------------------------
+   Trust & Metrics Strip
+   -------------------------------------------------------------------------- */
+.project-metrics-strip {
+  padding: 3rem 0;
+  background: #07131f;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  text-align: center;
+}
+
+@media (max-width: 900px) {
+  .metrics-grid {
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .metrics-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.metric-number {
+  font-family: var(--font-heading, 'Outfit', sans-serif);
+  font-size: clamp(2rem, 3.5vw, 2.75rem);
+  font-weight: 900;
+  color: var(--orange, #f47a24);
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.metric-label {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--slate-300, #cbd5e1);
+}
+
+/* --------------------------------------------------------------------------
+   CTA Final Section
+   -------------------------------------------------------------------------- */
+.project-cta-final {
+  padding: 4.5rem 0;
+  background: radial-gradient(circle at 50% 50%, rgba(30, 58, 95, 0.5) 0%, rgba(11, 25, 44, 0.95) 80%, #07131f 100%);
+  text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.project-cta-container {
+  max-width: 740px;
+  margin: 0 auto;
 }
