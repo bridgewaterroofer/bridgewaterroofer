@@ -1992,6 +1992,25 @@
   border-color: var(--navy-900);
 }
 
+.community-chip.is-center:hover {
+  background: var(--orange);
+  border-color: var(--orange);
+  color: var(--white);
+}
+
+.service-area-map svg a {
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.service-area-map svg a:hover circle {
+  fill: var(--orange);
+}
+
+.service-area-map svg a:hover text {
+  fill: var(--orange);
+}
+
 /* ==========================================================================
    SECTION 17: BRIDGEWATER ROOFING FAQS (Accordion)
    ========================================================================== */
