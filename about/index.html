@@ -372,117 +372,358 @@
   </aside>
 
   <main id="main-content">
-    <!-- Page Hero -->
-    <header class="article-hero" style="padding-bottom: 3.5rem;">
-      <div class="container hero-container" style="text-align: center; max-width: 800px; margin: 0 auto;">
-        <nav class="breadcrumb-nav" aria-label="Breadcrumb" style="justify-content: center;">
-          <ol class="breadcrumb-list">
-            <li><a href="/">Home</a></li>
-            <li aria-current="page">About Us</li>
-          </ol>
+
+    <div class="inner-breadcrumb-bar">
+      <div class="container">
+        <nav class="inner-breadcrumb-nav" aria-label="Breadcrumb">
+          <a href="/">Home</a>
+          <span class="breadcrumb-sep" aria-hidden="true">/</span>
+          <span class="breadcrumb-current" aria-current="page">About Us</span>
         </nav>
+      </div>
+    </div>
 
-        <div class="hero-badge-wrap" style="justify-content: center;">
-          <span class="category-badge">Local Somerset County Craftsmen</span>
-          <span class="reading-time">NJ HIC #13VH09876500</span>
+    <!-- Inner Page Hero -->
+    <header class="inner-page-hero">
+      <div class="inner-hero-container">
+        <div class="inner-hero-badge">
+          Somerset County Roofing Specialists
         </div>
-
-        <h1 class="article-h1" style="font-size: clamp(2.2rem, 4.5vw, 3.2rem);">About Bridgewater Roofer</h1>
-
-        <p class="article-lead" style="font-size: 1.15rem; color: #cbd5e1; max-width: 720px; margin: 0 auto;">
-          Built on a foundation of engineering integrity, transparent estimates, and certified roofing craftsmanship, Bridgewater Roofer has protected Central New Jersey homes and commercial properties for over two decades.
+        <h1 class="inner-hero-title">
+          Engineering Integrity. Certified Craftsmanship.
+        </h1>
+        <p class="inner-hero-lead">
+          Headquartered at 400 Commons Way in Bridgewater, NJ. We provide homeowner-focused diagnostics, bare-decking tear-off integrity, and 50-year manufacturer warranty backing across Central New Jersey.
         </p>
+        <div class="inner-hero-actions">
+          <a href="tel:+19084659944" class="btn btn-phone cta-phone" data-call-source="about-hero">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+            Speak With Our Team: (908) 465-9944
+          </a>
+          <a href="/contact/" class="btn btn-secondary" style="padding: 0.75rem 1.6rem;">
+            Request Free Estimate
+          </a>
+        </div>
       </div>
     </header>
 
-    <!-- Content Sections -->
-    <section style="padding: 4.5rem 0; background: var(--bg-surface, #0f172a);">
-      <div class="container" style="max-width: 900px; margin: 0 auto;">
-        
-        <article class="article-main" style="color: #cbd5e1; font-size: 1.05rem; line-height: 1.7;">
-          <h2 style="color: #ffffff; font-size: 1.8rem; font-family: 'Outfit', sans-serif; margin-bottom: 1rem;">Who We Are</h2>
-          <p>
-            Bridgewater Roofer is a full-service residential and commercial roofing contracting firm based at <strong>400 Commons Way in Bridgewater, NJ</strong>. Unlike franchise operations or traveling out-of-state storm chasers, our team lives and works directly within Somerset County. We understand the specific meteorological and structural challenges that New Jersey properties face: severe freeze-thaw cycles, Watchung Mountain wind gusts, heavy tree canopy shade, and strict New Jersey Uniform Construction Code (UCC) requirements.
-          </p>
+    <!-- Trust Metrics Bar -->
+    <section class="trust-metrics-section" style="background: #091524; border-bottom: 1px solid rgba(255, 255, 255, 0.08); padding: 2.25rem 0;">
+      <div class="container">
+        <div class="metrics-grid">
+          <div class="metric-item">
+            <div class="metric-number">22+</div>
+            <div class="metric-label">Years Serving Somerset County</div>
+          </div>
+          <div class="metric-item">
+            <div class="metric-number">1,850+</div>
+            <div class="metric-label">Roofs Installed &amp; Repaired</div>
+          </div>
+          <div class="metric-item">
+            <div class="metric-number">50-Yr</div>
+            <div class="metric-label">Non-Prorated Warranty Backing</div>
+          </div>
+          <div class="metric-item">
+            <div class="metric-number">$2M</div>
+            <div class="metric-label">Full Liability &amp; Workers' Comp</div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-          <h2 style="color: #ffffff; font-size: 1.8rem; font-family: 'Outfit', sans-serif; margin: 2.5rem 0 1rem;">Our Core Principles</h2>
-          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; margin-bottom: 2.5rem;">
-            <div style="background: #132338; border: 1px solid #1e3a5f; border-radius: 12px; padding: 1.5rem;">
-              <h3 style="color: #fb923c; font-size: 1.2rem; font-family: 'Outfit', sans-serif; margin-bottom: 0.5rem;">1. Honest Diagnostics</h3>
-              <p style="font-size: 0.95rem; color: #94a3b8; margin: 0;">We never push full roof replacements when an isolated flashing repair or shingle bundle replacement will safely protect your home.</p>
+    <!-- Main About Content Section -->
+    <section class="inner-section">
+      <div class="container">
+
+        <!-- Who We Are Section -->
+        <div class="about-intro-grid">
+          <div class="about-text-col">
+            <span class="inner-section-tag">WHO WE ARE</span>
+            <h2 class="inner-section-title" style="text-align: left; margin-bottom: 1.25rem;">Somerset County's Trusted Local Roofing Craftsmen</h2>
+            <p>
+              Bridgewater Roofer is a full-service residential and commercial roofing contractor headquartered at <strong>400 Commons Way in Bridgewater, NJ</strong>. Unlike transient storm chasers or regional franchise operations with rotating sub-contractors, our leadership and field crews live and raise our families right here in Somerset County.
+            </p>
+            <p>
+              We understand the unique microclimates and architectural demands of Central New Jersey: intense freeze-thaw expansion cycles, heavy snow accumulations in the Watchung Mountain corridors, dense oak and maple tree canopy moisture, and strict compliance with the New Jersey Uniform Construction Code (UCC).
+            </p>
+            <p>
+              Whether performing precision chimney step-flashing repairs on a Victorian home in Somerville, replacing architectural shingles on a colonial in Basking Ridge, or heat-welding a 60-mil TPO membrane on an office facility in Warren, we approach every project with engineering precision and uncompromising accountability.
+            </p>
+          </div>
+
+          <aside class="about-sidebar-card">
+            <h3 class="sidebar-card-title">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--orange, #f47a24)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              The Bridgewater Standard
+            </h3>
+            <ul class="sidebar-check-list">
+              <li class="sidebar-check-item">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                <div>
+                  <strong>Local Physical Headquarters</strong>
+                  Dispatched directly from 400 Commons Way, Bridgewater, NJ.
+                </div>
+              </li>
+              <li class="sidebar-check-item">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                <div>
+                  <strong>100% Bare Decking Inspections</strong>
+                  Every replacement begins with full tear-off down to bare wood.
+                </div>
+              </li>
+              <li class="sidebar-check-item">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                <div>
+                  <strong>Multi-Pass Magnetic Nail Sweeps</strong>
+                  Triple perimeter sweep of driveways, flowerbeds, and lawns.
+                </div>
+              </li>
+              <li class="sidebar-check-item">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                <div>
+                  <strong>Full Municipal Permitting</strong>
+                  We handle all paperwork, filings, and township inspections.
+                </div>
+              </li>
+            </ul>
+          </aside>
+        </div>
+
+        <!-- Core Principles -->
+        <div class="inner-section-header">
+          <span class="inner-section-tag">OUR OPERATING VALUES</span>
+          <h2 class="inner-section-title">The Principles Guiding Every Roof We Build</h2>
+          <p class="inner-section-lead">
+            We built our business on engineering discipline, straightforward pricing, and a total commitment to customer protection.
+          </p>
+        </div>
+
+        <div class="principles-grid">
+          <div class="principle-card">
+            <span class="principle-number">01</span>
+            <div class="principle-icon-wrap">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
             </div>
-            <div style="background: #132338; border: 1px solid #1e3a5f; border-radius: 12px; padding: 1.5rem;">
-              <h3 style="color: #38bdf8; font-size: 1.2rem; font-family: 'Outfit', sans-serif; margin-bottom: 0.5rem;">2. Complete Tear-Off Integrity</h3>
-              <p style="font-size: 0.95rem; color: #94a3b8; margin: 0;">When reroofing is necessary, we strip down to bare decking to inspect for hidden wood rot, install dual ice barriers, and ensure code compliance.</p>
+            <h3 class="principle-title">Honest Diagnostics</h3>
+            <p class="principle-desc">
+              We never push full roof replacements when an isolated valley flashing repair or minor shingle replacement will safely restore weather integrity. Our estimates are factual, itemized, and transparent.
+            </p>
+          </div>
+
+          <div class="principle-card">
+            <span class="principle-number">02</span>
+            <div class="principle-icon-wrap" style="color: #38bdf8; background: rgba(56, 189, 248, 0.12); border-color: rgba(56, 189, 248, 0.3);">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
             </div>
-            <div style="background: #132338; border: 1px solid #1e3a5f; border-radius: 12px; padding: 1.5rem;">
-              <h3 style="color: #4ade80; font-size: 1.2rem; font-family: 'Outfit', sans-serif; margin-bottom: 0.5rem;">3. Certified Installation</h3>
-              <p style="font-size: 0.95rem; color: #94a3b8; margin: 0;">Factory-certified installers with GAF, CertainTeed, and Carlisle ensure all projects carry valid 50-year non-prorated manufacturer warranties.</p>
+            <h3 class="principle-title">Complete Tear-Off Integrity</h3>
+            <p class="principle-desc">
+              We never shingle over existing degraded layers. We strip roofs down to bare plywood or tongue-and-groove decking to identify hidden dry rot, re-nail loose boards, and apply dual ice and water barriers.
+            </p>
+          </div>
+
+          <div class="principle-card">
+            <span class="principle-number">03</span>
+            <div class="principle-icon-wrap" style="color: #4ade80; background: rgba(74, 222, 128, 0.12); border-color: rgba(74, 222, 128, 0.3);">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </div>
+            <h3 class="principle-title">Factory-Certified Craftsmanship</h3>
+            <p class="principle-desc">
+              Factory certification with GAF, CertainTeed, and Carlisle SynTec ensures that every roof is installed precisely to manufacturer specifications, qualifying our customers for 50-year non-prorated system warranties.
+            </p>
+          </div>
+        </div>
+
+        <!-- Leadership & Technical Personnel -->
+        <div class="inner-section-header">
+          <span class="inner-section-tag">LEADERSHIP &amp; EXPERTISE</span>
+          <h2 class="inner-section-title">Meet Our Senior Roofing Technicians</h2>
+          <p class="inner-section-lead">
+            Every inspection, estimate, and installation is directed by seasoned industry veterans with decades of hands-on experience in Somerset County.
+          </p>
+        </div>
+
+        <div class="leadership-grid">
+          <div class="leader-card">
+            <div class="leader-header">
+              <div class="leader-avatar" style="color: #fb923c; border-color: rgba(244, 122, 36, 0.4);">
+                AD
+              </div>
+              <div class="leader-info">
+                <h3 class="leader-name">Anthony DeMatteo</h3>
+                <span class="leader-role-badge role-badge-orange">Master Roofer &amp; Field Director</span>
+              </div>
+            </div>
+            <p class="leader-bio">
+              With over 22 years of hands-on roofing experience in Central New Jersey, Anthony oversees all steep-slope residential replacements, job-site safety protocols, and crew staging. He has personally inspected more than 2,000 roofs across Somerset County.
+            </p>
+            <div class="leader-tags">
+              <span class="leader-tag">GAF Master Elite</span>
+              <span class="leader-tag">OSHA 30 Certified</span>
+              <span class="leader-tag">Steep-Slope Specialist</span>
             </div>
           </div>
 
-          <h2 style="color: #ffffff; font-size: 1.8rem; font-family: 'Outfit', sans-serif; margin: 2.5rem 0 1rem;">Leadership &amp; Technical Personnel</h2>
-          <div style="display: flex; flex-direction: column; gap: 1.5rem; margin-bottom: 2.5rem;">
-            
-            <div style="background: #132338; border: 1px solid #1e3a5f; border-radius: 12px; padding: 1.75rem; display: flex; gap: 1.5rem; align-items: flex-start; flex-wrap: wrap;">
-              <div class="avatar-initials" style="width:64px;height:64px;font-size:1.4rem;display:flex;align-items:center;justify-content:center;background:#0b1526;color:#fb923c;border-radius:50%;font-weight:700;border:2px solid #334155;flex-shrink:0;">AD</div>
-              <div style="flex: 1; min-width: 250px;">
-                <h3 style="color: #ffffff; font-size: 1.3rem; margin: 0 0 0.25rem; font-family: 'Outfit', sans-serif;">Anthony DeMatteo</h3>
-                <span style="color: #fb923c; font-size: 0.85rem; font-weight: 600; text-transform: uppercase;">Master Roofer &amp; Field Director</span>
-                <p style="font-size: 0.95rem; color: #94a3b8; margin-top: 0.5rem;">Over 22 years of hands-on steep-slope and flat roofing experience. Oversees field safety, crew staging, and municipal building code compliance across Somerset County.</p>
+          <div class="leader-card">
+            <div class="leader-header">
+              <div class="leader-avatar" style="color: #38bdf8; border-color: rgba(56, 189, 248, 0.4);">
+                MH
+              </div>
+              <div class="leader-info">
+                <h3 class="leader-name">Mark Henderson</h3>
+                <span class="leader-role-badge role-badge-blue">Senior Roofing Consultant &amp; Estimator</span>
               </div>
             </div>
-
-            <div style="background: #132338; border: 1px solid #1e3a5f; border-radius: 12px; padding: 1.75rem; display: flex; gap: 1.5rem; align-items: flex-start; flex-wrap: wrap;">
-              <div class="avatar-initials" style="width:64px;height:64px;font-size:1.4rem;display:flex;align-items:center;justify-content:center;background:#0b1526;color:#38bdf8;border-radius:50%;font-weight:700;border:2px solid #334155;flex-shrink:0;">MH</div>
-              <div style="flex: 1; min-width: 250px;">
-                <h3 style="color: #ffffff; font-size: 1.3rem; margin: 0 0 0.25rem; font-family: 'Outfit', sans-serif;">Mark Henderson</h3>
-                <span style="color: #38bdf8; font-size: 0.85rem; font-weight: 600; text-transform: uppercase;">Senior Roofing Consultant &amp; Estimator</span>
-                <p style="font-size: 0.95rem; color: #94a3b8; margin-top: 0.5rem;">Specializes in material lifecycle engineering, thermal envelope diagnostics, insurance scope negotiation, and standing seam metal roofing design.</p>
-              </div>
+            <p class="leader-bio">
+              Mark specializes in building envelope science, standing seam metal engineering, commercial low-slope membrane specifications, and storm damage insurance scope adjustments. He ensures transparent, line-item pricing for every project.
+            </p>
+            <div class="leader-tags">
+              <span class="leader-tag">Carlisle TPO Certified</span>
+              <span class="leader-tag">Thermal Diagnostics</span>
+              <span class="leader-tag">Insurance Restoration</span>
             </div>
-
-            <div style="background: #132338; border: 1px solid #1e3a5f; border-radius: 12px; padding: 1.75rem; display: flex; gap: 1.5rem; align-items: flex-start; flex-wrap: wrap;">
-              <div class="avatar-initials" style="width:64px;height:64px;font-size:1.4rem;display:flex;align-items:center;justify-content:center;background:#0b1526;color:#4ade80;border-radius:50%;font-weight:700;border:2px solid #334155;flex-shrink:0;">DC</div>
-              <div style="flex: 1; min-width: 250px;">
-                <h3 style="color: #ffffff; font-size: 1.3rem; margin: 0 0 0.25rem; font-family: 'Outfit', sans-serif;">Dave Collins</h3>
-                <span style="color: #4ade80; font-size: 0.85rem; font-weight: 600; text-transform: uppercase;">Lead Quality Inspector</span>
-                <p style="font-size: 0.95rem; color: #94a3b8; margin-top: 0.5rem;">Conducts final walkthrough inspections, 21-point roof health audits, and technical verification for all published research and technical guides.</p>
-              </div>
-            </div>
-
           </div>
 
-          <h2 style="color: #ffffff; font-size: 1.8rem; font-family: 'Outfit', sans-serif; margin: 2.5rem 0 1rem;">Licensing, Insurance &amp; Compliance</h2>
-          <p>
-            Bridgewater Roofer maintains active registration with the New Jersey Division of Consumer Affairs:
+          <div class="leader-card">
+            <div class="leader-header">
+              <div class="leader-avatar" style="color: #4ade80; border-color: rgba(74, 222, 128, 0.4);">
+                DC
+              </div>
+              <div class="leader-info">
+                <h3 class="leader-name">Dave Collins</h3>
+                <span class="leader-role-badge role-badge-green">Lead Quality &amp; Safety Inspector</span>
+              </div>
+            </div>
+            <p class="leader-bio">
+              Dave oversees quality assurance audits, pre-inspection walkthroughs, and municipal code compliance checks. He guarantees that every fastener pattern, drip edge overlap, and ridge vent installation strictly satisfies NJ UCC building requirements.
+            </p>
+            <div class="leader-tags">
+              <span class="leader-tag">NJ UCC Code Specialist</span>
+              <span class="leader-tag">21-Point Audits</span>
+              <span class="leader-tag">Clean-Site Auditor</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Licensing, Insurance & Compliance -->
+        <div class="inner-section-header">
+          <span class="inner-section-tag">CREDENTIALS &amp; ACCOUNTABILITY</span>
+          <h2 class="inner-section-title">Fully Licensed, Insured &amp; Municipal-Ready</h2>
+          <p class="inner-section-lead">
+            We maintain pristine credentials with the State of New Jersey and carry comprehensive liability and workers' compensation coverage to protect homeowners completely.
           </p>
-          <ul>
-            <li><strong>NJ Home Improvement Contractor License:</strong> #13VH09876500</li>
-            <li><strong>Commercial General Liability:</strong> $2,000,000 aggregate coverage</li>
-            <li><strong>Workers' Compensation:</strong> 100% compliant statutory coverage for all on-site personnel</li>
-            <li><strong>Permit Handling:</strong> Full preparation, filing, and final municipal inspection scheduling for all residential and commercial re-roofing projects</li>
-          </ul>
-        </article>
+        </div>
+
+        <div class="compliance-grid">
+          <div class="compliance-card">
+            <div class="compliance-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+            </div>
+            <h3 class="compliance-card-title">NJ HIC License</h3>
+            <div class="compliance-card-value">#13VH09876500</div>
+            <p class="compliance-card-desc">Active registration in good standing with the New Jersey Division of Consumer Affairs.</p>
+          </div>
+
+          <div class="compliance-card">
+            <div class="compliance-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+            </div>
+            <h3 class="compliance-card-title">Commercial Liability</h3>
+            <div class="compliance-card-value">$2,000,000</div>
+            <p class="compliance-card-desc">Comprehensive aggregate general liability policy covering residential and commercial projects.</p>
+          </div>
+
+          <div class="compliance-card">
+            <div class="compliance-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <h3 class="compliance-card-title">Workers' Comp</h3>
+            <div class="compliance-card-value">100% Statutory</div>
+            <p class="compliance-card-desc">Complete legal coverage for every installer, craftsman, and technician on your property.</p>
+          </div>
+
+          <div class="compliance-card">
+            <div class="compliance-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            </div>
+            <h3 class="compliance-card-title">Permit Management</h3>
+            <div class="compliance-card-value">Full Municipal Filing</div>
+            <p class="compliance-card-desc">We manage permit paperwork, UCC plans, and township building inspector scheduling.</p>
+          </div>
+        </div>
+
+        <!-- Comparison Table: Bridgewater Roofer vs Others -->
+        <div class="inner-section-header">
+          <span class="inner-section-tag">THE LOCAL ADVANTAGE</span>
+          <h2 class="inner-section-title">How Bridgewater Roofer Compares</h2>
+          <p class="inner-section-lead">
+            See the difference between choosing a dedicated Somerset County roofing contractor versus transient out-of-town companies.
+          </p>
+        </div>
+
+        <div class="comparison-wrap">
+          <table class="comparison-table">
+            <thead>
+              <tr>
+                <th>Standard of Craftsmanship</th>
+                <th class="col-bw">Bridgewater Roofer</th>
+                <th class="col-others">Storm Chasers &amp; General Handymen</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Headquarters &amp; Office</strong></td>
+                <td class="col-bw">400 Commons Way, Bridgewater, NJ</td>
+                <td class="col-others">Out-of-state, P.O. Box, or mobile-only</td>
+              </tr>
+              <tr>
+                <td><strong>Sub-Decking Inspection</strong></td>
+                <td class="col-bw">100% tear-off &amp; bare wood rot audit</td>
+                <td class="col-others">Often shingles over wet or decayed decking</td>
+              </tr>
+              <tr>
+                <td><strong>Fastener &amp; Nailing Standards</strong></td>
+                <td class="col-bw">6-nail pattern per shingle for 130 MPH rating</td>
+                <td class="col-others">Standard 4-nail pattern or misfired nails</td>
+              </tr>
+              <tr>
+                <td><strong>Job-Site Cleanup</strong></td>
+                <td class="col-bw">Continuous multi-pass magnetic sweeps</td>
+                <td class="col-others">Rushed rake sweeps leaving dangerous nails</td>
+              </tr>
+              <tr>
+                <td><strong>Warranty Protection</strong></td>
+                <td class="col-bw">50-Year non-prorated system warranty</td>
+                <td class="col-others">1-Year contractor or material-only tailgate warranty</td>
+              </tr>
+              <tr>
+                <td><strong>Municipal Permit Handling</strong></td>
+                <td class="col-bw">Full preparation, filing, and final signoff</td>
+                <td class="col-others">Homeowner often left to pull permits illegally</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
 
       </div>
     </section>
 
-    <!-- Final High-Conversion CTA Section -->
-    <section class="section-cta-final">
-      <div class="container cta-final-container">
-        <div class="cta-final-content">
-          <span class="badge-accent">Somerset County Roofing Specialists</span>
-          <h2>Work With Somerset County's Most Trusted Roofers</h2>
-          <p>
-            Contact our certified team today for transparent on-site diagnostics, honest recommendations, and detailed estimates.
+    <!-- Final CTA Section -->
+    <section class="project-cta-final">
+      <div class="container">
+        <div class="project-cta-container">
+          <span class="inner-section-tag">PROTECT YOUR SOMERSET COUNTY HOME</span>
+          <h2 class="inner-section-title" style="margin-bottom: 1rem;">Experience Roofing Done Right</h2>
+          <p class="inner-section-lead" style="margin-bottom: 2rem;">
+            Whether you need urgent leak repair, a thorough 21-point roof health audit, or a complete architectural replacement, our team is ready to deliver honest craftsmanship.
           </p>
-          <div class="cta-button-group">
-            <a href="tel:+19084659944" class="btn btn-primary btn-lg" data-call-source="about-page-footer">
-              <svg class="phone-icon" viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.02-.24c1.12.37 2.33.57 3.57.57a1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.24.2 2.45.57 3.57a1 1 0 01-.24 1.02l-2.21 2.2z"/></svg>
-              <span>Call (908) 465-9944</span>
+          <div class="inner-hero-actions">
+            <a href="tel:+19084659944" class="btn btn-phone cta-phone" data-call-source="about-footer">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+              Call (908) 465-9944
             </a>
-            <a href="/contact/" class="btn btn-outline btn-lg">Request Free Estimate</a>
+            <a href="/contact/" class="btn btn-primary" style="padding: 0.75rem 1.6rem;">
+              Request Free On-Site Estimate
+            </a>
           </div>
         </div>
       </div>
@@ -640,7 +881,7 @@
         <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
         Call a Roofer
       </a>
-      <a href="#estimate-form" class="sticky-estimate-btn">
+      <a href="/contact/" class="sticky-estimate-btn">
         Get Estimate
       </a>
     </div>
