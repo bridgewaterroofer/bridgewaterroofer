@@ -11,7 +11,10 @@ export function initInteractiveFeatures() {
   initReviewsCarousel();
   initFaqAccordion();
   initEstimateForm();
+  initHighVolumeFormHandler();
   initLegalModal();
+  initServiceAreaConsole();
+  initServiceReviewsSlider();
 }
 
 /**
@@ -129,12 +132,22 @@ function initRoofDiagnosis() {
     });
   });
 
-  // Hotspot clicks
+  // Hotspot clicks & keyboard accessibility
   hotspots.forEach((hs) => {
     hs.addEventListener('click', () => {
       const targetProblem = hs.getAttribute('data-linked-problem');
       if (targetProblem) {
         selectProblem(targetProblem);
+      }
+    });
+
+    hs.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        const targetProblem = hs.getAttribute('data-linked-problem');
+        if (targetProblem) {
+          selectProblem(targetProblem);
+        }
       }
     });
   });
@@ -156,60 +169,221 @@ function initMaterialExplorer() {
   const materials = {
     'asphalt': {
       title: 'Architectural Asphalt Shingles',
+      badge: 'Residential Gold Standard',
       desc: 'The gold standard for Somerset County residential roofs. Architectural dimensional shingles feature multi-layered fiberglass construction, excellent wind resistance up to 130 mph, and rich shadow lines that elevate suburban curb appeal.',
-      app: 'Residential homes, colonials, ranches & steep-slope roofs',
-      dur: 'Multi-decade manufacturer warranties available',
-      mnt: 'Low; periodic gutter cleaning & moss control',
+      specs: [
+        { icon: '💨', label: 'Wind Resistance', val: 'Up to 130 MPH (Class H)' },
+        { icon: '🛡️', label: 'Lifespan', val: '25–30+ Years' },
+        { icon: '🔥', label: 'Fire Rating', val: 'Class A Non-Combustible' },
+        { icon: '❄️', label: 'Ice Dam Defense', val: 'Self-Adhered Barrier' }
+      ],
+      repairs: [
+        'Blown-off tabs & wind-creased shingle tab replacements',
+        'Granule scouring & UV fiberglass deterioration repairs',
+        'Valley transition, step flashing & pipe collar resealing'
+      ],
       linkText: 'Explore Asphalt Shingle Roofing →',
-      linkUrl: '#services',
+      linkUrl: '/residential-roofing-bridgewater-nj/',
       accentColor: '#4A5568',
-      patternType: 'asphalt'
+      patternType: 'asphalt',
+      imageFile: '3d_material_asphalt.jpg',
+      hudTop: { tier: 'Surface Course', title: 'Architectural Asphalt Shingles', detail: 'Class A Fire • 130 MPH Wind Warranty', pos: { top: '26%', left: '45%' } },
+      hudMid: { tier: 'Secondary Shield', title: 'Synthetic Underlayment + Ice Barrier', detail: 'Self-Adhered Waterproof Membrane', pos: { top: '48%', left: '64%' } },
+      hudBot: { tier: 'Substrate Base', title: '1/2" CDX Plywood & Structural Rafters', detail: 'Solid Engineered Roof Decking', pos: { top: '68%', left: '46%' } },
+      cert: 'Factory Certified Replacement & Repair System'
     },
     'metal': {
       title: 'Standing Seam Metal Roofing',
+      badge: 'Generational Longevity',
       desc: 'Engineered with concealed fasteners and vertical raised seams that interlock tightly against rain, heavy New Jersey snow, and ice damming. Exceptional thermal reflectivity keeps attic spaces cooler in humid summers.',
-      app: 'Modern residences, accent porticos, valleys & commercial properties',
-      dur: 'Premium longevity with non-combustible Class A fire rating',
-      mnt: 'Minimal; highly resistant to cracking and rot',
+      specs: [
+        { icon: '💨', label: 'Wind Resistance', val: 'Up to 150+ MPH Uplift' },
+        { icon: '🛡️', label: 'Lifespan', val: '50+ Year Expected Life' },
+        { icon: '☀️', label: 'Energy Finish', val: 'Kynar 500® Reflective' },
+        { icon: '❄️', label: 'Snow Shedding', val: 'Rapid Shedding Surface' }
+      ],
+      repairs: [
+        'Thermal expansion clip binding & oil-canning adjustments',
+        'Transition sidewall counter-flashing resealing',
+        'Valley debris clearing & ridge cap ventilation tuning'
+      ],
       linkText: 'Explore Metal Roofing Solutions →',
-      linkUrl: '#services',
+      linkUrl: '/metal-roofing-bridgewater-nj/',
       accentColor: '#3182CE',
-      patternType: 'metal'
+      patternType: 'metal',
+      imageFile: '3d_material_metal.jpg',
+      hudTop: { tier: 'Surface Course', title: 'Standing Seam Steel Panels', detail: 'Concealed Clips • Zero Exposed Fasteners', pos: { top: '30%', left: '60%' } },
+      hudMid: { tier: 'Secondary Shield', title: 'High-Temp Self-Adhering Membrane', detail: '260°F+ Thermal Protection Underlayment', pos: { top: '48%', left: '36%' } },
+      hudBot: { tier: 'Substrate Base', title: 'Solid Plywood Decking & Rafters', detail: 'Engineered Structural Roof Plane', pos: { top: '72%', left: '46%' } },
+      cert: '50+ Year Expected Lifespan • Solar Reflective Kynar 500® Finish'
     },
     'flat': {
       title: 'Low-Slope & Flat Roofing Systems',
+      badge: 'Commercial Monolithic Shield',
       desc: 'Purpose-engineered membrane systems for flat residential additions, sunrooms, second-story balconies, and commercial structures requiring 100% monolithic water-tightness and proper scupper drainage.',
-      app: 'Home extensions, garage decks, commercial rooftops',
-      dur: 'Multi-ply systems with heat-fused seams',
-      mnt: 'Bi-annual drain & scupper inspection',
+      specs: [
+        { icon: '🔥', label: 'Seam Bonding', val: 'Robotic Hot-Air Welded' },
+        { icon: '☀️', label: 'Energy Star', val: 'High Solar Reflectance' },
+        { icon: '💧', label: 'Water Sealing', val: 'Monolithic Membrane' },
+        { icon: '🛡️', label: 'Core Insulation', val: 'R-30+ Rigid Polyiso' }
+      ],
+      repairs: [
+        'Lap seam de-bonding inspection & robotic re-fusion',
+        'Puncture patching & parapet wall flashing securing',
+        'Drain bowl, scupper & pitch pan sealant maintenance'
+      ],
       linkText: 'Explore Flat Roofing Systems →',
-      linkUrl: '#services',
+      linkUrl: '/flat-roofing-bridgewater-nj/',
       accentColor: '#2C5282',
-      patternType: 'flat'
+      patternType: 'flat',
+      imageFile: '3d_material_tpo.jpg',
+      hudTop: { tier: 'Surface Membrane', title: '60-Mil Commercial Membrane', detail: 'Continuous Monolithic Watertight Shield', pos: { top: '24%', left: '46%' } },
+      hudMid: { tier: 'Thermal Core', title: 'High-Density Polyiso Insulation', detail: 'R-30+ Code-Compliant Thermal Envelope', pos: { top: '52%', left: '54%' } },
+      hudBot: { tier: 'Substrate Base', title: 'Commercial Substrate / Steel Deck', detail: 'Heavy-Duty Structural Foundation', pos: { top: '74%', left: '40%' } },
+      cert: 'Factory Certified Commercial Flat Roof System'
     },
     'tpo': {
       title: 'TPO Single-Ply Membrane',
+      badge: 'Commercial Cool Roof',
       desc: 'Thermoplastic Polyolefin (TPO) is a high-performance white reflective roofing membrane hot-air welded into a continuous watertight shield. Energy Star compliant, resisting UV degradation, ozone, and chemical exposure.',
-      app: 'Commercial low-slope buildings, modern residential flat roofs',
-      dur: 'High puncture resistance & thermal reflection',
-      mnt: 'Periodic seam inspection & debris clearing',
+      specs: [
+        { icon: '🔥', label: 'Seam Bonding', val: 'Robotic Hot-Air Welded' },
+        { icon: '☀️', label: 'Cool Roof', val: 'Energy Star Reflective' },
+        { icon: '💧', label: 'Water Sealing', val: 'Monolithic Membrane' },
+        { icon: '🛡️', label: 'Core Insulation', val: 'R-30+ Rigid Polyiso' }
+      ],
+      repairs: [
+        'Lap seam de-bonding inspection & robotic re-fusion',
+        'Puncture patching & parapet wall flashing securing',
+        'Drain bowl, scupper & pitch pan sealant maintenance'
+      ],
       linkText: 'Explore Commercial TPO Roofing →',
-      linkUrl: '#services',
+      linkUrl: '/flat-roofing-bridgewater-nj/',
       accentColor: '#E2E8F0',
-      patternType: 'tpo'
+      patternType: 'tpo',
+      imageFile: '3d_material_tpo.jpg',
+      hudTop: { tier: 'Surface Membrane', title: '60-Mil White TPO Single-Ply', detail: 'Robotic Hot-Air Welded Lap Seams', pos: { top: '24%', left: '46%' } },
+      hudMid: { tier: 'Thermal Core', title: 'Rigid Polyiso Insulation (R-30+)', detail: 'High-Density Fastener Plates & Screws', pos: { top: '52%', left: '54%' } },
+      hudBot: { tier: 'Substrate Base', title: 'Fluted Steel B-Decking / Heavy Deck', detail: 'Commercial Structural Foundation', pos: { top: '74%', left: '40%' } },
+      cert: 'Energy Star Cool Roof Certified • Monolithic Chemical Fusion'
     },
     'epdm': {
       title: 'EPDM Synthetic Rubber Roofing',
+      badge: 'Sub-Zero Freeze-Thaw',
       desc: 'Ethylene Propylene Diene Monomer is an extremely durable synthetic black rubber roofing membrane with decades of proven performance under severe freeze-thaw cycles and hail.',
-      app: 'Low-slope residential additions & industrial buildings',
-      dur: 'Superior elasticity in severe New Jersey winter freezes',
-      mnt: 'Periodic inspection of edge terminations',
+      specs: [
+        { icon: '❄️', label: 'Elasticity', val: '300%+ Sub-Zero Elongation' },
+        { icon: '🛡️', label: 'Field Longevity', val: '30–35+ Year Proven Life' },
+        { icon: '⚡', label: 'Hail Rating', val: 'UL 2218 Class 4 Impact' },
+        { icon: '🌡️', label: 'Temp Range', val: '-45°F to 300°F Tolerance' }
+      ],
+      repairs: [
+        'Lap tape seam delamination & factory primer re-adhesion',
+        'Edge metal termination bar re-anchoring & sealing',
+        'Penetration pipe boot replacement & corner patching'
+      ],
       linkText: 'Explore EPDM Roofing Systems →',
-      linkUrl: '#services',
+      linkUrl: '/flat-roofing-bridgewater-nj/',
       accentColor: '#1A202C',
-      patternType: 'epdm'
+      patternType: 'epdm',
+      imageFile: '3d_material_epdm.jpg',
+      hudTop: { tier: 'Surface Membrane', title: 'Heavy-Duty Black EPDM Rubber', detail: 'Factory Lap Sealant Tape Seams', pos: { top: '24%', left: '48%' } },
+      hudMid: { tier: 'Thermal Core', title: 'High-Density Polyiso Core Board', detail: 'Continuous Thermal Insulation Barrier', pos: { top: '52%', left: '54%' } },
+      hudBot: { tier: 'Substrate Base', title: 'Commercial Steel / Heavy Wood Deck', detail: 'Structural Engineered Substrate', pos: { top: '74%', left: '34%' } },
+      cert: 'Superior Freeze-Thaw Elasticity • 30+ Year Field Longevity'
     }
   };
+
+  const isSubdir = window.location.pathname.split('/').filter(Boolean).length > 0;
+  const assetPrefix = isSubdir ? '../assets/images/' : 'assets/images/';
+
+  function applyHudData(hudKey, hudData) {
+    if (!hudData) return;
+    const pinEl = document.getElementById(`mat-layer-${hudKey}`);
+    const cardEl = document.getElementById(`layer-card-${hudKey}`);
+
+    if (pinEl) {
+      pinEl.style.top = hudData.pos.top;
+      pinEl.style.left = hudData.pos.left;
+      const pillTier = pinEl.querySelector('.hud-pill-tier');
+      if (pillTier) pillTier.textContent = hudData.tier;
+    }
+
+    if (cardEl) {
+      const cardTier = cardEl.querySelector('.layer-card-tier');
+      const titleEl = cardEl.querySelector('.layer-card-title');
+      const detailEl = cardEl.querySelector('.layer-card-detail');
+      if (cardTier) cardTier.textContent = hudData.tier;
+      if (titleEl) titleEl.textContent = hudData.title;
+      if (detailEl) detailEl.textContent = hudData.detail;
+    }
+  }
+
+  function updateMaterial3D(data) {
+    const img = document.getElementById('mat-3d-img');
+    const certText = document.getElementById('hud-cert-text');
+
+    if (img && data && data.imageFile) {
+      img.style.opacity = '0.35';
+      img.style.transform = 'scale(0.98)';
+      setTimeout(() => {
+        img.src = assetPrefix + data.imageFile;
+        img.alt = `3D ${data.title} Assembly Cutaway Model`;
+        img.style.opacity = '1';
+        img.style.transform = 'scale(1)';
+      }, 160);
+    }
+
+    if (data) {
+      applyHudData('top', data.hudTop);
+      applyHudData('mid', data.hudMid);
+      applyHudData('bot', data.hudBot);
+    }
+
+    if (certText && data && data.cert) {
+      certText.textContent = data.cert;
+    }
+  }
+
+  // Interactive Layer HUD Focus & Bi-Directional Highlighting
+  const layerKeys = ['top', 'mid', 'bot'];
+
+  function setActiveLayer(activeKey) {
+    layerKeys.forEach((key) => {
+      const pin = document.getElementById(`mat-layer-${key}`);
+      const card = document.getElementById(`layer-card-${key}`);
+      const isActive = key === activeKey;
+      if (pin) pin.classList.toggle('is-active', isActive);
+      if (card) card.classList.toggle('is-active', isActive);
+    });
+  }
+
+  layerKeys.forEach((key) => {
+    const pin = document.getElementById(`mat-layer-${key}`);
+    const card = document.getElementById(`layer-card-${key}`);
+
+    if (pin) {
+      pin.addEventListener('mouseenter', () => setActiveLayer(key));
+      pin.addEventListener('click', () => setActiveLayer(key));
+      pin.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          setActiveLayer(key);
+        }
+      });
+    }
+
+    if (card) {
+      card.addEventListener('mouseenter', () => setActiveLayer(key));
+      card.addEventListener('click', () => setActiveLayer(key));
+      card.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          setActiveLayer(key);
+        }
+      });
+    }
+  });
 
   tabs.forEach((tab) => {
     tab.addEventListener('click', () => {
@@ -226,16 +400,38 @@ function initMaterialExplorer() {
 
       if (title) title.textContent = data.title;
       if (desc) desc.textContent = data.desc;
-      if (app) app.textContent = data.app;
-      if (dur) dur.textContent = data.dur;
-      if (mnt) mnt.textContent = data.mnt;
+      
+      const badgeEl = document.getElementById('mat-badge');
+      if (badgeEl && data.badge) badgeEl.textContent = data.badge;
+
+      if (data.specs) {
+        data.specs.forEach((s, idx) => {
+          const lbl = document.getElementById(`spec-lbl-${idx + 1}`);
+          const val = document.getElementById(`spec-val-${idx + 1}`);
+          const icon = document.getElementById(`spec-icon-${idx + 1}`);
+          if (lbl) lbl.textContent = s.label;
+          if (val) val.textContent = s.val;
+          if (icon && s.icon) icon.textContent = s.icon;
+        });
+      }
+
+      if (data.repairs) {
+        data.repairs.forEach((r, idx) => {
+          const item = document.getElementById(`repair-item-${idx + 1}`);
+          if (item) item.textContent = r;
+        });
+      }
+
       if (link) {
         link.textContent = data.linkText;
         link.setAttribute('href', data.linkUrl);
       }
 
-      // Update SVG pattern
-      if (renderVisual) {
+      // Update 3D Stage if present
+      if (document.getElementById('mat-3d-img')) {
+        updateMaterial3D(data);
+      } else if (renderVisual) {
+        // Fallback to legacy SVG if present
         updateMaterialVisual(renderVisual, data.patternType, data.accentColor);
       }
     });
@@ -464,74 +660,106 @@ function updateMaterialVisual(svgElement, type, color) {
  * SECTION 11: BEFORE / AFTER IMAGE SLIDER
  */
 function initBeforeAfterSlider() {
-  const container = document.querySelector('.before-after-container');
-  if (!container) return;
+  const containers = document.querySelectorAll('.before-after-container');
+  if (!containers.length) return;
 
-  const afterLayer = container.querySelector('.ba-layer-after');
-  const handle = container.querySelector('.ba-handle');
-  if (!afterLayer || !handle) return;
+  containers.forEach((container) => {
+    const afterLayer = container.querySelector('.ba-layer-after');
+    const handle = container.querySelector('.ba-handle');
+    const afterImg = afterLayer ? afterLayer.querySelector('img') : null;
+    if (!afterLayer || !handle) return;
 
-  let isDragging = false;
+    let isDragging = false;
 
-  function updateSliderPosition(clientX) {
-    const rect = container.getBoundingClientRect();
-    const x = Math.max(0, Math.min(clientX - rect.left, rect.width));
-    const percent = (x / rect.width) * 100;
-
-    afterLayer.style.width = `${percent}%`;
-    handle.style.left = `${percent}%`;
-  }
-
-  // Mouse Events
-  handle.addEventListener('mousedown', (e) => {
-    isDragging = true;
-    e.preventDefault();
-  });
-
-  window.addEventListener('mouseup', () => {
-    isDragging = false;
-  });
-
-  window.addEventListener('mousemove', (e) => {
-    if (!isDragging) return;
-    updateSliderPosition(e.clientX);
-  });
-
-  // Touch Events
-  handle.addEventListener('touchstart', (e) => {
-    isDragging = true;
-  }, { passive: true });
-
-  window.addEventListener('touchend', () => {
-    isDragging = false;
-  });
-
-  window.addEventListener('touchmove', (e) => {
-    if (!isDragging || !e.touches[0]) return;
-    updateSliderPosition(e.touches[0].clientX);
-  }, { passive: true });
-
-  // Keyboard accessibility
-  handle.setAttribute('tabindex', '0');
-  handle.setAttribute('role', 'slider');
-  handle.setAttribute('aria-label', 'Before and After Roof Comparison');
-  handle.setAttribute('aria-valuemin', '0');
-  handle.setAttribute('aria-valuemax', '100');
-  handle.setAttribute('aria-valuenow', '50');
-
-  handle.addEventListener('keydown', (e) => {
-    let currentPercent = parseFloat(handle.style.left) || 50;
-    if (e.key === 'ArrowLeft') {
-      currentPercent = Math.max(0, currentPercent - 5);
-      afterLayer.style.width = `${currentPercent}%`;
-      handle.style.left = `${currentPercent}%`;
-      handle.setAttribute('aria-valuenow', currentPercent);
-    } else if (e.key === 'ArrowRight') {
-      currentPercent = Math.min(100, currentPercent + 5);
-      afterLayer.style.width = `${currentPercent}%`;
-      handle.style.left = `${currentPercent}%`;
-      handle.setAttribute('aria-valuenow', currentPercent);
+    function syncImageWidth() {
+      const rect = container.getBoundingClientRect();
+      const w = Math.round(rect.width);
+      if (w > 0) {
+        container.style.setProperty('--ba-container-width', `${w}px`);
+        if (afterImg) {
+          afterImg.style.width = `${w}px`;
+        }
+      }
     }
+
+    // Initial sync
+    syncImageWidth();
+
+    // Responsive sync
+    if (window.ResizeObserver) {
+      const ro = new ResizeObserver(() => syncImageWidth());
+      ro.observe(container);
+    } else {
+      window.addEventListener('resize', syncImageWidth);
+    }
+
+    function updateSliderPosition(clientX) {
+      const rect = container.getBoundingClientRect();
+      const x = Math.max(0, Math.min(clientX - rect.left, rect.width));
+      const percent = (x / rect.width) * 100;
+
+      afterLayer.style.width = `${percent}%`;
+      handle.style.left = `${percent}%`;
+      handle.setAttribute('aria-valuenow', Math.round(percent));
+    }
+
+    // Mouse Events
+    handle.addEventListener('mousedown', (e) => {
+      isDragging = true;
+      e.preventDefault();
+    });
+
+    window.addEventListener('mouseup', () => {
+      isDragging = false;
+    });
+
+    window.addEventListener('mousemove', (e) => {
+      if (!isDragging) return;
+      updateSliderPosition(e.clientX);
+    });
+
+    // Touch Events
+    handle.addEventListener('touchstart', (e) => {
+      isDragging = true;
+    }, { passive: true });
+
+    window.addEventListener('touchend', () => {
+      isDragging = false;
+    });
+
+    window.addEventListener('touchmove', (e) => {
+      if (!isDragging || !e.touches[0]) return;
+      updateSliderPosition(e.touches[0].clientX);
+    }, { passive: true });
+
+    // Container click-to-slide
+    container.addEventListener('click', (e) => {
+      if (e.target.closest('.ba-badge') || e.target.closest('.ba-handle')) return;
+      updateSliderPosition(e.clientX);
+    });
+
+    // Keyboard accessibility
+    handle.setAttribute('tabindex', '0');
+    handle.setAttribute('role', 'slider');
+    handle.setAttribute('aria-label', 'Before and After Roof Comparison');
+    handle.setAttribute('aria-valuemin', '0');
+    handle.setAttribute('aria-valuemax', '100');
+    handle.setAttribute('aria-valuenow', '50');
+
+    handle.addEventListener('keydown', (e) => {
+      let currentPercent = parseFloat(handle.style.left) || 50;
+      if (e.key === 'ArrowLeft') {
+        currentPercent = Math.max(0, currentPercent - 5);
+        afterLayer.style.width = `${currentPercent}%`;
+        handle.style.left = `${currentPercent}%`;
+        handle.setAttribute('aria-valuenow', Math.round(currentPercent));
+      } else if (e.key === 'ArrowRight') {
+        currentPercent = Math.min(100, currentPercent + 5);
+        afterLayer.style.width = `${currentPercent}%`;
+        handle.style.left = `${currentPercent}%`;
+        handle.setAttribute('aria-valuenow', Math.round(currentPercent));
+      }
+    });
   });
 }
 
@@ -640,7 +868,7 @@ function initReviewsCarousel() {
 
     const cardWidthPercent = 100 / visibleCount;
     track.style.transform = `translateX(-${currentIndex * cardWidthPercent}%)`;
-    
+
     prevBtn.disabled = currentIndex === 0;
     nextBtn.disabled = currentIndex >= maxIndex;
     prevBtn.style.opacity = currentIndex === 0 ? '0.5' : '1';
@@ -699,42 +927,125 @@ function initFaqAccordion() {
 }
 
 /**
- * SECTION 32: COMPACT ESTIMATE FORM UX
+ * GLOBAL FORM HANDLER: HIGH-INQUIRY VOLUME PRIORITY CALL REDIRECT
  */
-function initEstimateForm() {
-  const formCard = document.getElementById('estimate-form');
-  const statusMsg = document.getElementById('form-status');
-  if (!formCard || !statusMsg) return;
+function initHighVolumeFormHandler() {
+  // Inject modal overlay if not present
+  let modalBackdrop = document.getElementById('high-volume-modal');
+  if (!modalBackdrop) {
+    modalBackdrop = document.createElement('div');
+    modalBackdrop.id = 'high-volume-modal';
+    modalBackdrop.className = 'high-volume-modal-backdrop';
+    modalBackdrop.setAttribute('role', 'dialog');
+    modalBackdrop.setAttribute('aria-modal', 'true');
+    modalBackdrop.setAttribute('aria-label', 'High Inquiry Volume Notice');
+    modalBackdrop.innerHTML = `
+      <div class="high-volume-modal-card">
+        <button type="button" class="high-volume-close-btn" id="high-volume-close" aria-label="Close notice">&times;</button>
+        <div class="high-volume-badge">
+          <span class="live-dispatch-dot"></span>
+          <span>High Inquiry Volume Today</span>
+        </div>
+        <h3 class="high-volume-modal-title">Our Online Queue Is Currently Full</h3>
+        <p class="high-volume-modal-desc">
+          Thank you! Due to a high surge of requests across Somerset County today, our online submission queue is at full capacity. To guarantee immediate priority service without waiting in line, our field dispatch team is standing by to take your call directly.
+        </p>
+        <a href="tel:+19084659944" class="btn btn-phone high-volume-call-btn" id="high-volume-call-link" data-call-source="form-queue-redirect">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+          </svg>
+          <span>Call Dispatch Now &bull; (908) 465-9944</span>
+        </a>
+        <div class="high-volume-countdown">
+          Connecting your call in <strong id="call-countdown-timer">4</strong>s...
+        </div>
+      </div>
+    `;
+    document.body.appendChild(modalBackdrop);
+  }
 
-  const form = formCard.tagName === 'FORM' ? formCard : formCard.querySelector('form');
-  if (!form) return;
+  let countdownInterval = null;
 
-  form.addEventListener('submit', (e) => {
-    e.preventDefault();
+  function closeModal() {
+    if (countdownInterval) clearInterval(countdownInterval);
+    modalBackdrop.classList.remove('is-open');
+  }
 
-    const nameInput = form.querySelector('[name="name"]');
-    const phoneInput = form.querySelector('[name="phone"]');
+  const closeBtn = modalBackdrop.querySelector('#high-volume-close');
+  if (closeBtn) closeBtn.addEventListener('click', closeModal);
 
-    if (!nameInput.value.trim() || !phoneInput.value.trim()) {
-      alert('Please provide your name and phone number so our roofing team can reach you.');
+  modalBackdrop.addEventListener('click', (e) => {
+    if (e.target === modalBackdrop) closeModal();
+  });
+
+  const callLink = modalBackdrop.querySelector('#high-volume-call-link');
+  if (callLink) {
+    callLink.addEventListener('click', () => {
+      if (countdownInterval) clearInterval(countdownInterval);
+    });
+  }
+
+  function triggerHighVolumeRedirect() {
+    modalBackdrop.classList.add('is-open');
+
+    let secondsLeft = 4;
+    const timerEl = document.getElementById('call-countdown-timer');
+    if (timerEl) timerEl.textContent = secondsLeft.toString();
+
+    if (countdownInterval) clearInterval(countdownInterval);
+
+    countdownInterval = setInterval(() => {
+      secondsLeft--;
+      if (timerEl) timerEl.textContent = secondsLeft.toString();
+      if (secondsLeft <= 0) {
+        clearInterval(countdownInterval);
+        window.location.href = 'tel:+19084659944';
+      }
+    }, 1000);
+  }
+
+  // Intercept all form submissions globally on document
+  document.addEventListener('submit', (e) => {
+    const form = e.target;
+    if (!form || form.tagName !== 'FORM') return;
+
+    // Check validity
+    if (typeof form.checkValidity === 'function' && !form.checkValidity()) {
+      form.reportValidity();
       return;
     }
 
-    // Prepare simulated submission state
-    const submitBtn = form.querySelector('button[type="submit"]');
-    const originalText = submitBtn.textContent;
-    submitBtn.textContent = 'Submitting Request...';
-    submitBtn.disabled = true;
+    e.preventDefault();
+    e.stopPropagation();
 
-    setTimeout(() => {
-      submitBtn.textContent = 'Estimate Requested ✓';
-      statusMsg.classList.add('is-success');
+    // Trigger high volume redirect
+    triggerHighVolumeRedirect();
+
+    // Reset form safely
+    try {
       form.reset();
+    } catch (_) {}
+  }, true);
 
-      // Scroll smoothly to status message
-      statusMsg.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-    }, 800);
+  // Add subtle queue notices above submit buttons in forms
+  const allForms = document.querySelectorAll('form');
+  allForms.forEach((form) => {
+    if (form.querySelector('.form-queue-notice')) return;
+    const submitBtn = form.querySelector('button[type="submit"], input[type="submit"]');
+    if (submitBtn) {
+      const notice = document.createElement('div');
+      notice.className = 'form-queue-notice';
+      notice.innerHTML = `
+        <span class="live-dispatch-dot" style="width: 7px; height: 7px; flex-shrink: 0;"></span>
+        <span><strong>High Volume Alert:</strong> Online responses may experience delays today. For immediate priority scheduling, call <strong>(908) 465-9944</strong>.</span>
+      `;
+      submitBtn.parentNode.insertBefore(notice, submitBtn);
+    }
   });
+}
+
+function initEstimateForm() {
+  // Maintained for backward compatibility; handled globally by initHighVolumeFormHandler
 }
 
 /**
@@ -807,5 +1118,301 @@ function initLegalModal() {
       }
     }
   });
+}
+
+/**
+ * SECTION 18: SERVICE AREA RADAR & DISPATCH CONSOLE
+ */
+function initServiceAreaConsole() {
+  const filterButtons = document.querySelectorAll('.town-filter-btn');
+  const cards = document.querySelectorAll('.town-dispatch-card');
+  const mapNodes = document.querySelectorAll('.map-node');
+
+  if (!cards.length) return;
+
+  // Region lookup for nodes if data-town is used
+  const townRegionMap = {};
+  cards.forEach((card) => {
+    const town = card.getAttribute('data-town');
+    const region = card.getAttribute('data-region');
+    if (town && region) {
+      townRegionMap[town] = region;
+    }
+  });
+
+  // Filter Buttons
+  filterButtons.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const filter = btn.getAttribute('data-filter');
+
+      filterButtons.forEach((b) => b.classList.remove('is-active'));
+      btn.classList.add('is-active');
+
+      cards.forEach((card) => {
+        const region = card.getAttribute('data-region');
+        if (filter === 'all' || region === filter) {
+          card.classList.remove('is-hidden');
+        } else {
+          card.classList.add('is-hidden');
+        }
+      });
+
+      // Update map nodes dimming
+      mapNodes.forEach((node) => {
+        const town = node.getAttribute('data-town');
+        const nodeRegion = townRegionMap[town];
+        if (filter === 'all' || nodeRegion === filter || town === 'bridgewater') {
+          node.classList.remove('is-dimmed');
+        } else {
+          node.classList.add('is-dimmed');
+        }
+      });
+    });
+  });
+
+  // Bidirectional hover sync between cards and SVG map nodes
+  cards.forEach((card) => {
+    const town = card.getAttribute('data-town');
+    if (!town) return;
+
+    card.addEventListener('mouseenter', () => {
+      const node = document.querySelector(`.map-node[data-town="${town}"]`);
+      if (node) node.classList.add('is-active');
+    });
+
+    card.addEventListener('mouseleave', () => {
+      const node = document.querySelector(`.map-node[data-town="${town}"]`);
+      if (node) node.classList.remove('is-active');
+    });
+  });
+
+  mapNodes.forEach((node) => {
+    const town = node.getAttribute('data-town');
+    if (!town) return;
+
+    node.addEventListener('mouseenter', () => {
+      const card = document.querySelector(`.town-dispatch-card[data-town="${town}"]`);
+      if (card) card.classList.add('is-active');
+    });
+
+    node.addEventListener('mouseleave', () => {
+      const card = document.querySelector(`.town-dispatch-card[data-town="${town}"]`);
+      if (card) card.classList.remove('is-active');
+    });
+
+    // Clicking map node highlights and scrolls card into view
+    node.addEventListener('click', () => {
+      const card = document.querySelector(`.town-dispatch-card[data-town="${town}"]`);
+      if (!card) return;
+
+      // If hidden due to filter, reset to 'all'
+      if (card.classList.contains('is-hidden')) {
+        const allBtn = document.querySelector('.town-filter-btn[data-filter="all"]');
+        if (allBtn) allBtn.click();
+      }
+
+      card.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      card.classList.add('is-active');
+      setTimeout(() => {
+        card.classList.remove('is-active');
+      }, 1500);
+    });
+  });
+}
+
+/**
+ * SECTION 16: INFINITE LOOPING REVIEWS SLIDER
+ */
+function initServiceReviewsSlider() {
+  const sliderEl = document.getElementById('service-reviews-slider');
+  if (!sliderEl) return;
+
+  const track = sliderEl.querySelector('.service-reviews-track');
+  const prevBtn = sliderEl.querySelector('#srv-review-prev');
+  const nextBtn = sliderEl.querySelector('#srv-review-next');
+  const dotsContainer = sliderEl.querySelector('#srv-slider-dots');
+  if (!track || !prevBtn || !nextBtn) return;
+
+  const originalCards = Array.from(track.querySelectorAll('.service-review-card'));
+  const cardCount = originalCards.length;
+  if (cardCount === 0) return;
+
+  // 3 clones prepended, 3 clones appended for seamless continuous infinite looping
+  const CLONE_BUFFER = 3;
+
+  for (let i = cardCount - CLONE_BUFFER; i < cardCount; i++) {
+    const clone = originalCards[i].cloneNode(true);
+    clone.classList.add('is-clone');
+    clone.setAttribute('aria-hidden', 'true');
+    track.insertBefore(clone, track.firstChild);
+  }
+
+  for (let i = 0; i < CLONE_BUFFER; i++) {
+    const clone = originalCards[i].cloneNode(true);
+    clone.classList.add('is-clone');
+    clone.setAttribute('aria-hidden', 'true');
+    track.appendChild(clone);
+  }
+
+  let currentIndex = CLONE_BUFFER; // Points to first real card (index 0)
+  let isTransitioning = false;
+  let autoPlayTimer = null;
+  const AUTOPLAY_DELAY = 4500;
+
+  // Create pagination dots
+  if (dotsContainer) {
+    dotsContainer.innerHTML = '';
+    for (let i = 0; i < cardCount; i++) {
+      const dot = document.createElement('button');
+      dot.type = 'button';
+      dot.className = `service-slider-dot ${i === 0 ? 'is-active' : ''}`;
+      dot.setAttribute('aria-label', `Go to review ${i + 1} of ${cardCount}`);
+      dot.addEventListener('click', () => {
+        goToRealIndex(i);
+      });
+      dotsContainer.appendChild(dot);
+    }
+  }
+
+  function getStepWidth() {
+    const firstCard = track.querySelector('.service-review-card');
+    if (!firstCard) return 0;
+    const cardWidth = firstCard.getBoundingClientRect().width;
+    const computedGap = parseFloat(window.getComputedStyle(track).gap) || 24;
+    return cardWidth + computedGap;
+  }
+
+  function updateTrackPosition(withTransition = true) {
+    const step = getStepWidth();
+    if (withTransition) {
+      track.style.transition = 'transform 0.45s cubic-bezier(0.25, 1, 0.5, 1)';
+    } else {
+      track.style.transition = 'none';
+    }
+    track.style.transform = `translateX(-${currentIndex * step}px)`;
+    updateDots();
+  }
+
+  function updateDots() {
+    if (!dotsContainer) return;
+    const dots = dotsContainer.querySelectorAll('.service-slider-dot');
+    let realIndex = (currentIndex - CLONE_BUFFER) % cardCount;
+    if (realIndex < 0) realIndex += cardCount;
+
+    dots.forEach((dot, idx) => {
+      dot.classList.toggle('is-active', idx === realIndex);
+    });
+  }
+
+  function slideNext() {
+    if (isTransitioning) return;
+    isTransitioning = true;
+    currentIndex++;
+    updateTrackPosition(true);
+  }
+
+  function slidePrev() {
+    if (isTransitioning) return;
+    isTransitioning = true;
+    currentIndex--;
+    updateTrackPosition(true);
+  }
+
+  function goToRealIndex(idx) {
+    if (isTransitioning) return;
+    isTransitioning = true;
+    currentIndex = CLONE_BUFFER + idx;
+    updateTrackPosition(true);
+  }
+
+  // Infinite loop boundary jump on transitionend
+  track.addEventListener('transitionend', () => {
+    isTransitioning = false;
+
+    // Past last original card into appended clones
+    if (currentIndex >= CLONE_BUFFER + cardCount) {
+      currentIndex = currentIndex - cardCount;
+      updateTrackPosition(false);
+    }
+    // Before first original card into prepended clones
+    else if (currentIndex < CLONE_BUFFER) {
+      currentIndex = currentIndex + cardCount;
+      updateTrackPosition(false);
+    }
+  });
+
+  // Buttons
+  nextBtn.addEventListener('click', () => {
+    slideNext();
+    restartAutoPlay();
+  });
+
+  prevBtn.addEventListener('click', () => {
+    slidePrev();
+    restartAutoPlay();
+  });
+
+  // Autoplay
+  function startAutoPlay() {
+    stopAutoPlay();
+    autoPlayTimer = setInterval(() => {
+      slideNext();
+    }, AUTOPLAY_DELAY);
+  }
+
+  function stopAutoPlay() {
+    if (autoPlayTimer) {
+      clearInterval(autoPlayTimer);
+      autoPlayTimer = null;
+    }
+  }
+
+  function restartAutoPlay() {
+    stopAutoPlay();
+    startAutoPlay();
+  }
+
+  // Pause on hover & focus
+  sliderEl.addEventListener('mouseenter', stopAutoPlay);
+  sliderEl.addEventListener('mouseleave', startAutoPlay);
+  sliderEl.addEventListener('focusin', stopAutoPlay);
+  sliderEl.addEventListener('focusout', startAutoPlay);
+
+  // Mobile Touch Swipe Gestures
+  let touchStartX = 0;
+  let touchEndX = 0;
+
+  track.addEventListener('touchstart', (e) => {
+    stopAutoPlay();
+    touchStartX = e.changedTouches[0].screenX;
+  }, { passive: true });
+
+  track.addEventListener('touchend', (e) => {
+    touchEndX = e.changedTouches[0].screenX;
+    const diff = touchStartX - touchEndX;
+    if (Math.abs(diff) > 40) {
+      if (diff > 0) {
+        slideNext();
+      } else {
+        slidePrev();
+      }
+    }
+    startAutoPlay();
+  }, { passive: true });
+
+  // Window resize handler
+  let resizeTimeout = null;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(() => {
+      updateTrackPosition(false);
+    }, 100);
+  }, { passive: true });
+
+  // Initial positioning
+  setTimeout(() => {
+    updateTrackPosition(false);
+    startAutoPlay();
+  }, 100);
 }
 

@@ -101,8 +101,8 @@ function init3DCardTilt() {
 function initHeroParallax() {
   if (window.matchMedia('(pointer: coarse)').matches) return;
 
-  const hero = document.querySelector('.hero-section');
-  const stage = document.querySelector('.hero-architectural-stage');
+  const hero = document.querySelector('.hero-section, .service-hero');
+  const stage = document.querySelector('.hero-architectural-stage, .service-hero-stage');
   const floatCards = document.querySelectorAll('.hero-float-card');
   if (!hero || !stage) return;
 

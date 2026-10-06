@@ -15,6 +15,33 @@ export function initNavigation() {
   const heroSection = document.querySelector('.hero-section');
   const finalCtaSection = document.querySelector('.final-cta-section');
 
+  // Dynamic header height calculation to ensure breadcrumb and hero offsets are pixel-perfect
+  let unScrolledHeaderHeight = 0;
+  const topTrustBar = document.querySelector('.top-trust-bar');
+
+  function updateHeaderHeight() {
+    if (header) {
+      if (!header.classList.contains('is-scrolled')) {
+        unScrolledHeaderHeight = header.offsetHeight;
+        if (unScrolledHeaderHeight > 0) {
+          document.documentElement.style.setProperty('--header-height', `${unScrolledHeaderHeight}px`);
+        }
+      }
+      if (topTrustBar) {
+        const topBarHeight = topTrustBar.offsetHeight;
+        if (topBarHeight > 0) {
+          document.documentElement.style.setProperty('--top-bar-height', `${topBarHeight}px`);
+        }
+      }
+    }
+  }
+
+  updateHeaderHeight();
+  window.addEventListener('resize', updateHeaderHeight, { passive: true });
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(updateHeaderHeight);
+  }
+
   // 1. Scroll Handlers: Header shrink, progress bar, sticky bars
   function onScroll() {
     const scrollY = window.scrollY || window.pageYOffset;
@@ -26,9 +53,9 @@ export function initNavigation() {
       scrollProgressBar.style.width = `${scrollPercent}%`;
     }
 
-    // Header Blur & Shrink after 60px
+    // Header Blur & Slide sub-header out after 20px
     if (header) {
-      if (scrollY > 60) {
+      if (scrollY > 20) {
         header.classList.add('is-scrolled');
       } else {
         header.classList.remove('is-scrolled');

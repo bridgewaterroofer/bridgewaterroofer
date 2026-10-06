@@ -7,13 +7,15 @@
 /* --------------------------------------------------------------------------
    1. HERO SECTION SPECIFICS & 3D VISUAL STAGE
    -------------------------------------------------------------------------- */
-.hero-section {
+.hero-section,
+.loc-hero {
   min-height: auto;
-  padding-top: clamp(8.75rem, 13.5vh, 9.75rem);
+  padding-top: calc(var(--header-height, 108px) + 2.5rem);
   padding-bottom: clamp(4.5rem, 8vw, 6rem);
 }
 
-.hero-breadcrumb-nav {
+.hero-breadcrumb-nav,
+.loc-breadcrumb {
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -24,21 +26,35 @@
   z-index: 5;
 }
 
+.loc-breadcrumb__list {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.loc-breadcrumb__link,
 .hero-breadcrumb-nav a {
   color: var(--slate-300);
   text-decoration: none;
   transition: color var(--duration-fast) ease;
 }
 
+.loc-breadcrumb__link:hover,
 .hero-breadcrumb-nav a:hover {
   color: var(--orange);
 }
 
+.loc-breadcrumb__separator,
 .hero-breadcrumb-nav .breadcrumb-sep {
   color: var(--slate-600);
   user-select: none;
 }
 
+.loc-breadcrumb__item--active,
 .hero-breadcrumb-nav .breadcrumb-current {
   color: var(--orange);
   font-weight: 600;

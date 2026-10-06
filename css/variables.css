@@ -60,6 +60,10 @@
   --container-narrow: 1100px;
   --container-padding: clamp(1.25rem, 3.5vw, 2.5rem);
 
+  /* Header Dimensions */
+  --header-height: 118px;
+  --top-bar-height: 38px;
+
   /* Section Spacing */
   --section-pad-y: clamp(4.5rem, 8vw, 7.5rem);
   --section-pad-y-compact: clamp(3.5rem, 6vw, 5rem);

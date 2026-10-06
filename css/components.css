@@ -144,9 +144,21 @@
   left: 0;
   right: 0;
   z-index: 1000;
-  transition: transform var(--duration-normal) var(--ease-smooth),
-              background var(--duration-normal) var(--ease-smooth),
-              box-shadow var(--duration-normal) var(--ease-smooth);
+  transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1),
+    background var(--duration-normal) var(--ease-smooth),
+    box-shadow var(--duration-normal) var(--ease-smooth);
+}
+
+/* When scrolled, slide sub-header (top trust bar) out of view so ONLY the main navbar is sticky */
+.site-header.is-scrolled {
+  transform: translateY(calc(-1 * var(--top-bar-height, 38px)));
+}
+
+.site-header.is-scrolled .top-trust-bar {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.2s ease, visibility 0.2s;
 }
 
 /* Top Trust Bar */
@@ -158,6 +170,7 @@
   padding: 0.45rem 0;
   position: relative;
   z-index: 1002;
+  transition: opacity 0.2s ease, visibility 0.2s;
 }
 
 .top-trust-bar .container {
@@ -359,8 +372,8 @@
   transform: translateY(12px) scale(0.98);
   transform-origin: top left;
   transition: opacity var(--duration-normal) var(--ease-smooth),
-              transform var(--duration-normal) var(--ease-smooth),
-              visibility var(--duration-normal);
+    transform var(--duration-normal) var(--ease-smooth),
+    visibility var(--duration-normal);
   z-index: 1010;
   pointer-events: none;
 }
@@ -849,10 +862,7 @@
 
 @media (hover: hover) and (pointer: fine) {
   .tilt-card:hover {
-    transform: perspective(1000px)
-               rotateX(var(--rotateX, 0deg))
-               rotateY(var(--rotateY, 0deg))
-               translateY(-6px);
+    transform: perspective(1000px) rotateX(var(--rotateX, 0deg)) rotateY(var(--rotateY, 0deg)) translateY(-6px);
   }
 }
 
@@ -889,4 +899,160 @@
 .reveal-on-scroll.is-revealed {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* ==========================================================================
+   Priority Call / High Inquiry Volume Modal Overlay
+   ========================================================================== */
+.high-volume-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(4, 10, 18, 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.25rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.high-volume-modal-backdrop.is-open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.high-volume-modal-card {
+  background: linear-gradient(145deg, #0e1e32 0%, #081220 100%);
+  border: 1px solid rgba(244, 122, 36, 0.45);
+  border-radius: 24px;
+  max-width: 520px;
+  width: 100%;
+  padding: clamp(2rem, 5vw, 2.75rem);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7), 0 0 40px rgba(244, 122, 36, 0.2);
+  text-align: center;
+  position: relative;
+  transform: translateY(20px) scale(0.97);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.high-volume-modal-backdrop.is-open .high-volume-modal-card {
+  transform: translateY(0) scale(1);
+}
+
+.high-volume-close-btn {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: var(--slate-300, #cbd5e1);
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  font-size: 1.25rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.high-volume-close-btn:hover {
+  background: rgba(244, 122, 36, 0.2);
+  color: #ffffff;
+  border-color: var(--orange, #f47a24);
+}
+
+.high-volume-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(244, 122, 36, 0.15);
+  border: 1px solid rgba(244, 122, 36, 0.35);
+  color: var(--orange, #f47a24);
+  font-family: var(--font-heading, 'Outfit', sans-serif);
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 0.3rem 0.85rem;
+  border-radius: 9999px;
+  margin-bottom: 1.25rem;
+}
+
+.high-volume-modal-title {
+  font-family: var(--font-heading, 'Outfit', sans-serif);
+  font-size: clamp(1.6rem, 3.2vw, 2.1rem);
+  font-weight: 900;
+  color: #ffffff;
+  line-height: 1.2;
+  margin-bottom: 0.85rem;
+}
+
+.high-volume-modal-desc {
+  color: var(--slate-300, #cbd5e1);
+  font-size: 0.95rem;
+  line-height: 1.65;
+  margin-bottom: 1.75rem;
+}
+
+.high-volume-call-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.85rem;
+  background: linear-gradient(135deg, #f47a24 0%, #ea580c 100%) !important;
+  color: #ffffff !important;
+  font-family: var(--font-heading, 'Outfit', sans-serif);
+  font-size: 1.2rem;
+  font-weight: 800;
+  padding: 1.1rem 1.75rem;
+  border-radius: 14px;
+  text-decoration: none;
+  box-shadow: 0 10px 30px rgba(244, 122, 36, 0.45);
+  transition: all 0.25s ease;
+  width: 100%;
+}
+
+.high-volume-call-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 40px rgba(244, 122, 36, 0.65);
+}
+
+.high-volume-countdown {
+  margin-top: 1rem;
+  font-size: 0.82rem;
+  color: var(--slate-400, #94a3b8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+}
+
+.high-volume-countdown strong {
+  color: var(--orange, #f47a24);
+  font-weight: 800;
+}
+
+/* Subtle in-form queue notice */
+.form-queue-notice {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(244, 122, 36, 0.08);
+  border: 1px dashed rgba(244, 122, 36, 0.35);
+  border-radius: 10px;
+  padding: 0.65rem 0.85rem;
+  font-size: 0.82rem;
+  color: var(--slate-300, #cbd5e1);
+  margin-bottom: 1rem;
+  line-height: 1.45;
+}
+
+.form-queue-notice strong {
+  color: var(--orange, #f47a24);
 }

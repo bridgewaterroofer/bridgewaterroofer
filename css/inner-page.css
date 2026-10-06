@@ -9,8 +9,11 @@
 .inner-breadcrumb-bar {
   background: var(--navy-950, #07131f);
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  padding: 0.85rem 0;
+  padding-top: calc(var(--header-height, 118px) + 0.85rem);
+  padding-bottom: 0.85rem;
   font-size: 0.875rem;
+  position: relative;
+  z-index: 10;
 }
 
 .inner-breadcrumb-nav {
@@ -120,29 +123,70 @@
 }
 
 .inner-section-tag {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
   font-family: var(--font-heading, 'Outfit', sans-serif);
   font-size: 0.8125rem;
   font-weight: 800;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
   color: var(--orange, #f47a24);
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.85rem;
+  padding: 0.35rem 0.85rem;
+  background: rgba(244, 122, 36, 0.08);
+  border: 1px solid rgba(244, 122, 36, 0.22);
+  border-radius: var(--radius-full, 9999px);
+}
+
+.inner-section-tag::before {
+  content: "";
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
 }
 
 .inner-section-title {
   font-family: var(--font-heading, 'Outfit', sans-serif);
   font-size: clamp(1.85rem, 3.5vw, 2.5rem);
   font-weight: 800;
-  color: #ffffff;
+  color: var(--navy-950, #07131f);
   margin-bottom: 1rem;
   letter-spacing: -0.02em;
+  text-align: center;
 }
 
 .inner-section-lead {
   font-size: 1.0625rem;
   line-height: 1.65;
-  color: var(--slate-400, #94a3b8);
+  color: var(--slate-600, #475569);
+  text-align: center;
+  margin-inline: auto;
+  max-width: 780px;
+}
+
+/* Dark Theme Overrides for inner-section headers */
+.dark-theme .inner-section-tag,
+.section-dark .inner-section-tag,
+.inner-page-hero .inner-section-tag {
+  color: #FFA35C;
+  background: rgba(244, 122, 36, 0.14);
+  border-color: rgba(244, 122, 36, 0.35);
+}
+
+.dark-theme .inner-section-title,
+.section-dark .inner-section-title,
+.inner-page-hero .inner-section-title {
+  color: #ffffff;
+}
+
+.dark-theme .inner-section-lead,
+.section-dark .inner-section-lead,
+.inner-page-hero .inner-section-lead {
+  color: var(--slate-300, #cbd5e1);
 }
 
 /* --------------------------------------------------------------------------
@@ -1541,5 +1585,654 @@
   margin: 0;
 }
 
+/* ==========================================================================
+   SERVICE PAGE MASTER DESIGN SYSTEM (§ Service Page Specification)
+   ========================================================================== */
 
+/* Breadcrumb Bar */
+.service-breadcrumb-bar {
+  background: var(--navy-950);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding-top: calc(var(--header-height, 118px) + 0.85rem);
+  padding-bottom: 0.85rem;
+  font-size: 0.875rem;
+  position: relative;
+  z-index: 10;
+}
 
+.service-breadcrumb-nav {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  color: var(--slate-400);
+}
+
+.service-breadcrumb-nav a {
+  color: var(--slate-300);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color var(--duration-fast) ease;
+}
+
+.service-breadcrumb-nav a:hover {
+  color: var(--orange);
+}
+
+.service-breadcrumb-nav .breadcrumb-sep {
+  color: var(--slate-600);
+  font-size: 0.75rem;
+}
+
+.service-breadcrumb-nav .breadcrumb-current {
+  color: var(--orange);
+  font-weight: 700;
+}
+
+/* Service Hero Section (Height 600-720px on desktop) */
+.service-hero-section {
+  position: relative;
+  min-height: clamp(560px, 68vh, 720px);
+  background-color: var(--navy-950);
+  background-image:
+    radial-gradient(circle at 80% 25%, rgba(244, 122, 36, 0.12) 0%, transparent 45%),
+    radial-gradient(circle at 15% 75%, rgba(16, 36, 51, 0.85) 0%, transparent 60%),
+    linear-gradient(180deg, var(--navy-950) 0%, var(--navy-900) 100%);
+  color: var(--white);
+  padding-top: clamp(2.5rem, 5vw, 4rem);
+  padding-bottom: clamp(4.5rem, 8vw, 6.5rem);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.service-hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+  align-items: center;
+  gap: clamp(2rem, 3.5vw, 3.5rem);
+  position: relative;
+  z-index: 5;
+}
+
+.service-hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-heading);
+  font-size: 0.8125rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--amber);
+  background: rgba(255, 176, 32, 0.1);
+  border: 1px solid rgba(255, 176, 32, 0.25);
+  border-radius: var(--radius-full);
+  padding: 0.4rem 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.service-hero-title {
+  font-size: clamp(2.2rem, 4vw, 3.6rem);
+  font-weight: 800;
+  color: var(--white);
+  line-height: 1.18;
+  letter-spacing: -0.02em;
+  margin-bottom: 1.25rem;
+}
+
+.service-hero-lead {
+  font-size: clamp(1.05rem, 1.2vw, 1.2rem);
+  line-height: 1.65;
+  color: var(--slate-300);
+  margin-bottom: 2rem;
+  max-width: 620px;
+}
+
+.service-hero-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.15rem;
+  margin-bottom: 2rem;
+}
+
+.service-hero-trust {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 0.875rem;
+  color: var(--slate-300);
+}
+
+/* Service Hero Visual Right */
+.service-hero-visual-wrapper {
+  position: relative;
+  perspective: 1200px;
+  display: flex;
+  justify-content: center;
+}
+
+.service-hero-stage {
+  position: relative;
+  width: 100%;
+  max-width: 540px;
+  transform-style: preserve-3d;
+}
+
+.service-hero-frame {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.65), 0 0 35px var(--orange-glow);
+  border: 2px solid rgba(255, 255, 255, 0.18);
+  background: var(--navy-900);
+}
+
+.service-hero-frame img {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.service-hero-frame:hover img {
+  transform: scale(1.03);
+}
+
+/* Floating Badges on Hero */
+.service-float-pill {
+  position: absolute;
+  background: rgba(16, 36, 51, 0.92);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  padding: 0.7rem 1.15rem;
+  border-radius: var(--radius-md);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.service-float-pill.pill-top-left {
+  top: 12%;
+  left: -18px;
+}
+
+.service-float-pill.pill-bottom-right {
+  bottom: 12%;
+  right: -18px;
+}
+
+.service-float-pill .pill-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-sm);
+  background: rgba(244, 122, 36, 0.2);
+  border: 1px solid rgba(244, 122, 36, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--orange);
+}
+
+.service-float-pill .pill-text h5 {
+  font-size: 0.9375rem;
+  color: var(--white);
+  margin: 0;
+}
+
+.service-float-pill .pill-text span {
+  font-size: 0.75rem;
+  color: var(--amber);
+  font-weight: 700;
+}
+
+/* Section 6: Service Urgent Strip (Floating white card overlapping hero) */
+.service-urgent-strip {
+  position: relative;
+  z-index: 15;
+  margin-top: -3.5rem;
+  padding-bottom: 2rem;
+}
+
+.service-urgent-card {
+  background: var(--white);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  padding: clamp(1.75rem, 3.5vw, 2.5rem);
+  box-shadow: 0 18px 48px rgba(7, 19, 31, 0.16);
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 2rem;
+}
+
+.service-urgent-icon-pill {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: rgba(244, 122, 36, 0.12);
+  border: 1px solid rgba(244, 122, 36, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--orange);
+  flex-shrink: 0;
+}
+
+.service-urgent-text h3 {
+  font-size: 1.35rem;
+  color: var(--navy-950);
+  margin-bottom: 0.35rem;
+}
+
+.service-urgent-text p {
+  color: var(--slate-600);
+  font-size: 0.95rem;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.service-urgent-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  align-items: flex-end;
+}
+
+/* Section 7: Service Introduction (Light 2-col) */
+.service-intro-section {
+  padding: var(--section-pad-y) 0;
+  background: var(--white);
+}
+
+.service-intro-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: clamp(2.5rem, 5vw, 4rem);
+  align-items: center;
+}
+
+.service-intro-content h2 {
+  font-size: clamp(2rem, 3.2vw, 2.75rem);
+  color: var(--navy-950);
+  margin-bottom: 1.25rem;
+}
+
+.service-intro-content p {
+  font-size: 1.05rem;
+  color: var(--slate-600);
+  line-height: 1.7;
+  margin-bottom: 1.25rem;
+}
+
+.service-intro-media {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+}
+
+.service-intro-media img {
+  width: 100%;
+  height: 440px;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.service-intro-media:hover img {
+  transform: scale(1.03);
+}
+
+.service-media-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(180deg, transparent 0%, rgba(7, 19, 31, 0.92) 100%);
+  color: var(--white);
+  padding: 1.5rem 1.25rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+/* Section 8: Problems This Service Solves */
+.service-problems-section {
+  padding: var(--section-pad-y) 0;
+  background: var(--off-white);
+  border-top: 1px solid var(--border-light);
+  border-bottom: 1px solid var(--border-light);
+}
+
+.service-problems-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.service-problem-card {
+  background: var(--white);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 2rem;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  transition: transform var(--duration-fast) ease, box-shadow var(--duration-fast) ease, border-color var(--duration-fast) ease;
+}
+
+.service-problem-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+  border-color: rgba(244, 122, 36, 0.4);
+}
+
+.service-problem-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-sm);
+  background: rgba(244, 122, 36, 0.12);
+  border: 1px solid rgba(244, 122, 36, 0.25);
+  color: var(--orange);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+}
+
+.service-problem-card h3 {
+  font-size: 1.2rem;
+  color: var(--navy-950);
+  margin-bottom: 0.65rem;
+}
+
+.service-problem-card p {
+  font-size: 0.9375rem;
+  color: var(--slate-600);
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+
+/* Section 10: Signs Checklist Grid */
+.service-signs-section {
+  padding: var(--section-pad-y) 0;
+  background: var(--white);
+}
+
+.service-signs-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.service-sign-card {
+  background: var(--off-white);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 1.75rem 1.25rem;
+  text-align: center;
+  transition: transform var(--duration-fast) ease, border-color var(--duration-fast) ease;
+}
+
+.service-sign-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--orange);
+}
+
+.service-sign-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: var(--white);
+  border: 1px solid rgba(244, 122, 36, 0.35);
+  color: var(--orange);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem;
+}
+
+.service-sign-card h3 {
+  font-size: 1.05rem;
+  color: var(--navy-950);
+  margin-bottom: 0.5rem;
+}
+
+.service-sign-card p {
+  font-size: 0.875rem;
+  color: var(--slate-600);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Section 14: Subservices / Repair Types */
+.service-subservices-section {
+  padding: var(--section-pad-y) 0;
+  background: var(--navy-950);
+  background-image: linear-gradient(180deg, var(--navy-950) 0%, var(--navy-900) 100%);
+  color: var(--white);
+}
+
+.service-subservices-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.75rem;
+}
+
+.service-subservice-card {
+  background: rgba(16, 36, 51, 0.65);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius-md);
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  transition: transform var(--duration-fast) ease, border-color var(--duration-fast) ease;
+}
+
+.service-subservice-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(244, 122, 36, 0.5);
+}
+
+.service-subservice-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-sm);
+  background: rgba(244, 122, 36, 0.15);
+  border: 1px solid rgba(244, 122, 36, 0.35);
+  color: var(--orange);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+}
+
+.service-subservice-card h3 {
+  font-size: 1.2rem;
+  color: var(--white);
+  margin-bottom: 0.65rem;
+}
+
+.service-subservice-card p {
+  font-size: 0.9rem;
+  color: var(--slate-300);
+  line-height: 1.6;
+  margin-bottom: 1.25rem;
+  flex-grow: 1;
+}
+
+/* Section 17: Cost Factors (No Fake Pricing) */
+.service-cost-factors-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.service-cost-factor-card {
+  background: var(--white);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 1.75rem;
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--duration-fast) ease, border-color var(--duration-fast) ease;
+}
+
+.service-cost-factor-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--orange);
+}
+
+.service-cost-factor-card h3 {
+  font-size: 1.15rem;
+  color: var(--navy-950);
+  margin-bottom: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.service-cost-factor-card h3 span {
+  font-size: 0.8125rem;
+  color: var(--orange);
+  font-weight: 800;
+}
+
+.service-cost-factor-card p {
+  font-size: 0.875rem;
+  color: var(--slate-600);
+  line-height: 1.55;
+  margin: 0;
+}
+
+/* Section 24: Related Services Grid */
+.service-related-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.75rem;
+}
+
+.service-related-card {
+  background: var(--off-white);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--duration-fast) ease, box-shadow var(--duration-fast) ease;
+}
+
+.service-related-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+}
+
+.service-related-media {
+  height: 160px;
+  background: var(--navy-800);
+  overflow: hidden;
+}
+
+.service-related-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.service-related-card:hover .service-related-media img {
+  transform: scale(1.05);
+}
+
+.service-related-body {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.service-related-body h3 {
+  font-size: 1.15rem;
+  color: var(--navy-950);
+  margin-bottom: 0.5rem;
+}
+
+.service-related-body p {
+  font-size: 0.875rem;
+  color: var(--slate-600);
+  line-height: 1.55;
+  margin-bottom: 1.25rem;
+  flex-grow: 1;
+}
+
+/* Responsive Overrides for Service Pages */
+@media (max-width: 1100px) {
+  .service-problems-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .service-signs-grid,
+  .service-subservices-grid,
+  .service-cost-factors-grid,
+  .service-related-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .service-intro-grid {
+    grid-template-columns: 1fr;
+  }
+  .service-urgent-card {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .service-urgent-actions {
+    align-items: center;
+  }
+  .service-urgent-icon-pill {
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .service-hero-grid {
+    grid-template-columns: 1fr;
+  }
+  .service-problems-grid,
+  .service-signs-grid,
+  .service-subservices-grid,
+  .service-cost-factors-grid,
+  .service-related-grid {
+    grid-template-columns: 1fr;
+  }
+  .service-hero-stage {
+    max-width: 100%;
+  }
+  .service-float-pill {
+    padding: 0.5rem 0.85rem;
+    font-size: 0.8rem;
+  }
+  .service-float-pill.pill-top {
+    top: 12px;
+    left: 12px;
+    right: auto;
+  }
+  .service-float-pill.pill-bottom {
+    bottom: 12px;
+    left: 12px;
+    right: auto;
+  }
+}
+
+/* Editorial / Legal / Hub Article Hero */
+.article-hero {
+  padding-top: calc(var(--header-height, 108px) + 2.5rem);
+  background: var(--navy-950, #07131f);
+  position: relative;
+}

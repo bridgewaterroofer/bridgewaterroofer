@@ -205,6 +205,22 @@ ul, ol {
   color: var(--slate-400);
 }
 
+/* Universal Text Center Utility */
+.text-center {
+  text-align: center !important;
+}
+
+.text-center h2,
+.text-center .inner-section-title {
+  text-align: center;
+}
+
+.text-center p,
+.text-center .inner-section-lead {
+  text-align: center;
+  margin-inline: auto;
+}
+
 /* Reduced Motion Override */
 @media (prefers-reduced-motion: reduce) {
   *,

@@ -53,6 +53,10 @@
    Tablets Landscape & Standard (<= 1040px)
    -------------------------------------------------------------------------- */
 @media (max-width: 1040px) {
+  :root {
+    --header-height: 138px;
+  }
+
   .desktop-nav,
   .nav-actions .header-phone-btn,
   .nav-actions .header-phone-link {
@@ -171,6 +175,10 @@
    Mobile Landscape & Large Phones (<= 768px)
    -------------------------------------------------------------------------- */
 @media (max-width: 768px) {
+  :root {
+    --header-height: 108px;
+  }
+
   body {
     padding-bottom: 64px; /* Ensure mobile sticky call bar does not cover footer/content */
   }
