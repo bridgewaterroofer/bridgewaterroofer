@@ -147,10 +147,38 @@ function initRoofDiagnosis() {
         const targetProblem = hs.getAttribute('data-linked-problem');
         if (targetProblem) {
           selectProblem(targetProblem);
-        }
       }
     });
   });
+
+  // Location Page Hotspots support
+  const locHotspotButtons = document.querySelectorAll('.hotspot-btn');
+  if (locHotspotButtons.length) {
+    locHotspotButtons.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        locHotspotButtons.forEach((b) => b.classList.remove('active', 'is-active'));
+        btn.classList.add('active', 'is-active');
+
+        const title = btn.getAttribute('data-title');
+        const pill = btn.getAttribute('data-pill') || btn.getAttribute('data-tag');
+        const desc = btn.getAttribute('data-desc');
+        const actionTitle = btn.getAttribute('data-action-title');
+        const actionText = btn.getAttribute('data-action-text');
+
+        const pillEl = document.getElementById('diag-pill');
+        const titleEl = document.getElementById('diag-title');
+        const descEl = document.getElementById('diag-desc');
+        const actionTitleEl = document.getElementById('diag-action-title');
+        const actionTextEl = document.getElementById('diag-action-text');
+
+        if (pillEl && pill) pillEl.textContent = pill;
+        if (titleEl && title) titleEl.textContent = title;
+        if (descEl && desc) descEl.textContent = desc;
+        if (actionTitleEl && actionTitle) actionTitleEl.textContent = actionTitle;
+        if (actionTextEl && actionText) actionTextEl.textContent = actionText;
+      });
+    });
+  }
 }
 
 /**
