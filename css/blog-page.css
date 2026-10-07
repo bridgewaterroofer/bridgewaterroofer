@@ -1733,34 +1733,45 @@ body.blog-article-page {
 }
 
 /* --------------------------------------------------------------------------
-   18. RELATED CLUSTER ARTICLES (3-Cards)
+   18. RELATED CLUSTER ARTICLES (3-Cards) - Light Editorial Theme
    -------------------------------------------------------------------------- */
 .related-articles-section {
   padding: 4.5rem 0;
-  background: #081220;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  background: #ffffff;
+  border-top: 1px solid #e2e8f0;
+}
+
+.related-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.75rem;
+  margin-top: 2rem;
 }
 
 .related-article-card {
-  background: #132338;
-  border: 1px solid #1e3a5f;
-  border-radius: var(--radius-xl);
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: var(--radius-xl, 18px);
   overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
   display: flex;
   flex-direction: column;
-  transition: transform var(--duration-fast) ease, box-shadow var(--duration-fast) ease;
+  transition: transform var(--duration-fast, 0.2s) ease, box-shadow var(--duration-fast, 0.2s) ease, border-color var(--duration-fast, 0.2s) ease;
 }
 
 .related-article-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 16px 32px rgba(7, 19, 31, 0.08);
+  border-color: var(--orange);
+  box-shadow: 0 12px 32px rgba(7, 19, 31, 0.1);
 }
 
 .article-card-thumb {
-  height: 180px;
+  height: 200px;
+  width: 100%;
   overflow: hidden;
   position: relative;
+  background: #f1f5f9;
+  display: block;
 }
 
 .article-card-thumb img {
@@ -1768,40 +1779,62 @@ body.blog-article-page {
   height: 100%;
   object-fit: cover;
   transition: transform 0.4s ease;
+  display: block;
 }
 
 .related-article-card:hover .article-card-thumb img {
   transform: scale(1.05);
 }
 
-.article-card-body {
+.article-card-body,
+.related-article-card .service-card-body {
   padding: 1.5rem;
   display: flex;
   flex-direction: column;
   flex-grow: 1;
+  background: #ffffff;
 }
 
 .article-card-cat {
-  font-size: 0.75rem;
+  font-size: 0.775rem;
   font-weight: 800;
-  color: var(--orange-hover);
+  color: var(--orange);
   text-transform: uppercase;
   letter-spacing: 0.08em;
   margin-bottom: 0.5rem;
 }
 
-.article-card-body h3 {
+.article-card-body h3,
+.related-article-card h3 {
   font-size: 1.15rem;
-  color: #ffffff;
-  margin-bottom: 0.5rem;
+  color: #07131f;
+  margin-bottom: 0.65rem;
   line-height: 1.4;
+  font-weight: 800;
+  font-family: var(--font-heading);
 }
 
-.article-card-body p {
+.article-card-body h3 a,
+.related-article-card h3 a,
+.related-article-card .service-card-body h3 a {
+  color: #07131f !important;
+  text-decoration: none;
+  transition: color var(--duration-fast, 0.2s) ease;
+}
+
+.article-card-body h3 a:hover,
+.related-article-card h3 a:hover,
+.related-article-card .service-card-body h3 a:hover {
+  color: var(--orange) !important;
+}
+
+.article-card-body p,
+.related-article-card p,
+.related-article-card .service-card-body p {
   font-size: 0.875rem;
-  color: var(--slate-300, #cbd5e1);
-  line-height: 1.55;
-  margin-bottom: 1.25rem;
+  color: #475569;
+  line-height: 1.6;
+  margin-bottom: 0;
   flex-grow: 1;
 }
 
@@ -1810,9 +1843,9 @@ body.blog-article-page {
   align-items: center;
   justify-content: space-between;
   font-size: 0.8125rem;
-  color: var(--slate-400, #94a3b8);
+  color: #94a3b8;
   padding-top: 0.75rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-top: 1px solid #f1f5f9;
 }
 
 /* --------------------------------------------------------------------------
@@ -2162,7 +2195,7 @@ body.blog-article-page {
 
 
 .service-card-body h3 a, .article-card-body h3 a {
-  color: #ffffff;
+  color: #07131f;
   text-decoration: none;
   transition: color 0.2s ease;
 }
@@ -2171,6 +2204,10 @@ body.blog-article-page {
   color: var(--orange, #f47a24);
 }
 
-.related-articles-section h2, .related-services-section h2 {
+.related-articles-section h2 {
+  color: #07131f !important;
+}
+
+.related-services-section h2 {
   color: #ffffff !important;
 }
