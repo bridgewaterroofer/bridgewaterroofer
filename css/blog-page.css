@@ -1824,16 +1824,20 @@ body.blog-article-page {
 .article-content-column .faq-section,
 .article-main .faq-section {
   background: transparent !important;
-  padding: 3rem 0 1.5rem !important;
+  padding: 0 !important;
+  margin: 0 !important;
   color: #07131f !important;
 }
 
 .blog-article-page .faq-section h2,
-.article-main-container .faq-section h2 {
+.article-main-container .faq-section h2,
+.article-body-content .faq-section h2 {
   color: #07131f !important;
+  margin-top: 3.5rem !important;
+  margin-bottom: 1.25rem !important;
+  padding-bottom: 0.5rem !important;
   border-bottom: 2px solid #e2e8f0 !important;
-  padding-bottom: 0.5rem;
-  margin-bottom: 1.5rem;
+  scroll-margin-top: 150px;
 }
 
 .faq-accordion {
