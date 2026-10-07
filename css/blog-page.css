@@ -458,6 +458,15 @@ body.blog-article-page {
   margin-top: 0 !important;
 }
 
+/* Ensure the end of the blog body aligns flush with the left sidebar CTA section */
+.article-body-content > *:last-child,
+.article-content-column > *:last-child,
+.article-main > *:last-child,
+.author-eeat-container:last-child,
+.author-eeat-container > *:last-child {
+  margin-bottom: 0 !important;
+}
+
 .toc-card {
   background: #ffffff;
   border: 1px solid #e2e8f0;
@@ -1602,7 +1611,7 @@ body.blog-article-page {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-  margin: 3.5rem 0;
+  margin: 3.5rem 0 0 0 !important;
 }
 
 .review-accuracy-box {
