@@ -24,7 +24,7 @@ function initReadingProgressBar() {
   window.addEventListener('scroll', () => {
     if (!ticking) {
       window.requestAnimationFrame(() => {
-        const article = document.querySelector('.article-body-content') || document.body;
+        const article = document.querySelector('.article-body-content, .article-content-column, .article-main') || document.body;
         const rect = article.getBoundingClientRect();
         const articleTop = rect.top + window.scrollY;
         const articleHeight = rect.height;
@@ -53,7 +53,7 @@ function initReadingProgressBar() {
  * 2. Sticky Table of Contents with IntersectionObserver
  */
 function initTableOfContents() {
-  const tocLinks = document.querySelectorAll('.toc-nav-item a, .mobile-toc-content a');
+  const tocLinks = document.querySelectorAll('.toc-nav-list a, .toc-nav-link, .toc-nav-item a, .mobile-toc-content a, .toc-link');
   if (!tocLinks.length) return;
 
   const sectionIds = Array.from(tocLinks)
@@ -151,19 +151,22 @@ function initMobileToc() {
  * 4. Accessible FAQ Accordion
  */
 function initFaqAccordion() {
-  const faqQuestions = document.querySelectorAll('.faq-question');
+  const faqQuestions = document.querySelectorAll('.faq-question, .faq-trigger');
 
   faqQuestions.forEach(btn => {
     btn.addEventListener('click', () => {
       const isExpanded = btn.getAttribute('aria-expanded') === 'true';
-      const answer = btn.nextElementSibling;
+      const item = btn.closest('.faq-item') || btn.parentElement;
+      const answer = btn.nextElementSibling || (item && item.querySelector('.faq-answer, .faq-body, .faq-content'));
 
       // Close other FAQs for clean single-view accordion
       faqQuestions.forEach(otherBtn => {
         if (otherBtn !== btn) {
           otherBtn.setAttribute('aria-expanded', 'false');
-          if (otherBtn.nextElementSibling) {
-            otherBtn.nextElementSibling.hidden = true;
+          const otherItem = otherBtn.closest('.faq-item') || otherBtn.parentElement;
+          const otherAns = otherBtn.nextElementSibling || (otherItem && otherItem.querySelector('.faq-answer, .faq-body, .faq-content'));
+          if (otherAns) {
+            otherAns.hidden = true;
           }
         }
       });
