@@ -25,6 +25,12 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://bridgewaterroofer.com/roofing-services/">
 
+  <!-- Favicon Suite (Edge-to-edge Logo Icon) -->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
   <!-- Preconnect Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -43,16 +49,75 @@
   <!-- Structured Data -->
   <script type="application/ld+json">
   {
-  "@context": "https://schema.org",
-  "@type": "WebPage",
-  "name": "Roofing Services in Bridgewater, NJ | Residential & Commercial",
-  "url": "https://bridgewaterroofer.com/roofing-services/",
-  "description": "Explore complete roofing services in Bridgewater, NJ: emergency leak repair, roof replacements, storm restorations, commercial flat roofs, and detailed inspections."
-}
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "CollectionPage",
+        "@id": "https://bridgewaterroofer.com/roofing-services/#webpage",
+        "name": "Roofing Services in Bridgewater, NJ | Residential & Commercial",
+        "url": "https://bridgewaterroofer.com/roofing-services/",
+        "description": "Explore complete roofing services in Bridgewater, NJ: emergency leak repair, roof replacements, storm restorations, commercial flat roofs, and detailed inspections."
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://bridgewaterroofer.com/roofing-services/#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://bridgewaterroofer.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Roofing Services",
+            "item": "https://bridgewaterroofer.com/roofing-services/"
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://bridgewaterroofer.com/roofing-services/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How quickly can your crews respond to an emergency roof leak in Bridgewater?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Because our operations headquarters are located at 400 Commons Way in Bridgewater, our emergency dispatch crews typically arrive on-site within 60 to 90 minutes with heavy-duty waterproof tarping."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do I know if my roof needs a minor repair or a complete replacement?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "If your roof is under 15 years old and damage is confined to an isolated area, a targeted repair is recommended. However, if shingles are curling, missing granules across multiple slopes, or approaching 20+ years of age, a full replacement provides superior long-term value."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do you handle township roofing permits in Bridgewater and Somerset County?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. We manage the entire application with the Bridgewater Township Code Enforcement Department (or your local municipality) and coordinate final municipal inspections."
+            }
+          }
+        ]
+      }
+    ]
+  }
   </script>
 </head>
 <body class="site-body">
   <!-- Accessibility Skip Navigation -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Top Thin 2px Scroll Progress Bar -->
+  <div class="scroll-progress-bar" id="scrollProgress"></div>
+
+<!-- Accessibility Skip Navigation -->
   <a href="#main-content" class="skip-link">Skip to main content</a>
 
   <!-- Top Thin 2px Scroll Progress Bar -->
@@ -143,7 +208,7 @@
                   <li><a href="/residential-roofing-bridgewater-nj/">Asphalt Shingles <span>→</span></a></li>
                   <li><a href="/metal-roofing-bridgewater-nj/">Metal Roofing <span>→</span></a></li>
                   <li><a href="/flat-roofing-bridgewater-nj/">Flat Roofing <span>→</span></a></li>
-                  <li><a href="/flat-roofing-bridgewater-nj/">TPO &amp; EPDM Systems <span>→</span></a></li>
+                  <li><a href="/tpo-epdm-roofing-bridgewater-nj/">TPO &amp; EPDM Systems <span>→</span></a></li>
                   <li><a href="/roofing-materials/">All Roofing Materials <span>→</span></a></li>
                   <li><a href="/roofing-cost/">Roofing Cost Calculator <span>→</span></a></li>
                 </ul>
@@ -234,7 +299,34 @@
           </div>
 
           <div class="nav-item">
-            <a href="/blog/" class="nav-link">Resources</a>
+            <a href="/blog/" class="nav-link" aria-haspopup="true">
+              Resources
+              <svg class="caret" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd"
+                  d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                  clip-rule="evenodd" />
+              </svg>
+            </a>
+            <div class="mega-dropdown resources-dropdown">
+              <div class="mega-column">
+                <h4>Technical Guides</h4>
+                <ul>
+                  <li><a href="/blog/roof-flashing-and-rafter-repair-bridgewater-nj/">Flashing &amp; Rafter Repair <span>→</span></a></li>
+                  <li><a href="/blog/ice-dam-prevention-roof-repair-nj/">Ice Dam Prevention <span>→</span></a></li>
+                  <li><a href="/blog/what-causes-roof-leaks/">What Causes Roof Leaks <span>→</span></a></li>
+                  <li><a href="/blog/roof-repair-vs-replacement/">Repair vs Replacement <span>→</span></a></li>
+                </ul>
+              </div>
+              <div class="mega-column">
+                <h4>Materials &amp; Pricing</h4>
+                <ul>
+                  <li><a href="/blog/gaf-timberline-vs-certainteed-landmark-nj/">GAF vs CertainTeed <span>→</span></a></li>
+                  <li><a href="/roofing-cost/">Roofing Cost Calculator <span>→</span></a></li>
+                  <li><a href="/blog/bridgewater-roofing-permit-guide/">Bridgewater Permit Guide <span>→</span></a></li>
+                  <li><a href="/blog/">All Knowledge Base (11) <span>→</span></a></li>
+                </ul>
+              </div>
+            </div>
           </div>
 
           <div class="nav-item">
@@ -321,7 +413,7 @@
           <a href="/residential-roofing-bridgewater-nj/">Asphalt Shingles</a>
           <a href="/metal-roofing-bridgewater-nj/">Metal Roofing</a>
           <a href="/flat-roofing-bridgewater-nj/">Flat Roofing</a>
-          <a href="/flat-roofing-bridgewater-nj/">TPO &amp; EPDM Systems</a>
+          <a href="/tpo-epdm-roofing-bridgewater-nj/">TPO &amp; EPDM Systems</a>
           <a href="/roofing-materials/">All Materials Guide</a>
         </div>
       </div>
@@ -354,7 +446,27 @@
       <div class="mobile-nav-item"><a href="/projects/" class="mobile-nav-link">Projects</a></div>
       <div class="mobile-nav-item"><a href="/reviews/" class="mobile-nav-link">Reviews</a></div>
       <div class="mobile-nav-item"><a href="/about/" class="mobile-nav-link">About Us</a></div>
-      <div class="mobile-nav-item"><a href="/blog/" class="mobile-nav-link">Resources</a></div>
+
+      <!-- Resources Accordion -->
+      <div class="mobile-nav-item">
+        <button class="mobile-accordion-toggle" aria-expanded="false">
+          Resources &amp; Guides
+          <svg width="18" height="18" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd"
+              d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+              clip-rule="evenodd" />
+          </svg>
+        </button>
+        <div class="mobile-accordion-body">
+          <a href="/blog/roof-flashing-and-rafter-repair-bridgewater-nj/">Flashing &amp; Rafter Repair</a>
+          <a href="/blog/ice-dam-prevention-roof-repair-nj/">Ice Dam Prevention Guide</a>
+          <a href="/blog/gaf-timberline-vs-certainteed-landmark-nj/">GAF vs CertainTeed Guide</a>
+          <a href="/roofing-cost/">Roofing Cost Calculator</a>
+          <a href="/blog/bridgewater-roofing-permit-guide/">Bridgewater Permit Guide</a>
+          <a href="/blog/">All Knowledge Base (11)</a>
+        </div>
+      </div>
+
       <div class="mobile-nav-item"><a href="/contact/" class="mobile-nav-link">Contact</a></div>
     </div>
 
@@ -404,6 +516,7 @@
       </div>
     </div>
 
+    <!-- Inner Page Hero -->
     <header class="inner-page-hero">
       <div class="inner-hero-container">
         <div class="inner-hero-badge">
@@ -425,10 +538,22 @@
             Request Free Estimate
           </a>
         </div>
+
+        <!-- Hero Emergency Dispatch Banner -->
+        <div class="hero-emergency-banner" style="margin-top: 2rem; max-width: 680px; width: 100%;">
+          <span class="emergency-beacon" aria-hidden="true">
+            <span class="beacon-dot"></span>
+            <span class="beacon-wave"></span>
+          </span>
+          <span class="emergency-text">
+            <strong>Active Roof Leak or Storm Damage?</strong> Same-day emergency roofer dispatch across Bridgewater • <a href="tel:+19084659944" class="emergency-phone-link cta-phone" data-call-source="services-hero-banner">(908) 465-9944</a>
+          </span>
+        </div>
       </div>
     </header>
 
-    <section class="inner-section">
+    <!-- Services Hub Section -->
+    <section class="inner-section" style="background: #0f172a; padding: 4.5rem 0;">
       <div class="container">
         <div class="inner-section-header">
           <span class="inner-section-tag">FULL SPECTRUM CAPABILITIES</span>
@@ -436,94 +561,545 @@
           <p class="inner-section-lead">Select a specialized service below to review diagnostic procedures, material options, and warranty standards.</p>
         </div>
 
-        <div class="inner-grid-3">
-          <article class="inner-card">
-            <div class="inner-card-icon">🔨</div>
-            <h3 class="inner-card-title">Roof Repair</h3>
-            <p class="inner-card-desc">Targeted fixes for missing shingles, compromised valleys, pipe collar boot failures, and chimney flashing leaks. We restore watertight integrity without pushing unnecessary replacements.</p>
-            <div class="inner-card-footer">
-              <a href="/roof-repair-bridgewater-nj/" class="inner-card-link">View Roof Repair Details →</a>
+        <!-- Category Filters -->
+        <div class="projects-filter-bar" role="tablist" aria-label="Services Category Filter">
+          <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true">All Services (12)</button>
+          <button class="filter-btn" data-filter="repairs" role="tab" aria-selected="false">Repairs &amp; Leaks</button>
+          <button class="filter-btn" data-filter="replacements" role="tab" aria-selected="false">Replacements &amp; Materials</button>
+          <button class="filter-btn" data-filter="commercial" role="tab" aria-selected="false">Commercial &amp; Flat</button>
+          <button class="filter-btn" data-filter="inspections" role="tab" aria-selected="false">Inspections &amp; Structure</button>
+        </div>
+
+        <!-- 12 Service Cards Grid -->
+        <div class="services-hub-grid" id="servicesGrid">
+
+          <!-- 1. Roof Repair -->
+          <article class="services-hub-card" data-category="repairs">
+            <div class="services-hub-card-header">
+              <div class="services-hub-icon-wrap icon-orange">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+                </svg>
+              </div>
+              <span class="services-hub-badge badge-popular">Most Requested</span>
             </div>
+            <h3>Roof Repair</h3>
+            <p>Targeted fixes for missing wind-blown shingles, damaged pipe collars, rusted valleys, and flashing failures. We restore watertight envelope integrity without pushing unnecessary reroofing.</p>
+            <ul class="services-hub-features">
+              <li>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                Same-day localized shingle patching
+              </li>
+              <li>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                Pipe boot collar &amp; vent resealing
+              </li>
+            </ul>
+            <a href="/roof-repair-bridgewater-nj/" class="services-hub-link">Explore Roof Repair Details <span>→</span></a>
           </article>
 
-          <article class="inner-card">
-            <div class="inner-card-icon">🏠</div>
-            <h3 class="inner-card-title">Roof Replacement</h3>
-            <p class="inner-card-desc">Complete tear-off and certified installation of high-definition architectural shingles and standing seam metal. Engineered to resist 130 MPH winds with up to 50-year warranty protection.</p>
-            <div class="inner-card-footer">
-              <a href="/roof-replacement-bridgewater-nj/" class="inner-card-link">View Replacement Services →</a>
+          <!-- 2. Roof Replacement -->
+          <article class="services-hub-card" data-category="replacements">
+            <div class="services-hub-card-header">
+              <div class="services-hub-icon-wrap icon-blue">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                  <polyline points="9 22 9 12 15 12 15 22"/>
+                </svg>
+              </div>
+              <span class="services-hub-badge badge-certified">50-Yr Warranty</span>
             </div>
+            <h3>Roof Replacement</h3>
+            <p>Complete tear-off and certified installation of high-definition architectural shingles and standing seam metal. Engineered for 130 MPH wind resistance and maximum curb appeal.</p>
+            <ul class="services-hub-features">
+              <li>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                Full deck inspection &amp; synthetic underlayment
+              </li>
+              <li>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                GAF Timberline HDZ &amp; CertainTeed Landmark
+              </li>
+            </ul>
+            <a href="/roof-replacement-bridgewater-nj/" class="services-hub-link">Explore Replacement Options <span>→</span></a>
           </article>
 
-          <article class="inner-card">
-            <div class="inner-card-icon">💧</div>
-            <h3 class="inner-card-title">Roof Leak Repair</h3>
-            <p class="inner-card-desc">Forensic water infiltration tracking using infrared moisture diagnostics. We locate elusive entry points around skylights, dormer junctions, and roof penetrations.</p>
-            <div class="inner-card-footer">
-              <a href="/roof-leak-repair-bridgewater-nj/" class="inner-card-link">View Leak Detection Details →</a>
+          <!-- 3. Roof Leak Repair -->
+          <article class="services-hub-card" data-category="repairs">
+            <div class="services-hub-card-header">
+              <div class="services-hub-icon-wrap icon-blue">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/>
+                </svg>
+              </div>
+              <span class="services-hub-badge badge-urgent">Infrared Diagnostic</span>
             </div>
+            <h3>Roof Leak Repair</h3>
+            <p>Forensic water infiltration tracking using thermal infrared moisture diagnostics. We locate elusive water entry points around chimneys, skylights, dormers, and roof-wall junctions.</p>
+            <ul class="services-hub-features">
+              <li>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                Tracing unseen attic water travel paths
+              </li>
+              <li>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                Skylight &amp; chimney counter-flashing rebuilds
+              </li>
+            </ul>
+            <a href="/roof-leak-repair-bridgewater-nj/" class="services-hub-link">Explore Leak Detection Details <span>→</span></a>
           </article>
 
-          <article class="inner-card">
-            <div class="inner-card-icon">⚡</div>
-            <h3 class="inner-card-title">Emergency Roof Repair</h3>
-            <p class="inner-card-desc">24/7 on-call dispatch when severe storm gusts, fallen tree limbs, or hail breach your building envelope during active rainfall. Immediate heavy-duty tarping and shoring.</p>
-            <div class="inner-card-footer">
-              <a href="/emergency-roof-repair-bridgewater-nj/" class="inner-card-link">View Emergency Dispatch →</a>
+          <!-- 4. Emergency Roof Repair -->
+          <article class="services-hub-card" data-category="repairs">
+            <div class="services-hub-card-header">
+              <div class="services-hub-icon-wrap icon-orange">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+                </svg>
+              </div>
+              <span class="services-hub-badge badge-urgent">24/7 Rapid Response</span>
             </div>
+            <h3>Emergency Roof Repair</h3>
+            <p>24/7 on-call dispatch when severe storm gusts, fallen tree limbs, or active interior water pouring threatens your home. Rapid heavy-duty tarping and structural envelope containment.</p>
+            <ul class="services-hub-features">
+              <li>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                Under 2-hour dispatch in Somerset County
+              </li>
+              <li>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                Heavy-gauge hurricane tarping &amp; wood battens
+              </li>
+            </ul>
+            <a href="/emergency-roof-repair-bridgewater-nj/" class="services-hub-link">Emergency Dispatch Details <span>→</span></a>
           </article>
 
-          <article class="inner-card">
-            <div class="inner-card-icon">⛈️</div>
-            <h3 class="inner-card-title">Storm Damage Repair</h3>
-            <p class="inner-card-desc">Thorough post-storm hail impact and wind-crease diagnostics. We provide full photographic documentation and itemized scopes to support smooth insurance claims.</p>
-            <div class="inner-card-footer">
-              <a href="/storm-damage-roof-repair-bridgewater-nj/" class="inner-card-link">View Storm Restoration →</a>
+          <!-- 5. Storm Damage Repair -->
+          <article class="services-hub-card" data-category="repairs">
+            <div class="services-hub-card-header">
+              <div class="services-hub-icon-wrap icon-purple">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/>
+                  <path d="M13 13v6"/>
+                  <path d="M9 16v3"/>
+                </svg>
+              </div>
+              <span class="services-hub-badge">Direct Pricing</span>
             </div>
+            <h3>Storm Damage Repair</h3>
+            <p>Thorough post-storm hail impact and wind-crease diagnostics. We provide full photographic documentation and itemized scopes for self-pay homeowners seeking honest, flat-rate contractor pricing.</p>
+            <ul class="services-hub-features">
+              <li>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                Hail fracture &amp; granule loss evaluation
+              </li>
+              <li>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                Transparent, self-pay repair estimates
+              </li>
+            </ul>
+            <a href="/storm-damage-roof-repair-bridgewater-nj/" class="services-hub-link">Explore Storm Restoration <span>→</span></a>
           </article>
 
-          <article class="inner-card">
-            <div class="inner-card-icon">🏡</div>
-            <h3 class="inner-card-title">Residential Roofing</h3>
-            <p class="inner-card-desc">Specialized roofing craftsmanship for single-family homes, historic colonials, townhomes, and executive estates throughout Bridgewater and Somerset County.</p>
-            <div class="inner-card-footer">
-              <a href="/residential-roofing-bridgewater-nj/" class="inner-card-link">View Residential Roofing →</a>
+          <!-- 6. Roof Inspection -->
+          <article class="services-hub-card" data-category="inspections">
+            <div class="services-hub-card-header">
+              <div class="services-hub-icon-wrap icon-emerald">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="11" cy="11" r="8"/>
+                  <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                </svg>
+              </div>
+              <span class="services-hub-badge">21-Point Report</span>
             </div>
+            <h3>Roof Inspection</h3>
+            <p>Comprehensive physical evaluation covering shingle granule retention, plywood deck deflection, flashing integrity, attic intake ventilation, and chimney mortar condition with written reports.</p>
+            <ul class="services-hub-features">
+              <li>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                High-definition drone &amp; roof walk-over
+              </li>
+              <li>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                Attic moisture &amp; insulation assessment
+              </li>
+            </ul>
+            <a href="/roof-inspection-bridgewater-nj/" class="services-hub-link">Schedule Roof Inspection <span>→</span></a>
           </article>
 
-          <article class="inner-card">
-            <div class="inner-card-icon">🏢</div>
-            <h3 class="inner-card-title">Commercial Roofing</h3>
-            <p class="inner-card-desc">Certified single-ply TPO, EPDM, and modified bitumen membrane installations and preventative maintenance for retail centers, industrial buildings, and medical offices.</p>
-            <div class="inner-card-footer">
-              <a href="/commercial-roofing-bridgewater-nj/" class="inner-card-link">View Commercial Roofing →</a>
+          <!-- 7. Flashing & Structural Rafter Repair -->
+          <article class="services-hub-card" data-category="inspections">
+            <div class="services-hub-card-header">
+              <div class="services-hub-icon-wrap icon-amber">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M2 20h20"/>
+                  <path d="m5 20 7-15 7 15"/>
+                  <path d="m9 13 6 0"/>
+                </svg>
+              </div>
+              <span class="services-hub-badge badge-certified">Structural Carpentry</span>
             </div>
+            <h3>Flashing &amp; Rafter Repair</h3>
+            <p>Expert masonry counter-flashing rebuilds and structural wood sistering for sagging or water-damaged rafters. We restore foundational roof framing in full accordance with NJ UCC building codes.</p>
+            <ul class="services-hub-features">
+              <li>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                Chimney step flashing &amp; saw-cut reglets
+              </li>
+              <li>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                Rotted CDX plywood &amp; rafter sistering
+              </li>
+            </ul>
+            <a href="/blog/roof-flashing-and-rafter-repair-bridgewater-nj/" class="services-hub-link">Flashing &amp; Framing Guide <span>→</span></a>
           </article>
 
-          <article class="inner-card">
-            <div class="inner-card-icon">🔍</div>
-            <h3 class="inner-card-title">Roof Inspection</h3>
-            <p class="inner-card-desc">Comprehensive 21-point physical evaluation covering shingle granule retention, plywood deck deflection, flashing, attic intake ventilation, and chimney mortar.</p>
-            <div class="inner-card-footer">
-              <a href="/roof-inspection-bridgewater-nj/" class="inner-card-link">View Inspection Services →</a>
+          <!-- 8. Residential Roofing -->
+          <article class="services-hub-card" data-category="replacements">
+            <div class="services-hub-card-header">
+              <div class="services-hub-icon-wrap icon-emerald">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                  <polyline points="9 22 9 12 15 12 15 22"/>
+                </svg>
+              </div>
+              <span class="services-hub-badge badge-popular">Residential Focus</span>
             </div>
+            <h3>Residential Roofing</h3>
+            <p>Specialized architectural shingle reroofs for Somerset County colonials, split-levels, ranches, and luxury estates. 1-day installations with comprehensive magnetic nail sweep guarantees.</p>
+            <ul class="services-hub-features">
+              <li>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                1-Day clean tear-off &amp; driveway protection
+              </li>
+              <li>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                Ice barrier protection along all eaves
+              </li>
+            </ul>
+            <a href="/residential-roofing-bridgewater-nj/" class="services-hub-link">View Residential Roofing <span>→</span></a>
           </article>
 
-          <article class="inner-card">
-            <div class="inner-card-icon">🛡️</div>
-            <h3 class="inner-card-title">Metal Roofing</h3>
-            <p class="inner-card-desc">Concealed-fastener standing seam metal roofing offering 50+ year lifespan, maximum snow shed, and Class 4 impact resistance for modern and transitional properties.</p>
-            <div class="inner-card-footer">
-              <a href="/metal-roofing-bridgewater-nj/" class="inner-card-link">View Metal Roofing →</a>
+          <!-- 9. Metal Roofing -->
+          <article class="services-hub-card" data-category="replacements">
+            <div class="services-hub-card-header">
+              <div class="services-hub-icon-wrap icon-orange">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                </svg>
+              </div>
+              <span class="services-hub-badge">Class 4 Impact</span>
             </div>
+            <h3>Metal Roofing</h3>
+            <p>Concealed-fastener standing seam metal systems offering 50+ year lifespans, superior snow shed, and Class 4 impact resistance. Perfect for transitional architecture and Watchung ridge elevations.</p>
+            <ul class="services-hub-features">
+              <li>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                24-gauge standing seam Galvalume &amp; aluminum
+              </li>
+              <li>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                150+ MPH wind rating &amp; zero maintenance
+              </li>
+            </ul>
+            <a href="/metal-roofing-bridgewater-nj/" class="services-hub-link">Explore Metal Roofing <span>→</span></a>
           </article>
+
+          <!-- 10. Commercial Roofing -->
+          <article class="services-hub-card" data-category="commercial">
+            <div class="services-hub-card-header">
+              <div class="services-hub-icon-wrap icon-blue">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="4" y="2" width="16" height="20" rx="2" ry="2"/>
+                  <line x1="9" y1="22" x2="9" y2="22.01"/>
+                  <line x1="15" y1="22" x2="15" y2="22.01"/>
+                  <line x1="9" y1="6" x2="9" y2="6.01"/>
+                  <line x1="15" y1="6" x2="15" y2="6.01"/>
+                  <line x1="9" y1="10" x2="9" y2="10.01"/>
+                  <line x1="15" y1="10" x2="15" y2="10.01"/>
+                  <line x1="9" y1="14" x2="9" y2="14.01"/>
+                  <line x1="15" y1="14" x2="15" y2="14.01"/>
+                  <line x1="9" y1="18" x2="9" y2="18.01"/>
+                  <line x1="15" y1="18" x2="15" y2="18.01"/>
+                </svg>
+              </div>
+              <span class="services-hub-badge">Commercial Grade</span>
+            </div>
+            <h3>Commercial Roofing</h3>
+            <p>Single-ply membrane systems, low-slope coatings, and scheduled maintenance contracts for Bridgewater retail centers, medical offices, light industrial parks, and multi-tenant facilities.</p>
+            <ul class="services-hub-features">
+              <li>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                Zero-disruption commercial business staging
+              </li>
+              <li>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                Comprehensive NDL manufacturer warranties
+              </li>
+            </ul>
+            <a href="/commercial-roofing-bridgewater-nj/" class="services-hub-link">Commercial Roofing Services <span>→</span></a>
+          </article>
+
+          <!-- 11. Flat Roofing -->
+          <article class="services-hub-card" data-category="commercial">
+            <div class="services-hub-card-header">
+              <div class="services-hub-icon-wrap icon-purple">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+                </svg>
+              </div>
+              <span class="services-hub-badge">Low-Slope Systems</span>
+            </div>
+            <h3>Flat Roofing</h3>
+            <p>Monolithic flat roofing engineered for residential sunrooms, garage additions, and flat residential dormers. Eliminates chronic pooling water with custom tapered insulation slopes.</p>
+            <ul class="services-hub-features">
+              <li>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                Tapered polyiso insulation to eliminate ponding
+              </li>
+              <li>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                Seamless commercial-grade perimeter edge metal
+              </li>
+            </ul>
+            <a href="/flat-roofing-bridgewater-nj/" class="services-hub-link">Explore Flat Roofing <span>→</span></a>
+          </article>
+
+          <!-- 12. TPO & EPDM Systems -->
+          <article class="services-hub-card" data-category="commercial">
+            <div class="services-hub-card-header">
+              <div class="services-hub-icon-wrap icon-emerald">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polygon points="12 2 2 7 12 12 22 7 12 2"/>
+                  <polyline points="2 17 12 22 22 17"/>
+                  <polyline points="2 12 12 17 22 12"/>
+                </svg>
+              </div>
+              <span class="services-hub-badge">Hot-Air Welded</span>
+            </div>
+            <h3>TPO &amp; EPDM Systems</h3>
+            <p>White solar-reflective 60-mil TPO membranes and heavy-duty black EPDM rubber installations. Features robotic hot-air welded seams that form a monolithic, chemical-resistant barrier.</p>
+            <ul class="services-hub-features">
+              <li>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                Cool-roof white TPO energy efficiency
+              </li>
+              <li>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                Vulcanized EPDM rubber weather flexibility
+              </li>
+            </ul>
+            <a href="/tpo-epdm-roofing-bridgewater-nj/" class="services-hub-link">TPO &amp; EPDM Membrane Guide <span>→</span></a>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Choose Bridgewater Roofer (Trust Pillars) -->
+    <section class="inner-section" style="background: #0b1322; border-top: 1px solid rgba(255,255,255,0.08); border-bottom: 1px solid rgba(255,255,255,0.08); padding: 4.5rem 0;">
+      <div class="container">
+        <div class="inner-section-header">
+          <span class="inner-section-tag">THE LOCAL STANDARD</span>
+          <h2 class="inner-section-title">Why Somerset County Property Owners Choose Us</h2>
+          <p class="inner-section-lead">Headquartered at 400 Commons Way, we deliver honest craftsmanship, certified materials, and prompt service with zero middleman markups.</p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); gap: 1.75rem;">
+          <div style="background: #132338; border: 1px solid #1e3a5f; border-radius: 12px; padding: 1.85rem;">
+            <div style="color: #f97316; font-size: 1.85rem; font-weight: 800; font-family: 'Outfit', sans-serif; margin-bottom: 0.5rem;">01</div>
+            <h3 style="color: #fff; font-size: 1.25rem; font-family: 'Outfit', sans-serif; margin-bottom: 0.65rem;">Direct Contractor Pricing</h3>
+            <p style="color: #94a3b8; font-size: 0.925rem; line-height: 1.6; margin: 0;">We don't use commission-heavy traveling salesmen or subcontract brokers. Homeowners save 15% to 25% through honest line-item self-pay estimates.</p>
+          </div>
+
+          <div style="background: #132338; border: 1px solid #1e3a5f; border-radius: 12px; padding: 1.85rem;">
+            <div style="color: #38bdf8; font-size: 1.85rem; font-weight: 800; font-family: 'Outfit', sans-serif; margin-bottom: 0.5rem;">02</div>
+            <h3 style="color: #fff; font-size: 1.25rem; font-family: 'Outfit', sans-serif; margin-bottom: 0.65rem;">Factory Master Certified</h3>
+            <p style="color: #94a3b8; font-size: 0.925rem; line-height: 1.6; margin: 0;">Certified installers for GAF, CertainTeed, and leading commercial membrane systems, unlocking non-prorated 50-year manufacturer warranty protection.</p>
+          </div>
+
+          <div style="background: #132338; border: 1px solid #1e3a5f; border-radius: 12px; padding: 1.85rem;">
+            <div style="color: #10b981; font-size: 1.85rem; font-weight: 800; font-family: 'Outfit', sans-serif; margin-bottom: 0.5rem;">03</div>
+            <h3 style="color: #fff; font-size: 1.25rem; font-family: 'Outfit', sans-serif; margin-bottom: 0.65rem;">NJ UCC Permitting Handled</h3>
+            <p style="color: #94a3b8; font-size: 0.925rem; line-height: 1.6; margin: 0;">Every roof project is completed in full compliance with New Jersey Uniform Construction Code. We prepare all township permit paperwork and schedule final inspections.</p>
+          </div>
+
+          <div style="background: #132338; border: 1px solid #1e3a5f; border-radius: 12px; padding: 1.85rem;">
+            <div style="color: #a855f7; font-size: 1.85rem; font-weight: 800; font-family: 'Outfit', sans-serif; margin-bottom: 0.5rem;">04</div>
+            <h3 style="color: #fff; font-size: 1.25rem; font-family: 'Outfit', sans-serif; margin-bottom: 0.65rem;">Spotless Property Care</h3>
+            <p style="color: #94a3b8; font-size: 0.925rem; line-height: 1.6; margin: 0;">We protect driveways with heavy plywood runners and perform high-intensity multi-pass magnetic sweeps to ensure zero stray nails in your lawn or tires.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Project Workflow Process -->
+    <section class="inner-section" style="background: #0f172a; padding: 4.5rem 0;">
+      <div class="container">
+        <div class="inner-section-header">
+          <span class="inner-section-tag">SIMPLE &amp; TRANSPARENT</span>
+          <h2 class="inner-section-title">Our 4-Step Roofing Process</h2>
+          <p class="inner-section-lead">A seamless, stress-free workflow from initial inspection to final township signoff.</p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr)); gap: 1.5rem;">
+          <div style="background: #132338; border: 1px solid #1e3a5f; border-radius: 12px; padding: 1.75rem;">
+            <span style="display: inline-block; width: 36px; height: 36px; line-height: 36px; text-align: center; background: #f97316; color: #fff; font-weight: 800; border-radius: 50%; margin-bottom: 1rem;">1</span>
+            <h3 style="color: #fff; font-size: 1.2rem; font-family: 'Outfit', sans-serif; margin-bottom: 0.5rem;">Forensic Roof Diagnostic</h3>
+            <p style="color: #94a3b8; font-size: 0.9rem; line-height: 1.6; margin: 0;">We perform a hands-on physical assessment and drone photo evaluation of shingles, valleys, flashing, decking, and attic moisture levels.</p>
+          </div>
+
+          <div style="background: #132338; border: 1px solid #1e3a5f; border-radius: 12px; padding: 1.75rem;">
+            <span style="display: inline-block; width: 36px; height: 36px; line-height: 36px; text-align: center; background: #38bdf8; color: #0f172a; font-weight: 800; border-radius: 50%; margin-bottom: 1rem;">2</span>
+            <h3 style="color: #fff; font-size: 1.2rem; font-family: 'Outfit', sans-serif; margin-bottom: 0.5rem;">Guaranteed Itemized Scope</h3>
+            <p style="color: #94a3b8; font-size: 0.9rem; line-height: 1.6; margin: 0;">Receive a detailed, written proposal specifying shingle options, ice barrier courses, ventilation upgrades, permit fees, and payment milestones.</p>
+          </div>
+
+          <div style="background: #132338; border: 1px solid #1e3a5f; border-radius: 12px; padding: 1.75rem;">
+            <span style="display: inline-block; width: 36px; height: 36px; line-height: 36px; text-align: center; background: #10b981; color: #fff; font-weight: 800; border-radius: 50%; margin-bottom: 1rem;">3</span>
+            <h3 style="color: #fff; font-size: 1.2rem; font-family: 'Outfit', sans-serif; margin-bottom: 0.5rem;">1-Day Certified Install</h3>
+            <p style="color: #94a3b8; font-size: 0.9rem; line-height: 1.6; margin: 0;">Our certified master crews protect your siding and landscaping, complete the tear-off and reroof in a single day, and sweep clean before evening.</p>
+          </div>
+
+          <div style="background: #132338; border: 1px solid #1e3a5f; border-radius: 12px; padding: 1.75rem;">
+            <span style="display: inline-block; width: 36px; height: 36px; line-height: 36px; text-align: center; background: #a855f7; color: #fff; font-weight: 800; border-radius: 50%; margin-bottom: 1rem;">4</span>
+            <h3 style="color: #fff; font-size: 1.2rem; font-family: 'Outfit', sans-serif; margin-bottom: 0.5rem;">Walkthrough &amp; Warranty</h3>
+            <p style="color: #94a3b8; font-size: 0.9rem; line-height: 1.6; margin: 0;">We conduct a joint perimeter walkthrough with you, coordinate final township building inspector signoff, and deliver your manufacturer warranty packet.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Frequently Asked Questions (FAQ) -->
+    <section class="inner-section" style="background: #0b1322; border-top: 1px solid rgba(255,255,255,0.08); padding: 4.5rem 0;">
+      <div class="container">
+        <div class="inner-section-header">
+          <span class="inner-section-tag">COMMON INQUIRIES</span>
+          <h2 class="inner-section-title">Frequently Asked Roofing Questions</h2>
+          <p class="inner-section-lead">Clear answers to help you make informed decisions for your home or commercial building.</p>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 1rem; max-width: 850px; margin: 0 auto;">
+          <details style="background: #132338; border: 1px solid #1e3a5f; border-radius: 10px; padding: 1.25rem 1.5rem;">
+            <summary style="font-size: 1.1rem; font-weight: 600; color: #fff; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center;">
+              <span>How quickly can your crews respond to an emergency roof leak in Bridgewater?</span>
+              <span style="color: #38bdf8; font-size: 1.4rem;">+</span>
+            </summary>
+            <p style="color: #94a3b8; margin-top: 1rem; line-height: 1.6; font-size: 0.95rem;">
+              Because our operations headquarters are located at 400 Commons Way in Bridgewater, our emergency dispatch crews typically arrive on-site within 60 to 90 minutes. We deploy heavy-duty waterproof tarping and water containment to stop active ceiling leaks before scheduling permanent repairs.
+            </p>
+          </details>
+
+          <details style="background: #132338; border: 1px solid #1e3a5f; border-radius: 10px; padding: 1.25rem 1.5rem;">
+            <summary style="font-size: 1.1rem; font-weight: 600; color: #fff; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center;">
+              <span>How do I know if my roof needs a minor repair or a complete replacement?</span>
+              <span style="color: #38bdf8; font-size: 1.4rem;">+</span>
+            </summary>
+            <p style="color: #94a3b8; margin-top: 1rem; line-height: 1.6; font-size: 0.95rem;">
+              As a general rule, if your roof is under 15 years old and damage is confined to an isolated area (e.g. blown-off shingles or a compromised pipe boot), a targeted repair is recommended. However, if shingles are brittle, curling, missing heavy granules across multiple slopes, or approaching 20+ years of age, a full replacement provides far superior 50-year value and eliminates repeated emergency repair bills.
+            </p>
+          </details>
+
+          <details style="background: #132338; border: 1px solid #1e3a5f; border-radius: 10px; padding: 1.25rem 1.5rem;">
+            <summary style="font-size: 1.1rem; font-weight: 600; color: #fff; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center;">
+              <span>Do you provide written estimates before starting work?</span>
+              <span style="color: #38bdf8; font-size: 1.4rem;">+</span>
+            </summary>
+            <p style="color: #94a3b8; margin-top: 1rem; line-height: 1.6; font-size: 0.95rem;">
+              Yes. We provide completely transparent, itemized written estimates detailing the exact shingle brand, ice barrier underlayment, drip edge, ventilation upgrades, permit fees, and cleanup costs. Our pricing is 100% fixed with zero surprise add-ons.
+            </p>
+          </details>
+
+          <details style="background: #132338; border: 1px solid #1e3a5f; border-radius: 10px; padding: 1.25rem 1.5rem;">
+            <summary style="font-size: 1.1rem; font-weight: 600; color: #fff; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center;">
+              <span>Do you offer flexible monthly payment options for roof replacements?</span>
+              <span style="color: #38bdf8; font-size: 1.4rem;">+</span>
+            </summary>
+            <p style="color: #94a3b8; margin-top: 1rem; line-height: 1.6; font-size: 0.95rem;">
+              Yes! We offer direct homeowner financing plans including 0% APR promotional options and low monthly payment tiers starting around $149/month with no prepayment penalties. The application process is fast, paperless, and takes only minutes.
+            </p>
+          </details>
+
+          <details style="background: #132338; border: 1px solid #1e3a5f; border-radius: 10px; padding: 1.25rem 1.5rem;">
+            <summary style="font-size: 1.1rem; font-weight: 600; color: #fff; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center;">
+              <span>Do you handle township roofing permits in Bridgewater and Somerset County?</span>
+              <span style="color: #38bdf8; font-size: 1.4rem;">+</span>
+            </summary>
+            <p style="color: #94a3b8; margin-top: 1rem; line-height: 1.6; font-size: 0.95rem;">
+              Absolutely. In New Jersey, complete roof replacements require an official Uniform Construction Code (UCC) building permit. We manage the entire application with the Bridgewater Township Code Enforcement Department (or your local municipality) and schedule the final municipal inspection.
+            </p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- Final High-Conversion Master CTA Section -->
+    <section class="service-final-cta-section" id="schedule-diagnostic" aria-label="Schedule Your On-Site Roofing Diagnostic">
+      <div class="container">
+        <div class="service-final-cta-horizontal" id="estimate-form-wrap">
+          <!-- Left: Information & Trust -->
+          <div class="cta-horizontal-info">
+            <div class="inner-section-tag">SOMERSET COUNTY CERTIFIED ROOFERS</div>
+            <h2>Ready to Schedule Your On-Site Roofing Diagnostic?</h2>
+            <p class="cta-horizontal-desc">
+              Speak directly with an experienced Bridgewater roofing contractor. No pressure, no commission salesmen—just honest advice, transparent flat-rate pricing, and master-level execution across all steep-slope and low-slope roofing systems.
+            </p>
+
+            <div class="cta-horizontal-trust">
+              <div class="trust-pill">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>100% Free On-Site Roof Diagnostic &amp; Written Proposal</span>
+              </div>
+              <div class="trust-pill">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>Licensed &amp; Insured NJ Home Improvement Contractor (#13VH09876500)</span>
+              </div>
+              <div class="trust-pill">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>50-Year Non-Prorated Manufacturer Warranties (GAF Master Elite &amp; CertainTeed)</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: Prominent Phone Dispatch Card -->
+          <div class="cta-horizontal-phone-card">
+            <div class="phone-card-header">
+              <div class="dispatch-pulse-wrap">
+                <span class="live-dispatch-dot"></span>
+                <span class="dispatch-label">Direct Field Dispatch Phone</span>
+              </div>
+              <span class="dispatch-eta-badge">⚡ Same-Day Somerset Dispatch</span>
+            </div>
+
+            <div class="phone-card-body">
+              <a href="tel:+19084659944" class="btn btn-phone cta-phone horizontal-call-btn" data-call-source="services-hub-final-cta">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                </svg>
+                <span class="btn-phone-text">
+                  <small>Tap to Call Roofer Direct</small>
+                  <strong>(908) 465-9944</strong>
+                </span>
+              </a>
+            </div>
+
+            <div class="phone-card-footer">
+              <div class="schedule-info">
+                <span>Mon–Sat: 7:00 AM – 6:00 PM</span>
+              </div>
+              <div class="emergency-info">
+                <span class="emergency-fire">🚨</span>
+                <span>24/7 Emergency Dispatch</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
   </main>
 
-  <!-- ====================================================================
+<!-- ====================================================================
        SITE FOOTER (Global Master Component)
        ==================================================================== -->
   <footer class="site-footer" role="contentinfo">
@@ -605,10 +1181,12 @@
           <h4>Roofing Materials</h4>
           <ul>
             <li><a href="/residential-roofing-bridgewater-nj/">Asphalt Shingles</a></li>
+            <li><a href="/blog/gaf-timberline-vs-certainteed-landmark-nj/">GAF vs CertainTeed Guide</a></li>
             <li><a href="/metal-roofing-bridgewater-nj/">Metal Roofing</a></li>
             <li><a href="/flat-roofing-bridgewater-nj/">Flat Roofing</a></li>
-            <li><a href="/flat-roofing-bridgewater-nj/">TPO Membrane</a></li>
-            <li><a href="/flat-roofing-bridgewater-nj/">EPDM Rubber</a></li>
+            <li><a href="/tpo-epdm-roofing-bridgewater-nj/">TPO &amp; EPDM Systems</a></li>
+            <li><a href="/blog/ice-dam-prevention-roof-repair-nj/">Ice Dam Prevention Guide</a></li>
+            <li><a href="/blog/tpo-vs-epdm-roofing/">TPO vs EPDM Guide</a></li>
           </ul>
         </div>
 
@@ -638,6 +1216,9 @@
             <li><a href="/reviews/">Customer Reviews</a></li>
             <li><a href="/blog/">Roofing Resources</a></li>
             <li><a href="/roofing-cost/">Roofing Cost Guide</a></li>
+            <li><a href="/blog/roof-flashing-and-rafter-repair-bridgewater-nj/">Flashing &amp; Rafter Repair</a></li>
+            <li><a href="/blog/ice-dam-prevention-roof-repair-nj/">Ice Dam Prevention Guide</a></li>
+            <li><a href="/blog/gaf-timberline-vs-certainteed-landmark-nj/">GAF vs CertainTeed Guide</a></li>
             <li><a href="/blog/bridgewater-roofing-permit-guide/">Bridgewater Permit Guide</a></li>
             <li><a href="/contact/">Request Estimate</a></li>
           </ul>
@@ -690,21 +1271,27 @@
   </aside>
 
   <!-- ====================================================================
-       MOBILE STICKY CALL BAR (Global)
+       MOBILE STICKY CALL CTA (Global)
        ==================================================================== -->
-  <div class="mobile-sticky-bar" aria-label="Mobile Action Bar">
-    <div class="sticky-bar-grid">
-      <a href="tel:+19084659944" class="sticky-call-btn cta-phone" data-call-source="sticky-mobile">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-          <path
-            d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
-        </svg>
-        Call a Roofer
-      </a>
-      <a href="#estimate-form" class="sticky-estimate-btn">
-        Get Estimate
-      </a>
-    </div>
+  <div class="mobile-sticky-bar" id="mobileStickyBar" aria-label="Mobile Call Action">
+    <a href="tel:+19084659944" class="mobile-sticky-call-btn cta-phone" data-call-source="sticky-mobile">
+      <div class="sticky-call-pulse-wrap" aria-hidden="true">
+        <span class="sticky-call-pulse-ring"></span>
+        <span class="sticky-call-icon-bg">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
+          </svg>
+        </span>
+      </div>
+      <div class="sticky-call-details">
+        <span class="sticky-call-action">Tap to Call Roofer Direct</span>
+        <strong class="sticky-call-phone">(908) 465-9944</strong>
+      </div>
+      <div class="sticky-call-status">
+        <span class="status-live-dot"></span>
+        <span>24/7 Live</span>
+      </div>
+    </a>
   </div>
 
   <!-- Accessible Legal Modal Dialog (Global) -->
@@ -724,5 +1311,27 @@
   </dialog>
 
   <script type="module" src="../js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const filterButtons = document.querySelectorAll('.projects-filter-bar .filter-btn');
+      const serviceCards = document.querySelectorAll('.services-hub-card');
+
+      filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+          filterButtons.forEach(btn => btn.classList.remove('active'));
+          button.classList.add('active');
+          const filter = button.getAttribute('data-filter');
+
+          serviceCards.forEach(card => {
+            if (filter === 'all' || card.getAttribute('data-category') === filter) {
+              card.style.display = 'flex';
+            } else {
+              card.style.display = 'none';
+            }
+          });
+        });
+      });
+    });
+  </script>
 </body>
 </html>

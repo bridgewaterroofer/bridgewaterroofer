@@ -147,6 +147,7 @@ function initRoofDiagnosis() {
         const targetProblem = hs.getAttribute('data-linked-problem');
         if (targetProblem) {
           selectProblem(targetProblem);
+        }
       }
     });
   });

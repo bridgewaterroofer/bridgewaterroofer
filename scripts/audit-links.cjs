@@ -19,6 +19,7 @@ const pages = [
   'roof-inspection-bridgewater-nj/index.html',
   'metal-roofing-bridgewater-nj/index.html',
   'flat-roofing-bridgewater-nj/index.html',
+  'tpo-epdm-roofing-bridgewater-nj/index.html',
   'service-area/roofer-somerville-nj/index.html',
   'service-area/roofer-raritan-nj/index.html',
   'service-area/roofer-martinsville-nj/index.html',

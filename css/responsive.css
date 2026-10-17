@@ -54,23 +54,39 @@
    -------------------------------------------------------------------------- */
 @media (max-width: 1040px) {
   :root {
-    --header-height: 138px;
+    --header-height: 68px;
+    --top-bar-height: 0px !important;
   }
 
   .desktop-nav,
   .nav-actions .header-phone-btn,
   .nav-actions .header-phone-link {
-    display: none;
+    display: none !important;
   }
 
   .mobile-nav-toggle,
   .mobile-phone-quick {
-    display: flex;
+    display: flex !important;
+  }
+
+  /* Remove sub-header showing phone number on mobile view */
+  .top-trust-bar {
+    display: none !important;
+  }
+
+  .site-header.is-scrolled {
+    transform: none !important;
   }
 
   .hero-grid {
     grid-template-columns: 1fr;
     text-align: center;
+  }
+
+  .hero-section {
+    min-height: auto;
+    padding-top: calc(var(--header-height, 68px) + 1.5rem);
+    padding-bottom: 4rem;
   }
 
   .hero-content {
@@ -169,6 +185,14 @@
   .desktop-phone-pill {
     display: none !important;
   }
+
+  .mobile-sticky-bar {
+    display: block !important;
+  }
+
+  body {
+    padding-bottom: calc(72px + env(safe-area-inset-bottom, 0px));
+  }
 }
 
 /* --------------------------------------------------------------------------
@@ -176,28 +200,30 @@
    -------------------------------------------------------------------------- */
 @media (max-width: 768px) {
   :root {
-    --header-height: 108px;
+    --header-height: 68px;
+    --top-bar-height: 0px !important;
   }
 
   body {
-    padding-bottom: 64px; /* Ensure mobile sticky call bar does not cover footer/content */
+    padding-bottom: calc(72px + env(safe-area-inset-bottom, 0px));
   }
 
   .mobile-sticky-bar {
-    display: block;
+    display: block !important;
   }
 
-  .top-trust-bar .trust-badge-left {
-    display: none; /* Keep top bar clean on mobile */
+  .btn {
+    white-space: normal;
+    word-break: break-word;
+    text-align: center;
   }
 
-  .top-trust-bar .header-email-link,
-  .top-trust-bar .trust-bar-divider {
-    display: none;
+  .top-trust-bar {
+    display: none !important;
   }
 
-  .top-trust-bar .container {
-    justify-content: center;
+  .site-header.is-scrolled {
+    transform: none !important;
   }
 
   .services-grid {
@@ -237,7 +263,8 @@
     grid-template-columns: 1fr;
   }
 
-  .form-grid-2col {
+  .form-grid-2col,
+  .form-row-2col {
     grid-template-columns: 1fr;
   }
 
@@ -258,26 +285,101 @@
 }
 
 /* --------------------------------------------------------------------------
+   Mobile Standard (<= 576px) — Smooth Logo & Navigation Scaling
+   -------------------------------------------------------------------------- */
+@media (max-width: 576px) {
+  .nav-container {
+    gap: 0.5rem;
+  }
+
+  .brand-logo {
+    gap: 0.5rem;
+    min-width: 0;
+  }
+
+  .logo-icon {
+    width: 36px;
+    height: 36px;
+    flex-shrink: 0;
+  }
+
+  .logo-icon svg {
+    width: 22px;
+    height: 22px;
+  }
+
+  .logo-title {
+    font-size: clamp(1.05rem, 4vw, 1.25rem);
+    white-space: nowrap;
+  }
+
+  .logo-subtitle {
+    font-size: 0.625rem;
+  }
+
+  .nav-actions {
+    gap: 0.5rem;
+    flex-shrink: 0;
+  }
+
+  .mobile-nav-toggle,
+  .mobile-phone-quick {
+    width: 44px;
+    height: 44px;
+    min-width: 44px;
+    min-height: 44px;
+  }
+}
+
+/* --------------------------------------------------------------------------
    Mobile Standard / Small Phones (<= 480px, 390px, 375px)
    -------------------------------------------------------------------------- */
 @media (max-width: 480px) {
-  .hero-title {
-    font-size: 2.15rem;
+  .hero-title,
+  .service-hero-h1,
+  .service-hero-title,
+  .inner-hero-title,
+  .loc-hero__title {
+    font-size: clamp(1.75rem, 6.5vw, 2.25rem);
+    line-height: 1.18;
   }
 
-  .hero-cta-group {
+  .btn {
+    white-space: normal;
+    word-break: break-word;
+    text-align: center;
+    min-height: 44px;
+    padding: 0.85rem 1.25rem;
+    font-size: 0.975rem;
+  }
+
+  .hero-cta-group,
+  .service-hero-actions,
+  .emergency-strip-actions,
+  .final-cta-actions,
+  .comparison-bridge-cta {
     flex-direction: column;
     width: 100%;
+    gap: 0.75rem;
   }
 
+  .hero-cta-group .btn,
+  .service-hero-actions .btn,
+  .emergency-strip-actions .btn,
+  .final-cta-actions .btn,
   .hero-phone-cta,
   .hero-estimate-cta {
     width: 100%;
+    max-width: 100%;
     text-align: center;
+    justify-content: center;
   }
 
-  .hero-float-card {
-    display: none; /* Hide floating 3D labels on tiny screens to avoid overflow */
+  .hero-float-card,
+  .service-float-pill,
+  .float-card,
+  .float-pill {
+    display: none !important; /* Hide floating 3D labels on mobile screens to prevent overflow */
   }
 
   .hero-image-frame img {
@@ -339,5 +441,91 @@
 
   .before-after-container {
     aspect-ratio: 4 / 3;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Very Small Mobile (<= 360px, 320px) — Tight Viewport Hardening
+   -------------------------------------------------------------------------- */
+@media (max-width: 360px) {
+  .nav-container {
+    gap: 0.25rem;
+  }
+
+  .brand-logo {
+    gap: 0.35rem;
+  }
+
+  .logo-icon {
+    width: 32px;
+    height: 32px;
+  }
+
+  .logo-icon svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .logo-title {
+    font-size: 0.92rem;
+  }
+
+  .logo-subtitle {
+    display: none;
+  }
+
+  .nav-actions {
+    gap: 0.35rem;
+  }
+
+  .mobile-nav-toggle,
+  .mobile-phone-quick {
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+    min-height: 40px;
+  }
+
+  .mobile-nav-toggle {
+    padding: 7px;
+  }
+
+  .mobile-phone-quick {
+    padding: 0 !important;
+  }
+
+  .mobile-phone-quick svg {
+    width: 19px !important;
+    height: 19px !important;
+  }
+
+  .mobile-nav-toggle span {
+    width: 18px;
+  }
+
+  .mobile-sticky-call-btn {
+    padding: 0.5rem 0.65rem;
+  }
+
+  .sticky-call-pulse-wrap {
+    width: 34px;
+    height: 34px;
+  }
+
+  .sticky-call-icon-bg {
+    width: 30px;
+    height: 30px;
+  }
+
+  .sticky-call-action {
+    font-size: 0.58rem;
+  }
+
+  .sticky-call-phone {
+    font-size: 0.88rem;
+  }
+
+  .sticky-call-status {
+    display: none;
   }
 }

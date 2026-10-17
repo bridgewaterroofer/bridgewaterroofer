@@ -29,9 +29,7 @@ export function initNavigation() {
       }
       if (topTrustBar) {
         const topBarHeight = topTrustBar.offsetHeight;
-        if (topBarHeight > 0) {
-          document.documentElement.style.setProperty('--top-bar-height', `${topBarHeight}px`);
-        }
+        document.documentElement.style.setProperty('--top-bar-height', `${topBarHeight}px`);
       }
     }
   }
@@ -44,7 +42,7 @@ export function initNavigation() {
 
   // 1. Scroll Handlers: Header shrink, progress bar, sticky bars
   function onScroll() {
-    const scrollY = window.scrollY || window.pageYOffset;
+    const scrollY = window.scrollY || window.pageYOffset || document.documentElement.scrollTop || (document.body ? document.body.scrollTop : 0) || 0;
     const docHeight = document.documentElement.scrollHeight - window.innerHeight;
 
     // Scroll Progress Bar
@@ -62,9 +60,9 @@ export function initNavigation() {
       }
     }
 
-    // Mobile Sticky Call Bar after 200px
+    // Mobile Sticky Call Bar after 80px of scrolling
     if (mobileStickyBar) {
-      if (scrollY > 200) {
+      if (scrollY > 80) {
         mobileStickyBar.classList.add('is-visible');
       } else {
         mobileStickyBar.classList.remove('is-visible');
@@ -91,6 +89,8 @@ export function initNavigation() {
   }
 
   window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('touchmove', onScroll, { passive: true });
+  window.addEventListener('touchend', onScroll, { passive: true });
   onScroll(); // initial state
 
   // 2. Mobile Drawer Open/Close

@@ -16,10 +16,16 @@ const MIME_TYPES = {
 };
 
 const server = http.createServer((req, res) => {
-  let filePath = path.join(__dirname, req.url.split('?')[0]);
-  if (req.url === '/' || req.url === '') {
-    filePath = path.join(__dirname, 'index.html');
-  }
+  let urlPath = decodeURIComponent(req.url.split('?')[0]);
+  let filePath = path.join(__dirname, urlPath);
+
+  try {
+    if (fs.existsSync(filePath) && fs.statSync(filePath).isDirectory()) {
+      filePath = path.join(filePath, 'index.html');
+    } else if (!fs.existsSync(filePath) && fs.existsSync(filePath + '.html')) {
+      filePath = filePath + '.html';
+    }
+  } catch (e) {}
 
   const ext = path.extname(filePath).toLowerCase();
   const contentType = MIME_TYPES[ext] || 'application/octet-stream';
@@ -27,6 +33,11 @@ const server = http.createServer((req, res) => {
   fs.readFile(filePath, (err, content) => {
     if (err) {
       if (err.code === 'ENOENT') {
+        const notFoundPath = path.join(__dirname, '404.html');
+        if (fs.existsSync(notFoundPath)) {
+          res.writeHead(404, { 'Content-Type': 'text/html; charset=utf-8' });
+          return res.end(fs.readFileSync(notFoundPath));
+        }
         res.writeHead(404, { 'Content-Type': 'text/plain' });
         res.end('404 Not Found');
       } else {

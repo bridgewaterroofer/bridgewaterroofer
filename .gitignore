@@ -2,6 +2,7 @@
 scratch/
 *.tmp
 *.log
+*.zip
 
 # Dependencies
 node_modules/
@@ -17,6 +18,9 @@ desktop.ini
 *.swp
 *.swo
 
-# Environment variables
+# Environment variables & secret keys
 .env
 .env.local
+*key*.json
+*.local.json
+

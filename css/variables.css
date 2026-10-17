@@ -58,7 +58,7 @@
   --container-max: 1440px;
   --container-wide: 1440px;
   --container-narrow: 1100px;
-  --container-padding: clamp(1.25rem, 3.5vw, 2.5rem);
+  --container-padding: clamp(1rem, 3.5vw, 2.5rem);
 
   /* Header Dimensions */
   --header-height: 118px;

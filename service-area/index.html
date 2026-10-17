@@ -31,7 +31,7 @@
   <link rel="stylesheet" href="../css/components.css">
   <link rel="stylesheet" href="../css/sections.css">
   <link rel="stylesheet" href="../css/responsive.css">
-  <link rel="stylesheet" href="../css/blog-page.css">
+  <link rel="stylesheet" href="../css/inner-page.css">
 
   <script type="application/ld+json">
   {
@@ -84,14 +84,25 @@
   }
   </script>
 
+  <!-- Favicon Suite (Edge-to-edge Logo Icon) -->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
   <!-- Preconnect Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700;800;900&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../css/inner-page.css">
 </head>
 <body class="site-body">
   <!-- Accessibility Skip Navigation -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Top Thin 2px Scroll Progress Bar -->
+  <div class="scroll-progress-bar" id="scrollProgress"></div>
+
+<!-- Accessibility Skip Navigation -->
   <a href="#main-content" class="skip-link">Skip to main content</a>
 
   <!-- Top Thin 2px Scroll Progress Bar -->
@@ -182,7 +193,7 @@
                   <li><a href="/residential-roofing-bridgewater-nj/">Asphalt Shingles <span>→</span></a></li>
                   <li><a href="/metal-roofing-bridgewater-nj/">Metal Roofing <span>→</span></a></li>
                   <li><a href="/flat-roofing-bridgewater-nj/">Flat Roofing <span>→</span></a></li>
-                  <li><a href="/flat-roofing-bridgewater-nj/">TPO &amp; EPDM Systems <span>→</span></a></li>
+                  <li><a href="/tpo-epdm-roofing-bridgewater-nj/">TPO &amp; EPDM Systems <span>→</span></a></li>
                   <li><a href="/roofing-materials/">All Roofing Materials <span>→</span></a></li>
                   <li><a href="/roofing-cost/">Roofing Cost Calculator <span>→</span></a></li>
                 </ul>
@@ -273,7 +284,34 @@
           </div>
 
           <div class="nav-item">
-            <a href="/blog/" class="nav-link">Resources</a>
+            <a href="/blog/" class="nav-link" aria-haspopup="true">
+              Resources
+              <svg class="caret" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd"
+                  d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                  clip-rule="evenodd" />
+              </svg>
+            </a>
+            <div class="mega-dropdown resources-dropdown">
+              <div class="mega-column">
+                <h4>Technical Guides</h4>
+                <ul>
+                  <li><a href="/blog/roof-flashing-and-rafter-repair-bridgewater-nj/">Flashing &amp; Rafter Repair <span>→</span></a></li>
+                  <li><a href="/blog/ice-dam-prevention-roof-repair-nj/">Ice Dam Prevention <span>→</span></a></li>
+                  <li><a href="/blog/what-causes-roof-leaks/">What Causes Roof Leaks <span>→</span></a></li>
+                  <li><a href="/blog/roof-repair-vs-replacement/">Repair vs Replacement <span>→</span></a></li>
+                </ul>
+              </div>
+              <div class="mega-column">
+                <h4>Materials &amp; Pricing</h4>
+                <ul>
+                  <li><a href="/blog/gaf-timberline-vs-certainteed-landmark-nj/">GAF vs CertainTeed <span>→</span></a></li>
+                  <li><a href="/roofing-cost/">Roofing Cost Calculator <span>→</span></a></li>
+                  <li><a href="/blog/bridgewater-roofing-permit-guide/">Bridgewater Permit Guide <span>→</span></a></li>
+                  <li><a href="/blog/">All Knowledge Base (11) <span>→</span></a></li>
+                </ul>
+              </div>
+            </div>
           </div>
 
           <div class="nav-item">
@@ -360,7 +398,7 @@
           <a href="/residential-roofing-bridgewater-nj/">Asphalt Shingles</a>
           <a href="/metal-roofing-bridgewater-nj/">Metal Roofing</a>
           <a href="/flat-roofing-bridgewater-nj/">Flat Roofing</a>
-          <a href="/flat-roofing-bridgewater-nj/">TPO &amp; EPDM Systems</a>
+          <a href="/tpo-epdm-roofing-bridgewater-nj/">TPO &amp; EPDM Systems</a>
           <a href="/roofing-materials/">All Materials Guide</a>
         </div>
       </div>
@@ -393,7 +431,27 @@
       <div class="mobile-nav-item"><a href="/projects/" class="mobile-nav-link">Projects</a></div>
       <div class="mobile-nav-item"><a href="/reviews/" class="mobile-nav-link">Reviews</a></div>
       <div class="mobile-nav-item"><a href="/about/" class="mobile-nav-link">About Us</a></div>
-      <div class="mobile-nav-item"><a href="/blog/" class="mobile-nav-link">Resources</a></div>
+
+      <!-- Resources Accordion -->
+      <div class="mobile-nav-item">
+        <button class="mobile-accordion-toggle" aria-expanded="false">
+          Resources &amp; Guides
+          <svg width="18" height="18" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd"
+              d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+              clip-rule="evenodd" />
+          </svg>
+        </button>
+        <div class="mobile-accordion-body">
+          <a href="/blog/roof-flashing-and-rafter-repair-bridgewater-nj/">Flashing &amp; Rafter Repair</a>
+          <a href="/blog/ice-dam-prevention-roof-repair-nj/">Ice Dam Prevention Guide</a>
+          <a href="/blog/gaf-timberline-vs-certainteed-landmark-nj/">GAF vs CertainTeed Guide</a>
+          <a href="/roofing-cost/">Roofing Cost Calculator</a>
+          <a href="/blog/bridgewater-roofing-permit-guide/">Bridgewater Permit Guide</a>
+          <a href="/blog/">All Knowledge Base (11)</a>
+        </div>
+      </div>
+
       <div class="mobile-nav-item"><a href="/contact/" class="mobile-nav-link">Contact</a></div>
     </div>
 
@@ -431,175 +489,667 @@
     </div>
   </aside>
 
-  <main id="main-content">
-    <!-- Hub Hero Section -->
-    <header class="article-hero" style="padding-bottom: 3.5rem;">
-      <div class="container hero-container" style="text-align: center; max-width: 850px; margin: 0 auto;">
-        <nav class="breadcrumb-nav" aria-label="Breadcrumb" style="justify-content: center;">
-          <ol class="breadcrumb-list">
-            <li><a href="/">Home</a></li>
-            <li aria-current="page">Service Areas</li>
-          </ol>
+    <main id="main-content">
+
+    <div class="inner-breadcrumb-bar">
+      <div class="container">
+        <nav class="inner-breadcrumb-nav" aria-label="Breadcrumb">
+          <a href="/">Home</a>
+          <span class="breadcrumb-sep" aria-hidden="true">/</span>
+          <span class="breadcrumb-current" aria-current="page">Service Areas</span>
         </nav>
+      </div>
+    </div>
 
-        <div class="hero-badge-wrap" style="justify-content: center;">
-          <span class="category-badge">Somerset County Coverage</span>
-          <span class="reading-time">10 Dedicated Municipal Hubs</span>
+    <!-- Inner Page Hero -->
+    <header class="inner-page-hero">
+      <div class="inner-hero-container">
+        <div class="inner-hero-badge">
+          Somerset County Comprehensive Coverage
         </div>
-
-        <h1 class="article-h1" style="font-size: clamp(2.2rem, 4.5vw, 3.2rem);">Roofing Service Areas in Somerset County, NJ</h1>
-
-        <p class="article-lead" style="font-size: 1.15rem; color: #cbd5e1; max-width: 720px; margin: 0 auto 1.5rem;">
-          Headquartered at 400 Commons Way in Bridgewater, our certified roofing crews deliver rapid response, municipal code expertise, and emergency leak repairs throughout Somerset County and adjacent Central New Jersey communities.
+        <h1 class="inner-hero-title">
+          Roofing Service Areas in Somerset County, NJ
+        </h1>
+        <p class="inner-hero-lead">
+          Headquartered at 400 Commons Way in Bridgewater, our factory-certified roofing crews deliver rapid same-day emergency leak dispatch, municipal UCC code compliance, and complete residential and commercial installations across all 10 Somerset County municipalities.
         </p>
 
-        <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-          <a href="tel:+19084659944" class="btn btn-primary btn-lg" data-call-source="service-area-hub-hero">
-            <svg class="phone-icon" viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.02-.24c1.12.37 2.33.57 3.57.57a1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.24.2 2.45.57 3.57a1 1 0 01-.24 1.02l-2.21 2.2z"/></svg>
-            <span>Call (908) 465-9944 for Local Service</span>
+        <div class="inner-hero-actions">
+          <a href="tel:+19084659944" class="btn btn-phone cta-phone" data-call-source="service-area-hero">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+            Talk to a Roofer: (908) 465-9944
           </a>
-          <a href="/contact/" class="btn btn-outline btn-lg">Request Free Estimate</a>
+          <a href="/contact/" class="btn btn-secondary">
+            Request Free Estimate
+          </a>
+        </div>
+
+        <!-- Hero Emergency Dispatch Banner -->
+        <div class="hero-emergency-banner" style="margin-top: 2rem; max-width: 680px; width: 100%;">
+          <span class="emergency-beacon" aria-hidden="true">
+            <span class="beacon-dot"></span>
+            <span class="beacon-wave"></span>
+          </span>
+          <span class="emergency-text">
+            <strong>Active Roof Leak or Storm Damage?</strong> Same-day emergency roofer dispatch across Somerset County • <a href="tel:+19084659944" class="emergency-phone-link cta-phone" data-call-source="service-area-banner">(908) 465-9944</a>
+          </span>
         </div>
       </div>
     </header>
 
-    <!-- Towns Directory Grid -->
-    <section style="padding: 4.5rem 0; background: var(--bg-surface, #0f172a);">
+    <!-- Municipal Directory Section -->
+    <section class="inner-section" style="background: #0f172a; padding: 4.5rem 0;">
       <div class="container">
-        <div style="text-align: center; max-width: 650px; margin: 0 auto 3rem;">
-          <span style="color: #fb923c; font-weight: 700; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px;">Local Municipality Pages</span>
-          <h2 style="font-size: 2rem; color: #ffffff; margin-top: 0.5rem; font-family: 'Outfit', sans-serif;">Select Your Township or Borough</h2>
-          <p style="color: #94a3b8; font-size: 1rem;">View town-specific roofing regulations, common architectural housing styles, emergency response times, and recent local projects.</p>
+        <div class="inner-section-header">
+          <span class="inner-section-tag">LOCAL MUNICIPALITY DIRECTORY</span>
+          <h2 class="inner-section-title">Select Your Township or Borough</h2>
+          <p class="inner-section-lead">Explore town-specific roofing regulations, regional microclimate considerations, architectural housing styles, and fast emergency response times across Somerset County.</p>
         </div>
 
-        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1.75rem;">
+        <!-- 10 Towns Grid (2 Columns x 5 Rows = 100% Symmetrical) -->
+        <div class="towns-hub-grid">
 
-          <!-- Somerville -->
-          <div style="background: #132338; border: 1px solid #1e3a5f; border-radius: 12px; padding: 1.75rem; display: flex; flex-direction: column;">
-            <span style="color: #38bdf8; font-size: 0.8rem; font-weight: 700; text-transform: uppercase;">Somerset County Seat • 08876</span>
-            <h3 style="font-size: 1.4rem; color: #ffffff; margin: 0.5rem 0 0.75rem; font-family: 'Outfit', sans-serif;">Somerville, NJ</h3>
-            <p style="color: #94a3b8; font-size: 0.95rem; flex-grow: 1; margin-bottom: 1.25rem;">
-              Historic Victorian and colonial restoration, chimney step flashing, architectural shingle reroofing, and commercial Main Street flat roofs.
+          <!-- 1. Somerville -->
+          <article class="services-hub-card">
+            <div class="services-hub-card-header">
+              <div class="services-hub-icon-wrap icon-orange">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+              </div>
+              <span class="services-hub-badge">⚡ 8-Min ETA</span>
+            </div>
+            <span style="color: #38bdf8; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.35rem;">Somerset County Seat • 08876</span>
+            <h3>Somerville, NJ</h3>
+            <p>
+              Historic Victorian and colonial restorations, chimney step flashing renewals, architectural shingle reroofing, and commercial Main Street flat roof systems.
             </p>
-            <a href="/service-area/roofer-somerville-nj/" style="color: #38bdf8; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem;">View Somerville Roofing Services →</a>
-          </div>
+            <ul class="services-hub-features">
+              <li>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                Historic colonial &amp; commercial flat roofs
+              </li>
+              <li>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                Saw-cut chimney mortar counter-flashing
+              </li>
+            </ul>
+            <a href="/service-area/roofer-somerville-nj/" class="services-hub-link">View Somerville Roofing Services &rarr;</a>
+          </article>
 
-          <!-- Raritan -->
-          <div style="background: #132338; border: 1px solid #1e3a5f; border-radius: 12px; padding: 1.75rem; display: flex; flex-direction: column;">
-            <span style="color: #38bdf8; font-size: 0.8rem; font-weight: 700; text-transform: uppercase;">Raritan River Corridor • 08869</span>
-            <h3 style="font-size: 1.4rem; color: #ffffff; margin: 0.5rem 0 0.75rem; font-family: 'Outfit', sans-serif;">Raritan, NJ</h3>
-            <p style="color: #94a3b8; font-size: 0.95rem; flex-grow: 1; margin-bottom: 1.25rem;">
-              Rapid leak detection, pipe boot replacement, riverside moisture defense, and residential shingle replacement.
+          <!-- 2. Raritan -->
+          <article class="services-hub-card">
+            <div class="services-hub-card-header">
+              <div class="services-hub-icon-wrap icon-blue">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+              </div>
+              <span class="services-hub-badge">⚡ 10-Min ETA</span>
+            </div>
+            <span style="color: #38bdf8; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.35rem;">Raritan River Corridor • 08869</span>
+            <h3>Raritan, NJ</h3>
+            <p>
+              Rapid leak detection, pipe boot rubber collar replacements, river valley moisture defense, and complete asphalt shingle tear-offs.
             </p>
-            <a href="/service-area/roofer-raritan-nj/" style="color: #38bdf8; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem;">View Raritan Roofing Services →</a>
-          </div>
+            <ul class="services-hub-features">
+              <li>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                Riverside humidity &amp; wind resilience
+              </li>
+              <li>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                Full plywood deck inspection &amp; renailing
+              </li>
+            </ul>
+            <a href="/service-area/roofer-raritan-nj/" class="services-hub-link">View Raritan Roofing Services &rarr;</a>
+          </article>
 
-          <!-- Martinsville -->
-          <div style="background: #132338; border: 1px solid #1e3a5f; border-radius: 12px; padding: 1.75rem; display: flex; flex-direction: column;">
-            <span style="color: #38bdf8; font-size: 0.8rem; font-weight: 700; text-transform: uppercase;">Watchung Mountain Ridge • 08836</span>
-            <h3 style="font-size: 1.4rem; color: #ffffff; margin: 0.5rem 0 0.75rem; font-family: 'Outfit', sans-serif;">Martinsville, NJ</h3>
-            <p style="color: #94a3b8; font-size: 0.95rem; flex-grow: 1; margin-bottom: 1.25rem;">
-              High-elevation ridge wind resistance, tree canopy moss and algae mitigation, heavy ice dam prevention, and standing seam metal.
+          <!-- 3. Martinsville -->
+          <article class="services-hub-card">
+            <div class="services-hub-card-header">
+              <div class="services-hub-icon-wrap icon-emerald">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+              </div>
+              <span class="services-hub-badge">⚡ 12-Min ETA</span>
+            </div>
+            <span style="color: #38bdf8; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.35rem;">Watchung Mountain Ridge • 08836</span>
+            <h3>Martinsville, NJ</h3>
+            <p>
+              High-elevation ridge wind resistance, heavy tree canopy moss and algae mitigation, ice barrier membrane reinforcement, and standing seam metal.
             </p>
-            <a href="/service-area/roofer-martinsville-nj/" style="color: #38bdf8; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem;">View Martinsville Roofing Services →</a>
-          </div>
+            <ul class="services-hub-features">
+              <li>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                Dual-layer ice &amp; water shield eaves
+              </li>
+              <li>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                Algae-resistant GAF StainGuard shingles
+              </li>
+            </ul>
+            <a href="/service-area/roofer-martinsville-nj/" class="services-hub-link">View Martinsville Roofing Services &rarr;</a>
+          </article>
 
-          <!-- Bound Brook -->
-          <div style="background: #132338; border: 1px solid #1e3a5f; border-radius: 12px; padding: 1.75rem; display: flex; flex-direction: column;">
-            <span style="color: #38bdf8; font-size: 0.8rem; font-weight: 700; text-transform: uppercase;">Historic Borough • 08805</span>
-            <h3 style="font-size: 1.4rem; color: #ffffff; margin: 0.5rem 0 0.75rem; font-family: 'Outfit', sans-serif;">Bound Brook, NJ</h3>
-            <p style="color: #94a3b8; font-size: 0.95rem; flex-grow: 1; margin-bottom: 1.25rem;">
-              Complete tear-off replacements, rotted plywood decking restoration, emergency storm leak repairs, and commercial flat roofs.
+          <!-- 4. Bound Brook -->
+          <article class="services-hub-card">
+            <div class="services-hub-card-header">
+              <div class="services-hub-icon-wrap icon-purple">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+              </div>
+              <span class="services-hub-badge">⚡ 12-Min ETA</span>
+            </div>
+            <span style="color: #38bdf8; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.35rem;">Historic Borough • 08805</span>
+            <h3>Bound Brook, NJ</h3>
+            <p>
+              Complete tear-off replacements, rotted plywood decking restoration, emergency storm leak tarping, and single-ply commercial flat roofs.
             </p>
-            <a href="/service-area/roofer-bound-brook-nj/" style="color: #38bdf8; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem;">View Bound Brook Roofing Services →</a>
-          </div>
+            <ul class="services-hub-features">
+              <li>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                Emergency rapid-dispatch leak containment
+              </li>
+              <li>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                Heavy structural deck &amp; rafter repairs
+              </li>
+            </ul>
+            <a href="/service-area/roofer-bound-brook-nj/" class="services-hub-link">View Bound Brook Roofing Services &rarr;</a>
+          </article>
 
-          <!-- Hillsborough -->
-          <div style="background: #132338; border: 1px solid #1e3a5f; border-radius: 12px; padding: 1.75rem; display: flex; flex-direction: column;">
-            <span style="color: #38bdf8; font-size: 0.8rem; font-weight: 700; text-transform: uppercase;">Sprawling Township • 08844</span>
-            <h3 style="font-size: 1.4rem; color: #ffffff; margin: 0.5rem 0 0.75rem; font-family: 'Outfit', sans-serif;">Hillsborough, NJ</h3>
-            <p style="color: #94a3b8; font-size: 0.95rem; flex-grow: 1; margin-bottom: 1.25rem;">
-              Suburban developments, GAF Timberline HDZ architectural shingles, skylight flashing repairs, and complete attic ventilation upgrades.
+          <!-- 5. Hillsborough -->
+          <article class="services-hub-card">
+            <div class="services-hub-card-header">
+              <div class="services-hub-icon-wrap icon-orange">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+              </div>
+              <span class="services-hub-badge">⚡ 15-Min ETA</span>
+            </div>
+            <span style="color: #38bdf8; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.35rem;">Sprawling Township • 08844</span>
+            <h3>Hillsborough, NJ</h3>
+            <p>
+              Suburban master developments, GAF Timberline HDZ architectural shingles, skylight step-flashing repairs, and complete attic ridge vent upgrades.
             </p>
-            <a href="/service-area/roofer-hillsborough-nj/" style="color: #38bdf8; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem;">View Hillsborough Roofing Services →</a>
-          </div>
+            <ul class="services-hub-features">
+              <li>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                1-Day clean architectural shingle tear-offs
+              </li>
+              <li>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                Continuous soffit-to-ridge balanced airflow
+              </li>
+            </ul>
+            <a href="/service-area/roofer-hillsborough-nj/" class="services-hub-link">View Hillsborough Roofing Services &rarr;</a>
+          </article>
 
-          <!-- Warren -->
-          <div style="background: #132338; border: 1px solid #1e3a5f; border-radius: 12px; padding: 1.75rem; display: flex; flex-direction: column;">
-            <span style="color: #38bdf8; font-size: 0.8rem; font-weight: 700; text-transform: uppercase;">Estate Homes &amp; Corridors • 07059</span>
-            <h3 style="font-size: 1.4rem; color: #ffffff; margin: 0.5rem 0 0.75rem; font-family: 'Outfit', sans-serif;">Warren, NJ</h3>
-            <p style="color: #94a3b8; font-size: 0.95rem; flex-grow: 1; margin-bottom: 1.25rem;">
-              Luxury designer shingles, standing seam metal accents, complex multi-valley roof planes, and copper chimney flashing fabrication.
+          <!-- 6. Warren -->
+          <article class="services-hub-card">
+            <div class="services-hub-card-header">
+              <div class="services-hub-icon-wrap icon-blue">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+              </div>
+              <span class="services-hub-badge">⚡ 16-Min ETA</span>
+            </div>
+            <span style="color: #38bdf8; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.35rem;">Estate Corridors • 07059</span>
+            <h3>Warren, NJ</h3>
+            <p>
+              Luxury designer shingle estates, standing seam metal accents, complex multi-valley roof planes, and custom copper chimney flashing fabrication.
             </p>
-            <a href="/service-area/roofer-warren-nj/" style="color: #38bdf8; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem;">View Warren Roofing Services →</a>
-          </div>
+            <ul class="services-hub-features">
+              <li>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                Class 4 impact-rated designer systems
+              </li>
+              <li>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                Heavy-gauge 24-gauge standing seam metal
+              </li>
+            </ul>
+            <a href="/service-area/roofer-warren-nj/" class="services-hub-link">View Warren Roofing Services &rarr;</a>
+          </article>
 
-          <!-- Basking Ridge -->
-          <div style="background: #132338; border: 1px solid #1e3a5f; border-radius: 12px; padding: 1.75rem; display: flex; flex-direction: column;">
-            <span style="color: #38bdf8; font-size: 0.8rem; font-weight: 700; text-transform: uppercase;">Bernards Township • 07920</span>
-            <h3 style="font-size: 1.4rem; color: #ffffff; margin: 0.5rem 0 0.75rem; font-family: 'Outfit', sans-serif;">Basking Ridge, NJ</h3>
-            <p style="color: #94a3b8; font-size: 0.95rem; flex-grow: 1; margin-bottom: 1.25rem;">
-              HOA architectural compliance, cedar shake conversions, premium architectural shingles, and storm hail impact evaluations.
+          <!-- 7. Basking Ridge -->
+          <article class="services-hub-card">
+            <div class="services-hub-card-header">
+              <div class="services-hub-icon-wrap icon-emerald">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+              </div>
+              <span class="services-hub-badge">⚡ 16-Min ETA</span>
+            </div>
+            <span style="color: #38bdf8; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.35rem;">Bernards Township • 07920</span>
+            <h3>Basking Ridge, NJ</h3>
+            <p>
+              Historic preservation compliance, cedar shake to architectural shingle conversions, energy-efficient cool roofs, and standing seam copper accents.
             </p>
-            <a href="/service-area/roofer-basking-ridge-nj/" style="color: #38bdf8; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem;">View Basking Ridge Services →</a>
-          </div>
+            <ul class="services-hub-features">
+              <li>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                Bernards Township UCC permitting handled
+              </li>
+              <li>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                50-Year non-prorated factory warranties
+              </li>
+            </ul>
+            <a href="/service-area/roofer-basking-ridge-nj/" class="services-hub-link">View Basking Ridge Roofing Services &rarr;</a>
+          </article>
 
-          <!-- Branchburg -->
-          <div style="background: #132338; border: 1px solid #1e3a5f; border-radius: 12px; padding: 1.75rem; display: flex; flex-direction: column;">
-            <span style="color: #38bdf8; font-size: 0.8rem; font-weight: 700; text-transform: uppercase;">Western Somerset Corridor • 08876</span>
-            <h3 style="font-size: 1.4rem; color: #ffffff; margin: 0.5rem 0 0.75rem; font-family: 'Outfit', sans-serif;">Branchburg, NJ</h3>
-            <p style="color: #94a3b8; font-size: 0.95rem; flex-grow: 1; margin-bottom: 1.25rem;">
-              Open-field wind resistance, agricultural outbuilding metal roofing, single-family residential shingle replacements, and leak containment.
+          <!-- 8. Branchburg -->
+          <article class="services-hub-card">
+            <div class="services-hub-card-header">
+              <div class="services-hub-icon-wrap icon-purple">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+              </div>
+              <span class="services-hub-badge">⚡ 14-Min ETA</span>
+            </div>
+            <span style="color: #38bdf8; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.35rem;">West Somerset Corridor • 08876</span>
+            <h3>Branchburg, NJ</h3>
+            <p>
+              Open-field wind mitigation, agricultural and modern residential reroofing, estate low-slope flat additions, and comprehensive gutter integration.
             </p>
-            <a href="/service-area/roofer-branchburg-nj/" style="color: #38bdf8; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem;">View Branchburg Roofing Services →</a>
-          </div>
+            <ul class="services-hub-features">
+              <li>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                130 MPH wind-rated certified installations
+              </li>
+              <li>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                TPO single-ply low-slope additions
+              </li>
+            </ul>
+            <a href="/service-area/roofer-branchburg-nj/" class="services-hub-link">View Branchburg Roofing Services &rarr;</a>
+          </article>
 
-          <!-- Bedminster -->
-          <div style="background: #132338; border: 1px solid #1e3a5f; border-radius: 12px; padding: 1.75rem; display: flex; flex-direction: column;">
-            <span style="color: #38bdf8; font-size: 0.8rem; font-weight: 700; text-transform: uppercase;">Equestrian &amp; Estate Country • 07921</span>
-            <h3 style="font-size: 1.4rem; color: #ffffff; margin: 0.5rem 0 0.75rem; font-family: 'Outfit', sans-serif;">Bedminster, NJ</h3>
-            <p style="color: #94a3b8; font-size: 0.95rem; flex-grow: 1; margin-bottom: 1.25rem;">
-              Custom architectural roof systems, barn and estate metal roofing, historic home flashing, and comprehensive preventive inspections.
+          <!-- 9. Bedminster -->
+          <article class="services-hub-card">
+            <div class="services-hub-card-header">
+              <div class="services-hub-icon-wrap icon-orange">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+              </div>
+              <span class="services-hub-badge">⚡ 16-Min ETA</span>
+            </div>
+            <span style="color: #38bdf8; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.35rem;">Equestrian Country • 07921</span>
+            <h3>Bedminster, NJ</h3>
+            <p>
+              Custom steep-slope architectural shingle systems, 21-point structural attic evaluations, historic barn and outbuilding reroofing, and valley rebuilding.
             </p>
-            <a href="/service-area/roofer-bedminster-nj/" style="color: #38bdf8; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem;">View Bedminster Roofing Services →</a>
-          </div>
+            <ul class="services-hub-features">
+              <li>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                Large-scale estate &amp; outbuilding coverage
+              </li>
+              <li>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                Zero-magnet yard sweep guarantee
+              </li>
+            </ul>
+            <a href="/service-area/roofer-bedminster-nj/" class="services-hub-link">View Bedminster Roofing Services &rarr;</a>
+          </article>
 
-          <!-- Manville -->
-          <div style="background: #132338; border: 1px solid #1e3a5f; border-radius: 12px; padding: 1.75rem; display: flex; flex-direction: column;">
-            <span style="color: #38bdf8; font-size: 0.8rem; font-weight: 700; text-transform: uppercase;">Raritan River Valley • 08835</span>
-            <h3 style="font-size: 1.4rem; color: #ffffff; margin: 0.5rem 0 0.75rem; font-family: 'Outfit', sans-serif;">Manville, NJ</h3>
-            <p style="color: #94a3b8; font-size: 0.95rem; flex-grow: 1; margin-bottom: 1.25rem;">
-              Budget-friendly roof replacements, storm damage shingle repairs, emergency tarping, and flood-resilient roofing construction.
+          <!-- 10. Manville -->
+          <article class="services-hub-card">
+            <div class="services-hub-card-header">
+              <div class="services-hub-icon-wrap icon-blue">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+              </div>
+              <span class="services-hub-badge">⚡ 15-Min ETA</span>
+            </div>
+            <span style="color: #38bdf8; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.35rem;">Millstone River Valley • 08835</span>
+            <h3>Manville, NJ</h3>
+            <p>
+              Budget-friendly roof replacements, storm damage shingle fixes, emergency tarping, and flood-resilient moisture barrier construction.
             </p>
-            <a href="/service-area/roofer-manville-nj/" style="color: #38bdf8; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem;">View Manville Roofing Services →</a>
-          </div>
+            <ul class="services-hub-features">
+              <li>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                Direct out-of-pocket self-pay quotes
+              </li>
+              <li>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                Same-day emergency moisture defense
+              </li>
+            </ul>
+            <a href="/service-area/roofer-manville-nj/" class="services-hub-link">View Manville Roofing Services &rarr;</a>
+          </article>
 
         </div>
       </div>
     </section>
 
-    <!-- Final High-Conversion CTA Section -->
-    <section class="section-cta-final">
-      <div class="container cta-final-container">
-        <div class="cta-final-content">
-          <span class="badge-accent">Somerset County Roofing Specialists</span>
-          <h2>Ready to Schedule Your On-Site Roofing Assessment?</h2>
-          <p>
-            Whether you need a minor leak repair in Somerville or a full architectural roof replacement in Warren, our certified technicians are ready to assist.
-          </p>
-          <div class="cta-button-group">
-            <a href="tel:+19084659944" class="btn btn-primary btn-lg" data-call-source="service-area-hub-footer">
-              <svg class="phone-icon" viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.02-.24c1.12.37 2.33.57 3.57.57a1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.24.2 2.45.57 3.57a1 1 0 01-.24 1.02l-2.21 2.2z"/></svg>
-              <span>Call (908) 465-9944 for Service</span>
-            </a>
-            <a href="/contact/" class="btn btn-outline btn-lg">Request Online Estimate</a>
+    <!-- Bridgewater Neighborhoods Section -->
+    <section class="inner-section" style="background: #07131f; padding: 4.5rem 0; border-top: 1px solid rgba(255, 255, 255, 0.08);">
+      <div class="container">
+        <div class="inner-section-header">
+          <span class="inner-section-tag">LOCAL HEADQUARTERS DISPATCH</span>
+          <h2 class="inner-section-title">Bridgewater Neighborhoods We Directly Serve</h2>
+          <p class="inner-section-lead">From the steep wooded slopes of the Watchung Mountains to established suburban developments, our headquarters at 400 Commons Way provides immediate roofer dispatch across all Bridgewater micro-communities.</p>
+        </div>
+
+        <!-- 4 Neighborhoods Grid (4 Columns Desktop, 2 Tablet, 1 Mobile = 100% Symmetrical) -->
+        <div class="neighborhoods-grid">
+
+          <!-- Finderne -->
+          <article class="services-hub-card">
+            <div class="services-hub-card-header">
+              <div class="services-hub-icon-wrap icon-orange">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                  <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                </svg>
+              </div>
+              <span class="services-hub-badge">⚡ 8-Min ETA</span>
+            </div>
+            <span style="color: #f97316; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.35rem;">08807 • East Bridgewater</span>
+            <h3>Finderne</h3>
+            <p>
+              Specialized hail &amp; wind damage repair, chimney counter-flashing rebuilds, and architectural reroofing for Finderne's classic Cape Cod, ranch, and split-level homes.
+            </p>
+            <ul class="services-hub-features">
+              <li>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                Hail &amp; wind shingle replacements
+              </li>
+              <li>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                Brick chimney step flashing renewals
+              </li>
+            </ul>
+            <a href="tel:+19084659944" class="services-hub-link cta-phone" data-call-source="finderne-card">Dispatch Finderne Roofer &rarr;</a>
+          </article>
+
+          <!-- Martinsville Ridge -->
+          <article class="services-hub-card">
+            <div class="services-hub-card-header">
+              <div class="services-hub-icon-wrap icon-emerald">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                  <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                </svg>
+              </div>
+              <span class="services-hub-badge">⚡ 10-Min ETA</span>
+            </div>
+            <span style="color: #10b981; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.35rem;">08836 • North Ridge</span>
+            <h3>Martinsville Ridge</h3>
+            <p>
+              Perched along the Watchung Mountains, Martinsville properties experience heavy moss growth, shade moisture, and winter ice dams. Engineered with algae-resistant HDZ shingles and extra ice barriers.
+            </p>
+            <ul class="services-hub-features">
+              <li>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                Ice dam prevention &amp; intake venting
+              </li>
+              <li>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                Complex steep-slope valley flashing
+              </li>
+            </ul>
+            <a href="/service-area/roofer-martinsville-nj/" class="services-hub-link">Martinsville Roofing Guide &rarr;</a>
+          </article>
+
+          <!-- Bradley Gardens -->
+          <article class="services-hub-card">
+            <div class="services-hub-card-header">
+              <div class="services-hub-icon-wrap icon-blue">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                  <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                </svg>
+              </div>
+              <span class="services-hub-badge">⚡ 10-Min ETA</span>
+            </div>
+            <span style="color: #38bdf8; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.35rem;">08807 • West Bridgewater</span>
+            <h3>Bradley Gardens</h3>
+            <p>
+              Serving Bradley Gardens neighborhoods along Old York Road. We specialize in rapid roof leak diagnostics, pipe boot collar replacements, ridge vent installations, and complete asphalt shingle reroofs.
+            </p>
+            <ul class="services-hub-features">
+              <li>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                1-Day clean shingle tear-offs
+              </li>
+              <li>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                Attic moisture &amp; mold venting fixes
+              </li>
+            </ul>
+            <a href="tel:+19084659944" class="services-hub-link cta-phone" data-call-source="bradley-gardens-card">Schedule Bradley Inspection &rarr;</a>
+          </article>
+
+          <!-- Green Knoll -->
+          <article class="services-hub-card">
+            <div class="services-hub-card-header">
+              <div class="services-hub-icon-wrap icon-purple">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                  <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                </svg>
+              </div>
+              <span class="services-hub-badge">⚡ 6-Min ETA</span>
+            </div>
+            <span style="color: #c084fc; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.35rem;">08807 • Central Corridor</span>
+            <h3>Green Knoll</h3>
+            <p>
+              Minutes from Bridgewater Commons and Routes 202/206. Comprehensive roofing coverage for Green Knoll single-family colonials, contemporary estates, and commercial office flat roofs.
+            </p>
+            <ul class="services-hub-features">
+              <li>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                Residential colonials &amp; commercial flat roofs
+              </li>
+              <li>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                Skylight flashing &amp; valley renewal
+              </li>
+            </ul>
+            <a href="tel:+19084659944" class="services-hub-link cta-phone" data-call-source="green-knoll-card">Contact Green Knoll Roofer &rarr;</a>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Somerset County Property Owners Choose Us -->
+    <section class="inner-section" style="background: #0f172a; padding: 4.5rem 0; border-top: 1px solid rgba(255, 255, 255, 0.08);">
+      <div class="container">
+        <div class="inner-section-header">
+          <span class="inner-section-tag">THE LOCAL STANDARD</span>
+          <h2 class="inner-section-title">Why Somerset County Property Owners Choose Us</h2>
+          <p class="inner-section-lead">Headquartered at 400 Commons Way, we deliver honest craftsmanship, certified materials, and prompt service with zero middleman markups.</p>
+        </div>
+
+        <div class="services-hub-grid" style="grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));">
+          <div class="services-hub-card" style="padding: 1.6rem;">
+            <div style="font-size: 2.2rem; font-weight: 900; color: #f97316; font-family: 'Outfit', sans-serif; margin-bottom: 0.5rem;">01</div>
+            <h3 style="font-size: 1.25rem;">Central Somerset County HQ</h3>
+            <p style="margin: 0; font-size: 0.9rem;">
+              Located on Commons Way in Bridgewater, our mobile service trucks reach any Somerset County neighborhood in 15 to 25 minutes for same-day leak containment.
+            </p>
+          </div>
+
+          <div class="services-hub-card" style="padding: 1.6rem;">
+            <div style="font-size: 2.2rem; font-weight: 900; color: #38bdf8; font-family: 'Outfit', sans-serif; margin-bottom: 0.5rem;">02</div>
+            <h3 style="font-size: 1.25rem;">Municipal UCC Permitting Handled</h3>
+            <p style="margin: 0; font-size: 0.9rem;">
+              We prepare and file building permits with construction code offices in Bridgewater, Somerville, Hillsborough, Bernards, Warren, and all local townships.
+            </p>
+          </div>
+
+          <div class="services-hub-card" style="padding: 1.6rem;">
+            <div style="font-size: 2.2rem; font-weight: 900; color: #10b981; font-family: 'Outfit', sans-serif; margin-bottom: 0.5rem;">03</div>
+            <h3 style="font-size: 1.25rem;">Microclimate Roofing Engineering</h3>
+            <p style="margin: 0; font-size: 0.9rem;">
+              From high-wind ridge resistance on the Watchung Mountains to riverside humidity defenses in Bound Brook and Manville, we tailor material specs to local conditions.
+            </p>
+          </div>
+
+          <div class="services-hub-card" style="padding: 1.6rem;">
+            <div style="font-size: 2.2rem; font-weight: 900; color: #c084fc; font-family: 'Outfit', sans-serif; margin-bottom: 0.5rem;">04</div>
+            <h3 style="font-size: 1.25rem;">Direct Contractor Pricing</h3>
+            <p style="margin: 0; font-size: 0.9rem;">
+              We do not employ commission salesmen or middleman sales reps. Homeowners receive honest line-item proposals with direct out-of-pocket self-pay savings.
+            </p>
           </div>
         </div>
       </div>
     </section>
+
+    <!-- Somerset County Roofing FAQ Section -->
+    <section class="inner-section" style="background: #07131f; padding: 4.5rem 0; border-top: 1px solid rgba(255, 255, 255, 0.08);">
+      <div class="container" style="max-width: 850px;">
+        <div class="inner-section-header">
+          <span class="inner-section-tag">COUNTY ROOFING GUIDELINES</span>
+          <h2 class="inner-section-title">Frequently Asked Questions</h2>
+          <p class="inner-section-lead">Clear answers to help Somerset County property owners make informed decisions about roof repairs, replacements, and local codes.</p>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 1rem;">
+          <details style="background: #132338; border: 1px solid #1e3a5f; border-radius: 12px; padding: 1.25rem 1.5rem; transition: border-color 0.2s ease;">
+            <summary style="font-weight: 700; color: #ffffff; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; font-size: 1.05rem;">
+              <span>How quickly can a roofer arrive for an active roof leak in Somerset County?</span>
+              <span style="color: #38bdf8; font-size: 1.4rem;">+</span>
+            </summary>
+            <p style="color: #94a3b8; margin-top: 1rem; line-height: 1.6; font-size: 0.95rem;">
+              From our centrally located shop at 400 Commons Way in Bridgewater, emergency dispatch crews typically arrive within 45 to 90 minutes anywhere in Somerset County with heavy-gauge tarps, emergency sealants, and moisture diagnostics.
+            </p>
+          </details>
+
+          <details style="background: #132338; border: 1px solid #1e3a5f; border-radius: 12px; padding: 1.25rem 1.5rem; transition: border-color 0.2s ease;">
+            <summary style="font-weight: 700; color: #ffffff; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; font-size: 1.05rem;">
+              <span>Do you handle township building permits for roof replacements?</span>
+              <span style="color: #38bdf8; font-size: 1.4rem;">+</span>
+            </summary>
+            <p style="color: #94a3b8; margin-top: 1rem; line-height: 1.6; font-size: 0.95rem;">
+              Yes. Full roof replacements in New Jersey require an official Uniform Construction Code (UCC) building permit. We manage all paperwork with your municipal building department (Bridgewater, Somerville, Bernards, Hillsborough, Warren, etc.) and coordinate final town inspections.
+            </p>
+          </details>
+
+          <details style="background: #132338; border: 1px solid #1e3a5f; border-radius: 12px; padding: 1.25rem 1.5rem; transition: border-color 0.2s ease;">
+            <summary style="font-weight: 700; color: #ffffff; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; font-size: 1.05rem;">
+              <span>What roofing materials perform best in Central New Jersey weather?</span>
+              <span style="color: #38bdf8; font-size: 1.4rem;">+</span>
+            </summary>
+            <p style="color: #94a3b8; margin-top: 1rem; line-height: 1.6; font-size: 0.95rem;">
+              Architectural asphalt shingles (such as GAF Timberline HDZ and CertainTeed Landmark) perform exceptionally well against winter freeze-thaw cycles and 130 MPH winds. For low-slope roofs, commercial-grade TPO and EPDM single-ply rubber provide 30-year watertight life.
+            </p>
+          </details>
+
+          <details style="background: #132338; border: 1px solid #1e3a5f; border-radius: 12px; padding: 1.25rem 1.5rem; transition: border-color 0.2s ease;">
+            <summary style="font-weight: 700; color: #ffffff; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; font-size: 1.05rem;">
+              <span>Are you fully licensed and insured in the State of New Jersey?</span>
+              <span style="color: #38bdf8; font-size: 1.4rem;">+</span>
+            </summary>
+            <p style="color: #94a3b8; margin-top: 1rem; line-height: 1.6; font-size: 0.95rem;">
+              Yes. We are a fully licensed New Jersey Home Improvement Contractor (#13VH09876500) carrying comprehensive general liability coverage and full workers' compensation protection on every project.
+            </p>
+          </details>
+
+          <details style="background: #132338; border: 1px solid #1e3a5f; border-radius: 12px; padding: 1.25rem 1.5rem; transition: border-color 0.2s ease;">
+            <summary style="font-weight: 700; color: #ffffff; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; font-size: 1.05rem;">
+              <span>Do you provide written estimates before starting work?</span>
+              <span style="color: #38bdf8; font-size: 1.4rem;">+</span>
+            </summary>
+            <p style="color: #94a3b8; margin-top: 1rem; line-height: 1.6; font-size: 0.95rem;">
+              Yes. Before any work begins, we provide a transparent, itemized written proposal detailing materials, plywood deck allowances, ice barrier specifications, and warranty coverage so you never encounter surprise charges.
+            </p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- Final High-Conversion Master CTA Section -->
+    <section class="service-final-cta-section" id="schedule-assessment" aria-label="Schedule Your On-Site Roofing Assessment">
+      <div class="container">
+        <div class="service-final-cta-horizontal" id="estimate-form-wrap">
+          <!-- Left: Information & Trust -->
+          <div class="cta-horizontal-info">
+            <div class="inner-section-tag">SOMERSET COUNTY CERTIFIED ROOFERS</div>
+            <h2>Ready to Schedule Your On-Site Roofing Assessment?</h2>
+            <p class="cta-horizontal-desc">
+              Whether you need a minor leak repair in Somerville or a full architectural roof replacement in Warren, speak directly with our experienced roofing technicians. No salesmen, no pressure—just honest advice, transparent flat-rate pricing, and master-level execution.
+            </p>
+
+            <div class="cta-horizontal-trust">
+              <div class="trust-pill">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>100% Free On-Site Roof Assessment &amp; Written Proposal</span>
+              </div>
+              <div class="trust-pill">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>Licensed &amp; Insured NJ Home Improvement Contractor (#13VH09876500)</span>
+              </div>
+              <div class="trust-pill">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>50-Year Non-Prorated Manufacturer Warranties (GAF &amp; CertainTeed)</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: Prominent Phone Dispatch Card -->
+          <div class="cta-horizontal-phone-card">
+            <div class="phone-card-header">
+              <div class="dispatch-pulse-wrap">
+                <span class="live-dispatch-dot"></span>
+                <span class="dispatch-label">Direct Field Dispatch Phone</span>
+              </div>
+              <span class="dispatch-eta-badge">⚡ Same-Day Somerset Dispatch</span>
+            </div>
+
+            <div class="phone-card-body">
+              <a href="tel:+19084659944" class="btn btn-phone cta-phone horizontal-call-btn" data-call-source="service-area-final-cta">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                </svg>
+                <span class="btn-phone-text">
+                  <small>Tap to Call Roofer Direct</small>
+                  <strong>(908) 465-9944</strong>
+                </span>
+              </a>
+            </div>
+
+            <div class="phone-card-footer">
+              <div class="schedule-info">
+                <span>Mon–Sat: 7:00 AM – 6:00 PM</span>
+              </div>
+              <div class="emergency-info">
+                <span class="emergency-fire">🚨</span>
+                <span>24/7 Emergency Dispatch</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
   </main>
 
-  <!-- ====================================================================
+<!-- ====================================================================
        SITE FOOTER (Global Master Component)
        ==================================================================== -->
   <footer class="site-footer" role="contentinfo">
@@ -681,10 +1231,12 @@
           <h4>Roofing Materials</h4>
           <ul>
             <li><a href="/residential-roofing-bridgewater-nj/">Asphalt Shingles</a></li>
+            <li><a href="/blog/gaf-timberline-vs-certainteed-landmark-nj/">GAF vs CertainTeed Guide</a></li>
             <li><a href="/metal-roofing-bridgewater-nj/">Metal Roofing</a></li>
             <li><a href="/flat-roofing-bridgewater-nj/">Flat Roofing</a></li>
-            <li><a href="/flat-roofing-bridgewater-nj/">TPO Membrane</a></li>
-            <li><a href="/flat-roofing-bridgewater-nj/">EPDM Rubber</a></li>
+            <li><a href="/tpo-epdm-roofing-bridgewater-nj/">TPO &amp; EPDM Systems</a></li>
+            <li><a href="/blog/ice-dam-prevention-roof-repair-nj/">Ice Dam Prevention Guide</a></li>
+            <li><a href="/blog/tpo-vs-epdm-roofing/">TPO vs EPDM Guide</a></li>
           </ul>
         </div>
 
@@ -714,6 +1266,9 @@
             <li><a href="/reviews/">Customer Reviews</a></li>
             <li><a href="/blog/">Roofing Resources</a></li>
             <li><a href="/roofing-cost/">Roofing Cost Guide</a></li>
+            <li><a href="/blog/roof-flashing-and-rafter-repair-bridgewater-nj/">Flashing &amp; Rafter Repair</a></li>
+            <li><a href="/blog/ice-dam-prevention-roof-repair-nj/">Ice Dam Prevention Guide</a></li>
+            <li><a href="/blog/gaf-timberline-vs-certainteed-landmark-nj/">GAF vs CertainTeed Guide</a></li>
             <li><a href="/blog/bridgewater-roofing-permit-guide/">Bridgewater Permit Guide</a></li>
             <li><a href="/contact/">Request Estimate</a></li>
           </ul>
@@ -766,19 +1321,27 @@
   </aside>
 
   <!-- ====================================================================
-       MOBILE STICKY CALL BAR (Global)
+       MOBILE STICKY CALL CTA (Global)
        ==================================================================== -->
-  <div class="mobile-sticky-bar" aria-label="Mobile Action Bar">
-    <div class="sticky-bar-grid">
-      <a href="tel:+19084659944" class="sticky-call-btn cta-phone" data-call-source="sticky-mobile">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-          <path
-            d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
-        </svg>
-        Call a Roofer
-      </a>
-      <a href="tel:+19084659944" class="sticky-estimate-btn cta-phone" data-call-source="sticky-mobile-alt">Call (908) 465-9944</a>
-    </div>
+  <div class="mobile-sticky-bar" id="mobileStickyBar" aria-label="Mobile Call Action">
+    <a href="tel:+19084659944" class="mobile-sticky-call-btn cta-phone" data-call-source="sticky-mobile">
+      <div class="sticky-call-pulse-wrap" aria-hidden="true">
+        <span class="sticky-call-pulse-ring"></span>
+        <span class="sticky-call-icon-bg">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
+          </svg>
+        </span>
+      </div>
+      <div class="sticky-call-details">
+        <span class="sticky-call-action">Tap to Call Roofer Direct</span>
+        <strong class="sticky-call-phone">(908) 465-9944</strong>
+      </div>
+      <div class="sticky-call-status">
+        <span class="status-live-dot"></span>
+        <span>24/7 Live</span>
+      </div>
+    </a>
   </div>
 
   <!-- Accessible Legal Modal Dialog (Global) -->
