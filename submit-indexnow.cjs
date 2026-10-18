@@ -7,53 +7,72 @@ const https = require('https');
 const host = 'bridgewaterroofer.com';
 const key = '2dfab80f52863e8a8b4a5c8f76a0f6d5';
 const keyLocation = `https://${host}/${key}.txt`;
-const urlList = [
-  "https://bridgewaterroofer.com/",
-  "https://bridgewaterroofer.com/roof-repair-bridgewater-nj/",
-  "https://bridgewaterroofer.com/roof-replacement-bridgewater-nj/",
-  "https://bridgewaterroofer.com/roof-leak-repair-bridgewater-nj/",
-  "https://bridgewaterroofer.com/emergency-roof-repair-bridgewater-nj/",
-  "https://bridgewaterroofer.com/storm-damage-roof-repair-bridgewater-nj/",
-  "https://bridgewaterroofer.com/residential-roofing-bridgewater-nj/",
-  "https://bridgewaterroofer.com/commercial-roofing-bridgewater-nj/",
-  "https://bridgewaterroofer.com/roof-inspection-bridgewater-nj/",
-  "https://bridgewaterroofer.com/metal-roofing-bridgewater-nj/",
-  "https://bridgewaterroofer.com/flat-roofing-bridgewater-nj/",
-  "https://bridgewaterroofer.com/tpo-epdm-roofing-bridgewater-nj/",
-  "https://bridgewaterroofer.com/service-area/roofer-somerville-nj/",
-  "https://bridgewaterroofer.com/service-area/roofer-raritan-nj/",
-  "https://bridgewaterroofer.com/service-area/roofer-martinsville-nj/",
-  "https://bridgewaterroofer.com/service-area/roofer-bound-brook-nj/",
-  "https://bridgewaterroofer.com/service-area/roofer-hillsborough-nj/",
-  "https://bridgewaterroofer.com/service-area/roofer-warren-nj/",
-  "https://bridgewaterroofer.com/service-area/roofer-basking-ridge-nj/",
-  "https://bridgewaterroofer.com/service-area/roofer-branchburg-nj/",
-  "https://bridgewaterroofer.com/service-area/roofer-bedminster-nj/",
-  "https://bridgewaterroofer.com/service-area/roofer-manville-nj/",
-  "https://bridgewaterroofer.com/blog/",
-  "https://bridgewaterroofer.com/blog/roof-repair-vs-replacement/",
-  "https://bridgewaterroofer.com/blog/what-causes-roof-leaks/",
-  "https://bridgewaterroofer.com/blog/roof-replacement-cost-bridgewater-nj/",
-  "https://bridgewaterroofer.com/blog/bridgewater-roofing-permit-guide/",
-  "https://bridgewaterroofer.com/blog/asphalt-shingles-vs-metal-roofing/",
-  "https://bridgewaterroofer.com/blog/what-to-check-after-a-nj-storm/",
-  "https://bridgewaterroofer.com/blog/how-long-does-a-roof-last-in-nj/",
-  "https://bridgewaterroofer.com/blog/tpo-vs-epdm-roofing/",
-  "https://bridgewaterroofer.com/blog/roof-flashing-and-rafter-repair-bridgewater-nj/",
-  "https://bridgewaterroofer.com/blog/ice-dam-prevention-roof-repair-nj/",
-  "https://bridgewaterroofer.com/blog/gaf-timberline-vs-certainteed-landmark-nj/",
-  "https://bridgewaterroofer.com/editorial-policy/",
-  "https://bridgewaterroofer.com/service-area/",
-  "https://bridgewaterroofer.com/contact/",
-  "https://bridgewaterroofer.com/about/",
-  "https://bridgewaterroofer.com/privacy-policy/",
-  "https://bridgewaterroofer.com/roofing-services/",
-  "https://bridgewaterroofer.com/roofing-materials/",
-  "https://bridgewaterroofer.com/projects/",
-  "https://bridgewaterroofer.com/reviews/",
-  "https://bridgewaterroofer.com/roofing-cost/",
-  "https://bridgewaterroofer.com/authors/mark-henderson/"
-];
+const fs = require('fs');
+
+let urlList = [];
+try {
+  const sitemapXml = fs.readFileSync('sitemap.xml', 'utf8');
+  const locRegex = /<loc>(https:\/\/bridgewaterroofer\.com\/[^<]*)<\/loc>/g;
+  let match;
+  while ((match = locRegex.exec(sitemapXml)) !== null) {
+    if (!urlList.includes(match[1])) {
+      urlList.push(match[1]);
+    }
+  }
+} catch (e) {
+  console.warn('Could not read sitemap.xml, falling back to base URL list.');
+}
+
+if (urlList.length === 0) {
+  urlList = [
+    "https://bridgewaterroofer.com/",
+    "https://bridgewaterroofer.com/roof-repair-bridgewater-nj/",
+    "https://bridgewaterroofer.com/roof-replacement-bridgewater-nj/",
+    "https://bridgewaterroofer.com/roof-leak-repair-bridgewater-nj/",
+    "https://bridgewaterroofer.com/emergency-roof-repair-bridgewater-nj/",
+    "https://bridgewaterroofer.com/storm-damage-roof-repair-bridgewater-nj/",
+    "https://bridgewaterroofer.com/residential-roofing-bridgewater-nj/",
+    "https://bridgewaterroofer.com/commercial-roofing-bridgewater-nj/",
+    "https://bridgewaterroofer.com/roof-inspection-bridgewater-nj/",
+    "https://bridgewaterroofer.com/metal-roofing-bridgewater-nj/",
+    "https://bridgewaterroofer.com/flat-roofing-bridgewater-nj/",
+    "https://bridgewaterroofer.com/tpo-epdm-roofing-bridgewater-nj/",
+    "https://bridgewaterroofer.com/service-area/roofer-somerville-nj/",
+    "https://bridgewaterroofer.com/service-area/roofer-raritan-nj/",
+    "https://bridgewaterroofer.com/service-area/roofer-martinsville-nj/",
+    "https://bridgewaterroofer.com/service-area/roofer-bound-brook-nj/",
+    "https://bridgewaterroofer.com/service-area/roofer-hillsborough-nj/",
+    "https://bridgewaterroofer.com/service-area/roofer-warren-nj/",
+    "https://bridgewaterroofer.com/service-area/roofer-basking-ridge-nj/",
+    "https://bridgewaterroofer.com/service-area/roofer-branchburg-nj/",
+    "https://bridgewaterroofer.com/service-area/roofer-bedminster-nj/",
+    "https://bridgewaterroofer.com/service-area/roofer-manville-nj/",
+    "https://bridgewaterroofer.com/blog/",
+    "https://bridgewaterroofer.com/blog/roof-repair-vs-replacement/",
+    "https://bridgewaterroofer.com/blog/what-causes-roof-leaks/",
+    "https://bridgewaterroofer.com/blog/roof-replacement-cost-bridgewater-nj/",
+    "https://bridgewaterroofer.com/blog/bridgewater-roofing-permit-guide/",
+    "https://bridgewaterroofer.com/blog/asphalt-shingles-vs-metal-roofing/",
+    "https://bridgewaterroofer.com/blog/what-to-check-after-a-nj-storm/",
+    "https://bridgewaterroofer.com/blog/how-long-does-a-roof-last-in-nj/",
+    "https://bridgewaterroofer.com/blog/tpo-vs-epdm-roofing/",
+    "https://bridgewaterroofer.com/blog/roof-flashing-and-rafter-repair-bridgewater-nj/",
+    "https://bridgewaterroofer.com/blog/ice-dam-prevention-roof-repair-nj/",
+    "https://bridgewaterroofer.com/blog/gaf-timberline-vs-certainteed-landmark-nj/",
+    "https://bridgewaterroofer.com/editorial-policy/",
+    "https://bridgewaterroofer.com/service-area/",
+    "https://bridgewaterroofer.com/contact/",
+    "https://bridgewaterroofer.com/about/",
+    "https://bridgewaterroofer.com/privacy-policy/",
+    "https://bridgewaterroofer.com/terms/",
+    "https://bridgewaterroofer.com/roofing-services/",
+    "https://bridgewaterroofer.com/roofing-materials/",
+    "https://bridgewaterroofer.com/projects/",
+    "https://bridgewaterroofer.com/reviews/",
+    "https://bridgewaterroofer.com/roofing-cost/",
+    "https://bridgewaterroofer.com/authors/mark-henderson/"
+  ];
+}
 
 const payload = JSON.stringify({
   host,

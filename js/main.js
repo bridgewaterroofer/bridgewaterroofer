@@ -15,6 +15,21 @@ function init() {
   initEventTracking();
 
   console.info('Bridgewater Roofer — Premium Platform Initialized.');
+
+  // Automatic IndexNow trigger for Hostinger / production deployments
+  if ('requestIdleCallback' in window) {
+    window.requestIdleCallback(triggerAutoIndexNow, { timeout: 4000 });
+  } else {
+    setTimeout(triggerAutoIndexNow, 3500);
+  }
+}
+
+function triggerAutoIndexNow() {
+  try {
+    if (sessionStorage.getItem('in_triggered')) return;
+    sessionStorage.setItem('in_triggered', '1');
+    fetch('/auto-indexnow.php', { method: 'POST', priority: 'low' }).catch(() => {});
+  } catch (_) {}
 }
 
 if (document.readyState === 'loading') {

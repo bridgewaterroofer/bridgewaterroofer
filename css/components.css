@@ -1273,3 +1273,9 @@
 .inner-table tbody tr:hover td {
   background: rgba(244, 122, 36, 0.06);
 }
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

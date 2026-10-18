@@ -436,7 +436,8 @@ body.blog-article-page {
 
 .article-body-content,
 .article-content-column,
-.article-main {
+.article-main,
+.article-content {
   grid-area: content;
   min-width: 0;
   max-width: 860px;
@@ -485,6 +486,7 @@ body.blog-article-page {
   border-bottom: 1px solid #e2e8f0;
 }
 
+.toc-card-header h2,
 .toc-card-header h3 {
   font-size: 0.925rem;
   text-transform: uppercase;
@@ -497,6 +499,7 @@ body.blog-article-page {
   gap: 0.45rem;
 }
 
+.toc-card-header h2 svg,
 .toc-card-header h3 svg {
   color: var(--orange);
 }
@@ -2189,7 +2192,7 @@ body.blog-article-page {
    -------------------------------------------------------------------------- */
 @media (max-width: 1024px) {
   .article-layout-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     grid-template-areas: "content";
     gap: 2.5rem;
   }

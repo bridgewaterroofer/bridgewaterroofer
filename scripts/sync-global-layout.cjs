@@ -27,14 +27,13 @@ const footerContent = fs.readFileSync(footerPath, 'utf8').trim();
 function applyGlobalLayout(filePath) {
   let content = fs.readFileSync(filePath, 'utf8');
 
-  // 1. Locate end of scroll-progress-bar
-  const progressPattern = /<div class="scroll-progress-bar"[^>]*><\/div>/i;
-  const progressMatch = content.match(progressPattern);
-  if (!progressMatch) {
-    console.error(`[SKIP] Could not find scroll-progress-bar in ${filePath}`);
+  // 1. Locate end of opening <body> tag
+  const bodyMatch = content.match(/<body[^>]*>/i);
+  if (!bodyMatch) {
+    console.error(`[SKIP] Could not find <body> in ${filePath}`);
     return;
   }
-  const topCut = progressMatch.index + progressMatch[0].length;
+  const topCut = bodyMatch.index + bodyMatch[0].length;
   const topPart = content.substring(0, topCut);
 
   // 2. Locate main content
@@ -54,8 +53,8 @@ function applyGlobalLayout(filePath) {
     scriptTag = scriptMatch[0];
   }
 
-  // 4. Reconstruct document
-  const finalDoc = `${topPart}\n\n${headerContent}\n\n  ${mainContent}\n\n${footerContent}\n\n  ${scriptTag}\n</body>\n</html>\n`;
+  // 4. Reconstruct document cleanly with exactly one header & footer
+  const finalDoc = `${topPart}\n\n  ${headerContent}\n\n  ${mainContent}\n\n${footerContent}\n\n  ${scriptTag}\n</body>\n</html>\n`;
 
   fs.writeFileSync(filePath, finalDoc, 'utf8');
   console.log(`[SUCCESS] Synced global header & footer in ${path.relative(rootDir, filePath)}`);
@@ -68,7 +67,7 @@ function findHtmlFiles(dir) {
   for (const entry of entries) {
     const fullPath = path.join(dir, entry.name);
     if (entry.isDirectory()) {
-      if (entry.name !== 'node_modules' && entry.name !== '.git' && entry.name !== 'components') {
+      if (entry.name !== 'node_modules' && entry.name !== '.git' && entry.name !== 'components' && entry.name !== 'scratch') {
         files.push(...findHtmlFiles(fullPath));
       }
     } else if (entry.isFile() && entry.name.endsWith('.html')) {

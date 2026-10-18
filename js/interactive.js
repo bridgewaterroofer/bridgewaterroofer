@@ -11,7 +11,6 @@ export function initInteractiveFeatures() {
   initReviewsCarousel();
   initFaqAccordion();
   initEstimateForm();
-  initHighVolumeFormHandler();
   initLegalModal();
   initServiceAreaConsole();
   initServiceReviewsSlider();
@@ -956,125 +955,62 @@ function initFaqAccordion() {
 }
 
 /**
- * GLOBAL FORM HANDLER: HIGH-INQUIRY VOLUME PRIORITY CALL REDIRECT
+ * SECTION 19: PROFESSIONAL FORM SUBMISSION & VALIDATION
  */
-function initHighVolumeFormHandler() {
-  // Inject modal overlay if not present
-  let modalBackdrop = document.getElementById('high-volume-modal');
-  if (!modalBackdrop) {
-    modalBackdrop = document.createElement('div');
-    modalBackdrop.id = 'high-volume-modal';
-    modalBackdrop.className = 'high-volume-modal-backdrop';
-    modalBackdrop.setAttribute('role', 'dialog');
-    modalBackdrop.setAttribute('aria-modal', 'true');
-    modalBackdrop.setAttribute('aria-label', 'High Inquiry Volume Notice');
-    modalBackdrop.innerHTML = `
-      <div class="high-volume-modal-card">
-        <button type="button" class="high-volume-close-btn" id="high-volume-close" aria-label="Close notice">&times;</button>
-        <div class="high-volume-badge">
-          <span class="live-dispatch-dot"></span>
-          <span>High Inquiry Volume Today</span>
-        </div>
-        <h3 class="high-volume-modal-title">Our Online Queue Is Currently Full</h3>
-        <p class="high-volume-modal-desc">
-          Thank you! Due to a high surge of requests across Somerset County today, our online submission queue is at full capacity. To guarantee immediate priority service without waiting in line, our field dispatch team is standing by to take your call directly.
-        </p>
-        <a href="tel:+19084659944" class="btn btn-phone high-volume-call-btn" id="high-volume-call-link" data-call-source="form-queue-redirect">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
-          </svg>
-          <span>Call Dispatch Now &bull; (908) 465-9944</span>
-        </a>
-        <div class="high-volume-countdown">
-          Connecting your call in <strong id="call-countdown-timer">4</strong>s...
-        </div>
-      </div>
-    `;
-    document.body.appendChild(modalBackdrop);
-  }
-
-  let countdownInterval = null;
-
-  function closeModal() {
-    if (countdownInterval) clearInterval(countdownInterval);
-    modalBackdrop.classList.remove('is-open');
-  }
-
-  const closeBtn = modalBackdrop.querySelector('#high-volume-close');
-  if (closeBtn) closeBtn.addEventListener('click', closeModal);
-
-  modalBackdrop.addEventListener('click', (e) => {
-    if (e.target === modalBackdrop) closeModal();
-  });
-
-  const callLink = modalBackdrop.querySelector('#high-volume-call-link');
-  if (callLink) {
-    callLink.addEventListener('click', () => {
-      if (countdownInterval) clearInterval(countdownInterval);
-    });
-  }
-
-  function triggerHighVolumeRedirect() {
-    modalBackdrop.classList.add('is-open');
-
-    let secondsLeft = 4;
-    const timerEl = document.getElementById('call-countdown-timer');
-    if (timerEl) timerEl.textContent = secondsLeft.toString();
-
-    if (countdownInterval) clearInterval(countdownInterval);
-
-    countdownInterval = setInterval(() => {
-      secondsLeft--;
-      if (timerEl) timerEl.textContent = secondsLeft.toString();
-      if (secondsLeft <= 0) {
-        clearInterval(countdownInterval);
-        window.location.href = 'tel:+19084659944';
-      }
-    }, 1000);
-  }
-
-  // Intercept all form submissions globally on document
-  document.addEventListener('submit', (e) => {
-    const form = e.target;
-    if (!form || form.tagName !== 'FORM') return;
-
-    // Check validity
-    if (typeof form.checkValidity === 'function' && !form.checkValidity()) {
-      form.reportValidity();
-      return;
-    }
-
-    e.preventDefault();
-    e.stopPropagation();
-
-    // Trigger high volume redirect
-    triggerHighVolumeRedirect();
-
-    // Reset form safely
-    try {
-      form.reset();
-    } catch (_) {}
-  }, true);
-
-  // Add subtle queue notices above submit buttons in forms
-  const allForms = document.querySelectorAll('form');
-  allForms.forEach((form) => {
-    if (form.querySelector('.form-queue-notice')) return;
-    const submitBtn = form.querySelector('button[type="submit"], input[type="submit"]');
-    if (submitBtn) {
-      const notice = document.createElement('div');
-      notice.className = 'form-queue-notice';
-      notice.innerHTML = `
-        <span class="live-dispatch-dot" style="width: 7px; height: 7px; flex-shrink: 0;"></span>
-        <span><strong>High Volume Alert:</strong> Online responses may experience delays today. For immediate priority scheduling, call <strong>(908) 465-9944</strong>.</span>
-      `;
-      submitBtn.parentNode.insertBefore(notice, submitBtn);
-    }
-  });
-}
-
 function initEstimateForm() {
-  // Maintained for backward compatibility; handled globally by initHighVolumeFormHandler
+  const forms = document.querySelectorAll('form');
+  forms.forEach((form) => {
+    form.addEventListener('submit', (e) => {
+      // 1. Native HTML5 validity check
+      if (typeof form.checkValidity === 'function' && !form.checkValidity()) {
+        form.reportValidity();
+        return;
+      }
+
+      // If form targets /thank-you/, let standard navigation proceed cleanly
+      const action = form.getAttribute('action');
+      if (action && action.includes('thank-you')) {
+        return;
+      }
+
+      // For in-page forms (e.g. homepage final estimate request)
+      e.preventDefault();
+
+      const submitBtn = form.querySelector('button[type="submit"], input[type="submit"]');
+      const statusMsg = form.querySelector('.form-status-msg') || document.getElementById('form-status');
+      const originalText = submitBtn ? submitBtn.innerHTML : '';
+
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = `
+          <span style="display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="animation: spin 1s linear infinite;">
+              <circle cx="12" cy="12" r="10" stroke-opacity="0.25"></circle>
+              <path d="M12 2a10 10 0 0 1 10 10" stroke-linecap="round"></path>
+            </svg>
+            Submitting Estimate Request...
+          </span>
+        `;
+      }
+
+      setTimeout(() => {
+        if (statusMsg) {
+          statusMsg.style.display = 'block';
+          statusMsg.style.opacity = '1';
+          statusMsg.setAttribute('aria-live', 'polite');
+          statusMsg.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+        form.reset();
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = 'Estimate Request Sent &check;';
+          setTimeout(() => {
+            submitBtn.innerHTML = originalText || 'Request Roofing Estimate';
+          }, 4500);
+        }
+      }, 600);
+    });
+  });
 }
 
 /**

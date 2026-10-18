@@ -381,13 +381,24 @@ Every page contains Schema.org structured data embedded in `<script type="applic
 The site is configured for the **IndexNow protocol**, allowing immediate notifications to Microsoft Bing, Yandex, and other search engines when pages are updated.
 
 - **Verification Key File**: [`2dfab80f52863e8a8b4a5c8f76a0f6d5.txt`](file:///d:/Bridgewater-Roofer/2dfab80f52863e8a8b4a5c8f76a0f6d5.txt)
-- **Submitter Script**: [`submit-indexnow.cjs`](file:///d:/Bridgewater-Roofer/submit-indexnow.cjs)
+- **Hostinger Server Submitter**: [`auto-indexnow.php`](file:///d:/Bridgewater-Roofer/auto-indexnow.php)
+- **Node.js Submitter**: [`submit-indexnow.cjs`](file:///d:/Bridgewater-Roofer/submit-indexnow.cjs)
 
-To submit recently updated URLs to IndexNow:
-
-```bash
-node submit-indexnow.cjs
-```
+#### How Hostinger Automation Works:
+1. **Automatic On Upload / Visit**: Once uploaded to Hostinger, the first page view triggers a lightweight non-blocking background ping to `/auto-indexnow.php`. The script detects if `sitemap.xml` has been updated since the last deployment, and automatically posts all 46 URLs to `api.indexnow.org` and `www.bing.com`.
+2. **Direct Browser / Webhook**: You can also visit `https://bridgewaterroofer.com/auto-indexnow.php?force=1` in your browser at any time to force re-index all URLs and view live HTTP status codes.
+3. **Hostinger Cron Job (Optional)**: In Hostinger hPanel -> **Advanced** -> **Cron Jobs**, set up a weekly or daily job:
+   ```bash
+   php /home/uXXXXXXX/public_html/auto-indexnow.php
+   ```
+4. **Hostinger Git Deployment (Optional)**: In Hostinger hPanel -> **Advanced** -> **Git**, set the Post-deployment command:
+   ```bash
+   php auto-indexnow.php
+   ```
+5. **Local / CI CLI Run**:
+   ```bash
+   node submit-indexnow.cjs
+   ```
 
 ### LLM & AI Agent Compatibility (`llms.txt`)
 
