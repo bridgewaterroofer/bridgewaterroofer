@@ -1156,20 +1156,36 @@
   align-items: center;
 }
 
-.service-local-content h2 {
+.service-local-card {
+  max-width: 920px;
+}
+
+.service-local-section h2,
+.service-local-content h2,
+.service-local-card h2,
+.service-local-section .inner-section-title {
   font-family: var(--font-heading, 'Outfit', sans-serif);
   font-size: clamp(2rem, 3.2vw, 2.65rem);
   font-weight: 800;
-  color: #ffffff;
+  color: #ffffff !important;
   line-height: 1.2;
   margin-bottom: 1.25rem;
+  text-align: left;
 }
 
-.service-local-content p {
+.service-local-section p,
+.service-local-content p,
+.service-local-card p {
   color: var(--slate-300, #cbd5e1);
   font-size: 1.02rem;
   line-height: 1.7;
   margin-bottom: 1.25rem;
+}
+
+.service-local-section strong,
+.service-local-content strong,
+.service-local-card strong {
+  color: #ffffff;
 }
 
 .service-local-media {

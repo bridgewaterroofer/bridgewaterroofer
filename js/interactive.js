@@ -14,6 +14,8 @@ export function initInteractiveFeatures() {
   initLegalModal();
   initServiceAreaConsole();
   initServiceReviewsSlider();
+  initServiceAreaMap();
+  initServiceFilters();
 }
 
 /**
@@ -84,11 +86,168 @@ function initRoofDiagnosis() {
       service: 'Comprehensive Roof Assessment',
       url: '#services',
       hotspotId: 'hotspot-gutter'
+    },
+    // Gutter Diagnostics
+    'gutter-overflow': {
+      tag: 'Runoff Capacity Exceeded',
+      title: 'Heavy Rain Gutter Overflow & Spilling',
+      desc: 'Water pouring over gutter edges during storms signals undersized 5-inch troughs, clogged downspouts, or improper eave pitch. Overflow saturates foundation soil and enters basements.',
+      service: '6-Inch Seamless Gutter Installation',
+      url: '/gutter-installation-bridgewater-nj/',
+      hotspotId: 'hotspot-gutter'
+    },
+    'gutter-sagging': {
+      tag: 'Fastener & Load Failure',
+      title: 'Sagging, Pulling Away & Standing Water',
+      desc: 'When spike-and-ferrule fasteners pull loose or fascia boards soften with rot, gutters sag, trap heavy standing water, and pull away under winter ice loads.',
+      service: 'Hidden Screw Hanger & Fascia Repair',
+      url: '/gutter-installation-bridgewater-nj/',
+      hotspotId: 'hotspot-gutter'
+    },
+    'gutter-leaks': {
+      tag: 'Seam Separation & Corrosion',
+      title: 'Leaking Corner Miters & End Cap Seams',
+      desc: 'Sectional gutters have seams every 10 feet that degrade and leak. Custom-extruded seamless aluminum gutters eliminate seam leaks across the entire roofline run.',
+      service: 'Custom Seamless Gutters',
+      url: '/gutter-installation-bridgewater-nj/',
+      hotspotId: 'hotspot-gutter'
+    },
+    'gutter-foundation': {
+      tag: 'Structural Hazard',
+      title: 'Foundation Soil Erosion & Basement Dampness',
+      desc: 'Short downspout discharges deposit thousands of gallons directly against foundation footings, causing hydrostatic pressure cracks and damp crawl spaces.',
+      service: 'Downspout Extension & Drainage',
+      url: '/gutter-installation-bridgewater-nj/',
+      hotspotId: 'hotspot-ceiling'
+    },
+    'gutter-ice': {
+      tag: 'Winter Weather Damage',
+      title: 'Frozen Gutters, Icicles & Eave Ice Dams',
+      desc: 'Debris-filled gutters prevent winter meltwater drainage, backing freezing water up beneath lower shingle courses and soaking interior ceiling drywall.',
+      service: 'Micro-Mesh Gutter Guards',
+      url: '/gutter-installation-bridgewater-nj/',
+      hotspotId: 'hotspot-valley'
+    },
+    'gutter-fascia': {
+      tag: 'Wood Decay Warning',
+      title: 'Soft, Decayed, or Waterlogged Fascia Boards',
+      desc: 'Continuous water overflow rots wood fascia and sub-fascia behind gutters. We replace deteriorated lumber with primed spruce or maintenance-free composite trim.',
+      service: 'Fascia Board Replacement',
+      url: '/gutter-installation-bridgewater-nj/',
+      hotspotId: 'hotspot-gutter'
+    },
+    // Skylight Diagnostics
+    'skylight-leak': {
+      tag: 'Active Envelope Breach',
+      title: 'Water Dripping from Skylight Frame',
+      desc: 'Water leaking around skylight drywall tunnels during rain usually stems from dried-out rubber perimeter gaskets or deteriorated top saddle flashing on the uphill slope.',
+      service: 'Skylight Leak Repair & Flashing',
+      url: '/skylight-repair-installation-bridgewater-nj/',
+      hotspotId: 'hotspot-flashing'
+    },
+    'skylight-condensation': {
+      tag: 'Thermal Seal Failure',
+      title: 'Fogging, Moisture & Hazing Between Panes',
+      desc: 'Trapped condensation between double-pane glass indicates thermal seal failure. Insulating argon gas has escaped, requiring full glass or sash replacement.',
+      service: 'Energy-Star Velux Replacement',
+      url: '/skylight-repair-installation-bridgewater-nj/',
+      hotspotId: 'hotspot-vent'
+    },
+    'skylight-cracked': {
+      tag: 'Impact Hazard',
+      title: 'Hail Impact or Cracked Acrylic/Glass Pane',
+      desc: 'Aged plastic bubble domes become brittle and fracture under hail or falling tree branches. Modern impact-rated laminated glass provides shatter resistance and UV filtering.',
+      service: 'Laminated Glass Skylights',
+      url: '/skylight-repair-installation-bridgewater-nj/',
+      hotspotId: 'hotspot-shingles'
+    },
+    'skylight-flashing': {
+      tag: 'Step Flashing Wear',
+      title: 'Corroded or Disturbed Skylight Flashing',
+      desc: 'Tar patches around old skylights crack and crumble. We install engineered factory Velux aluminum flashing kits interwoven with ice and water underlayment.',
+      service: 'Factory Flashing Rebuild',
+      url: '/skylight-repair-installation-bridgewater-nj/',
+      hotspotId: 'hotspot-flashing'
+    },
+    'skylight-drywall': {
+      tag: 'Interior Damage Alert',
+      title: 'Attic Shaft Stains & Peeling Tunnel Paint',
+      desc: 'Brown rings or soft drywall on light shafts indicate slow hidden leaks tracing down rafters before showing visibly. Non-destructive moisture tracking resolves the source.',
+      service: 'Non-Destructive Leak Detection',
+      url: '/skylight-repair-installation-bridgewater-nj/',
+      hotspotId: 'hotspot-ceiling'
+    },
+    'skylight-drafts': {
+      tag: 'Thermal Inefficiency',
+      title: 'Winter Drafts & Summer Solar Heat Gain',
+      desc: 'Single-glazed or aged skylights leak expensive conditioned air. Upgrading to Low-E argon-filled units with solar thermal blinds cuts heating and cooling loads.',
+      service: 'Solar Powered Venting Skylights',
+      url: '/skylight-repair-installation-bridgewater-nj/',
+      hotspotId: 'hotspot-vent'
+    },
+    // Siding Diagnostics
+    'siding-damage': {
+      tag: 'Storm & Wind Impact',
+      title: 'Cracked, Unzipped, or Missing Siding Panels',
+      desc: 'High wind gusts can unlock vinyl siding seams or fracture panels. Prompt replacement prevents wind-driven rain from penetrating the wood wall sheathing behind.',
+      service: 'Targeted Siding Panel Repair',
+      url: '/siding-contractor-bridgewater-nj/',
+      hotspotId: 'hotspot-shingles'
+    },
+    'siding-warping': {
+      tag: 'Thermal Distortion',
+      title: 'Buckled, Wavy, or Distorted Siding Runs',
+      desc: 'Vinyl siding nailed too tightly into wall studs cannot expand during hot NJ summers, causing buckling. Improper nailing clearances must be corrected.',
+      service: 'Siding Re-Hanging & Alignment',
+      url: '/siding-contractor-bridgewater-nj/',
+      hotspotId: 'hotspot-gutter'
+    },
+    'siding-rot': {
+      tag: 'Hidden Moisture Hazard',
+      title: 'Moisture Intrusion & Wall Sheathing Rot',
+      desc: 'Missing window head flashing or torn housewrap channels rain behind siding panels, rotting exterior OSB sheathing and framing studs undetected.',
+      service: 'Water-Resistive Barrier Restoration',
+      url: '/siding-contractor-bridgewater-nj/',
+      hotspotId: 'hotspot-flashing'
+    },
+    'siding-drafts': {
+      tag: 'Insulation Loss',
+      title: 'Wall Drafts & Skyrocketing Energy Bills',
+      desc: 'Uninsulated hollow vinyl allows thermal bridging across wall studs. Contoured foam-backed siding adds continuous R-value and eliminates interior cold spots.',
+      service: 'Insulated Siding Installation',
+      url: '/siding-contractor-bridgewater-nj/',
+      hotspotId: 'hotspot-ceiling'
+    },
+    'siding-paint': {
+      tag: 'Sun & Oxidation Aging',
+      title: 'Fading, Chalking, or Peeling Exterior Finish',
+      desc: 'Wood siding requires scraping and repainting every 4-6 years. Upgrading to James Hardie fiber cement or ColorPlus® finishes delivers 15+ years of vibrant color.',
+      service: 'James Hardie Fiber Cement',
+      url: '/siding-contractor-bridgewater-nj/',
+      hotspotId: 'hotspot-vent'
+    },
+    'siding-trim': {
+      tag: 'Envelope Perimeter Wear',
+      title: 'Loose Corner Posts, Soffits & J-Channel Gaps',
+      desc: 'Openings around corner posts and soffit transitions allow water and nesting pests into exterior wall cavities. We install custom-bent aluminum trim capping.',
+      service: 'Aluminum Trim Coil Capping',
+      url: '/siding-contractor-bridgewater-nj/',
+      hotspotId: 'hotspot-gutter'
     }
   };
 
-  function selectProblem(problemKey) {
-    const data = problemData[problemKey];
+  function selectProblem(problemKey, triggerEl) {
+    let data = problemData[problemKey];
+    if (!data && triggerEl) {
+      data = {
+        tag: triggerEl.getAttribute('data-tag') || 'Diagnostic Analysis',
+        title: triggerEl.getAttribute('data-title') || triggerEl.textContent.trim(),
+        desc: triggerEl.getAttribute('data-desc') || '',
+        service: triggerEl.getAttribute('data-service') || 'Inspection',
+        url: triggerEl.getAttribute('data-url') || '#estimate-form-wrap',
+        hotspotId: triggerEl.getAttribute('data-hotspot') || ''
+      };
+    }
     if (!data) return;
 
     // Update buttons state
@@ -127,7 +286,7 @@ function initRoofDiagnosis() {
   problemButtons.forEach((btn) => {
     btn.addEventListener('click', () => {
       const key = btn.getAttribute('data-problem');
-      selectProblem(key);
+      selectProblem(key, btn);
     });
   });
 
@@ -136,7 +295,7 @@ function initRoofDiagnosis() {
     hs.addEventListener('click', () => {
       const targetProblem = hs.getAttribute('data-linked-problem');
       if (targetProblem) {
-        selectProblem(targetProblem);
+        selectProblem(targetProblem, hs);
       }
     });
 
@@ -145,7 +304,7 @@ function initRoofDiagnosis() {
         e.preventDefault();
         const targetProblem = hs.getAttribute('data-linked-problem');
         if (targetProblem) {
-          selectProblem(targetProblem);
+          selectProblem(targetProblem, hs);
         }
       }
     });
@@ -319,6 +478,297 @@ function initMaterialExplorer() {
       hudMid: { tier: 'Thermal Core', title: 'High-Density Polyiso Core Board', detail: 'Continuous Thermal Insulation Barrier', pos: { top: '52%', left: '54%' } },
       hudBot: { tier: 'Substrate Base', title: 'Commercial Steel / Heavy Wood Deck', detail: 'Structural Engineered Substrate', pos: { top: '74%', left: '34%' } },
       cert: 'Superior Freeze-Thaw Elasticity • 30+ Year Field Longevity'
+    },
+    // Gutter Materials
+    'aluminum': {
+      title: 'Seamless Aluminum Gutters (0.032" Heavy-Gauge)',
+      badge: 'Residential Standard',
+      desc: 'Formed on-site from thick 0.032-gauge aluminum coils. Seamless fabrication eliminates mid-run joints, preventing leaks while handling high-volume stormwater across Somerset County.',
+      specs: [
+        { icon: '📏', label: 'Profiles', val: '5" & 6" K-Style' },
+        { icon: '🛡️', label: 'Lifespan', val: '25–30+ Years' },
+        { icon: '🎨', label: 'Finish', val: '28 Baked Enamel Colors' },
+        { icon: '💧', label: 'Capacity', val: '40% More Runoff (6")' }
+      ],
+      repairs: [
+        'On-site continuous roll-forming with zero leak seams',
+        'Heavy-duty hidden screw hangers spaced every 24 inches',
+        'Rot-resistant primed wood or AZEK composite fascia mounting'
+      ],
+      linkText: 'Explore Seamless Gutter Services →',
+      linkUrl: '/gutter-installation-bridgewater-nj/',
+      accentColor: '#38BDF8',
+      imageFile: 'gutter_installation_action.jpg',
+      hudTop: { tier: 'Runoff Channel', title: '0.032" Heavy Aluminum Trough', detail: 'Seamless Precision Roll-Formed Run', pos: { top: '26%', left: '52%' } },
+      hudMid: { tier: 'Fastener System', title: 'Hidden Heavy Screw Hanger', detail: 'Self-Sealing Zinc Fasteners into Rafters', pos: { top: '48%', left: '58%' } },
+      hudBot: { tier: 'Mounting Base', title: 'Solid Wood or Composite Fascia', detail: 'Protected by Drip Edge Flashing', pos: { top: '70%', left: '42%' } },
+      cert: 'Lifetime Baked Enamel Finish • Zero Mid-Span Seams'
+    },
+    'copper': {
+      title: 'Pure Architectural Copper Gutters',
+      badge: 'Prestigious Longevity',
+      desc: 'Crafted from heavy 16 oz cold-rolled copper. Develops a distinguished protective patina over time, ideal for Somerset County historic colonials, stone manors, and luxury estates.',
+      specs: [
+        { icon: '⏳', label: 'Lifespan', val: '80–100+ Years' },
+        { icon: '✨', label: 'Aesthetic', val: 'Natural Verdigris Patina' },
+        { icon: '🔧', label: 'Joints', val: 'Hand-Soldered Seams' },
+        { icon: '🏛️', label: 'Profiles', val: 'Half-Round & K-Style' }
+      ],
+      repairs: [
+        'Custom seamless roll-forming and traditional half-round sections',
+        'Hand-soldered brass brackets and expansion joints',
+        'Matching solid copper round fluted downspouts'
+      ],
+      linkText: 'Explore Copper Gutter Installation →',
+      linkUrl: '/gutter-installation-bridgewater-nj/',
+      accentColor: '#B45309',
+      imageFile: 'gutter_installation_action.jpg',
+      hudTop: { tier: 'Prestige Channel', title: '16 oz Architectural Copper Trough', detail: 'Naturally Weathering Protective Patina', pos: { top: '26%', left: '52%' } },
+      hudMid: { tier: 'Fastener System', title: 'Cast Brass & Copper Brackets', detail: 'Reinforced Shank & Circle Hangers', pos: { top: '48%', left: '58%' } },
+      hudBot: { tier: 'Mounting Base', title: 'Custom Crown Fascia & Rafter Tails', detail: 'Artisan Architectural Integration', pos: { top: '70%', left: '42%' } },
+      cert: 'Generational Craftsmanship • 100-Year Potential Life'
+    },
+    'galvalume': {
+      title: 'Galvalume Steel Heavy-Duty Gutters',
+      badge: 'Industrial Durability',
+      desc: 'Steel substrate coated in aluminum-zinc alloy for superior resistance to rust and heavy snow impact. Built to withstand punishing winter ice accumulation without denting.',
+      specs: [
+        { icon: '🛡️', label: 'Strength', val: 'Superior Snow/Ice Load' },
+        { icon: '⏳', label: 'Lifespan', val: '35–45+ Years' },
+        { icon: '🛡️', label: 'Corrosion', val: 'Galvalume Self-Healing' },
+        { icon: '❄️', label: 'Impact', val: 'Denting & Hail Resistant' }
+      ],
+      repairs: [
+        'Commercial-grade seamless runs for large roof footprints',
+        'Industrial internal box-miters and high-capacity outlets',
+        'Heavy-duty snow bracket reinforcement'
+      ],
+      linkText: 'Explore Heavy-Duty Gutters →',
+      linkUrl: '/gutter-installation-bridgewater-nj/',
+      accentColor: '#64748B',
+      imageFile: 'gutter_installation_action.jpg',
+      hudTop: { tier: 'Heavy-Duty Channel', title: 'Galvalume Steel Alloy Trough', detail: 'Alu-Zinc Self-Healing Corrosion Barrier', pos: { top: '26%', left: '52%' } },
+      hudMid: { tier: 'Fastener System', title: 'Reinforced Commercial Hanger Screws', detail: 'Withstands Dense Winter Snow Loads', pos: { top: '48%', left: '58%' } },
+      hudBot: { tier: 'Mounting Base', title: 'Heavy Sub-Fascia Framing', detail: 'Engineered Eave Anchorage', pos: { top: '70%', left: '42%' } },
+      cert: 'Engineered for Heavy Winter Snow & Large Roof Runoff'
+    },
+    'guards': {
+      title: 'Stainless Steel Micro-Mesh Gutter Guards',
+      badge: 'Zero-Clog Defense',
+      desc: 'Medical-grade 316 stainless steel micro-mesh on an anodized aluminum frame. Blocks pine needles, pollen, shingle granules, and leaves while pulling in torrential rainwater.',
+      specs: [
+        { icon: '🛡️', label: 'Filtration', val: '50-Micron Micro-Mesh' },
+        { icon: '💧', label: 'Rain Volume', val: '60+ Inches Per Hour' },
+        { icon: '❄️', label: 'Ice Defense', val: 'Prevents Gutter Clog Ice' },
+        { icon: '📜', label: 'Warranty', val: 'Lifetime No-Clog Guarantee' }
+      ],
+      repairs: [
+        'Fits directly beneath shingle drip edges without voiding roof warranties',
+        'Heavy-gauge extruded aluminum substrate frame',
+        'Completely eliminates seasonal ladder cleaning hazards'
+      ],
+      linkText: 'Explore Gutter Guard Options →',
+      linkUrl: '/gutter-installation-bridgewater-nj/',
+      accentColor: '#10B981',
+      imageFile: 'gutter_leaf_guard_detail.jpg',
+      hudTop: { tier: 'Filtration Course', title: '316 Marine Stainless Micro-Mesh', detail: 'Sheds Pine Needles & Shingle Granules', pos: { top: '26%', left: '50%' } },
+      hudMid: { tier: 'Support Frame', title: 'Anodized Aluminum Truss Frame', detail: 'Structural Ribbing Resists Heavy Twigs', pos: { top: '48%', left: '56%' } },
+      hudBot: { tier: 'Mounting Base', title: 'Fascia-Locked Precision Pitch', detail: 'Integrated Seamless Gutter Lip Fit', pos: { top: '70%', left: '42%' } },
+      cert: '100% No-Clog Performance • Roof Warranty Compliant'
+    },
+    // Skylight Systems
+    'deck-mounted': {
+      title: 'Velux Deck-Mounted Glass Skylights',
+      badge: 'No-Leak Gold Standard',
+      desc: 'Engineered to mount directly to the structural roof decking with three patented layers of water protection. Features Low-E Clean, Quiet & Safe laminated glass.',
+      specs: [
+        { icon: '☀️', label: 'Glass', val: 'Low-E3 Laminated Safety Glass' },
+        { icon: '💧', label: 'Protection', val: 'Triple Seal No-Leak Kit' },
+        { icon: '🔇', label: 'Sound', val: '25% Noise Reduction' },
+        { icon: '🛡️', label: 'Warranty', val: '10-Yr No-Leak Guarantee' }
+      ],
+      repairs: [
+        'Deck-seal adhesive membrane wrapped directly to roof deck',
+        'Surrounding high-temp ice and water underlayment collar',
+        'Engineered aluminum step flashing integrated into shingles'
+      ],
+      linkText: 'Explore Deck-Mounted Skylights →',
+      linkUrl: '/skylight-repair-installation-bridgewater-nj/',
+      accentColor: '#0284C7',
+      imageFile: 'skylight_installation_action.jpg',
+      hudTop: { tier: 'Glazing Course', title: 'Low-E3 Dual Pane Laminated Glass', detail: 'Neat® Coating Stays Clean Longer', pos: { top: '28%', left: '52%' } },
+      hudMid: { tier: 'Flashing System', title: 'Factory Velux Step Flashing', detail: 'Interwoven with Surrounding Shingle Courses', pos: { top: '50%', left: '60%' } },
+      hudBot: { tier: 'Deck Seal', title: 'Self-Adhered Waterproof Membrane', detail: 'Direct Deck Mounting Collar', pos: { top: '72%', left: '40%' } },
+      cert: 'Velux 10-Year No-Leak Warranty • Energy Star Certified'
+    },
+    'curb-mounted': {
+      title: 'Velux Curb-Mounted Skylights',
+      badge: 'Versatile Replacement',
+      desc: 'Built to fit over a site-constructed wooden curb. Ideal for low-pitch roofs, flat roof additions, or fast replacement of older aged bubble skylights without disturbing interior trim.',
+      specs: [
+        { icon: '📐', label: 'Pitch Range', val: '0° to 60° (Flat to Steep)' },
+        { icon: '🛡️', label: 'Durability', val: 'Commercial-Grade Heavy Frame' },
+        { icon: '☀️', label: 'Energy Star', val: 'Low Solar Heat Gain' },
+        { icon: '💧', label: 'Curb Flashing', val: 'Custom Welded Saddle' }
+      ],
+      repairs: [
+        'Insulated 2x4 or 2x6 wood curb rebuilding and leveling',
+        'Heavy-duty rubber curb gasket and exterior counter-flashing',
+        'Continuous ice barrier wrap up all four curb sides'
+      ],
+      linkText: 'Explore Curb-Mounted Skylights →',
+      linkUrl: '/skylight-repair-installation-bridgewater-nj/',
+      accentColor: '#0369A1',
+      imageFile: 'skylight_flashing_detail.jpg',
+      hudTop: { tier: 'Glazing Cap', title: 'Heavy Aluminum Glazing Frame', detail: 'Double-Sealed Insulated Glass Unit', pos: { top: '28%', left: '52%' } },
+      hudMid: { tier: 'Curb Flashing', title: 'Preformed Aluminum Curb Flashing', detail: 'Custom Saddle & Sill Water Deflector', pos: { top: '50%', left: '60%' } },
+      hudBot: { tier: 'Structural Base', title: 'Waterproof Membrane Wrapped Curb', detail: 'Solid Lumber Framing Anchor', pos: { top: '72%', left: '40%' } },
+      cert: 'Engineered for Low-Slope & Traditional Roof Curbs'
+    },
+    'solar-venting': {
+      title: 'Solar-Powered Fresh Air Venting Skylights',
+      badge: '30% Federal Tax Credit',
+      desc: 'Brings fresh breezes and natural light indoors with zero electrical wiring. An integrated solar panel charges the battery, while an acoustic rain sensor automatically closes the sash at the first drop of rain.',
+      specs: [
+        { icon: '⚡', label: 'Power', val: 'Built-In Solar PV Cell' },
+        { icon: '🌧️', label: 'Rain Sensor', val: 'Auto-Closing Acoustic Sensor' },
+        { icon: '💰', label: 'Tax Credit', val: 'Up to 30% Federal Credit' },
+        { icon: '📱', label: 'Control', val: 'Wireless Wall Remote / App' }
+      ],
+      repairs: [
+        'Passive chimney effect exhausts hot, stale attic air',
+        'Eligible for 30% federal clean energy tax credits on product and labor',
+        'Optional factory-fitted solar room-darkening shades'
+      ],
+      linkText: 'Explore Solar Venting Skylights →',
+      linkUrl: '/skylight-repair-installation-bridgewater-nj/',
+      accentColor: '#F59E0B',
+      imageFile: 'skylight_installation_action.jpg',
+      hudTop: { tier: 'Smart Operator', title: 'Motorized Solar Venting Sash', detail: 'Rain Sensor Closes Window Automatically', pos: { top: '28%', left: '52%' } },
+      hudMid: { tier: 'Flashing Envelope', title: 'Velux Triple-Seal Flashing Kit', detail: 'Full Waterproof Underlayment Tie-In', pos: { top: '50%', left: '60%' } },
+      hudBot: { tier: 'Shaft Collar', title: 'Insulated Framing & Drywall Return', detail: 'Thermal Bridge Elimination', pos: { top: '72%', left: '40%' } },
+      cert: '30% Federal Clean Energy Tax Credit Eligible'
+    },
+    'sun-tunnel': {
+      title: 'Velux Sun Tunnel® Tubular Daylighting',
+      badge: 'Compact Interior Brightness',
+      desc: 'Brings daylight into dark interior spaces like hallways, walk-in closets, powder rooms, and laundry spaces through a highly reflective optical tube extending from roof to ceiling.',
+      specs: [
+        { icon: '☀️', label: 'Reflectivity', val: '99.7% Pure Optical Mirror' },
+        { icon: '⏱️', label: 'Install Time', val: 'Under 3 Hours' },
+        { icon: '🏠', label: 'Applications', val: 'Hallways, Baths, Closets' },
+        { icon: '🛡️', label: 'Roof Pitch', val: '14° to 60° Pitches' }
+      ],
+      repairs: [
+        'Low-profile integrated roof pitch flashing tile',
+        'Rigid or flexible ultra-reflective tunnel tubing',
+        'Frosted ceiling diffuser for soft, glare-free daylight distribution'
+      ],
+      linkText: 'Explore Sun Tunnel Daylighting →',
+      linkUrl: '/skylight-repair-installation-bridgewater-nj/',
+      accentColor: '#EAB308',
+      imageFile: 'skylight_flashing_detail.jpg',
+      hudTop: { tier: 'Roof Collector', title: 'High-Impact Acrylic Roof Dome', detail: 'Captures Low-Angle Morning & Evening Sun', pos: { top: '28%', left: '52%' } },
+      hudMid: { tier: 'Optical Channel', title: '99.7% Reflective Miro-Silver Tube', detail: 'Transfers Natural Light Around Obstacles', pos: { top: '50%', left: '60%' } },
+      hudBot: { tier: 'Ceiling Output', title: 'Dual-Diffuser Ceiling Lens', detail: 'Glare-Free Interior Room Illumination', pos: { top: '72%', left: '40%' } },
+      cert: 'Ideal for Dark Hallways & Windowless Interior Rooms'
+    },
+    // Siding Materials
+    'vinyl': {
+      title: 'Insulated Premium Vinyl Siding',
+      badge: 'High-Efficiency Value',
+      desc: 'CertainTeed Monogram premium vinyl siding backed by contoured EPS foam insulation. Eliminates thermal bridging across studs, resists 130 MPH winds, and never requires painting.',
+      specs: [
+        { icon: '💨', label: 'Wind Uplift', val: 'Class 130+ MPH Wind' },
+        { icon: '❄️', label: 'Insulation', val: 'Continuous R-Value Layer' },
+        { icon: '🎨', label: 'Maintenance', val: 'Zero Scraping or Painting' },
+        { icon: '🛡️', label: 'Warranty', val: 'Lifetime Limited Transferable' }
+      ],
+      repairs: [
+        'Rigid interlocking hem locks panels securely against nor’easters',
+        'Contoured foam core resists impact from lawnmowers and hail',
+        'Available in traditional clapboard and contemporary Dutch lap'
+      ],
+      linkText: 'Explore Insulated Vinyl Siding →',
+      linkUrl: '/siding-contractor-bridgewater-nj/',
+      accentColor: '#38BDF8',
+      imageFile: '3d_material_siding.webp',
+      hudTop: { tier: 'Exterior Course', title: '0.046" Heavy Virgin Vinyl Panel', detail: 'TrueTexture™ Cedar Woodgrain Texture', pos: { top: '36%', left: '70%' } },
+      hudMid: { tier: 'Thermal Shield', title: 'Contoured EPS Foam Core Board', detail: 'Eliminates Thermal Stud Bridging (R-3+)', pos: { top: '48%', left: '45%' } },
+      hudBot: { tier: 'Weather Barrier', title: 'DuPont Tyvek® Breathable Wrap', detail: 'Flashing Tape Around Windows & Doors', pos: { top: '64%', left: '24%' } },
+      cert: 'Class 130 MPH Wind Certified • High Thermal R-Value'
+    },
+    'fiber-cement': {
+      title: 'James Hardie® Fiber Cement Siding',
+      badge: 'Architectural Prestige',
+      desc: 'Composed of Portland cement, sand, and cellulose fibers engineered for NJ climate zones (HardieZone® HZ5). Resists freeze-thaw cracking, moisture swelling, rot, pests, and fire.',
+      specs: [
+        { icon: '🔥', label: 'Fire Rating', val: 'Class A Non-Combustible' },
+        { icon: '🛡️', label: 'Substrate', val: '30-Yr Non-Prorated Warranty' },
+        { icon: '🎨', label: 'ColorPlus®', val: '15-Yr Baked Finish Warranty' },
+        { icon: '🪵', label: 'Texture', val: 'Authentic Deep Cedar Grain' }
+      ],
+      repairs: [
+        'Non-combustible composite will not burn or melt when exposed to flame',
+        'Resistant to carpenter bees, termites, and woodpecker pecking',
+        'HardiePlank® lap siding, HardieShingle®, and HardieTrim® boards'
+      ],
+      linkText: 'Explore James Hardie Siding →',
+      linkUrl: '/siding-contractor-bridgewater-nj/',
+      accentColor: '#D97706',
+      imageFile: '3d_material_siding.webp',
+      hudTop: { tier: 'Armor Course', title: '5/16" James Hardie® Plank', detail: 'Class A Non-Combustible Fire Rating', pos: { top: '36%', left: '70%' } },
+      hudMid: { tier: 'Drainage Plane', title: 'HardieWrap® Weather Barrier', detail: 'Micro-Grooved Moisture Drainage Gap', pos: { top: '48%', left: '45%' } },
+      hudBot: { tier: 'Substrate Base', title: '1/2" CDX Exterior Sheathing', detail: 'Ring-Shank Corrosion Proof Fastening', pos: { top: '64%', left: '24%' } },
+      cert: 'HardieZone® HZ5 Engineered for New Jersey Freeze-Thaw'
+    },
+    'shakes': {
+      title: 'Architectural Cedar Shake Impressions',
+      badge: 'Colonial Shore Accent',
+      desc: 'Molded directly from authentic hand-split cedar shingles. Captures subtle grain variations, sawmill marks, and rustic shadow lines without the rot, curling, or insect vulnerability of raw wood.',
+      specs: [
+        { icon: '🪵', label: 'Appearance', val: 'Hand-Split Cedar Impression' },
+        { icon: '🛡️', label: 'Rot Resistance', val: '100% Moisture Proof Poly' },
+        { icon: '💨', label: 'Wind Rating', val: 'Up to 110 MPH Locked' },
+        { icon: '🎨', label: 'Varieties', val: 'Perfection, Rough-Split, Scallop' }
+      ],
+      repairs: [
+        'Ideal for accent gables, second-story dormers, and portico entries',
+        'Continuous perimeter perimeter J-channel and drip cap integration',
+        'Zero oiling, staining, or annual cedar preservative chemical treatments'
+      ],
+      linkText: 'Explore Shake Siding Options →',
+      linkUrl: '/siding-contractor-bridgewater-nj/',
+      accentColor: '#92400E',
+      imageFile: '3d_material_siding.webp',
+      hudTop: { tier: 'Accent Profile', title: 'Perfection Cedar Shake Shingles', detail: 'Deep Shadow Lines & Staggered Butt Joints', pos: { top: '36%', left: '70%' } },
+      hudMid: { tier: 'Locking Interlock', title: 'Perimeter Panel Latch Seams', detail: 'Seamless Horizontal & Vertical Interlock', pos: { top: '48%', left: '45%' } },
+      hudBot: { tier: 'Sub-Sheathing', title: 'Engineered Weather-Tight Wall Plane', detail: 'Protected Gables & Dormer Sidewalls', pos: { top: '64%', left: '24%' } },
+      cert: 'Authentic Colonial Charm with Zero Wood Rot Maintenance'
+    },
+    'board-batten': {
+      title: 'Modern Vertical Board & Batten Siding',
+      badge: 'Modern Farmhouse Architecture',
+      desc: 'Features wide 8-inch or 10-inch vertical boards accented by raised 2-inch batten strips. Creates soaring vertical lines and contemporary farmhouse curb appeal across Somerset County.',
+      specs: [
+        { icon: '📐', label: 'Design', val: 'Vertical Architectural Lines' },
+        { icon: '🛡️', label: 'Substrate', val: 'Fiber Cement or Heavy Vinyl' },
+        { icon: '🎨', label: 'Colors', val: 'Modern Dark Charcoal & White' },
+        { icon: '❄️', label: 'Durability', val: 'Impact & Weather Resistant' }
+      ],
+      repairs: [
+        'Durable vertical furring strip installation for true flat planes',
+        'Integrated z-flashing water management between multi-level courses',
+        'Striking modern aesthetic combined with lifetime low maintenance'
+      ],
+      linkText: 'Explore Board & Batten Siding →',
+      linkUrl: '/siding-contractor-bridgewater-nj/',
+      accentColor: '#475569',
+      imageFile: '3d_material_siding.webp',
+      hudTop: { tier: 'Vertical Facade', title: 'Wide Board & Raised Batten Profile', detail: 'Dramatic Modern Farmhouse Architectural Lines', pos: { top: '36%', left: '70%' } },
+      hudMid: { tier: 'Flashing Transit', title: 'Z-Flashing Horizontal Seam Drips', detail: 'Directs Rain Outward Away from Sheathing', pos: { top: '48%', left: '45%' } },
+      hudBot: { tier: 'Framing Anchors', title: 'Horizontal Wall Furring & OSB Deck', detail: 'High-Tensile Structural Fastener Grid', pos: { top: '64%', left: '24%' } },
+      cert: 'Contemporary Elevation Architecture • Engineered Water Shedding'
     }
   };
 
@@ -692,10 +1142,10 @@ function initBeforeAfterSlider() {
   if (!containers.length) return;
 
   containers.forEach((container) => {
-    const afterLayer = container.querySelector('.ba-layer-after');
+    const slidingLayer = container.querySelector('.ba-layer-before') || container.querySelector('.ba-layer-after');
     const handle = container.querySelector('.ba-handle');
-    const afterImg = afterLayer ? afterLayer.querySelector('img') : null;
-    if (!afterLayer || !handle) return;
+    const slidingImg = slidingLayer ? slidingLayer.querySelector('img') : null;
+    if (!slidingLayer || !handle) return;
 
     let isDragging = false;
 
@@ -704,8 +1154,8 @@ function initBeforeAfterSlider() {
       const w = Math.round(rect.width);
       if (w > 0) {
         container.style.setProperty('--ba-container-width', `${w}px`);
-        if (afterImg) {
-          afterImg.style.width = `${w}px`;
+        if (slidingImg) {
+          slidingImg.style.width = `${w}px`;
         }
       }
     }
@@ -726,7 +1176,7 @@ function initBeforeAfterSlider() {
       const x = Math.max(0, Math.min(clientX - rect.left, rect.width));
       const percent = (x / rect.width) * 100;
 
-      afterLayer.style.width = `${percent}%`;
+      slidingLayer.style.width = `${percent}%`;
       handle.style.left = `${percent}%`;
       handle.setAttribute('aria-valuenow', Math.round(percent));
     }
@@ -927,88 +1377,120 @@ function initReviewsCarousel() {
  * SECTION 17: FAQ ACCORDION
  */
 function initFaqAccordion() {
-  const triggers = document.querySelectorAll('.faq-trigger');
+  const triggers = document.querySelectorAll('.faq-trigger, .faq-question');
 
   triggers.forEach((trigger) => {
     trigger.addEventListener('click', () => {
       const isExpanded = trigger.getAttribute('aria-expanded') === 'true';
-      const content = trigger.nextElementSibling;
+      const answerContent = trigger.nextElementSibling;
 
-      // Close other accordion items
-      triggers.forEach((other) => {
-        if (other !== trigger) {
-          other.setAttribute('aria-expanded', 'false');
-          if (other.nextElementSibling) {
-            other.nextElementSibling.style.maxHeight = null;
+      // Close other accordion items in the same container
+      const container = trigger.closest('.faq-accordion') || trigger.parentElement.parentElement;
+      if (container) {
+        const siblings = container.querySelectorAll('.faq-trigger, .faq-question');
+        siblings.forEach((other) => {
+          if (other !== trigger) {
+            other.setAttribute('aria-expanded', 'false');
+            const otherAns = other.nextElementSibling;
+            if (otherAns) {
+              otherAns.style.maxHeight = null;
+              if (otherAns.classList.contains('faq-answer')) {
+                otherAns.setAttribute('hidden', '');
+              }
+            }
           }
-        }
-      });
+        });
+      }
 
       trigger.setAttribute('aria-expanded', !isExpanded);
-      if (!isExpanded && content) {
-        content.style.maxHeight = content.scrollHeight + 'px';
-      } else if (content) {
-        content.style.maxHeight = null;
+      if (!isExpanded && answerContent) {
+        answerContent.removeAttribute('hidden');
+        answerContent.style.maxHeight = answerContent.scrollHeight + 'px';
+      } else if (answerContent) {
+        answerContent.setAttribute('hidden', '');
+        answerContent.style.maxHeight = null;
       }
     });
   });
 }
 
 /**
- * SECTION 19: PROFESSIONAL FORM SUBMISSION & VALIDATION
+ * SECTION 19: FORM INTERCEPTOR & CALL REDIRECTION (CRO System Maintenance Notice)
  */
+function showCallToast() {
+  let toast = document.getElementById('form-call-toast');
+  if (!toast) {
+    toast = document.createElement('aside');
+    toast.id = 'form-call-toast';
+    toast.className = 'form-call-toast';
+    toast.setAttribute('role', 'alert');
+    toast.setAttribute('aria-live', 'assertive');
+    toast.innerHTML = `
+      <div class="form-call-toast-header">
+        <span class="form-call-toast-badge">
+          <span class="notice-pulse"></span>
+          <span>⚡ Direct Phone Dispatch Active</span>
+        </span>
+        <button type="button" class="form-call-toast-close" aria-label="Close notification">&times;</button>
+      </div>
+      <div class="form-call-toast-title">Faster Service Available by Phone</div>
+      <div class="form-call-toast-desc">
+        Online submissions are temporarily paused for scheduled maintenance. To ensure zero delay and instant scheduling, please call our Bridgewater priority desk directly:
+      </div>
+      <a href="tel:+19084659944" class="btn-notice-call cta-phone" data-call-source="form-toast">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
+        </svg>
+        <span>Call (908) 465-9944</span>
+      </a>
+      <div class="notice-meta" style="margin-top: 0.65rem;">
+        <span>✓ Direct Roofer Access</span>
+        <span>✓ No Waiting</span>
+      </div>
+    `;
+    document.body.appendChild(toast);
+    toast.querySelector('.form-call-toast-close').addEventListener('click', () => {
+      toast.classList.remove('is-visible');
+    });
+  }
+  toast.classList.add('is-visible');
+}
+
 function initEstimateForm() {
   const forms = document.querySelectorAll('form');
   forms.forEach((form) => {
+    const card = form.closest('.estimate-form-card, .contact-form-card, #estimate-form') || form;
+    const notice = card.querySelector('.form-compact-callout, .form-out-of-order-notice');
+
+    const triggerNotice = () => {
+      if (notice) {
+        notice.classList.add('is-highlighted');
+      }
+      showCallToast();
+    };
+
+    // Trigger on any input focus, click, or keydown
+    const fields = form.querySelectorAll('input, select, textarea');
+    fields.forEach((field) => {
+      field.addEventListener('focus', triggerNotice);
+      field.addEventListener('click', triggerNotice);
+    });
+
+    // Handle form submission
     form.addEventListener('submit', (e) => {
-      // 1. Native HTML5 validity check
-      if (typeof form.checkValidity === 'function' && !form.checkValidity()) {
-        form.reportValidity();
-        return;
-      }
-
-      // If form targets /thank-you/, let standard navigation proceed cleanly
-      const action = form.getAttribute('action');
-      if (action && action.includes('thank-you')) {
-        return;
-      }
-
-      // For in-page forms (e.g. homepage final estimate request)
       e.preventDefault();
+      triggerNotice();
 
-      const submitBtn = form.querySelector('button[type="submit"], input[type="submit"]');
-      const statusMsg = form.querySelector('.form-status-msg') || document.getElementById('form-status');
-      const originalText = submitBtn ? submitBtn.innerHTML : '';
-
-      if (submitBtn) {
-        submitBtn.disabled = true;
-        submitBtn.innerHTML = `
-          <span style="display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="animation: spin 1s linear infinite;">
-              <circle cx="12" cy="12" r="10" stroke-opacity="0.25"></circle>
-              <path d="M12 2a10 10 0 0 1 10 10" stroke-linecap="round"></path>
-            </svg>
-            Submitting Estimate Request...
-          </span>
-        `;
+      if (notice) {
+        notice.scrollIntoView({ behavior: 'smooth', block: 'center' });
       }
 
-      setTimeout(() => {
-        if (statusMsg) {
-          statusMsg.style.display = 'block';
-          statusMsg.style.opacity = '1';
-          statusMsg.setAttribute('aria-live', 'polite');
-          statusMsg.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-        }
-        form.reset();
-        if (submitBtn) {
-          submitBtn.disabled = false;
-          submitBtn.innerHTML = 'Estimate Request Sent &check;';
-          setTimeout(() => {
-            submitBtn.innerHTML = originalText || 'Request Roofing Estimate';
-          }, 4500);
-        }
-      }, 600);
+      // Mobile visitors are smoothly prompted directly into the phone dialer
+      if (/Mobi|Android|iPhone|iPad/i.test(navigator.userAgent)) {
+        setTimeout(() => {
+          window.location.href = 'tel:+19084659944';
+        }, 150);
+      }
     });
   });
 }
@@ -1381,3 +1863,166 @@ function initServiceReviewsSlider() {
   }, 100);
 }
 
+/**
+ * SECTION 16: INTERACTIVE LEAFLET SERVICE AREA MAP (Somerset County)
+ */
+function initServiceAreaMap() {
+  const mapContainer = document.getElementById('service-area-leaflet-map');
+  if (!mapContainer) return;
+
+  const startLeaflet = () => {
+    if (typeof window.L === 'undefined') return;
+    if (mapContainer._leaflet_id) return; // Prevent double init
+
+    const centerCoords = [40.5939, -74.6254]; // Bridgewater, NJ Hub
+    const map = L.map('service-area-leaflet-map', {
+      center: centerCoords,
+      zoom: 11,
+      scrollWheelZoom: false,
+      zoomControl: true
+    });
+
+    // OpenStreetMap Tile Layer
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 18,
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a>'
+    }).addTo(map);
+
+    // Circular Service Radius (matching Image 1)
+    L.circle(centerCoords, {
+      radius: 13500, // ~13.5 km coverage radius
+      color: '#0d9488',
+      fillColor: '#0d9488',
+      fillOpacity: 0.1,
+      weight: 2
+    }).addTo(map);
+
+    // 11 Somerset County Service Areas
+    const serviceAreas = [
+      { name: 'Bridgewater (Central Hub)', lat: 40.5939, lng: -74.6254, url: '/service-area/', isHub: true },
+      { name: 'Somerville', lat: 40.5743, lng: -74.6099, url: '/service-area/roofer-somerville-nj/' },
+      { name: 'Raritan', lat: 40.5695, lng: -74.6343, url: '/service-area/roofer-raritan-nj/' },
+      { name: 'Martinsville', lat: 40.6012, lng: -74.5779, url: '/service-area/roofer-martinsville-nj/' },
+      { name: 'Bound Brook', lat: 40.5684, lng: -74.5385, url: '/service-area/roofer-bound-brook-nj/' },
+      { name: 'Hillsborough', lat: 40.4998, lng: -74.6646, url: '/service-area/roofer-hillsborough-nj/' },
+      { name: 'Warren', lat: 40.6382, lng: -74.5090, url: '/service-area/roofer-warren-nj/' },
+      { name: 'Basking Ridge', lat: 40.7065, lng: -74.5493, url: '/service-area/roofer-basking-ridge-nj/' },
+      { name: 'Branchburg', lat: 40.5784, lng: -74.7077, url: '/service-area/roofer-branchburg-nj/' },
+      { name: 'Bedminster', lat: 40.6698, lng: -74.6599, url: '/service-area/roofer-bedminster-nj/' },
+      { name: 'Manville', lat: 40.5407, lng: -74.5888, url: '/service-area/roofer-manville-nj/' }
+    ];
+
+    const markers = {};
+
+    // Custom Teardrop Pin Marker (matching Image 1)
+    function createPinIcon(isHub = false) {
+      const color = isHub ? '#f47a24' : '#0284c7';
+      const size = isHub ? [30, 39] : [24, 32];
+      const anchor = isHub ? [15, 39] : [12, 32];
+      return L.divIcon({
+        className: 'leaflet-custom-pin' + (isHub ? ' is-hub' : ''),
+        html: `
+          <svg width="${size[0]}" height="${size[1]}" viewBox="0 0 28 36" fill="none">
+            <path d="M14 0C6.268 0 0 6.268 0 14c0 10.5 14 22 14 22s14-11.5 14-22c0-7.732-6.268-14-14-14z" fill="${color}" />
+            <circle cx="14" cy="14" r="5" fill="#ffffff" />
+          </svg>
+        `,
+        iconSize: size,
+        iconAnchor: anchor,
+        popupAnchor: [0, -anchor[1] + 6]
+      });
+    }
+
+    // Add pins to map
+    serviceAreas.forEach((area) => {
+      const marker = L.marker([area.lat, area.lng], {
+        icon: createPinIcon(area.isHub),
+        title: area.name
+      }).addTo(map);
+
+      const popupHtml = `
+        <div class="map-popup-card">
+          <div class="popup-badge">${area.isHub ? '⭐ HEADQUARTERS & HUB' : '📍 SERVICE AREA'}</div>
+          <h4 class="popup-title">${area.name}</h4>
+          <p class="popup-desc">Roof repair, replacement &amp; inspections in ${area.name}.</p>
+          <a href="${area.url}" class="popup-link">Explore ${area.name} Services &rarr;</a>
+        </div>
+      `;
+
+      marker.bindPopup(popupHtml);
+      markers[area.name.toLowerCase().replace(/[^a-z]/g, '')] = marker;
+    });
+
+    // Connect Community Chips in right column to Map Pins
+    const chips = document.querySelectorAll('.community-chip');
+    chips.forEach((chip) => {
+      const cleanName = chip.textContent.toLowerCase().replace(/[^a-z]/g, '');
+      const matchedKey = Object.keys(markers).find(k => cleanName.includes(k) || k.includes(cleanName));
+
+      if (matchedKey && markers[matchedKey]) {
+        chip.addEventListener('mouseenter', () => {
+          markers[matchedKey].openPopup();
+        });
+        chip.addEventListener('click', (e) => {
+          e.preventDefault();
+          const marker = markers[matchedKey];
+          map.setView(marker.getLatLng(), 13, { animate: true });
+          marker.openPopup();
+        });
+      }
+    });
+
+    // Invalidate map size when it scrolls into view to ensure full tile rendering
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            map.invalidateSize();
+            observer.disconnect();
+          }
+        });
+      }, { threshold: 0.1 });
+      observer.observe(mapContainer);
+    }
+  };
+
+  if (typeof window.L !== 'undefined') {
+    startLeaflet();
+  } else {
+    // If Leaflet script is still loading, wait for it
+    const checkLeaflet = setInterval(() => {
+      if (typeof window.L !== 'undefined') {
+        clearInterval(checkLeaflet);
+        startLeaflet();
+      }
+    }, 100);
+    setTimeout(() => clearInterval(checkLeaflet), 5000);
+  }
+}
+
+/**
+ * SECTION 4: SERVICE CATEGORY FILTERING
+ */
+function initServiceFilters() {
+  const filterBtns = document.querySelectorAll('.service-filter-btn');
+  const serviceCards = document.querySelectorAll('.services-grid .service-card');
+  if (!filterBtns.length || !serviceCards.length) return;
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const category = btn.getAttribute('data-filter');
+
+      filterBtns.forEach(b => {
+        const isActive = b === btn;
+        b.classList.toggle('is-active', isActive);
+        b.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+      });
+
+      serviceCards.forEach(card => {
+        const cardCat = card.getAttribute('data-category') || '';
+        const isMatch = category === 'all' || cardCat.split(' ').includes(category);
+        card.classList.toggle('is-hidden', !isMatch);
+      });
+    });
+  });
+}

@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 380" width="600" height="380">
+  <defs>
+    <linearGradient id="sky_skylight" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0F172A"/>
+      <stop offset="100%" stop-color="#1E293B"/>
+    </linearGradient>
+    <linearGradient id="glass_sheen" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#38BDF8" stop-opacity="0.8"/>
+      <stop offset="40%" stop-color="#60A5FA" stop-opacity="0.5"/>
+      <stop offset="70%" stop-color="#93C5FD" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#0284C7" stop-opacity="0.7"/>
+    </linearGradient>
+    <linearGradient id="frame_flashing" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#475569"/>
+      <stop offset="100%" stop-color="#1E293B"/>
+    </linearGradient>
+    <linearGradient id="step_flash_copper" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#D97706"/>
+      <stop offset="100%" stop-color="#B45309"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="380" fill="url(#sky_skylight)"/>
+
+  <!-- Steep Architectural Shingle Roof Plane -->
+  <polygon points="40,380 560,380 440,60 160,60" fill="#1E293B" stroke="#334155" stroke-width="2"/>
+  
+  <!-- Shingle courses -->
+  <g stroke="#0F172A" stroke-width="2">
+    <line x1="80" y1="320" x2="520" y2="320"/>
+    <line x1="110" y1="260" x2="490" y2="260"/>
+    <line x1="130" y1="200" x2="470" y2="200"/>
+    <line x1="150" y1="140" x2="450" y2="140"/>
+  </g>
+
+  <!-- Step Flashing Shingles surrounding curb -->
+  <g fill="url(#step_flash_copper)">
+    <polygon points="190,260 215,240 215,215 190,235"/>
+    <polygon points="195,215 220,195 220,170 195,190"/>
+    <polygon points="200,170 225,150 225,125 200,145"/>
+    
+    <polygon points="385,240 410,260 410,235 385,215"/>
+    <polygon points="380,195 405,215 405,190 380,170"/>
+    <polygon points="375,150 400,170 400,145 375,125"/>
+  </g>
+
+  <!-- Velux Skylight Exterior Frame -->
+  <polygon points="210,260 390,260 370,120 230,120" fill="url(#frame_flashing)" stroke="#F47A24" stroke-width="2.5"/>
+
+  <!-- Low-E Laminated Glass Surface with Sun Reflection -->
+  <polygon points="225,248 375,248 358,132 242,132" fill="url(#glass_sheen)"/>
+  
+  <!-- Diagonal Light Sun Ray Reflection -->
+  <polygon points="250,248 290,248 320,132 280,132" fill="#FFFFFF" opacity="0.35"/>
+  <polygon points="310,248 335,248 345,132 325,132" fill="#FFFFFF" opacity="0.2"/>
+
+  <!-- Water Diversion Saddle / Flashing Collar Top -->
+  <polygon points="225,120 375,120 355,95 245,95" fill="url(#step_flash_copper)"/>
+
+  <!-- Technical Spec Badge -->
+  <rect x="25" y="25" width="280" height="36" rx="18" fill="rgba(15,23,42,0.92)" stroke="rgba(244,122,36,0.4)" stroke-width="1.5"/>
+  <circle cx="45" cy="43" r="6" fill="#F47A24"/>
+  <text x="62" y="48" fill="#FFFFFF" font-family="system-ui, sans-serif" font-size="12" font-weight="700">VELUX® SKYLIGHTS &amp; LEAK REPAIR</text>
+</svg>

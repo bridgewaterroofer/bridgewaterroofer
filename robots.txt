@@ -1,4 +1,7 @@
 User-agent: *
 Allow: /
+Disallow: /components/
+Disallow: /scratch/
+Disallow: /thank-you/
 
 Sitemap: https://bridgewaterroofer.com/sitemap.xml

@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 380" width="600" height="380">
+  <defs>
+    <linearGradient id="sky_siding" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1E293B"/>
+      <stop offset="100%" stop-color="#334155"/>
+    </linearGradient>
+    <linearGradient id="siding_plank" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#F8FAFC"/>
+      <stop offset="50%" stop-color="#E2E8F0"/>
+      <stop offset="100%" stop-color="#CBD5E1"/>
+    </linearGradient>
+    <linearGradient id="wrap_hydro" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#22C55E"/>
+      <stop offset="100%" stop-color="#15803D"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="380" fill="url(#sky_siding)"/>
+
+  <!-- House Sheathing Layer & Vapor Barrier -->
+  <rect x="40" y="80" width="520" height="260" fill="url(#wrap_hydro)" rx="4"/>
+  <g stroke="rgba(255,255,255,0.2)" stroke-width="1">
+    <line x1="40" y1="140" x2="560" y2="140"/>
+    <line x1="40" y1="200" x2="560" y2="200"/>
+    <line x1="40" y1="260" x2="560" y2="260"/>
+    <line x1="160" y1="80" x2="160" y2="340"/>
+    <line x1="280" y1="80" x2="280" y2="340"/>
+    <line x1="400" y1="80" x2="400" y2="340"/>
+  </g>
+  <text x="60" y="115" fill="#FFFFFF" font-family="monospace" font-size="11" opacity="0.6">VAPOR BARRIER / HOUSEWRAP</text>
+
+  <!-- Horizontal Lap Siding Panels (Vinyl & Hardie Plank Style) -->
+  <g stroke="#94A3B8" stroke-width="1.5">
+    <polygon points="120,320 540,320 540,285 120,285" fill="url(#siding_plank)"/>
+    <polygon points="140,285 540,285 540,250 140,250" fill="url(#siding_plank)"/>
+    <polygon points="160,250 540,250 540,215 160,215" fill="url(#siding_plank)"/>
+    <polygon points="180,215 540,215 540,180 180,180" fill="url(#siding_plank)"/>
+    <polygon points="200,180 540,180 540,145 200,145" fill="url(#siding_plank)"/>
+    <polygon points="220,145 540,145 540,110 220,110" fill="url(#siding_plank)"/>
+  </g>
+
+  <!-- Corner Post / J-Channel Trim Capping -->
+  <rect x="530" y="80" width="25" height="260" fill="#FFFFFF" stroke="#94A3B8" stroke-width="2"/>
+  
+  <!-- Architectural Shadow Under Each Lap -->
+  <line x1="120" y1="320" x2="540" y2="320" stroke="#64748B" stroke-width="2.5"/>
+  <line x1="140" y1="285" x2="540" y2="285" stroke="#64748B" stroke-width="2.5"/>
+  <line x1="160" y1="250" x2="540" y2="250" stroke="#64748B" stroke-width="2.5"/>
+  <line x1="180" y1="215" x2="540" y2="215" stroke="#64748B" stroke-width="2.5"/>
+  <line x1="200" y1="180" x2="540" y2="180" stroke="#64748B" stroke-width="2.5"/>
+
+  <!-- Technical Spec Badge -->
+  <rect x="25" y="25" width="290" height="36" rx="18" fill="rgba(15,23,42,0.92)" stroke="rgba(34,197,94,0.4)" stroke-width="1.5"/>
+  <circle cx="45" cy="43" r="6" fill="#22C55E"/>
+  <text x="62" y="48" fill="#FFFFFF" font-family="system-ui, sans-serif" font-size="12" font-weight="700">VINYL &amp; JAMES HARDIE® SIDING</text>
+</svg>
