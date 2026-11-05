@@ -359,16 +359,17 @@
 .mega-dropdown {
   position: absolute;
   top: 100%;
-  left: -80px;
-  width: 740px;
+  left: 0;
+  width: 880px;
+  max-width: calc(100vw - 40px);
   background: var(--navy-900);
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: var(--radius-md);
-  padding: 1.5rem;
+  padding: 1.15rem 1.35rem;
   box-shadow: 0 20px 48px rgba(0, 0, 0, 0.45), 0 0 1px rgba(255, 255, 255, 0.2);
   display: grid;
-  grid-template-columns: 1fr 1fr 220px;
-  gap: 1.5rem;
+  grid-template-columns: repeat(3, minmax(180px, 1fr)) 215px;
+  gap: 1.15rem;
   opacity: 0;
   visibility: hidden;
   transform: translateY(12px) scale(0.98);
@@ -378,6 +379,35 @@
     visibility var(--duration-normal);
   z-index: 1010;
   pointer-events: none;
+  max-height: calc(100vh - 120px);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+/* Invisible hover bridge to prevent premature menu closure */
+.mega-dropdown::before {
+  content: '';
+  position: absolute;
+  top: -12px;
+  left: 0;
+  right: 0;
+  height: 12px;
+}
+
+/* Custom scrollbar for narrow viewports */
+.mega-dropdown::-webkit-scrollbar {
+  width: 5px;
+}
+.mega-dropdown::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 4px;
+}
+.mega-dropdown::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.22);
+  border-radius: 4px;
+}
+.mega-dropdown::-webkit-scrollbar-thumb:hover {
+  background: var(--orange);
 }
 
 .nav-item:hover .mega-dropdown,
@@ -388,15 +418,64 @@
   pointer-events: auto;
 }
 
-/* Service Areas Locations Dropdown */
+/* Roofing Services Dropdown (4-Column Layout: 3 Service/Material Columns + 1 Callout) */
+.mega-dropdown.services-dropdown,
+.nav-item:first-child .mega-dropdown {
+  left: -20px;
+  width: 880px;
+  max-width: calc(100vw - 40px);
+  grid-template-columns: repeat(3, minmax(180px, 1fr)) 215px;
+  gap: 1.15rem;
+}
+
+@media (max-width: 1280px) {
+  .mega-dropdown.services-dropdown,
+  .nav-item:first-child .mega-dropdown {
+    left: -60px;
+    width: 820px;
+    grid-template-columns: repeat(3, minmax(165px, 1fr)) 195px;
+    gap: 0.9rem;
+    padding: 1rem 1.15rem;
+  }
+}
+
+@media (max-width: 1140px) {
+  .mega-dropdown.services-dropdown,
+  .nav-item:first-child .mega-dropdown {
+    left: -100px;
+    width: 760px;
+    grid-template-columns: repeat(3, 1fr) 180px;
+    gap: 0.75rem;
+    padding: 0.9rem 1rem;
+  }
+}
+
+/* Service Areas Locations Dropdown (4-Column Layout: North, South/Central, Regional, Callout) */
 .mega-dropdown.locations-dropdown {
-  left: -180px;
-  width: 720px;
+  left: -160px;
+  width: 880px;
+  max-width: calc(100vw - 40px);
+  grid-template-columns: repeat(3, minmax(180px, 1fr)) 215px;
+  gap: 1.15rem;
 }
 
 @media (max-width: 1280px) {
   .mega-dropdown.locations-dropdown {
+    left: -220px;
+    width: 820px;
+    grid-template-columns: repeat(3, minmax(165px, 1fr)) 195px;
+    gap: 0.9rem;
+    padding: 1rem 1.15rem;
+  }
+}
+
+@media (max-width: 1140px) {
+  .mega-dropdown.locations-dropdown {
     left: -260px;
+    width: 760px;
+    grid-template-columns: repeat(3, 1fr) 180px;
+    gap: 0.75rem;
+    padding: 0.9rem 1rem;
   }
 }
 
@@ -405,7 +484,9 @@
   right: -50px;
   left: auto;
   width: 520px;
+  max-width: calc(100vw - 40px);
   grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
 }
 
 @media (max-width: 1280px) {
@@ -415,38 +496,50 @@
 }
 
 .mega-column h4 {
-  font-size: 0.8125rem;
+  font-size: 0.75rem;
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.08em;
   color: var(--orange);
-  margin-bottom: 0.75rem;
-  padding-bottom: 0.4rem;
+  margin-bottom: 0.5rem;
+  padding-bottom: 0.35rem;
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .mega-column ul {
   display: flex;
   flex-direction: column;
-  gap: 0.35rem;
+  gap: 0.2rem;
 }
 
 .mega-column a {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0.4rem 0.5rem;
+  padding: 0.3rem 0.45rem;
   border-radius: var(--radius-xs);
   color: var(--slate-300);
-  font-size: 0.875rem;
+  font-size: 0.8125rem;
   font-weight: 500;
+  line-height: 1.35;
   transition: all var(--duration-fast) ease;
+}
+
+.mega-column a span {
+  font-size: 0.75rem;
+  opacity: 0.6;
+  transition: transform var(--duration-fast) ease, opacity var(--duration-fast) ease;
 }
 
 .mega-column a:hover {
   background: rgba(255, 255, 255, 0.06);
   color: var(--white);
-  transform: translateX(4px);
+  transform: translateX(3px);
+}
+
+.mega-column a:hover span {
+  opacity: 1;
+  transform: translateX(2px);
 }
 
 /* Mega Menu Callout Panel */
@@ -454,14 +547,15 @@
   background: linear-gradient(145deg, var(--navy-800) 0%, var(--navy-950) 100%);
   border: 1px solid rgba(244, 122, 36, 0.25);
   border-radius: var(--radius-sm);
-  padding: 1.25rem 1rem;
+  padding: 1.1rem 0.95rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  gap: 0.75rem;
 }
 
 .callout-tag {
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   font-weight: 800;
   color: var(--amber);
   text-transform: uppercase;
@@ -469,17 +563,17 @@
 }
 
 .mega-callout h5 {
-  font-size: 1.05rem;
+  font-size: 0.975rem;
   color: var(--white);
-  margin-block: 0.4rem 0.6rem;
-  line-height: 1.2;
+  margin-block: 0.35rem 0.45rem;
+  line-height: 1.25;
 }
 
 .mega-callout p {
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   color: var(--slate-400);
   line-height: 1.4;
-  margin-bottom: 1rem;
+  margin-bottom: 0.25rem;
 }
 
 /* Nav Actions (Header Right) */

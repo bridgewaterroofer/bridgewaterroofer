@@ -24,3 +24,5 @@ desktop.ini
 *key*.json
 *.local.json
 
+# Local agent skills
+.agents/
